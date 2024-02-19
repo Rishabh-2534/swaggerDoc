@@ -1,0 +1,115 @@
+.grid-container {
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+.align-center {
+  justify-content: center;
+}
+
+.grid-x {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.home-hero .home-hero_img {
+  background-image: url(https://www.simpplr.com/wp-content/uploads/2021/02/simpplr-remote-hero-584.png);
+  width: 580px;
+  height: 547px;
+  margin-left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home-hero .home-hero__inner .home-title {
+  font-size: 2.7em;
+  color: rgb(52, 64, 74);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 2em;
+  margin-top: 1em;
+  letter-spacing: -0.02em;
+}
+
+.home-hero .home-hero__inner .home-subtitle {
+  font-size: 1.4em;
+  margin-bottom: 1.5em;
+  line-height: 1.35;
+  color: rgb(52, 64, 74);
+  position: relative;
+}
+
+.home-hero .home-hero__inner .home-btn::before {
+  width: 40px;
+  height: 40px;
+  left: 12px;
+  top: 12px;
+}
+
+.home-hero .home-hero__inner .home-btn {
+  padding: 10px 20px;
+  font-size: 1.05em;
+  color: rgb(41 62 64);
+  font-weight: 500;
+  background-color: rgb(255 255 255);
+  border-radius: 50em;
+  box-shadow: 0 6px 24px 0 rgb(0 0 0 / 5%), 0 0 0 1px rgb(0 0 0 / 8%);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.home-hero .home-hero__inner .home-subtitle::before {
+  content: '';
+  position: absolute;
+  width: 3em;
+  height: 2px;
+  background-color: rgb(26 188 156);
+  left: 0;
+  top: -24px;
+}
+
+.header {
+  height: 80px;
+  padding: 1.3em 0;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.nav_2 img {
+  margin: 15px;
+  height: 80px;
+  width: 160px;
+}
+
+.button {
+  background-color: white;
+  border-style: solid;
+  border-color: rgb(26 188 156);
+  color: black;
+  padding: 20px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+  border-width: 2px;
+}
+
+.button:hover {
+  background-color: #22cc9b;
+  font-size: 22px;
+  border: none;
+  text-decoration: none;
+  color: rgb(60, 61, 61);
+}

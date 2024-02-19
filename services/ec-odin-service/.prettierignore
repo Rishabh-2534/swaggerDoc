@@ -1,0 +1,11 @@
+branding/
+dist/
+fonts/
+img/
+node_modules/
+translations/
+crowdin.yml
+*.html
+*.ejs
+test/coverage
+test/mochareport

@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "name": "server.js",
+      "script": "node ./server.js"
+    },
+    {
+      "name": "service.js",
+      "script": "node ./scripts/service.js"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "EC API",
+  "version": "1.0.0",
+  "author": "Simpplr",
+  "license": "ISC",
+  "homepage": "https://github.com/Simpplr/ec-api/",
+  "description": "EC API for ODIN and Zeus",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simpplr/ec-api.git"
+  },
+  "engines": {
+    "node": "^18"
+  },
+  "scripts": {
+    "postinstall": "[ \"$CI\" = \"true\" ] && recursive-npm-script \"npm ci\" -s --rootDir ./services || recursive-npm-script \"npm install\" -s --rootDir ./services",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint:fix": "eslint --fix ./",
+    "lint": "eslint ./",
+    "setup-env": "recursive-npm-script \"setup-env\""
+  },
+  "devDependencies": {
+    "@commitlint/cli": "16.3.0",
+    "@simpplr/recursive-npm-script": "1.1.1",
+    "@simpplr/shared-config-commitlint": "1.0.4",
+    "@simpplr/shared-config-prettier": "2.0.1",
+    "eslint": "8.46.0",
+    "prettier": "3.0.0"
+  },
+  "dependencies": {},
+  "prettier": "@simpplr/shared-config-prettier"
+}

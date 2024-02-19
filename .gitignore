@@ -1,0 +1,8 @@
+# Node artifact files
+node_modules
+services/*/node_modules
+services/*/.env
+services/*/tests/coverage
+services/*/logs.txt
+yarn.lock
+.DS_Store

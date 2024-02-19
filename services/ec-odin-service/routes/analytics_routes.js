@@ -1,0 +1,136 @@
+const express = require('express');
+
+const analyticsRouter = express.Router();
+
+const middleware = require('../middlewares/middleware');
+const analyticsService = require('../services/analytics_service');
+const analyticsValidator = require('../validators/analyticsValidator');
+
+// Custom middlewares
+analyticsRouter.use(middleware.getAccessToken);
+analyticsRouter.use(middleware.getBaseUrl);
+analyticsRouter.use(middleware.parseRequestBody);
+
+analyticsRouter.get(
+  '/adoption',
+  analyticsValidator.getAdoptionDataValidator,
+  analyticsService.getAdoptionData,
+);
+analyticsRouter.get(
+  '/adoption-average',
+  analyticsValidator.getAdoptionAverageValidator,
+  analyticsService.getAdoptionAverage,
+);
+analyticsRouter.get(
+  '/app-page-views',
+  analyticsValidator.getAppPageViewsValidator,
+  analyticsService.getAppPageViews,
+);
+analyticsRouter.get(
+  '/app-adoption',
+  analyticsValidator.getAppAdoptionValidator,
+  analyticsService.getAppAdoption,
+);
+analyticsRouter.get(
+  '/views',
+  analyticsValidator.getViewsListValidator,
+  analyticsService.getViewsList,
+);
+analyticsRouter.get(
+  '/content-engagement',
+  analyticsValidator.getContentEngagementValidator,
+  analyticsService.getContentEngagement,
+);
+analyticsRouter.get(
+  '/content-publications',
+  analyticsValidator.getContentPublicationsValidator,
+  analyticsService.getContentPublications,
+);
+analyticsRouter.get(
+  '/content-views-by-type',
+  analyticsValidator.getContentViewsByTypeValidator,
+  analyticsService.getContentViewsByType,
+);
+analyticsRouter.get(
+  '/content-views-list',
+  analyticsValidator.getContentViewsListValidator,
+  analyticsService.getContentViewsList,
+);
+analyticsRouter.get(
+  '/content-referral-sources',
+  analyticsValidator.getContentReferralSourcesValidator,
+  analyticsService.getContentReferralSources,
+);
+analyticsRouter.get(
+  '/knowledge-page-stats',
+  analyticsValidator.getKnowledgePageStatsValidator,
+  analyticsService.getKnowledgePageStats,
+);
+analyticsRouter.get(
+  '/newsletter',
+  analyticsValidator.getNewslettersValidator,
+  analyticsService.getNewsletters,
+);
+analyticsRouter.get(
+  '/social-engagement',
+  analyticsValidator.getSocialEngagementValidator,
+  analyticsService.getSocialEngagement,
+);
+analyticsRouter.get(
+  '/social-engagement-list',
+  analyticsValidator.getSocialEngagementListValidator,
+  analyticsService.getSocialEngagementList,
+);
+analyticsRouter.get(
+  '/campaigns',
+  analyticsValidator.getCampaignsValidator,
+  analyticsService.getCampaigns,
+);
+analyticsRouter.get(
+  '/searches',
+  analyticsValidator.getSearchesValidator,
+  analyticsService.getSearches,
+);
+analyticsRouter.get(
+  '/search-list',
+  analyticsValidator.getSearchListValidator,
+  analyticsService.getSearchList,
+);
+analyticsRouter.get(
+  '/searches-performed',
+  analyticsValidator.getSearchesPerfomedValidator,
+  analyticsService.getSearchesPerfomed,
+);
+analyticsRouter.get(
+  '/people-count',
+  analyticsValidator.getPeopleOverviewValidator,
+  analyticsService.getPeopleOverview,
+);
+analyticsRouter.get(
+  '/people-performance',
+  analyticsValidator.getPeoplePerformanceValidator,
+  analyticsService.getPeoplePerformance,
+);
+analyticsRouter.get(
+  '/profile-completeness',
+  analyticsService.getPeopleProfileCompleteness,
+);
+analyticsRouter.get('/site-count', analyticsService.getSiteCounts);
+analyticsRouter.get(
+  '/low-activity-sites',
+  analyticsValidator.getLowActivitySitesValidator,
+  analyticsService.getLowActivitySites,
+);
+analyticsRouter.get(
+  '/site-popularity',
+  analyticsValidator.getSitePopularityValidator,
+  analyticsService.getSitePopularity,
+);
+analyticsRouter.get(
+  '/site-publications',
+  analyticsValidator.getSitePublicationsValidator,
+  analyticsService.getSitePublications,
+);
+module.exports = {
+  analyticsRouter,
+};

@@ -1,0 +1,95 @@
+# Default values for microservice-deploy.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+#***********************************************************************************************************#
+# Below Values are required for jenkins shared lib #
+#***********************************************************************************************************#
+
+# serverName must be seperated with "-" and all characters must be in small letter.
+# this name will be used to deploy helm chart
+serviceName: 'ec_service'
+
+# Sub-microservice root path - this is needed to UT and trivy
+SubMicroserviceRootPaths: 'services/ec-odin-service'
+
+### ***** Below are the optional values ****** ###
+
+# Uncomment below lines if you don't want to perform code and images scan using trivy
+#trivyScan: "false" # OPTIONAL
+
+# Uncomment below lines if you don't want to perform listing
+#IsLintEnabled: "false" # OPTIONAL
+
+## Uncomment below lines if you don't want to perform unit test
+IsUtEnabled: 'false' # OPTIONAL
+
+IsDbUpgradeEnabled: 'false'
+
+#***********************************************************************************************************#
+# Below Values are required for helm chart #
+#***********************************************************************************************************#
+#***********************************************************************************************************#
+# Common Deployment Variables #
+#***********************************************************************************************************#
+
+#NOTE: SubmicroserviceName and labels's name must be same.
+
+# Details of all sub-microservices
+microservicesName: # This name is common for all the microservices
+  ec-odin-service:
+    isServiceEnabled: true # value would be true if you want to create service against this deployment
+    serviceName: 'ec-odin-service'
+    isHpaEnabled: HPA-REPLACE-WITH-TRUE-FALSE # Keep it as it is, this will be replaced from jenkins
+    name: 'ec-odin-service'
+    labels:
+      name: 'ec-odin-service'
+      team: 'search-charlie'
+    repo: 'ec-odin-api-service' # ECR Repo Name
+    dockerFileLocation: 'services/ec-odin-service/'
+    startUpProbe:
+      create: true # make it true if you want to custome initialDelaySeconds and make it false if you want to disable startUpProbe.
+      path: /startUpProbe
+    livenessProbe:
+      create: true # make it true if you want to custome initialDelaySeconds and make it false if you want to disable livenessProbe
+      path: /livenessProbe
+    readinessProbe:
+      create: true # make it true if you want to custome initialDelaySeconds and make it false if you want to disable readinessProbe
+      path: /healthz
+    resources:
+      requests:
+        cpu: 50m
+        memory: 250Mi
+      limits:
+        cpu: 100m
+        memory: 500Mi
+# HealthCheck path
+
+startUpProbe:
+  create: true
+  path: /startUpProbe
+  initialDelaySeconds: 180
+  failureThreshold: 5
+  periodSeconds: 30
+
+livenessProbe:
+  create: true
+  path: /livenessProbe
+  initialDelaySeconds: 180
+  failureThreshold: 5
+  periodSeconds: 30
+
+readinessProbe:
+  create: false
+  path: /healthz
+
+#***********************************************************************************************************#
+# CronJobs Variables #
+#***********************************************************************************************************#
+
+
+#***********************************************************************************************************#
+# Ingress Variables #
+#***********************************************************************************************************#
+ingress:
+  className: ''
+  paths:
