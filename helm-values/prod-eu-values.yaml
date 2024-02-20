@@ -1,0 +1,46 @@
+microservicesName:
+  slack-api-app:
+    autoscalingMinReplicas: 2
+    autoscalingMaxReplicas: 2
+
+configMap:
+  data:
+    NODE_ENV: PROD
+    PORT: '5000'
+    ENV: PROD
+    DB_DIALECT: postgres
+    AWS_SM_API_VERSION: 2017-10-17
+    AWS_SM_REGION: eu-west-1
+    AWS_SM_KMS_KEY_ID: bdd25d6d-47a4-42d6-8e0f-a3639795f3a8
+    AWS_SM_ODIN_CDC_CONFIG: prod/db/realtime_sync_db/credentials
+    EVENT_LOGGING_KAFKA_HOST: b-3.smplrbasesharedprodkaf.v1byhg.c9.kafka.eu-west-1.amazonaws.com:9094,b-1.smplrbasesharedprodkaf.v1byhg.c9.kafka.eu-west-1.amazonaws.com:9094,b-2.smplrbasesharedprodkaf.v1byhg.c9.kafka.eu-west-1.amazonaws.com:9094
+    SLACK_DELIVERY_TOPIC: Simpplr_Slack_Post_Prod
+    SLACK_DELIVERY_CONSUMER_GROUP: Simpplr_Slack_Post_Group_Prod
+    SIMPPLR_TENANT_INTRANET_MS_BASE_URL: http://tenant-app-service
+    SIMPPLR_CONTENT_MGMT_MS_BASE_URL: http://content-mgmt-service
+    MAX_MESSAGE_RETRY_COUNT: '3'
+    LOG_LEVEL: debug
+    ZEUS_SERVICE_NAME: slack_integration
+    NOTIFICATION_PERSISTENCE_KAFKA_TOPIC: notification-persistence-prod
+    NOTIFICATOIN_EVENT_PUBLIC_KAFKA_TOPIC: notification-events-pub-prod
+    CDC_PORT: '5432'
+    CDC_HOST: sf-db.eu.simpplr.com
+    CDC_DB_NAME: realtime_sync_db
+    OPENTELEMETRY_EXPORT_URL: http://observe-traces.observe.svc.cluster.local:4318/v1/traces
+    OBSERVABILITY_ENABLED: 'N'
+    DEEPLINK_SERVICE_BASE_URL: https://simpplr.link/d
+    FF_PROVIDER: 'harness'
+    AWS_SM_FF_CONFIG: prod/harness
+    AWS_SM_ACCOUNT_DB_CREDS_TAG_KEY: Environment
+    AWS_SM_ACCOUNT_DB_CREDS_TAG_VALUE: RLS_Prod
+    AWS_SM_ACCOUNT_DB_CREDS_KEY_NAME_PREFIX: prod/db/
+    AWS_SM_SLACK_TWO_CREDS: prod/slack_two_credentials
+    SLACK_CUSTOM_OWN_APP_CREDS_SM_PREFIX: prod/slack/
+    AWS_SM_ACCOUNT_DB_CREDS_KEY_NAME_SUFFIX: /credentials
+    SLACK_EVENT_URL: https://api.eu.simpplr.xyz/v1/slack/events
+    SLACK_INTERACTION_URL: https://api.eu.simpplr.xyz/v1/slack/interactions
+    REDIRECT_URL: https://api.simpplr.com/oauth/callback-passthrough
+    SIMPPLR_IDENTITY_MGMT_MS_BASE_URL: http://identity-mgmt-service
+    CONTENT_EVENTS_KAFKA_TOPIC: content-events-prod
+    REDIS_SM_CONFIG: prod/redis_credentials
+    SLACK_EVENT_PUBLIC_KAFKA_TOPIC: Core_Slack_Public_Prod

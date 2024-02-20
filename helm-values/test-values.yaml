@@ -1,0 +1,58 @@
+#***********************************************************************************************************#
+# Dev Deployment Variables #
+#***********************************************************************************************************#
+
+# Below array is required if you need any custome values -- It's optional
+
+# microservicesName:    # this name must not be changed
+#   notification-email-daemon:
+#     containerPort: 5000
+#     replicaCount: 1
+#     resources:
+#       requests:
+#         cpu: 400m
+#         memory: 400Mi
+#***********************************************************************************************************#
+# ConfigMap Variables #
+#***********************************************************************************************************#
+configMap:
+  data:
+    NODE_ENV: TEST
+    PORT: '5000'
+    ENV: TEST
+    DB_DIALECT: postgres
+    AWS_SM_API_VERSION: 2017-10-17
+    AWS_SM_REGION: us-west-2
+    AWS_SM_KMS_KEY_ID: 4e4743d9-3b5c-45dc-b795-64a5dc995e86
+    AWS_SM_ODIN_CDC_CONFIG: test/db/realtime_sync_db/credentials
+    EVENT_LOGGING_KAFKA_HOST: b-3.zeusbasesharedpreprod.68d6s9.c14.kafka.us-west-2.amazonaws.com:9094,b-1.zeusbasesharedpreprod.68d6s9.c14.kafka.us-west-2.amazonaws.com:9094,b-2.zeusbasesharedpreprod.68d6s9.c14.kafka.us-west-2.amazonaws.com:9094
+    SLACK_DELIVERY_TOPIC: Simpplr_Slack_Post_Test
+    SLACK_DELIVERY_CONSUMER_GROUP: Simpplr_Slack_Post_Grp_Test
+    SIMPPLR_TENANT_INTRANET_MS_BASE_URL: http://tenant-app-service
+    SIMPPLR_CONTENT_MGMT_MS_BASE_URL: http://content-mgmt-service
+    MAX_MESSAGE_RETRY_COUNT: '3'
+    LOG_LEVEL: debug
+    ZEUS_SERVICE_NAME: slack_integration
+    NOTIFICATION_PERSISTENCE_KAFKA_TOPIC: notification-persistence-test
+    NOTIFICATOIN_EVENT_PUBLIC_KAFKA_TOPIC: notification-events-pub-test
+    CDC_PORT: '5432'
+    CDC_HOST: sf-db.test.simpplr.xyz
+    CDC_DB_NAME: realtime_sync_db
+    OPENTELEMETRY_EXPORT_URL: http://observe-traces.observe.svc.cluster.local:4318/v1/traces
+    OBSERVABILITY_ENABLED: 'N'
+    DEEPLINK_SERVICE_BASE_URL: https://simpplr.link/d
+    FF_PROVIDER: 'harness'
+    AWS_SM_FF_CONFIG: test/harness
+    AWS_SM_ACCOUNT_DB_CREDS_TAG_KEY: Environment
+    AWS_SM_ACCOUNT_DB_CREDS_TAG_VALUE: RLS_Test
+    AWS_SM_ACCOUNT_DB_CREDS_KEY_NAME_PREFIX: test/db/
+    AWS_SM_SLACK_TWO_CREDS: test/slack_two_credentials
+    SLACK_CUSTOM_OWN_APP_CREDS_SM_PREFIX: test/slack/
+    AWS_SM_ACCOUNT_DB_CREDS_KEY_NAME_SUFFIX: /credentials
+    SLACK_EVENT_URL: https://api.test.simpplr.xyz/v1/slack/events
+    SLACK_INTERACTION_URL: https://api.test.simpplr.xyz/v1/slack/interactions
+    REDIRECT_URL: https://odin.dev.simpplr.xyz/oauth/callback-passthrough
+    SIMPPLR_IDENTITY_MGMT_MS_BASE_URL: http://identity-mgmt-service
+    CONTENT_EVENTS_KAFKA_TOPIC: content-events-test
+    REDIS_SM_CONFIG: test/redis_credentials
+    SLACK_EVENT_PUBLIC_KAFKA_TOPIC: Core_Slack_Public_Test

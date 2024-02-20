@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simpplr Extensibility Center</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="public/styles/home.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="nav_2">
+        <img src="public/images/simpplrLogo.png" alt="logo" />
+      </div>
+    </header>
+
+    <div class="home-hero">
+      <div class="grid-container">
+        <div class="grid-x align-middle align-center">
+          <div class="col-md-9 col-xs-10 col-lg-6 cell">
+            <div class="home-hero__inner">
+              <h1 class="home-title">
+                Simpplr <br />
+                <span style="color: #22cc9b">Extensibility Center</span>
+              </h1>
+              <p class="home-subtitle">
+                Please select your login <br />environment.
+              </p>
+              <a
+                href="<%=domainName%>/api/auth/login?type=sandbox"
+                class="button"
+                >Sandbox</a
+              >
+              <a href="<%=domainName%>/api/auth/login?type=prod" class="button"
+                >Production</a
+              >
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 cell">
+            <figure class="home-hero_img"></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

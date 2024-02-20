@@ -1,0 +1,1370 @@
+{
+  "swagger": "2.0",
+
+  "info": {
+    "version": "1.0",
+
+    "title": "Swagger collection",
+
+    "contact": {}
+  },
+
+  "host": "dev.api.ec.simpplr.com",
+
+  "basePath": "/api",
+
+  "securityDefinitions": {},
+
+  "schemes": ["https"],
+
+  "consumes": ["multipart/form-data"],
+
+  "produces": ["application/json"],
+
+  "paths": {
+    "/contents/site/{site_id}/page": {
+      "post": {
+        "summary": "Create Page - File Upload",
+
+        "tags": ["File Upload"],
+
+        "operationId": "FileUploadsample",
+
+        "deprecated": false,
+
+        "produces": ["application/json"],
+
+        "consumes": ["multipart/form-data"],
+
+        "parameters": [
+          {
+            "name": "Authorization",
+
+            "in": "header",
+
+            "required": false,
+
+            "default": "Bearer {token}",
+
+            "type": "string"
+          },
+
+          {
+            "name": "x-simpplr-domain",
+
+            "in": "header",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "site_id",
+
+            "in": "path",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": "Site ID"
+          },
+
+          {
+            "name": "content-sub-type",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "publish-at",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "body",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "summary",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "title",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "is-feed-enabled",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "category-name",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "original-file",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "file",
+
+            "description": ""
+          },
+
+          {
+            "name": "landscape-file",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "file",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-files",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "array",
+
+            "items": {
+              "type": "file"
+            },
+
+            "description": ""
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "",
+
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/contents/site/{site_id}/page/{content_id}": {
+      "put": {
+        "summary": "Create Page - File Upload",
+
+        "tags": ["File Upload"],
+
+        "operationId": "FileUploadsample",
+
+        "deprecated": false,
+
+        "produces": ["application/json"],
+
+        "consumes": ["multipart/form-data"],
+
+        "parameters": [
+          {
+            "name": "Authorization",
+
+            "in": "header",
+
+            "required": false,
+
+            "default": "Bearer {token}",
+
+            "type": "string"
+          },
+
+          {
+            "name": "x-simpplr-domain",
+
+            "in": "header",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "site_id",
+
+            "in": "path",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": "Site ID"
+          },
+
+          {
+            "name": "content_id",
+
+            "in": "path",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": "Content ID"
+          },
+
+          {
+            "name": "content-sub-type",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "publish-at",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "body",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "summary",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "title",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "is-feed-enabled",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "category-name",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "original-file",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "file",
+
+            "description": ""
+          },
+
+          {
+            "name": "landscape-file",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "file",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-files",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "array",
+
+            "items": {
+              "type": "file"
+            },
+
+            "description": ""
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "",
+
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/contents/site/{site_id}/event": {
+      "post": {
+        "summary": "Create Event - File Upload",
+
+        "tags": ["File Upload"],
+
+        "operationId": "CreateEvent-FileUploadCopy",
+
+        "deprecated": false,
+
+        "produces": ["application/json"],
+
+        "consumes": ["multipart/form-data"],
+
+        "parameters": [
+          {
+            "name": "Authorization",
+
+            "in": "header",
+
+            "required": false,
+
+            "default": "Bearer {token}",
+
+            "type": "string"
+          },
+
+          {
+            "name": "x-simpplr-domain",
+
+            "in": "header",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "site_id",
+
+            "in": "path",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": "Site ID"
+          },
+
+          {
+            "name": "content-sub-type",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "starts-at",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "publish-at",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "body",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "summary",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "title",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "is-feed-enabled",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "category-name",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "integer",
+
+            "format": "int32",
+
+            "description": ""
+          },
+
+          {
+            "name": "publishing-status",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "ends-at",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "timezone-iso",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "has-rsvp",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "location",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "site-id",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "is-all-day",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-content-topic-ids",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "has-directions",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-suggested-topics",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "directions",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-topics",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "has-map-url",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "map-url",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "language",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-organizers",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "publish-to",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "rsvp-due-at-date",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "rsvp-note-label",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "rsvp-capacity-count",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "rsvp-has-maybe-option",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-files",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "array",
+
+            "items": {
+              "type": "file"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "original-file",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "file",
+
+            "description": ""
+          },
+
+          {
+            "name": "landscape-file",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "file",
+
+            "description": ""
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "",
+
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/contents/site/{site_id}/event/{content_id}": {
+      "put": {
+        "summary": "Update Event - File Upload",
+
+        "tags": ["File Upload"],
+
+        "operationId": "UpdateEvent-FileUploadCopy",
+
+        "deprecated": false,
+
+        "produces": ["application/json"],
+
+        "consumes": ["multipart/form-data"],
+
+        "parameters": [
+          {
+            "name": "Authorization",
+
+            "in": "header",
+
+            "required": false,
+
+            "default": "Bearer {token}",
+
+            "type": "string"
+          },
+
+          {
+            "name": "x-simpplr-domain",
+
+            "in": "header",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "site_id",
+
+            "in": "path",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": "Site ID"
+          },
+
+          {
+            "name": "content_id",
+
+            "in": "path",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": "Content ID"
+          },
+
+          {
+            "name": "content-sub-type",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "starts-at",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "publish-at",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "body",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "summary",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "title",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "is-feed-enabled",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "category-name",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "integer",
+
+            "format": "int32",
+
+            "description": ""
+          },
+
+          {
+            "name": "publishing-status",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "ends-at",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "timezone-iso",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "has-rsvp",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "location",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "site-id",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "is-all-day",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-content-topic-ids",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "has-directions",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "boolean",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-suggested-topics",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "directions",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-topics",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "has-map-url",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "map-url",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "language",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-organizers",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "array",
+
+            "items": {
+              "type": "string"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "publish-to",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "rsvp-due-at-date",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "rsvp-note-label",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "rsvp-capacity-count",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "rsvp-has-maybe-option",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "string",
+
+            "description": ""
+          },
+
+          {
+            "name": "list-of-files",
+
+            "in": "formData",
+
+            "required": false,
+
+            "type": "array",
+
+            "items": {
+              "type": "file"
+            },
+
+            "description": ""
+          },
+
+          {
+            "name": "original-file",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "file",
+
+            "description": ""
+          },
+
+          {
+            "name": "landscape-file",
+
+            "in": "formData",
+
+            "required": true,
+
+            "type": "file",
+
+            "description": ""
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "",
+
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+
+  "tags": [
+    {
+      "name": "File Upload",
+
+      "description": ""
+    }
+  ]
+}
