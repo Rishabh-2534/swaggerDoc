@@ -1,5 +1,6 @@
 const express = require('express');
 const probesRouter = express.Router();
+const logger = require('../utils/logger');
 
 probesRouter.get('/startUpProbe', (req, res) => {
   logger.debug(`inside startup probe ${Date.now()}`);
