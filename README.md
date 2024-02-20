@@ -39,7 +39,7 @@ Function - ES6 Arrow functions
 3.  Install dependencies (npm install)
 4.  Run server.js for gateway (node server.js) and scripts/service.js for express APIs (node scripts/service.js)
 
-Server should run on http://localhost:3001
+Server should run on http://localhost:5000
 
 ## Logs
 
