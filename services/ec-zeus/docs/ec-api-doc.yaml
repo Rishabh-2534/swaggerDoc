@@ -11,16 +11,16 @@ servers:
     - url: https://api.dev.simpplr.xyz/v1
 paths:
     /notification/create:
-        $ref: "./paths/notifications/create.yaml"
+        $ref: "./docs/paths/notifications/create.yaml"
     /notification/list:
-        $ref: "./paths/notifications/search.yaml"
+        $ref: "./docs/paths/notifications/search.yaml"
     /notification/{notificationId}:
-        $ref: "./paths/notifications/update.yaml"
+        $ref: "./docs/paths/notifications/update.yaml"
 components:
     schemas:
-        $ref: "./schemas/_index.yaml"
+        $ref: "./docs/schemas/_index.yaml"
     responses:
-        $ref: "./responses/_index.yaml"
+        $ref: "./docs/responses/_index.yaml"
     securitySchemes:
         apiAuthSecurity:
             type: "oauth2"
