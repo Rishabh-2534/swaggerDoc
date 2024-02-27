@@ -152,9 +152,15 @@ components:
                                 type: "string"
                                 example: "Something went wrong, please try again"
     securitySchemes:
-        bearerAuth:
-            type: http
-            scheme: bearer
-            bearerFormat: JWT
+        apiAuthSecurity:
+            type: 'oauth2'
+            description: 'This API uses OAuth 2 with the implicit grant flow.'
+            flows:
+                implicit:
+                  authorizationUrl: https://api.dev.simpplr.xyz/v1/identity/oauth/authorize
+                  scopes:
+                    read: 'read data'
+                    write: 'create/update data'
+                    everything: 'allow full access'
 security:
     - bearerAuth: []
