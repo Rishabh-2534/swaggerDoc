@@ -163,4 +163,4 @@ components:
                     write: 'create/update data'
                     everything: 'allow full access'
 security:
-    - bearerAuth: []
+    - apiAuthSecurity: []
