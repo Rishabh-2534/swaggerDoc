@@ -1,0 +1,10 @@
+description: "Error"
+content:
+  application/json:
+    schema:
+      oneOf:
+        - $ref: "../../schemas/notifications/message.yaml"
+        - $ref: "../../schemas/notifications/validation-error.yaml"
+      
+      
+

@@ -1,0 +1,4 @@
+CreateNotification:
+  $ref: "./notifications/create_request.yaml"
+SearchNotification:
+  $ref: "./notifications/search_request.yaml"

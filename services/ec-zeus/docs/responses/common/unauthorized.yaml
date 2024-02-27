@@ -1,0 +1,9 @@
+description: "Authorize error"
+content:
+    application/json:
+        schema:
+            type: "object"
+            properties:
+                message:
+                    type: "string"
+                    example: "Missing/Invalid authentication token"

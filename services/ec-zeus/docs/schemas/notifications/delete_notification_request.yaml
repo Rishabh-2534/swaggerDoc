@@ -1,0 +1,23 @@
+required:
+  - category
+  - action_by
+  - is_deleted
+type: object
+properties:
+  category:
+    type: string
+    description:
+      This is to identify type of notification. Currently only support
+      inapp category.
+    example: inapp
+    enum:
+      - inapp
+  is_deleted:
+    type: boolean
+    description: Set this to true if you want to delete notification
+    enum:
+      - false
+      - true
+  action_by:
+    type: string
+    description: Email of the person who performed this action

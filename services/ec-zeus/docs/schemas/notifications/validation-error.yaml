@@ -1,0 +1,15 @@
+type: "array"
+items:
+  properties:
+    seq_id:
+      type: integer,
+      example: 0
+    field_name:
+      type: string,
+      example: "sent_to"
+    error_code:
+      type: integer,
+      example: "1001"
+    message:
+      type: "string"
+      message: "should have required property 'sent_to'"

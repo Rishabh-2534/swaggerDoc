@@ -1,0 +1,21 @@
+put:
+  tags:
+    - Notifications
+  summary: Update notification
+  description: Use this API to update notification
+  requestBody:
+    description: Update notification
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: "../../schemas/notifications/action_update_request.yaml"
+            - $ref: "../../schemas/notifications/delete_notification_request.yaml"
+    required: true
+  responses:
+    200:
+      $ref: "../../responses/notifications/update_success.yaml"
+    403:
+      $ref: "../../responses/common/unauthorized.yaml"
+    400:
+      $ref: "../../responses/notifications/validation-error.yaml"

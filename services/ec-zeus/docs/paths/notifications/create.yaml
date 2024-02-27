@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Notifications
+  summary: Create a new notification
+  description: Use this API to create a new notification to your tenant
+  requestBody:
+    description: Create a new notification to your tenant
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/notifications/create_request.yaml"
+    required: true
+  responses:
+    200:
+      $ref: "../../responses/notifications/create_success.yaml"
+    400:
+      $ref: "../../responses/notifications/create_error.yaml"
+    401:
+      $ref: "../../responses/common/unauthorized.yaml"
+    403:
+      $ref: "../../responses/common/forbidden.yaml"

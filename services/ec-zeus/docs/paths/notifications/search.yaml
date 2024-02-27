@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Notifications
+  summary: Search notification
+  description: Use this API to search notifications
+  requestBody:
+    description: Search notifications
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/notifications/search_request.yaml"
+    required: true
+  responses:
+    200:
+      $ref: "../../responses/notifications/search_success.yaml"
+    403:
+      $ref: "../../responses/common/unauthorized.yaml"
+    503:
+      $ref: "../../responses/notifications/search-error.yaml"
+

@@ -1,0 +1,12 @@
+description: "Forbidden error"
+content:
+    application/json:
+        schema:
+            type: "object"
+            properties:
+                error_code:
+                    type: "integer"
+                    example: 2001
+                message:
+                    type: "string"
+                    example: "Something went wrong, please try again"

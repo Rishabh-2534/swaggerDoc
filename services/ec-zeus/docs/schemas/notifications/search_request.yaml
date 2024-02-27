@@ -1,0 +1,26 @@
+type: object
+properties:
+  size:
+    type: integer
+    format: int64
+    example: 10
+    description: Payload size
+  nextPageToken:
+    type: string
+    description: Token for next page
+  since:
+    type: integer
+    description: Unix epoch timestamp
+  include-actioned:
+    type: boolean
+    description: Include actioned
+    enum:
+      - false
+      - true
+  filter:
+    type: string
+    description: Notification type to filter
+    example: approved
+    enum:
+      - actionable
+      - activity

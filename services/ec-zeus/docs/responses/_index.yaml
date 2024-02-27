@@ -1,0 +1,6 @@
+Unauthorized:
+  $ref: "./common/unauthorized.yaml"
+NotificationCreateSuccess:
+  $ref: "./notifications/create_success.yaml"
+NotificationError:
+  $ref: "./notifications/error.yaml"
