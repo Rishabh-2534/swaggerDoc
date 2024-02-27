@@ -1,0 +1,160 @@
+---
+openapi: 3.0.2
+info:
+    version: 1.0.0
+    title: Simpplr API Documentation
+    description: ""
+tags:
+    - name: Notifications
+      description: Everything about notifications
+servers:
+    - url: https://api.dev.simpplr.xyz/v1
+paths:
+    /notification/create:
+        post:
+            tags:
+                - Notifications
+            summary: Create a new notification
+            description: Use this API to create a new notification to your tenant
+            requestBody:
+                description: Create a new notification to your tenant
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/NotificationPost"
+                required: true
+            responses:
+                200:
+                    description: Successful operation
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/NotificationSuccess"
+                403:
+                    $ref: "#/components/responses/Unauthorized"
+                400:
+                    description: Invalid request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/NotificationError"
+    /notification/list:
+        post:
+            tags:
+                - Notifications
+            summary: Search notification
+            description: Use this API to search notifications
+            requestBody:
+                description: Search notifications
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/NotificationSchema"
+                required: true
+            responses:
+                200:
+                    description: Successful operation
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/NotificationSuccess"
+                400:
+                    description: Invalid request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/NotificationError"
+components:
+    schemas:
+        NotificationPost:
+            required:
+                - category
+                - sent_to
+                - sent_by
+                - message
+            type: object
+            properties:
+                category:
+                    type: string
+                    description:
+                        This is to identify type of notification. Currently only support
+                        inapp category.
+                    example: inapp
+                    enum:
+                        - inapp
+                sent_to:
+                    type: string
+                    description: Email of the person to send this Notification to
+                sent_by:
+                    type: string
+                    description: Email of the person who is sending notification
+                url:
+                    type: string
+                    description: Target URL for the Notification
+                message:
+                    type: string
+                    description:
+                        Message for notification. {{fullName}} variable can be used
+                        in message to display the sender name.
+                notification_type:
+                    type: string
+                    description:
+                        "`actionable` - Notifications which require some action, like
+                        a follow request, leave approval. \n `activity`- Notification which publishes
+                        some information \n default will be `activity`"
+                    example: activity
+                    enum:
+                        - actionable
+                        - activity
+        NotificationSchema:
+            type: object
+            properties:
+                size:
+                    type: integer
+                    format: int64
+                    example: 10
+                    description: Payload size
+                nextPageToken:
+                    type: string
+                    description: Token for next page
+                since:
+                    type: integer
+                    description: Unix epoch timestamp
+                include-actioned:
+                    type: boolean
+                    description: Include actioned
+                    enum:
+                        - false
+                        - true
+                filter:
+                    type: string
+                    description: Notification type to filter
+                    example: approved
+                    enum:
+                        - actionable
+                        - activity
+        NotificationError:
+            type: object
+        NotificationSuccess:
+            type: object
+    responses:
+        Unauthorized:
+            description: "Authorization error"
+            content:
+                application/json:
+                    schema:
+                        type: "object"
+                        properties:
+                            error_code:
+                                type: "integer"
+                                example: 2001
+                            message:
+                                type: "string"
+                                example: "Something went wrong, please try again"
+    securitySchemes:
+        bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
+security:
+    - bearerAuth: []
