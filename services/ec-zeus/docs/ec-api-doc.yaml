@@ -22,9 +22,11 @@ paths:
         $ref: "./services/ec-zeus/docs/paths/notifications/update.yaml"
     
     # Alerts
-    /alert:
-        $ref: "./services/ec-zeus/docs/paths/alerts/search_create.yaml" # this reference has to be from service for github actions to work
-    /alert/{alertId}:
+    /alerts/list:
+        $ref: "./services/ec-zeus/docs/paths/alerts/search.yaml" # this reference has to be from service for github actions to work
+    /alerts:
+        $ref: "./services/ec-zeus/docs/paths/alerts/create.yaml" # this reference has to be from service for github actions to work
+    /alerts/{alertId}:
         $ref: "./services/ec-zeus/docs/paths/alerts/update.yaml"
 components:
     schemas:

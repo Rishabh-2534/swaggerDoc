@@ -19,24 +19,3 @@ post:
       $ref: "../../responses/common/unauthorized.yaml"
     403:
       $ref: "../../responses/common/forbidden.yaml"
-      
-get:
-  tags:
-    - Alerts
-  summary: Search alerts
-  description: Use this API to search alerts
-  requestBody:
-    description: Search alerts
-    content:
-      application/json:
-        schema:
-          $ref: "../../schemas/alerts/search_request.yaml"
-    required: true
-  responses:
-    200:
-      $ref: "../../responses/alerts/search_success.yaml"
-    403:
-      $ref: "../../responses/common/unauthorized.yaml"
-    503:
-      $ref: "../../responses/alerts/search_error.yaml"
-
