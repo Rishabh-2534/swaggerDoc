@@ -16,24 +16,24 @@ servers:
 paths:
     # Notifications
     /notification/create:
-        $ref: "./services/ec-zeus/docs/paths/notifications/create.yaml" # this reference has to be from service for github actions to work
+        $ref: "./paths/notifications/create.yaml"
     /notification/list:
-        $ref: "./services/ec-zeus/docs/paths/notifications/search.yaml"
+        $ref: "./paths/notifications/search.yaml"
     /notification/{notificationId}:
-        $ref: "./services/ec-zeus/docs/paths/notifications/update.yaml"
-    
+        $ref: "./paths/notifications/update.yaml"
+
     # Alerts
     /alerts/list:
-        $ref: "./services/ec-zeus/docs/paths/alerts/search.yaml" # this reference has to be from service for github actions to work
+        $ref: "./paths/alerts/search.yaml"
     /alerts:
-        $ref: "./services/ec-zeus/docs/paths/alerts/create.yaml" # this reference has to be from service for github actions to work
+        $ref: "./paths/alerts/create.yaml"
     /alerts/{alertId}:
-        $ref: "./services/ec-zeus/docs/paths/alerts/update.yaml"
+        $ref: "./paths/alerts/update.yaml"
 components:
     schemas:
-        $ref: "./services/ec-zeus/docs/schemas/_index.yaml"
+        $ref: "./schemas/_index.yaml"
     responses:
-        $ref: "./services/ec-zeus/docs/responses/_index.yaml"
+        $ref: "./responses/_index.yaml"
     securitySchemes:
         apiAuthSecurity:
             type: "oauth2"
