@@ -12,9 +12,7 @@ CreateNotification:
 SearchNotification:
   $ref: "./notifications/search_request.yaml"
 ActionUpdate:
-  $ref: "./notifications/action_update_request.yaml"
-DeleteNotification:
-  $ref: "./notifications/delete_notification_request.yaml"
+  $ref: "./notifications/update_request.yaml"
 
 # Alerts schemas
 Alert:
