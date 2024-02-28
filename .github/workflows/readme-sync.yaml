@@ -20,4 +20,4 @@ jobs:
         uses: readmeio/rdme@v8
         with:
           working-directory: ./services/ec-zeus/docs
-          rdme: openapi ./services/ec-zeus/docs/ec-api-doc.yaml --workingDirectory=./services/ec-zeus/docs --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
+          rdme: openapi ec-api-doc.yaml --workingDirectory=./services/ec-zeus/docs --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
