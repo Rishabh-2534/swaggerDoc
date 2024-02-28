@@ -16,5 +16,5 @@ post:
     403:
       $ref: "../../responses/common/unauthorized.yaml"
     503:
-      $ref: "../../responses/notifications/search-error.yaml"
+      $ref: "../../responses/notifications/search_error.yaml"
 

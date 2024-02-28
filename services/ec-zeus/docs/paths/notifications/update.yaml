@@ -25,4 +25,4 @@ put:
     403:
       $ref: "../../responses/common/unauthorized.yaml"
     400:
-      $ref: "../../responses/notifications/validation-error.yaml"
+      $ref: "../../responses/common/validation_error.yaml"

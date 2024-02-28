@@ -1,0 +1,59 @@
+type: object
+properties:
+  alertId:
+    type: "string"
+    example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+  authoredBy:
+    type: object
+    properties:
+      name:
+        type: "string"
+        example: "Joy"
+      id:
+        type: "string"
+        example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+  text:
+    type: "string"
+    example: "Notification title"
+  displayFrom:
+    type: "string"
+    example: "2024-02-28T21:00:00.000Z"
+  displayUntil:
+    type: "string"
+    example: "2024-02-28T21:00:00.000Z"
+  isRecipientDeleted:
+    type: boolean
+    example: false
+  link:
+    type: "string"
+    example: "http://example.com"
+  message:
+    type: "string"
+    example: "Alert to organization"
+  recipientCount:
+    type: "integer"
+    example: 10
+  seenCount:
+    type: "integer"
+    example: 10
+  recipientType:
+    type: "string"
+    example: everyone
+  status:
+    type: "string"
+    example: "scheduled"    
+  site:
+    type: object
+    properties:
+      name:
+        type: "string"
+        example: "HR Site"
+      siteId:
+        type: "string"
+        example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+  createdAt:
+    type: "string"
+    example: "2024-02-14T12:36:38.151Z"
+  category:
+    type: "string"
+    example: "Must_Read"

@@ -31,7 +31,6 @@ properties:
     description: "`actionable` - Notifications which require some action, like
       a follow request, leave approval. \n `activity`- Notification which publishes
       some information \n default will be `activity`"
-    example: activity
     enum:
       - actionable
       - activity

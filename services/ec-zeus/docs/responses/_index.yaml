@@ -1,6 +1,33 @@
+# Common Errors
 Unauthorized:
   $ref: "./common/unauthorized.yaml"
+CommonError:
+  $ref: "./common/error.yaml"
+Forbidden:
+  $ref: "./common/forbidden.yaml"
+ValidationError:
+  $ref: "./common/validation_error.yaml"
+
+# Notificaton Errors
 NotificationCreateSuccess:
   $ref: "./notifications/create_success.yaml"
-NotificationError:
-  $ref: "./notifications/error.yaml"
+NotificationCreatError:
+  $ref: "./notifications/create_error.yaml"
+NotificationSearchSuccess:
+  $ref: "./notifications/search_success.yaml"
+NotificationUpdateSuccess:
+  $ref: "./notifications/update_success.yaml"
+NotificationSearchError:
+  $ref: "./notifications/search_error.yaml"
+
+# Alert Errors
+AlertCreateSuccess:
+  $ref: "./alerts/create_success.yaml"
+AlertError:
+  $ref: "./alerts/create_error.yaml"
+AlertSearchSuccess:
+  $ref: "./alerts/search_success.yaml"
+AlertSearchError:
+  $ref: "./alerts/search_error.yaml"
+AlertUpdateSuccess:
+  $ref: "./alerts/update_success.yaml"

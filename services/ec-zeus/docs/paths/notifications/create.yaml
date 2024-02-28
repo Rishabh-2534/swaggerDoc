@@ -2,9 +2,9 @@ post:
   tags:
     - Notifications
   summary: Create a new notification
-  description: Use this API to create a new notification to your tenant
+  description: Use this API to create a new notification
   requestBody:
-    description: Create a new notification to your tenant
+    description: Create a new notification
     content:
       application/json:
         schema:

@@ -1,4 +1,25 @@
+# Common schemas
+Message:
+  $ref: "./common/message.yaml"
+ValidationError:
+  $ref: "./common/validation_error.yaml"
+
+# Notification schemas
+Notification:
+  $ref: "./notifications/notification.yaml"
 CreateNotification:
   $ref: "./notifications/create_request.yaml"
 SearchNotification:
   $ref: "./notifications/search_request.yaml"
+ActionUpdate:
+  $ref: "./notifications/action_update_request.yaml"
+DeleteNotification:
+  $ref: "./notifications/delete_notification_request.yaml"
+
+# Alerts schemas
+Alert:
+  $ref: "./alerts/alert.yaml"
+CreateAlert:
+  $ref: "./alerts/create_request.yaml"
+SearchAlert:
+  $ref: "./alerts/search_request.yaml"
