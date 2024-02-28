@@ -12,6 +12,7 @@ tags:
 
 servers:
     - url: https://api.dev.simpplr.xyz/v1
+    - url: https://api.test.simpplr.xyz/v1
 paths:
     # Notifications
     /notification/create:
