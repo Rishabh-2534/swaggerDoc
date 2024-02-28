@@ -4,17 +4,20 @@ name: Sync OpenAPI definition to ReadMe
 on:
   push:
     branches:
-      - develop
+      - release
 
 jobs:
-  sync:
+  SyncToProd:
     runs-on: ubuntu-latest
+    environment: 
+      name: production
+      url: 'https://simpplr-zeus.readme.io/'
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
 
       # Run GitHub Action to sync OpenAPI file at ./path-to-file.json
-      - name: Sync OpenAPI definition to ReadMe
+      - name: Sync OpenAPI definition to ReadMe production
         # We recommend specifying a fixed version, i.e. @v8
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@v8

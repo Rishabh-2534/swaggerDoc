@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Simpplr Zeus",
     "scripts": {
-        "validate": "rdme openapi:validate docs/ec-api-doc.yaml"
+        "validate": "rdme openapi:validate ec-api-doc.yaml --workingDirectory=./docs/"
     },
     "repository": {
         "type": "git",
