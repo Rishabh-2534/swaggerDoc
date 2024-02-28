@@ -32,13 +32,13 @@ properties:
     example: '2024-02-29T21:00:00.000Z'
   membersType:
     type: string
-    description: 'Which group of members should this Alert be displayed to. \n Note: Applicable only if the recipient is set as Site'
+    description: "Which group of members should this Alert be displayed to. \n Note: Applicable only if the recipient is set as Site"
     enum:
       - site_members
       - site_members_and_followers
   status:
     type: string
-    description: 'Status of alert. \n delete and expire status is while updating alert'
+    description: "Status of alert. \n delete and expire status is while updating alert"
     enum:
       - active
       - scheduled
