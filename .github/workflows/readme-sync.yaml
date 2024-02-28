@@ -19,4 +19,5 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi ./services/ec-zeus/docs/ec-api-doc.yaml --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
+          working-directory: ./services/ec-zeus/docs
+          rdme: openapi ec-api-doc.yaml --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
