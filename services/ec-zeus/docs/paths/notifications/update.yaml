@@ -15,9 +15,7 @@ put:
     content:
       application/json:
         schema:
-          oneOf:
-            - $ref: "../../schemas/notifications/action_update_request.yaml"
-            - $ref: "../../schemas/notifications/delete_notification_request.yaml"
+          $ref: "../../schemas/notifications/update_request.yaml"
     required: true
   responses:
     200:

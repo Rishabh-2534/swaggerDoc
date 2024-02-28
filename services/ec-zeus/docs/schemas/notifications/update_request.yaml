@@ -1,4 +1,3 @@
-description: 'To upate notification'
 required:
   - category
   - action_by
@@ -19,3 +18,9 @@ properties:
   action_by:
     type: string
     description: Email of the person who performed this action
+  is_deleted:
+    type: boolean
+    description: Set this to true if you want to delete notification
+    enum:
+      - false
+      - true

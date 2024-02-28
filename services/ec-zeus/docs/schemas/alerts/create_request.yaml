@@ -1,8 +1,9 @@
 required:
-  - category
-  - sent_to
-  - sent_by
   - message
+  - recipientType
+  - displayFrom
+  - displayUntil
+  - isDismissable
 type: object
 properties:
   message:
@@ -36,6 +37,9 @@ properties:
     enum:
       - site_members
       - site_members_and_followers
+  isDismissable:
+    type: boolean
+    description: "true: The Alert can be dismissed by users. \n false: The Alert cannot be dismissed by users."
   status:
     type: string
     description: "Status of alert. \n delete and expire status is while updating alert"
