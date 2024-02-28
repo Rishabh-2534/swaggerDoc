@@ -1,7 +1,7 @@
 post:
   tags:
     - Notifications
-  summary: Create a new notification
+  summary: Create a new Notification
   description: Use this API to create a new notification
   requestBody:
     description: Create a new notification
