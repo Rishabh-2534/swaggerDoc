@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
+      
+      - name: Change directory
+        run: cd ./services/ec-zeus/docs
 
       # Run GitHub Action to sync OpenAPI file at ./path-to-file.json
       - name: GitHub Action
@@ -19,5 +22,4 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@v8
         with:
-          working-directory: ./services/ec-zeus/docs
           rdme: openapi ec-api-doc.yaml --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
