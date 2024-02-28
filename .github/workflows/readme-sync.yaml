@@ -12,14 +12,12 @@ jobs:
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
-      
-      - name: Change directory
-        run: cd ./services/ec-zeus/docs
 
       # Run GitHub Action to sync OpenAPI file at ./path-to-file.json
-      - name: GitHub Action
+      - name: Sync OpenAPI definition to ReadMe
         # We recommend specifying a fixed version, i.e. @v8
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi ec-api-doc.yaml --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
+          working-directory: ./services/ec-zeus/docs
+          rdme: openapi ./services/ec-zeus/docs/ec-api-doc.yaml --workingDirectory=./services/ec-zeus/docs --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
