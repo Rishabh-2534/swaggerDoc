@@ -19,5 +19,7 @@ Alert:
   $ref: "./alerts/alert.yaml"
 CreateAlert:
   $ref: "./alerts/create_request.yaml"
+UpdateAlert:
+  $ref: "./alerts/update_request.yaml"
 SearchAlert:
   $ref: "./alerts/search_request.yaml"

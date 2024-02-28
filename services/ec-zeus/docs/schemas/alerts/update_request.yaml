@@ -1,9 +1,5 @@
 required:
   - message
-  - recipientType
-  - displayFrom
-  - displayUntil
-  - isDismissable
 type: object
 properties:
   message:
@@ -14,21 +10,14 @@ properties:
     type: string
     description: Target link for the Alert
     example: https://example.com
-  recipientType:
-    type: string
-    description: Recipient group for this Alert
-    enum: [everyone, audience, site]
-  recipientTypeId:
-    type: string
-    description: ID of the recipient
   displayFrom:
     type: string
     description: UTC Time from which this Alert should be displayed
-    example: "2024-02-28T21:00:00.000Z"
+    example: '2024-02-28T21:00:00.000Z'
   displayUntil:
     type: string
     description: UTC Time to which this Alert should be displayed
-    example: "2024-02-29T21:00:00.000Z"
+    example: '2024-02-29T21:00:00.000Z'
   membersType:
     type: string
     description: "Which group of members should this Alert be displayed to. \n Note: Applicable only if the recipient is set as Site"
@@ -40,7 +29,9 @@ properties:
     description: "true: The Alert can be dismissed by users. \n false: The Alert cannot be dismissed by users."
   status:
     type: string
-    description: "Status of alert."
+    description: "Status of alert. \n delete and expire status is while updating alert"
     enum:
       - active
       - scheduled
+      - delete
+      - expire
