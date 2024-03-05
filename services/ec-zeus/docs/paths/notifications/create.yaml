@@ -1,10 +1,10 @@
 post:
   tags:
     - Notifications
-  summary: Create a new Notification
+  summary: Create a new notification - SPRINT DEMO
   description: Use this API to create a new notification
   requestBody:
-    description: Create a new notification - SPRINT DEMO
+    description: Create a new notification
     content:
       application/json:
         schema:
