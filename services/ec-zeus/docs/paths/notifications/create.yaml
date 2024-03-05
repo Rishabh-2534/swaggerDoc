@@ -4,7 +4,7 @@ post:
   summary: Create a new notification
   description: Use this API to create a new notification
   requestBody:
-    description: Create a new notification
+    description: Create a new notification - SPRINT DEMO
     content:
       application/json:
         schema:
