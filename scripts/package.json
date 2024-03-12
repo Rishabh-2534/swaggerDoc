@@ -1,0 +1,20 @@
+{
+  "name": "ec-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-app": "node ./create-partner-app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "password-generator": "^2.3.2",
+    "pg": "^8.11.3",
+    "redis-clustr": "^1.7.0",
+    "sequelize": "^6.37.1",
+    "uuid": "^9.0.1"
+  }
+}
