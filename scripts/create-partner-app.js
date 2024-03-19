@@ -68,12 +68,12 @@ const main = async () => {
 
     const OAuth2Client = oauth2ClientDetailsModel(db, Sequelize);
 
-    const appName = await readFromConsole('Enter app name: ');
-    const appDescription = await readFromConsole('Enter app description: ');
-    const redirectURI = await readFromConsole('Enter rediret URL: ');
+    const appName = await readFromConsole('\nEnter app name: ');
+    const appDescription = await readFromConsole('\nEnter app description: ');
+    const redirectURI = await readFromConsole('\nEnter rediret URL: ');
 
     const confirm = await readFromConsole(
-      `Are you sure you want to continue? (y/n) with \n App Name: ${appName} \n App Description: ${appDescription} \n Redirect URI: ${redirectURI} \n on ${env} env? `
+      `\nAre you sure you want to continue? (y/n) with \n\n App Name: ${appName} \n\n App Description: ${appDescription} \n\n Redirect URI: ${redirectURI} \n\n on ${env} env? `
     );
 
     if (confirm.toLocaleLowerCase() === 'y') {
@@ -96,8 +96,7 @@ const main = async () => {
       redisHelper.setKey(redis, key, { status: 'Y' });
 
       console.log(
-        `Please find your app details in ${env} env below: \n app_id: ${clientId} \n app_secret: ${clientSecret} \n redirect_uri: ${redirectURI} \n\n\n
-         Please get this saved to vault {identity-mgmt-app/${env}/runtime//Oauth2/ClientCredentials/${clientId}} with value {client_secret: ${clientSecret}}`
+        `\nPlease find your app details in ${env} env below: \n app_id: ${clientId} \n app_secret: ${clientSecret} \n redirect_uri: ${redirectURI} \n\n\n Please get this saved to vault {identity-mgmt-app/${env}/runtime//Oauth2/ClientCredentials/${clientId}} with value {client_secret: ${clientSecret}}`
       );
     } else {
       console.log('Exiting without creating app...');

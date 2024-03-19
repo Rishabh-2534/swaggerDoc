@@ -74,8 +74,6 @@ exports.getKey = async (redisClient, key) => {
 
 /* Promise to set a key in Redis client */
 exports.setKey = async (redisClient, key, value, key_expiry) => {
-  console.log({ key, value, key_expiry });
-
   return new Promise((resolve, reject) => {
     redisClient.set(key, value, function (err, result) {
       console.log('setting data in redis');

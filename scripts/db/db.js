@@ -4,7 +4,7 @@ exports.connectToDB = async ({ host, user, password, database }) => {
     host,
     dialect: 'postgres',
     logging: false,
-    operatorsAliases: false,
+    operatorsAliases: '0',
     pool: {
       max: 5,
       min: 0,
