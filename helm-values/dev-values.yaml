@@ -28,5 +28,5 @@ configMap:
     AWS_SM_REGION: us-west-2
     AWS_SM_KMS_KEY_ID: 4e4743d9-3b5c-45dc-b795-64a5dc995e86
     LOG_LEVEL: debug
-    CACHE_DIR: /tmp/cache
+    CACHE_DIR: /tmp/cache/readmeio
     
