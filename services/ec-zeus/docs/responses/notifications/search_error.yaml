@@ -1,9 +1,0 @@
-description: "Error"
-content:
-  application/json:
-    schema:
-      type: "object"
-      properties:
-        message:
-          type: "string"
-          example: "Unable to retrieve notification."
