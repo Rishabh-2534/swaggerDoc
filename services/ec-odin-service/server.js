@@ -58,6 +58,7 @@ app.use(
     }),
     {
       development: process.env.NODE_ENV === 'development', // optional, sends logs to Development Data
+      baseLogUrl: 'https://developer.simpplr.com/',       // optional This is the base URL for your ReadMe project. 
     },
   ),
 );
