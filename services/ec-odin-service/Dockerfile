@@ -8,7 +8,7 @@ COPY ./services/ec-odin-service ./services/ec-odin-service
 
 WORKDIR /backend/services/ec-odin-service
 
-RUN npm install
+RUN npm install --cache /tmp/ec-cache
 
 FROM gcr.io/distroless/nodejs18-debian11
 COPY --from=build-env /backend/services/ec-odin-service /backend/services/ec-odin-service
