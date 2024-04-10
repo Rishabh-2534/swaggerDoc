@@ -3,6 +3,7 @@ const express = require('express');
 const readme = require('readmeio');
 const cors = require('cors');
 const requestIp = require('request-ip');
+require('dotenv').config();
 
 const app = express();
 const bodyParser = require('body-parser');

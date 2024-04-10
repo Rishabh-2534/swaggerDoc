@@ -2,7 +2,6 @@ FROM node:18.16.1 AS build-env
 
 ARG SIMPPLR_NPM_TOKEN
 
-ENV CACHE_DIR /tmp/cache
 WORKDIR /backend
 
 COPY ./services/ec-odin-service ./services/ec-odin-service
