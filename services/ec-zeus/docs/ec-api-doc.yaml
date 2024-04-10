@@ -5,6 +5,8 @@ info:
     title: Simpplr API Documentation
     description: ""
 tags:
+    - name: Notifications
+      description: Everything about Notifications
     - name: Alerts
       description: Everything about Alerts
 
@@ -12,6 +14,14 @@ servers:
     - url: https://api.dev.simpplr.xyz/v1
     - url: https://api.test.simpplr.xyz/v1
 paths:
+    # Notifications
+    /notification/create:
+        $ref: "./paths/notifications/create.yaml"
+    /notification/list:
+        $ref: "./paths/notifications/search.yaml"
+    /notification/{notificationId}:
+        $ref: "./paths/notifications/update.yaml"
+
     # Alerts
     /alerts/list:
         $ref: "./paths/alerts/search.yaml"

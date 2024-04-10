@@ -1,0 +1,65 @@
+type: object
+properties:
+  user:
+    type: object
+    properties:
+      img:
+        type: "string"
+        example: "https://example.com/image/upload/v155982512"
+      name:
+        type: "string"
+        example: "Joy"
+      id:
+        type: "string"
+        example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+  text:
+    type: "string"
+    example: "Notification title"
+  state:
+    type: "string"
+    example: "new"
+  stamp:
+    type: "string"
+    example: "actioned"
+  details:
+    type: object
+    properties:
+      sentByUserId:
+        type: "string"
+        example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+      sentToUserId:
+        type: "string"
+        example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+      url:
+        type: "string"
+        example: "https://example.com/image/upload/v155982512"
+  isSeen:
+    type: "string"
+    example: "false"
+  isRead:
+    type: "string"
+    example: "false"
+  isActionable:
+    type: "boolean"
+    example: false
+  actionedBy:
+    type: object
+    properties:
+      img:
+        type: "string"
+        example: "https://example.com/image/upload/v155982512"
+      name:
+        type: "string"
+        example: "Joy"
+      id:
+        type: "string"
+        example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+  id:
+    type: "string"
+    example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+  createdAt:
+    type: "string"
+    example: "2024-02-14T12:36:38.151Z"
+  category:
+    type: "string"
+    example: "Must_Read"

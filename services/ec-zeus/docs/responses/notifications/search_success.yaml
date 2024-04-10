@@ -1,0 +1,31 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: "string"
+          example: "SUCCESS"
+        result:
+          type: object
+          properties:
+            listOfItems:
+              type: "array"
+              items:
+                $ref: "../../schemas/notifications/notification.yaml"
+        counts:
+          type: object
+          properties:
+            activity:
+              type: integer
+              example: 1
+            actionable:
+              type: integer
+              example: 1
+        nextPageToken:
+          type: integer
+          example: 16
+        message:
+          type: "string"
+          example: "Notification retrived successfully."
