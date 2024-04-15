@@ -13,3 +13,13 @@ UpdateAlert:
   $ref: "./alerts/update_request.yaml"
 SearchAlert:
   $ref: "./alerts/search_request.yaml"
+
+# Notification schemas
+Notification:
+  $ref: "./notifications/notification.yaml"
+CreateNotification:
+  $ref: "./notifications/create_request.yaml"
+SearchNotification:
+  $ref: "./notifications/search_request.yaml"
+ActionUpdate:
+  $ref: "./notifications/update_request.yaml"

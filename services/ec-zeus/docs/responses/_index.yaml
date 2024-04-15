@@ -19,3 +19,15 @@ AlertSearchError:
   $ref: './alerts/search_error.yaml'
 AlertUpdateSuccess:
   $ref: './alerts/update_success.yaml'
+
+# Notificaton Errors
+NotificationCreateSuccess:
+  $ref: "./notifications/create_success.yaml"
+NotificationCreatError:
+  $ref: "./notifications/create_error.yaml"
+NotificationSearchSuccess:
+  $ref: "./notifications/search_success.yaml"
+NotificationUpdateSuccess:
+  $ref: "./notifications/update_success.yaml"
+NotificationSearchError:
+  $ref: "./notifications/search_error.yaml"
