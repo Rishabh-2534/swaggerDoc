@@ -1,25 +1,25 @@
-put:
+delete:
   tags:
     - Alerts
-  summary: Update alert
-  description: Use this API to update/expire alert
+  summary: Delete alert
+  description: Use this API to delete alert
   parameters:
     - name: alertId
       in: path
-      description: "ID of alert to update"
+      description: "ID of alert to delete"
       required: true
       schema:
         type: string
   requestBody:
-    description: Update alert
+    description: Delete alert
     content:
       application/json:
         schema:
-          $ref: "../../schemas/alerts/update_request.yaml"
+          $ref: "../../schemas/alerts/delete_request.yaml"
     required: true
   responses:
     200:
-      $ref: "../../responses/alerts/update_success.yaml"
+      $ref: "../../responses/alerts/delete_success.yaml"
     403:
       $ref: "../../responses/common/unauthorized.yaml"
     400:
