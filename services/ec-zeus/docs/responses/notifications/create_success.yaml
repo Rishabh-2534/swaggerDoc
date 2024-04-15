@@ -1,0 +1,18 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        status:
+          type: "string"
+          example: "SUCCESS"
+        result:
+          type: "object"
+          properties:
+            notificationId:
+              type: "string"
+              example: "44fa7711-407a-4305-9dff-a01660068238"
+        message:
+          type: "string"
+          example: "Notification created successfully."
