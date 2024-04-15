@@ -33,16 +33,6 @@ get:
         enum:
         - false
         - true
-    - name: include_actioned
-      in: query
-      description: This allows to filter the notifications based on the status. By default all the notifications will be returned.
-      required: false
-      schema:
-        type: string
-        enum:
-        - actionable
-        - activity
-
   responses:
     200:
       $ref: "../../responses/notifications/search_success.yaml"
