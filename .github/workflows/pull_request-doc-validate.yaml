@@ -26,5 +26,5 @@ jobs:
       - name: Install modules on root
         run: npm --version && npm ci
 
-      - name: Run UTs of alerts-core
+      - name: Run validator on zeus doc
         run: cd ./services/ec-zeus && npm run validate
