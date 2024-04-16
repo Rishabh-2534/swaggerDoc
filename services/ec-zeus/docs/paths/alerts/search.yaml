@@ -2,7 +2,7 @@ post:
   tags:
     - Alerts
   summary: Search alerts
-  description: Use this API to search alerts
+  description: Use this API to get list of all alerts
   requestBody:
     description: Search alerts
     content:

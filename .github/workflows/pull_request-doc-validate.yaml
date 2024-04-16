@@ -1,0 +1,30 @@
+name: CI-Checks
+
+on:
+  push:
+    branches:
+      - develop
+      - release
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+env:
+  SIMPPLR_NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  CheckingReadMeDocValidity:
+    runs-on: kubernetes
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set node version
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+
+      - name: Install modules on root
+        run: npm --version && npm ci
+
+      - name: Run validator on zeus doc
+        run: cd ./services/ec-zeus && npm run validate

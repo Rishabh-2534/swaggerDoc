@@ -3,6 +3,7 @@ const express = require('express');
 const readme = require('readmeio');
 const cors = require('cors');
 const requestIp = require('request-ip');
+require('dotenv').config();
 
 const app = express();
 const bodyParser = require('body-parser');
@@ -57,6 +58,7 @@ app.use(
     }),
     {
       development: process.env.NODE_ENV === 'development', // optional, sends logs to Development Data
+      baseLogUrl: 'https://developer.simpplr.com/',       // optional This is the base URL for your ReadMe project. 
     },
   ),
 );

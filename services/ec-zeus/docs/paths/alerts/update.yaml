@@ -2,7 +2,7 @@ put:
   tags:
     - Alerts
   summary: Update alert
-  description: Use this API to update alert
+  description: Use this API to update/expire/delete alert
   parameters:
     - name: alertId
       in: path
