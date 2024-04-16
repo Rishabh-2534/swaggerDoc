@@ -3,7 +3,7 @@ post:
     - Alerts
   summary: Search alerts
   description: Search api allows us to retrieves list of alerts, encompassing active, scheduled and expired alerts.
-  requestBody:
+  parameters:
     description: Search alerts
     content:
       application/json:
