@@ -8,8 +8,8 @@ properties:
   category:
     type: string
     description:
-      This is to identify type of notification. Currently only support
-      `inapp` category.
+      This is to identify type of notification. Currently only
+      `inapp` category is supported.
     example: inapp
     enum:
       - inapp
@@ -21,7 +21,7 @@ properties:
     description: The Email-id of the person of the person who is sending notification.
   url:
     type: string
-    description: You can add link to notification so that the user is redirected to it when he clicks the notification.
+    description: You can add link to notification and the user is redirected to it when he clicks the notification.
   message:
     type: string
     description: The notificatoin message that will be display to user. {{fullName}} variable can be used
