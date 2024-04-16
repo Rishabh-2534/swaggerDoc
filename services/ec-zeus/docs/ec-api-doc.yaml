@@ -12,6 +12,12 @@ servers:
     - url: https://api.dev.simpplr.xyz/v1
     - url: https://api.test.simpplr.xyz/v1
 paths:
+    # Notifications
+    /notifications:
+        $ref: "./paths/notifications/create-search.yaml"
+    /notifications/{notificationId}:
+        $ref: "./paths/notifications/update.yaml"
+
     # Alerts
     /alerts/list:
         $ref: "./paths/alerts/search.yaml"

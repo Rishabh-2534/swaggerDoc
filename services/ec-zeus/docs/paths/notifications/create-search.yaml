@@ -1,0 +1,63 @@
+get:
+  tags:
+    - Notifications
+  summary: Search Notifications
+  description: "Search notifications API retrieve notifications based on certain search criteria provided in the request. The search results are returned in a paginated format."
+  parameters:
+    - name: size
+      in: query
+      description: A limit on the number of notifications to return in a request.
+      required: false
+      schema:
+        type: integer
+        format: int64
+        example: 10
+    - name: nextPageToken
+      in: query
+      description: A cursor to use in pagination, if provided results will be returned from the token provided. 
+      required: false
+      schema:
+        type: string
+    - name: since
+      in: query
+      description: Only returns notification created on/after given timestamp. This will be unix epoch timestamp.
+      required: false
+      schema:
+        type: integer
+    - name: include_actioned
+      in: query
+      description: This allows to include the actioned notification in search result. By default actioned notification will not be part of result.
+      required: false
+      schema:
+        type: boolean
+        enum:
+        - false
+        - true
+  responses:
+    200:
+      $ref: "../../responses/notifications/search_success.yaml"
+    403:
+      $ref: "../../responses/common/unauthorized.yaml"
+    503:
+      $ref: "../../responses/notifications/search_error.yaml"
+post:
+  tags:
+    - Notifications
+  summary: Create a new notification
+  description: This allows to create a new notification.
+  requestBody:
+    description: Create a new notification
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/notifications/create_request.yaml"
+    required: true
+  responses:
+    200:
+      $ref: "../../responses/notifications/create_success.yaml"
+    400:
+      $ref: "../../responses/notifications/create_error.yaml"
+    401:
+      $ref: "../../responses/common/unauthorized.yaml"
+    403:
+      $ref: "../../responses/common/forbidden.yaml"

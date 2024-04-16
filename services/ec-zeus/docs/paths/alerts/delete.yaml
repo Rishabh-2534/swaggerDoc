@@ -2,7 +2,7 @@ delete:
   tags:
     - Alerts
   summary: Delete alert
-  description: Use this API to delete alert
+  description: This API allows us to delete an Alert using alert id. But you can only delete schedueled alerts.
   parameters:
     - name: alertId
       in: path

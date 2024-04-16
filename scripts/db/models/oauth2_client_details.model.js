@@ -1,7 +1,7 @@
 /* This is the Sequelize model for oauth_client_details table */
-const oauth2ClientDetailsModel = (database, type) =>
+const partnerOauth2ClientDetailsModel = (database, type) =>
   database.define(
-    'oauth2_client_details',
+    "partner_oauth2_client_details",
     {
       id: {
         type: type.BIGINT,
@@ -12,10 +12,6 @@ const oauth2ClientDetailsModel = (database, type) =>
         type: type.STRING,
         allowNull: false,
       },
-      account_id: {
-        type: type.UUID,
-        allowNull: true,
-      },
       app_disp_name: {
         type: type.STRING,
         allowNull: false,
@@ -24,17 +20,9 @@ const oauth2ClientDetailsModel = (database, type) =>
         type: type.STRING,
         allowNull: false,
       },
-      type: {
-        type: type.STRING,
-        allowNull: false,
-      },
       client_id: {
         type: type.STRING,
         allowNull: false,
-      },
-      client_secret: {
-        type: type.STRING,
-        allowNull: true,
       },
       redirect_uri: {
         type: type.STRING,
@@ -49,11 +37,11 @@ const oauth2ClientDetailsModel = (database, type) =>
         allowNull: false,
       },
       createdAt: {
-        field: 'created_on',
+        field: "created_on",
         type: type.DATE,
       },
       updatedAt: {
-        field: 'modified_on',
+        field: "modified_on",
         type: type.DATE,
       },
     },
@@ -63,4 +51,4 @@ const oauth2ClientDetailsModel = (database, type) =>
     }
   );
 
-module.exports = oauth2ClientDetailsModel;
+module.exports = partnerOauth2ClientDetailsModel;

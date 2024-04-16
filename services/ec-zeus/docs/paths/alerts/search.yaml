@@ -2,7 +2,7 @@ post:
   tags:
     - Alerts
   summary: Search alerts
-  description: Use this API to get list of all alerts
+  description: Search api allows us to retrieves list of alerts, encompassing active, scheduled and expired alerts.
   requestBody:
     description: Search alerts
     content:

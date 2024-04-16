@@ -1,7 +1,7 @@
 require('dotenv').config();
 const readline = require('readline');
 const { connectToDB } = require('./db/db');
-const oauth2ClientDetailsModel = require('./db/models/oauth2_client_details.model');
+const partnerOauth2ClientDetailsModel = require('./db/models/oauth2_client_details.model');
 const { v4: uuid } = require('uuid');
 const generatePassword = require('password-generator');
 const { Sequelize } = require('sequelize');
@@ -66,7 +66,7 @@ const main = async () => {
       database: DB_NAME,
     });
 
-    const OAuth2Client = oauth2ClientDetailsModel(db, Sequelize);
+    const OAuth2Client = partnerOauth2ClientDetailsModel(db, Sequelize);
 
     const appName = await readFromConsole('\nEnter app name: ');
     const appDescription = await readFromConsole('\nEnter app description: ');
@@ -84,12 +84,10 @@ const main = async () => {
         app_id: uuid(),
         app_disp_name: appName,
         app_desc: appDescription,
-        type: 'system',
         client_id: clientId,
         redirect_uri: redirectURI,
         auth_grant_type: 'Authorization Code',
         state_param_supported: true,
-        account_id: '00000000-0000-0000-0000-000000000000',
       });
 
       const key = `oauthApp:${clientId}:${env}`;
