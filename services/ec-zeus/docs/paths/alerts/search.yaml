@@ -6,7 +6,7 @@ get:
   parameters:
     - name: size
       in: query
-      description: Payload size
+      description: A limit on the number of alerts to return in a request.
       schema:
         type: integer
         format: int64
@@ -18,7 +18,7 @@ get:
         type: string
     - name: recipient
       in: query
-      description: 'Receiving audience. Allowed values: everyone , {site-id}'
+      description: 'Returns alerts based on the receiving audience. Allowed values: everyone , {site-id}'
       schema:
         type: string
     - name: term
@@ -28,7 +28,7 @@ get:
         type: string
     - name: sortBy
       in: query
-      description: Sorting order for Alerts
+      description: Allows the alerts to be Sorted in order based on the created on or display timestamp.
       schema:
         type: string
         enum:
@@ -40,7 +40,7 @@ get:
         - display_to_date_oldest
     - name: filter
       in: query
-      description: How to filter Alerts
+      description: Returns alerts based on the status of the alert. By default it is set to all.
       schema:
         type: string
         default: all
