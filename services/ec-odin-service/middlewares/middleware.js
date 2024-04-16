@@ -207,6 +207,7 @@ const parseRequestBody = async (req, res, next) => {
 };
 
 const logRequestParams = (req, res, next) => {
+  try {
   if (req.url === '/ping') {
     return next();
   }
@@ -219,6 +220,11 @@ const logRequestParams = (req, res, next) => {
     `***** Request details ***** URL: ${req.url} ***** Params: ${params}  ***** Query: ${query}  ***** Body: ${body}`,
   );
   return next();
+} catch (error) {
+  logger.error(
+    `Error in middleware logRequestParams ${error}`,
+  );
+}
 };
 
 module.exports = {

@@ -6,3 +6,4 @@ services/*/tests/coverage
 services/*/logs.txt
 yarn.lock
 .DS_Store
+scripts/.env

@@ -8,19 +8,19 @@ properties:
     type: string
     description:
       This is to identify type of notification. Currently only support
-      inapp category.
+      `inapp` category.
     example: inapp
     enum:
       - inapp
   action_at:
     type: string
-    description: UTC time at which action was performed
+    description: Time at which this action was performed. This is UTC time.
   action_by:
     type: string
-    description: Email of the person who performed this action
+    description: The Email-id of the person of the person who performed this action.
   is_deleted:
     type: boolean
-    description: Set this to true if you want to delete notification
+    description: If you wish to delete notification, set this to true.
     enum:
       - false
       - true

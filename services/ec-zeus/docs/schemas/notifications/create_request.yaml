@@ -9,27 +9,27 @@ properties:
     type: string
     description:
       This is to identify type of notification. Currently only support
-      inapp category.
+      `inapp` category.
     example: inapp
     enum:
       - inapp
   sent_to:
     type: string
-    description: Email of the person to send this Notification to
+    description: The Email-id of the person who will be receiving this notification.
   sent_by:
     type: string
-    description: Email of the person who is sending notification
+    description: The Email-id of the person of the person who is sending notification.
   url:
     type: string
-    description: Target URL for the Notification
+    description: You can add link to notification so that the user is redirected to it when he clicks the notification.
   message:
     type: string
-    description: Message for notification. {{fullName}} variable can be used
+    description: The notificatoin message that will be display to user. {{fullName}} variable can be used
       in message to display the sender name.
   notification_type:
     type: string
-    description: "`actionable` - Notifications which require some action, like
-      a follow request, leave approval. \n `activity`- Notification which publishes
+    description: "The notification could be either activity or actionable.\n`actionable` - Notifications which require some action, like
+      a follow request, leave approval. \n`activity`- Notification which publishes
       some information \n default will be `activity`"
     enum:
       - actionable

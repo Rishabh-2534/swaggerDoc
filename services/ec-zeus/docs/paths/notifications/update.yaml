@@ -2,7 +2,7 @@ put:
   tags:
     - Notifications
   summary: Update notification
-  description: Use this API to update notification
+  description: This API allows you to update existing notification. You can perform action on any `actionable` notification or you can delete any notificatin.
   parameters:
     - name: notificationId
       in: path

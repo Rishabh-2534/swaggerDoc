@@ -2,17 +2,6 @@
 # Dev Deployment Variables #
 #***********************************************************************************************************#
 
-# Below array is required if you need any custome values -- It's optional
-
-# microservicesName:    # this name must not be changed
-#   notification-email-daemon:
-#     containerPort: 5000
-#     replicaCount: 1
-#     resources:
-#       requests:
-#         cpu: 400m
-#         memory: 400Mi
-
 #***********************************************************************************************************#
 # ConfigMap Variables #
 #***********************************************************************************************************#
@@ -28,4 +17,3 @@ configMap:
     AWS_SM_REGION: us-west-2
     AWS_SM_KMS_KEY_ID: 4e4743d9-3b5c-45dc-b795-64a5dc995e86
     LOG_LEVEL: debug
-    
