@@ -1,0 +1,7 @@
+type: object
+properties:
+  status:
+    type: string
+    description: "Status of alert. \n delete in this case"
+    enum:
+      - delete

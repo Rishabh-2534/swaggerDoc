@@ -2,7 +2,7 @@ get:
   tags:
     - Notifications
   summary: Search Notifications
-  description: "Search notifications API retrieve notifications based on certain search criteria provided in the request. The search results are returned in a paginated format."
+  description: "Search notifications API retrieves notifications based on certain search criteria provided in the request. The search results are returned in a paginated format."
   parameters:
     - name: size
       in: query
@@ -44,7 +44,7 @@ post:
   tags:
     - Notifications
   summary: Create a new notification
-  description: This allows to create a new notification.
+  description: This API allows you to create a new notification for a user.
   requestBody:
     description: Create a new notification
     content:
