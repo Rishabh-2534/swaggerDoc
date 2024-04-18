@@ -91,5 +91,4 @@ readinessProbe:
 # Ingress Variables #
 #***********************************************************************************************************#
 ingress:
-  className: ''
-  paths:
+  enabled: false
