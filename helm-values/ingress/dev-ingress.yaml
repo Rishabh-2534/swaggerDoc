@@ -33,6 +33,6 @@ spec:
           pathType: ImplementationSpecific
           backend:
             service:
-              name: ec_service # Make sure you name the service correctly by checking the name of it nginx ingress controller service nothing else
+              name: ec-service # Make sure you name the service correctly by checking the name of it nginx ingress controller service nothing else
               port:
                 number: 80
