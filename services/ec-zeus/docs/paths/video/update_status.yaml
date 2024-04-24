@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Video
+  summary: Update the video status
+  description: Update the video status for a Kaltura video in Native video service
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          title: VideoEntryStatus
+          properties:
+            videoId:
+              type: string
+              description: Unique Kaltura entry id for a video.
+              example: 1_vt8df700
+            videoStatus:
+              type: integer
+              description: Updated Kaltura video status to be updated in Native video service.
+              example: 1
+  responses:
+    200:
+      $ref: ../../responses/video/update_status_success.yaml
+    400:
+      $ref: ../../responses/video/video_error.yaml
+    401:
+      $ref: ../../responses/common/unauthorized.yaml
+    403:
+      $ref: ../../responses/common/forbidden.yaml

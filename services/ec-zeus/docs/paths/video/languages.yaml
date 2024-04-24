@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Video
+  summary: Get kalatura languages list
+  description: This API allows you to get a list of languages available in Kaltura
+  responses:
+    200:
+      $ref: ../../responses/video/languages_success.yaml
+    400:
+      $ref: ../../responses/video/video_error.yaml
+    401:
+      $ref: ../../responses/common/unauthorized.yaml
+    403:
+      $ref: ../../responses/common/forbidden.yaml

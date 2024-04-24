@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Video
+  summary: Get user video token
+  description: This API allows you to get a token for a user to access video
+  responses:
+    200:
+      $ref: ../../responses/video/tokens_success.yaml
+    400:
+      $ref: ../../responses/video/video_error.yaml
+    401:
+      $ref: ../../responses/common/unauthorized.yaml
+    403:
+      $ref: ../../responses/common/forbidden.yaml

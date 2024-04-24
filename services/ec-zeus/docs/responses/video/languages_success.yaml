@@ -1,0 +1,26 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: integer
+          example: 200
+        message:
+          type: string
+          example: SUCCESS
+        result:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 852
+              simpplrLocale:
+                type: string
+                example: en-US
+              videoLanguage:
+                type: string
+                example: English

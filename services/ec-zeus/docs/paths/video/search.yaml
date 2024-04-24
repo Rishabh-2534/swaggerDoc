@@ -1,0 +1,64 @@
+get:
+  tags:
+    - Video
+  summary: Get paginated search result for native videos
+  description: This API allows you to get paginated search result for native videos
+  parameters:
+    - in: query
+      name: seachTerm
+      schema:
+        type: string
+      description: Filter by name of the media
+    - in: query
+      name: duration
+      schema:
+        type: string
+        enum:
+          [
+            'less_than_one_minute',
+            'one_to_five_minutes',
+            'five_to_thirty_minutes',
+            'thirty_minute_to_one_hour',
+            'more_than_one_hour',
+          ]
+      description: Duration
+    - in: query
+      name: owner
+      schema:
+        type: string
+        format: uuid
+      description: Filter by owner uuid
+    - in: query
+      name: siteId
+      schema:
+        type: string
+        format: uuid
+      description: Filter by siteId uuid
+    - in: query
+      name: pageSize
+      schema:
+        type: integer
+        minimum: 0
+        default: 16
+      description: limit the number of items
+    - in: query
+      name: offset
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+      description: kind of page number
+    - in: query
+      name: publishStartDate
+      schema:
+        type: string
+      description: publish start date
+  responses:
+    200:
+      $ref: ../../responses/video/search_success.yaml
+    400:
+      $ref: ../../responses/video/video_error.yaml
+    401:
+      $ref: ../../responses/common/unauthorized.yaml
+    403:
+      $ref: ../../responses/common/forbidden.yaml
