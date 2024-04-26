@@ -9,10 +9,14 @@ tags:
       description: Everything about Alerts
 
 servers:
-    - url: https://platform.dev.simpplr.xyz/v1
+    # - url: https://platform.dev.simpplr.xyz/v1
     - url: https://platform.test.simpplr.xyz/v1
-    - url: https://platform.qa.simpplr.xyz/v1
+    # - url: https://platform.qa.simpplr.xyz/v1
 paths:
+    # Authorization
+    /identity/oauth/authorize:
+        $ref: "./paths/identity/authorize.yaml"
+
     # Notifications
     /notifications:
         $ref: "./paths/notifications/create-search.yaml"
