@@ -20,7 +20,9 @@ delete:
   responses:
     200:
       $ref: "../../responses/alerts/delete_success.yaml"
-    403:
+    401:
       $ref: "../../responses/common/unauthorized.yaml"
     400:
       $ref: "../../responses/common/validation_error.yaml"
+    403:
+      $ref: "../../responses/common/forbidden.yaml"

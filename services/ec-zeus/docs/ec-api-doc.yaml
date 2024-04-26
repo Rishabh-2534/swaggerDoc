@@ -20,12 +20,11 @@ paths:
         $ref: "./paths/notifications/update.yaml"
 
     # Alerts
-    /alerts/list:
-        $ref: "./paths/alerts/search.yaml"
     /alerts:
-        $ref: "./paths/alerts/create.yaml"
+        $ref: "./paths/alerts/create-search.yaml"
     /alerts/{alertId}:
         $ref: "./paths/alerts/update.yaml"
+
 
     # Video
     /video/tokens:
