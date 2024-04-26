@@ -25,3 +25,7 @@ SearchNotification:
   $ref: "./notifications/search_request.yaml"
 ActionUpdate:
   $ref: "./notifications/update_request.yaml"
+
+# Identity schemas
+Identity:
+  $ref: "./identity/authorize_request.yaml"

@@ -56,7 +56,7 @@ get:
       $ref: "../../responses/common/unauthorized.yaml"
     403:
       $ref: "../../responses/common/forbidden.yaml"
-    503:
+    500:
       $ref: "../../responses/alerts/search_error.yaml"
 post:
   tags:
@@ -79,3 +79,5 @@ post:
       $ref: '../../responses/common/unauthorized.yaml'
     403:
       $ref: '../../responses/common/forbidden.yaml'
+    500:
+      $ref: "../../responses/alerts/search_error.yaml"
