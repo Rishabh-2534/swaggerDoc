@@ -7,7 +7,7 @@
 
 # serverName must be seperated with "-" and all characters must be in small letter.
 # this name will be used to deploy helm chart
-serviceName: 'ec_service'
+serviceName: 'ec-service'
 
 # Sub-microservice root path - this is needed to UT and trivy
 SubMicroserviceRootPaths: 'services/ec-odin-service'
@@ -91,5 +91,4 @@ readinessProbe:
 # Ingress Variables #
 #***********************************************************************************************************#
 ingress:
-  className: ''
-  paths:
+  enabled: false

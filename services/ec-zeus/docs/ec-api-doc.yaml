@@ -20,12 +20,21 @@ paths:
         $ref: "./paths/notifications/update.yaml"
 
     # Alerts
-    /alerts/list:
-        $ref: "./paths/alerts/search.yaml"
     /alerts:
-        $ref: "./paths/alerts/create.yaml"
+        $ref: "./paths/alerts/create-search.yaml"
     /alerts/{alertId}:
         $ref: "./paths/alerts/update.yaml"
+
+
+    # Video
+    /video/tokens:
+        $ref: "./paths/video/tokens.yaml"
+    /video/entry/update:
+        $ref: "./paths/video/update_status.yaml"
+    /video/languages:
+        $ref: "./paths/video/languages.yaml"
+    /video/search:
+        $ref: "./paths/video/search.yaml"
 components:
     schemas:
         $ref: "./schemas/_index.yaml"

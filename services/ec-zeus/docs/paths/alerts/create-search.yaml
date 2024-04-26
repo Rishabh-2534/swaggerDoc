@@ -58,4 +58,24 @@ get:
       $ref: "../../responses/common/forbidden.yaml"
     503:
       $ref: "../../responses/alerts/search_error.yaml"
-
+post:
+  tags:
+    - Alerts
+  summary: Create a new alert
+  description: Create API allows us to create a new alert, whose status can be either active or schedueled.
+  requestBody:
+    description: Create a new alert
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/alerts/create_request.yaml'
+    required: true
+  responses:
+    200:
+      $ref: '../../responses/alerts/create_success.yaml'
+    400:
+      $ref: '../../responses/alerts/create_error.yaml'
+    401:
+      $ref: '../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../responses/common/forbidden.yaml'

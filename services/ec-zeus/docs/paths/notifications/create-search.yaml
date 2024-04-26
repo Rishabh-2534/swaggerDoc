@@ -36,7 +36,7 @@ get:
   responses:
     200:
       $ref: "../../responses/notifications/search_success.yaml"
-    403:
+    401:
       $ref: "../../responses/common/unauthorized.yaml"
     503:
       $ref: "../../responses/notifications/search_error.yaml"

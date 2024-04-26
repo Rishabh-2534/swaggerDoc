@@ -1,0 +1,122 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                type: object
+                properties:
+                  file_id:
+                    type: string
+                    example: 518439e8-1169-4dc9-aade-68874667b3b5
+                  id:
+                    type: string
+                    example: 1_vt8df700
+                  title:
+                    type: string
+                    example: Top-Employee-Benefits.mp4
+                  url:
+                    type: string
+                    example: https://abc.dev.simpplr.xyz/file_preview/518439e8-1169-4dc9-aade-68874667b3b5
+                  downloadUrl:
+                    type: string
+                    example: https://cdnapisec.kaltura.com/p/5650462/sp/565046200/playManifest/entryId/1_vt8df700/format/download/protocol/https/flavorParamIds/0
+                  thumbnailImg:
+                    type: string
+                    example: https://cfvod.kaltura.com/p/5650462/sp/565046200/thumbnail/entry_id/1_vt8df700/version/100001
+                  runTime:
+                    type: integer
+                    example: 30
+                  size:
+                    type: string
+                    example: 4180512
+                  captionStatus:
+                    type: integer
+                    example: 1
+                  videoStatus:
+                    type: integer
+                    example: 2
+                  listOfSite:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        siteId:
+                          type: string
+                          example: 8980ab19-d1b0-4822-9ce5-51a823e326c9
+                        name:
+                          type: string
+                          example: Human Resource
+                        access:
+                          type: string
+                          example: public
+                        url:
+                          type: string
+                          example: https://abc.simpplr.xyz/site/8980ab19-d1b0-4822-9ce5-51a823e326c9
+                  isInHomeFeed:
+                    type: boolean
+                    example: true
+                  modifiedAt:
+                    type: string
+                    format: date-time
+                    example: 2024-03-06T10:08:57.184Z
+                  createdAt:
+                    type: string
+                    format: date-time
+                    example: 2024-03-06T10:08:57.184Z
+                  provider:
+                    type: string
+                    example: native_video
+                  version:
+                    type: integer
+                    example: 1
+                  owner:
+                    type: object
+                    properties:
+                      userId:
+                        type: string
+                        example: 8980ab19-d1b0-4822-9ce5-51a823e326c9
+                      name:
+                        type: string
+                        example: John Doe
+                      url:
+                        type: string
+                        example: https://abc.simpplr.xyz/people/8980ab19-d1b0-4822-9ce5-51a823e326c9
+                  captions:
+                    type: object
+                    properties:
+                      listOfItems:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: 1_rgegipzl
+                            text:
+                              type: string
+                              example: a top four employee
+                            timeStamp:
+                              type: number
+                              example: 3.06
+                      totalRecords:
+                        type: integer
+                        example: 1
+            totalCount:
+              type: integer
+              example: 1
+            totalRecords:
+              type: integer
+              example: 1
+        status:
+          type: integer
+          example: 200
+        message:
+          type: string
+          example: SUCCESS

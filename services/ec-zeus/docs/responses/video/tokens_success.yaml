@@ -1,0 +1,69 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: integer
+          example: 200
+        message:
+          type: string
+          example: SUCCESS
+        result:
+          type: object
+          properties:
+            accessToken:
+              type: object
+              properties:
+                ks:
+                  type: string
+                  example: djJ8NTY1MDQ2Mny9LrkHzRws4rjdBmJo8QO32BVm47WVjBlNMA16gR5jucbXhiKSfe_JYa0gDJx0EzcWqHZ0DNz4aW4sH84ni45p6d-WSWpIX8Tgc9I69VvYg5WXxzHwnI-yfwl3AMS5k1YKtUpat0FTZzRSDlcitVinNHl0vTrrjyPaz_WT-CLpyCQ2M8bnjKsCytoqOUm6t3bKu6Uoyw6kV5TOy30vQM0Ton4-nuSB8vZ-JdZdzf0PzfdMZ7GKKwL9uIXaTI-wRTeTXoXEhDJBsPWcvaziWSVkkvsE8bwzA1CSpe41KitLy-942oHiO2kvM8TJ4u021I
+                sessionType:
+                  type: integer
+                  enum:
+                    - 0
+                    - 2
+                  example: 2
+                partnerId:
+                  type: string
+                  example: 5650462
+                userId:
+                  type: string
+                  example: 02f02dc0-b3f2-453f-a272-c57988042ee9_7d863324-dd4b-40c8-8274-1717ea630382
+                expiry:
+                  type: integer
+                  example: 1713962725
+                privileges:
+                  type: string
+                  example: sessionid:1_abc,apptoken:1_def,disableentitlement
+                objectType:
+                  type: string
+                  enum:
+                    - KalturaSessionInfo
+                    - KalturaAuthInfo
+                  example: KalturaSessionInfo
+            uiconfIds:
+              type: object
+              properties:
+                defaultPlayer:
+                  type: string
+                  example: 53755452
+                playerWithTranscript:
+                  type: string
+                  example: 53755472
+            uiconfId:
+              type: string
+              example: 53755452
+            partnerId:
+              type: string
+              example: 5650462
+            subPartnerId:
+              type: string
+              example: 565046200
+            playerUrl:
+              type: string
+              example: https://cdnapisec.kaltura.com/p/5650462/embedPlaykitJs/uiconf_id/53755452?iframeembed=true&ks=djJ8NTY1MDQ2Mny9LrkHzRws4rjdBmJo8QO32BVm47WVjBlNMA16gR5jucbXhiKSfe_JYa0gDJx0EzcWqHZ0DNz4aW4sH84ni45p6d-WSWpIX8Tgc9I69VvYg5WXxzHwnI-yfwl3AMS5k1YKtUpat0FTZzRSDlcitVinNHl0vTrrjyPaz_WT-CLpyCQ2M8bnjKsCytoqOUm6t3bKu6Uoyw6kV5TOy30vQM0Ton4-nuSB8vZ-JdZdzf0PzfdMZ7GKKwL9uIXaTI-wRTeTXoXEhDJBsPWcvaziWSVkkvsE8bwzA1CSpe41KitLy-942oHiO2kvM8TJ4u021IU=
+            playerId:
+              type: string
+              example: player12
