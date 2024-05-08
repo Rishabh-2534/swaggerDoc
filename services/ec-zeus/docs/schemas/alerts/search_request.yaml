@@ -1,3 +1,6 @@
+required:
+  - size
+  - filter
 type: object
 properties:
   size:
