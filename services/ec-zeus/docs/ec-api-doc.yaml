@@ -47,7 +47,7 @@ components:
     securitySchemes:
         OAuth2-US:
             type: "oauth2"
-            description: "This API uses OAuth 2 with the implicit grant flow for US."
+            description: "This API uses OAuth 2 with the implicit grant flow."
             flows:
                 authorizationCode:
                     authorizationUrl: https://platform.test.simpplr.xyz/v1/account/integrations/ec/oauth2/url
@@ -55,14 +55,3 @@ components:
                     scopes:
                         read: Read Access
                         write: Write Access
-        OAuth2-EU:
-            type: "oauth2"
-            description: "This API uses OAuth 2 with the implicit grant flow for EU."
-            flows:
-                authorizationCode:
-                    authorizationUrl: https://platform.dev.simpplr.xyz/v1/account/integrations/ec/oauth2/url
-                    tokenUrl: https://platform.dev.simpplr.xyz/v1/account/integrations/ec/oauth2/url
-                    scopes:
-                        read: Read Access
-                        write: Write Access
-                        
