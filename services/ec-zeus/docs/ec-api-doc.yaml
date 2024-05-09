@@ -9,7 +9,7 @@ tags:
       description: Everything about Alerts
 
 servers:
-    - url: https://platform.dev.simpplr.xyz/v1
+    # - url: https://platform.dev.simpplr.xyz/v1
     - url: https://platform.test.simpplr.xyz/v1
     # - url: https://platform.qa.simpplr.xyz/v1
 paths:
@@ -45,13 +45,15 @@ components:
     responses:
         $ref: "./responses/_index.yaml"
     securitySchemes:
-        OAuth2-US:
+        apiAuthSecurity:
             type: "oauth2"
             description: "This API uses OAuth 2 with the implicit grant flow."
             flows:
-                authorizationCode:
-                    authorizationUrl: https://platform.test.simpplr.xyz/v1/account/integrations/ec/oauth2/url
-                    tokenUrl: https://platform.test.simpplr.xyz/v1/account/integrations/ec/oauth2/url
+                implicit:
+                    authorizationUrl:  https://platform.test.simpplr.xyz/v1
                     scopes:
-                        read: Read Access
-                        write: Write Access
+                        read: "read data"
+                        write: "create/update data"
+                        everything: "allow full access"
+security:
+    - apiAuthSecurity: []
