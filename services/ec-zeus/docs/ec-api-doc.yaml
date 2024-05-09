@@ -45,15 +45,24 @@ components:
     responses:
         $ref: "./responses/_index.yaml"
     securitySchemes:
-        apiAuthSecurity:
+        OAuth2-US:
             type: "oauth2"
-            description: "This API uses OAuth 2 with the implicit grant flow."
+            description: "This API uses OAuth 2 with the implicit grant flow for US."
             flows:
-                implicit:
-                    authorizationUrl: https://api.dev.simpplr.xyz/v1/identity/oauth/authorize
+                authorizationCode:
+                    authorizationUrl: https://platform.test.simpplr.xyz/v1/account/integrations/ec/oauth2/url
+                    tokenUrl: https://platform.test.simpplr.xyz/v1/account/integrations/ec/oauth2/url
                     scopes:
-                        read: "read data"
-                        write: "create/update data"
-                        everything: "allow full access"
-security:
-    - apiAuthSecurity: []
+                        read: Read Access
+                        write: Write Access
+        OAuth2-EU:
+            type: "oauth2"
+            description: "This API uses OAuth 2 with the implicit grant flow for EU."
+            flows:
+                authorizationCode:
+                    authorizationUrl: https://platform.dev.simpplr.xyz/v1/account/integrations/ec/oauth2/url
+                    tokenUrl: https://platform.dev.simpplr.xyz/v1/account/integrations/ec/oauth2/url
+                    scopes:
+                        read: Read Access
+                        write: Write Access
+                        
