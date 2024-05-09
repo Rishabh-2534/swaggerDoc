@@ -1,7 +1,7 @@
 post:
   tags:
     - Authorization
-  summary: This API allows you to generate the access token.
+  summary: Authorization
   description: This API allows you to generate the access token or refresh token for authorization code.
   requestBody:
     content:
