@@ -1,0 +1,159 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        result:
+          type: object
+          properties:
+            title:
+              type: string
+              example: test 2
+            teams:
+              type: boolean
+              example: false
+            storageProvider:
+              type: array
+              example: []
+            siteId:
+              type: string
+              example: 19b963b1-928b-42cd-a002-fc47827c6f58
+            name:
+              type: string
+              example: test 2
+            description:
+              type: string
+              example: null
+            members:
+              type: integer
+              example: 1
+            managerCount:
+              type: integer
+              example: 1
+            followerCount:
+              type: integer
+              example: 0
+            landingPage:
+              type: string
+              example: dashboard
+            isPrivate:
+              type: boolean
+              example: false
+            isFollower:
+              type: boolean
+              example: false
+            isListed:
+              type: boolean
+              example: true
+            isInMandatorySubscription:
+              type: boolean
+              example: false
+            isFavorited:
+              type: boolean
+              example: false
+            isContentSubmissionsEnabled:
+              type: boolean
+              example: true
+            canManage:
+              type: boolean
+              example: true
+            isContentFeedEnabled:
+              type: boolean
+              example: true
+            isBroadcast:
+              type: boolean
+              example: false
+            isActive:
+              type: boolean
+              example: true
+            id:
+              type: string
+              example: 19b963b1-928b-42cd-a002-fc47827c6f58
+            hasPages:
+              type: boolean
+              example: true
+            hasEvents:
+              type: boolean
+              example: true
+            hasDashboard:
+              type: boolean
+              example: true
+            hasContent:
+              type: boolean
+              example: true
+            hasAlbums:
+              type: boolean
+              example: true
+            dashboardLayout:
+              type: string
+              example: e
+            createdAt:
+              type: string
+              example: "2024-04-01T01:47:39.980Z"
+            category:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: 1Site Category
+                id:
+                  type: string
+                  example: 1c68dc4e-bb3a-4a11-828e-f8ec22d1f05d
+            canMention:
+              type: boolean
+              example: true
+            canEdit:
+              type: boolean
+              example: true
+            canCreatePage:
+              type: boolean
+              example: true
+            canCreateEvent:
+              type: boolean
+              example: true
+            canCreateAlbum:
+              type: boolean
+              example: true
+            canActivateDeactivate:
+              type: boolean
+              example: true
+            access:
+              type: string
+              example: Public
+            activeLicenseCount:
+              type: integer
+              example: 42
+            analytics:
+              type: object
+              properties:
+                csvUrl:
+                  type: string
+                  example: "#"
+                totalAlbumCount:
+                  type: integer
+                  example: 0
+                totalEventCount:
+                  type: integer
+                  example: 1
+                totalPageCount:
+                  type: integer
+                  example: 0
+            metadata:
+              type: string
+              example: null
+            canUploadAllFileTypes:
+              type: boolean
+              example: true
+            isMembershipAutoApproved:
+              type: boolean
+              example: false
+            isContentUnfurlEnabled:
+              type: boolean
+              example: true
+            slack:
+              type: string
+              example: null

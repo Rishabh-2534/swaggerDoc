@@ -29,3 +29,11 @@ ActionUpdate:
 # Identity schemas
 Identity:
   $ref: "./identity/authorize_request.yaml"
+
+# content schemas
+GetFiles:
+  $ref: "./content/get_files.yaml"
+SearchContent:
+  $ref: "./content/search_content.yaml"
+SearchSites:
+  $ref: "./content/search_sites.yaml"

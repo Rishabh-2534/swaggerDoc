@@ -1,0 +1,19 @@
+type: object
+properties:
+  size:
+    type: integer
+    description: Maximum number of results to return
+    example: 4
+  sortBy:
+    type: string
+    description: Technique for sorting results
+    enum:
+      - alphabetical
+      - createdNewest
+      - createdOldest
+      - modifiedNewest
+      - modifiedOldest
+    example: popular
+  filter:
+    type: string
+    example: popular

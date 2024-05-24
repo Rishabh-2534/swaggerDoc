@@ -1,0 +1,23 @@
+description: Error
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              seq_id:
+                type: integer
+                example: 0
+              field_name:
+                type: string
+                example: additional_property
+              error_code:
+                type: integer
+                example: 1007
+              message:
+                type: string
+                example: "Request body contains additional properties: siteI"
