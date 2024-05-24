@@ -1,0 +1,435 @@
+description: Success Response
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        result:
+          type: object
+          properties:
+            versionId:
+              type: integer
+              example: 2
+            usefulContent:
+              type: object
+              properties:
+                hasUserRated:
+                  type: boolean
+                  example: false
+                canViewHistory:
+                  type: boolean
+                  example: true
+            type:
+              type: string
+              example: event
+            title:
+              type: string
+              example: test 2604
+            timezoneOffset:
+              type: integer
+              example: -18000000
+            timezoneName:
+              type: string
+              example: America/New_York
+            timezoneIso:
+              type: string
+              example: America/New_York
+            timezoneDetails:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 82
+                name:
+                  type: string
+                  example: America/New_York
+                iso:
+                  type: string
+                  example: America/New_York
+                offset:
+                  type: string
+                  example: UTC -05:00
+            summary:
+              type: string
+              example: ""
+            status:
+              type: string
+              example: published
+            startsAt:
+              type: string
+              example: "2024-04-30T09:45:00.000Z"
+            site:
+              type: object
+              properties:
+                siteId:
+                  type: string
+                  example: 39096bec-2115-48bd-94d0-d9c40c74b70d
+                name:
+                  type: string
+                  example: Sopan Test
+                isPublic:
+                  type: boolean
+                  example: true
+                isPrivate:
+                  type: boolean
+                  example: false
+                access:
+                  type: string
+                  example: public
+                isManager:
+                  type: boolean
+                  example: false
+                isContentManager:
+                  type: boolean
+                  example: false
+                isMember:
+                  type: boolean
+                  example: true
+                isFollower:
+                  type: boolean
+                  example: false
+                isBroadcast:
+                  type: boolean
+                  example: false
+                isFeatured:
+                  type: boolean
+                  example: false
+            rsvp:
+              type: object
+              properties:
+                noteLabel:
+                  type: string
+                  example: null
+                hasMaybeOption:
+                  type: boolean
+                  example: false
+                capacityCount:
+                  type: string
+                  example: null
+                attendingCount:
+                  type: integer
+                  example: 0
+                reportUrl:
+                  type: string
+                  example: "https://https://alpha.dev.simpplr.xyz//v1/content/15df32b8-a917-43bc-974a-3f4671f62f2f/rsvp/report"
+                canDownloadReport:
+                  type: boolean
+                  example: true
+                dueAtDate:
+                  type: string
+                  example: null
+                isExpired:
+                  type: boolean
+                  example: true
+            recentViewCount:
+              type: integer
+              example: 0
+            publishAt:
+              type: string
+              example: "2024-04-26T06:57:00.000Z"
+            postCount:
+              type: integer
+              example: 0
+            modifiedAt:
+              type: string
+              example: "2024-04-26T07:00:46.358Z"
+            mapUrl:
+              type: string
+              example: null
+            location:
+              type: string
+              example: Bangalore
+            listOfTopics:
+              type: array
+              example: []
+            listOfOrganizers:
+              type: array
+              example: []
+            listOfMentions:
+              type: array
+              example: []
+            listOfInlineImages:
+              type: array
+              example: []
+            listOfFiles:
+              type: array
+              example: []
+            icsDownloadUrl:
+              type: string
+              example: "https://https://alpha.dev.simpplr.xyz//v1/content/sites/content/15df32b8-a917-43bc-974a-3f4671f62f2f/calendar/ics"
+            googleCalendarWebUrl:
+              type: string
+              example: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=test%202604&dates=20240430T054500/20240507T061500&ctz=America/New_York&details=Author%3A%0ASourya%20kaushik%20(%20sourya.kaushik@simpplr.com)%0A%0ASummary%3A%0A%0A%0Ahttps://https://alpha.dev.simpplr.xyz//site/39096bec-2115-48bd-94d0-d9c40c74b70d/event/15df32b8-a917-43bc-974a-3f4671f62f2f&location=Bangalore&pli=1&uid=1715602641081@simpplr.com&sf=true&output=xml"
+            outlookWebUrl:
+              type: string
+              example: ""
+            likeCount:
+              type: integer
+              example: 0
+            isScheduled:
+              type: boolean
+              example: false
+            isPublished:
+              type: boolean
+              example: true
+            isOpenToNotification:
+              type: boolean
+              example: true
+            isMultiDay:
+              type: boolean
+              example: true
+            isLiked:
+              type: boolean
+              example: false
+            isLatest:
+              type: boolean
+              example: true
+            isInSiteCarousel:
+              type: boolean
+              example: false
+            isInHomeCarousel:
+              type: boolean
+              example: false
+            homeCarouselItemId:
+              type: string
+              example: null
+            siteCarouselItemId:
+              type: string
+              example: null
+            isFeedEnabled:
+              type: boolean
+              example: true
+            isFavorited:
+              type: boolean
+              example: false
+            isAllDay:
+              type: boolean
+              example: false
+            isDeleted:
+              type: boolean
+              example: false
+            imgLayout:
+              type: string
+              example: small
+            imgCaption:
+              type: string
+              example: ""
+            id:
+              type: string
+              example: 15df32b8-a917-43bc-974a-3f4671f62f2f
+            hasRsvp:
+              type: boolean
+              example: true
+            hasDirections:
+              type: boolean
+              example: false
+            firstPublishedAt:
+              type: string
+              example: "2024-04-26T12:28:38.850Z"
+            excerpt:
+              type: string
+              example: dxdcccdd
+            endsAt:
+              type: string
+              example: "2024-05-07T10:15:00.000Z"
+            editedBy:
+              type: object
+              properties:
+                peopleId:
+                  type: string
+                  example: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                name:
+                  type: string
+                  example: Sourya kaushik
+                mediumPhotoUrl:
+                  type: string
+                  example: null
+                location:
+                  type: string
+                  example: null
+                lastName:
+                  type: string
+                  example: kaushik
+                isProtectedAuthor:
+                  type: boolean
+                  example: false
+                isFollowing:
+                  type: boolean
+                  example: false
+                isActive:
+                  type: boolean
+                  example: true
+                img:
+                  type: string
+                  example: null
+                id:
+                  type: string
+                  example: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                firstName:
+                  type: string
+                  example: Sourya
+                email:
+                  type: string
+                  example: sourya.kaushik@simpplr.com
+                canFollow:
+                  type: boolean
+                  example: false
+            createdAt:
+              type: string
+              example: "2024-04-26T06:58:38.853Z"
+            contentId:
+              type: string
+              example: 15df32b8-a917-43bc-974a-3f4671f62f2f
+            canSendUpdateNotification:
+              type: boolean
+              example: true
+            canPublishUnpublish:
+              type: boolean
+              example: true
+            canModerate:
+              type: boolean
+              example: true
+            canMakeMustRead:
+              type: boolean
+              example: true
+            canEdit:
+              type: boolean
+              example: true
+            canDelete:
+              type: boolean
+              example: true
+            body:
+              type: string
+              example: "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"attrs\":{\"indentation\":0,\"textAlign\":\"left\",\"className\":\"\",\"data-sw-sid\":null},\"content\":[{\"type\":\"text\",\"text\":\"dxdcccdd\"}]}]}"
+            authoredBy:
+              type: object
+              properties:
+                peopleId:
+                  type: string
+                  example: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                name:
+                  type: string
+                  example: Sourya kaushik
+                mediumPhotoUrl:
+                  type: string
+                  example: null
+                location:
+                  type: string
+                  example: null
+                lastName:
+                  type: string
+                  example: kaushik
+                isProtectedAuthor:
+                  type: boolean
+                  example: false
+                isFollowing:
+                  type: boolean
+                  example: false
+                isActive:
+                  type: boolean
+                  example: true
+                img:
+                  type: string
+                  example: null
+                id:
+                  type: string
+                  example: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                firstName:
+                  type: string
+                  example: Sourya
+                email:
+                  type: string
+                  example: sourya.kaushik@simpplr.com
+                canFollow:
+                  type: boolean
+                  example: false
+            language:
+              type: string
+              example: en
+            isNewTiptap:
+              type: boolean
+              example: true
+            listOfInlineVideos:
+              type: array
+              example: []
+            onboardingStatus:
+              type: string
+              example: null
+            onboardingAddedOn:
+              type: string
+              example: null
+            hasRead:
+              type: boolean
+              example: false
+            isMustRead:
+              type: boolean
+              example: false
+            mustReadDetails:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 1583
+                content_id:
+                  type: string
+                  example: 5267
+                duration:
+                  type: string
+                  example: ninety_days
+                status:
+                  type: string
+                  example: inactive
+                audience:
+                  type: string
+                  example: site_members_and_followers
+                createdAt:
+                  type: string
+                  example: "2024-05-06T06:23:14.699Z"
+                created_by:
+                  type: string
+                  example: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                expiry_date_time:
+                  type: string
+                  example: "2024-05-07T06:22:06.690Z"
+                message:
+                  type: string
+                  example: "{\"type\":\"doc\",\"content\":[]}"
+                is_new_tiptap:
+                  type: boolean
+                  example: true
+                removedAt:
+                  type: string
+                  example: "2024-05-07T06:22:06.690Z"
+                unreadMustReadsCount:
+                  type: integer
+                  example: 12
+                readCount:
+                  type: integer
+                  example: 0
+                createdBy:
+                  type: object
+                  properties:
+                    peopleId:
+                      type: string
+                      example: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                    name:
+                      type: string
+                      example: Sourya kaushik
+                    id:
+                      type: string
+                      example: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                    img:
+                      type: string
+                      example: ""
+                audienceCount:
+                  type: integer
+                  example: 42
+            eventSyncDetails:
+              type: object
+              properties:
+                enabled:
+                  type: boolean
+                  example: false

@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Content
+  summary: Search for Sites
+  description: This API allows you to search sites
+  requestBody :
+     description: Get Files from a Site
+     content:
+      application/json:
+        schema:
+          $ref: '../../schemas/content/search_sites.yaml'
+     required: true
+  
+  responses:
+    200:
+      $ref: ../../responses/content/searchSites/search_sites_success.yaml
+    400:
+      $ref: ../../responses/content/searchSites/search_sites_error.yaml
+    401:
+      $ref: ../../responses/common/unauthorized.yaml
+    403:
+      $ref: ../../responses/common/forbidden.yaml

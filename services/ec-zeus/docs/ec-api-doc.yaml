@@ -35,6 +35,23 @@ paths:
         $ref: "./paths/video/languages.yaml"
     /video/search:
         $ref: "./paths/video/search.yaml"
+
+    # Content
+    /content/{siteId}:
+        $ref: "./paths/content/get_site.yaml"
+
+    /content/sites/content/list:
+        $ref: "./paths/content/search_content.yaml"
+
+    /content/sites/list: 
+        $ref: "./paths/content/search_sites.yaml"
+
+    /content/sites/:site_id/content/:content_id: 
+        $ref: "./paths/content/search_content_by_id.yaml"
+
+    /content/files/list:
+        $ref: "./paths/content/get_files.yaml"
+    
 components:
     schemas:
         $ref: "./schemas/_index.yaml"

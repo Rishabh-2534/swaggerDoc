@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Content
+  summary: Search for Contents
+  description: Use this API to search for Contents
+  requestBody :
+     description: Get Files from a Site
+     content:
+      application/json:
+        schema:
+          $ref: '../../schemas/content/search_content.yaml'
+     required: true
+  responses:
+    200:
+      $ref: ../../responses/content/searchContent/search_content_success.yaml
+    400:
+      $ref: ../../responses/content/searchContent/search_content_error.yaml
+    401:
+      $ref: ../../responses/common/unauthorized.yaml
+    403:
+      $ref: ../../responses/common/forbidden.yaml

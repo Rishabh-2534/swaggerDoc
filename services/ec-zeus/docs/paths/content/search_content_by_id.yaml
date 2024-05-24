@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Content
+  summary: Search for Content(page/event) by Id
+  description: This API allows you to search a page or event
+  parameters:
+    - name: site_id
+      in: query
+      description: ID of the Site whose content is to be searched
+      schema:
+        type: string
+        example: "39096bec-2115-48bd-94d0-d9c40c74b70d"
+    - name: content_id
+      in: query
+      description: ID of the Content to be searched
+      schema:
+        type: string
+        example: "15df32b8-a917-43bc-974a-3f4671f62f2f"
+  responses:
+    200:
+      $ref: ../../responses/content/searchContentById/search_content_by_Id_success.yaml
+    400:
+      $ref: ../../responses/content/searchContentById/search_content_by_Id_error.yaml
+    401:
+      $ref: ../../responses/common/unauthorized.yaml
+    403:
+      $ref: ../../responses/common/forbidden.yaml
