@@ -4,6 +4,7 @@ required:
   - displayFrom
   - displayUntil
   - isDismissable
+  - status
 type: object
 properties:
   message:

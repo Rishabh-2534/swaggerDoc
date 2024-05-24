@@ -9,10 +9,14 @@ tags:
       description: Everything about Alerts
 
 servers:
-    - url: https://platform.dev.simpplr.xyz/v1
+    # - url: https://platform.dev.simpplr.xyz/v1
     - url: https://platform.test.simpplr.xyz/v1
-    - url: https://platform.qa.simpplr.xyz/v1
+    # - url: https://platform.qa.simpplr.xyz/v1
 paths:
+    # Authorization
+    /identity/oauth/authorize:
+        $ref: "./paths/identity/authorize.yaml"
+
     # Notifications
     /notifications:
         $ref: "./paths/notifications/create-search.yaml"
@@ -63,7 +67,7 @@ components:
             description: "This API uses OAuth 2 with the implicit grant flow."
             flows:
                 implicit:
-                    authorizationUrl: https://api.dev.simpplr.xyz/v1/identity/oauth/authorize
+                    authorizationUrl:  https://platform.test.simpplr.xyz/v1
                     scopes:
                         read: "read data"
                         write: "create/update data"
