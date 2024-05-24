@@ -22,5 +22,5 @@ properties:
     type: boolean
     description: If you wish to delete notification, set this to true.
     enum:
-      - false
       - true
+      - false
