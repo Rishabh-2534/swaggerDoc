@@ -18,9 +18,9 @@ get:
         example: "15df32b8-a917-43bc-974a-3f4671f62f2f"
   responses:
     200:
-      $ref: ../../responses/content/searchContentById/search_content_by_Id_success.yaml
+      $ref: ../../responses/content/searchContentById/search_content_by_id_success.yaml
     400:
-      $ref: ../../responses/content/searchContentById/search_content_by_Id_error.yaml
+      $ref: ../../responses/content/searchContentById/search_content_by_id_error.yaml
     401:
       $ref: ../../responses/common/unauthorized.yaml
     403:
