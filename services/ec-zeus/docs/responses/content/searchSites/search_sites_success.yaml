@@ -1,0 +1,134 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        result:
+          type: object
+          properties:
+            nextPageToken:
+              type: integer
+              example: 4
+            totalRecords:
+              type: integer
+              example: 13
+            listOfItems:
+              type: array
+              items:
+                type: object
+                properties:
+                  landingPage:
+                    type: string
+                    example: dashboard
+                  hasDashboard:
+                    type: boolean
+                    example: true
+                  title:
+                    type: string
+                    example: HVDPublicSite test
+                  id:
+                    type: string
+                    example: 26431bad-f0f9-45e4-af33-5b7e64f3505d
+                  siteId:
+                    type: string
+                    example: 26431bad-f0f9-45e4-af33-5b7e64f3505d
+                  name:
+                    type: string
+                    example: HVDPublicSite test
+                  memberCount:
+                    type: integer
+                    example: 22
+                  managerCount:
+                    type: integer
+                    example: 5
+                  followerCount:
+                    type: integer
+                    example: 20
+                  isPublic:
+                    type: boolean
+                    example: true
+                  isPrivate:
+                    type: boolean
+                    example: false
+                  isFollower:
+                    type: boolean
+                    example: true
+                  isAccessRequested:
+                    type: boolean
+                    example: false
+                  isContentManager:
+                    type: boolean
+                    example: false
+                  isManager:
+                    type: boolean
+                    example: false
+                  isMember:
+                    type: boolean
+                    example: false
+                  isOwner:
+                    type: boolean
+                    example: false
+                  isInMandatorySubscription:
+                    type: boolean
+                    example: false
+                  isListed:
+                    type: boolean
+                    example: true
+                  isFeatured:
+                    type: boolean
+                    example: false
+                  isActive:
+                    type: boolean
+                    example: true
+                  category:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: Uncategorized
+                      categoryId:
+                        type: string
+                        example: 73f929f9-5306-41f1-a59f-a7ab495633bc
+                  access:
+                    type: string
+                    example: Public
+                  canEdit:
+                    type: boolean
+                    example: true
+                  canActivateDeactivate:
+                    type: boolean
+                    example: true
+                  img:
+                    type: string
+                    example: "https://alpha.dev.simpplr.xyz//content/o/b65ca96e-cb1a-4d94-80f3-3b3aa8e05b79"
+                  hasPages:
+                    type: boolean
+                    example: true
+                  hasEvents:
+                    type: boolean
+                    example: true
+                  hasAlbums:
+                    type: boolean
+                    example: true
+                  canCreatePage:
+                    type: boolean
+                    example: true
+                  canCreateEvent:
+                    type: boolean
+                    example: true
+                  canCreateAlbum:
+                    type: boolean
+                    example: true
+                  isAlertEnabled:
+                    type: boolean
+                    example: false
+                  metadata:
+                    type: string
+                    example: null
+                  isMembershipAutoApproved:
+                    type: boolean
+                    example: false

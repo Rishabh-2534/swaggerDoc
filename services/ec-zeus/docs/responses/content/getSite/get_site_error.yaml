@@ -1,0 +1,23 @@
+description: Error
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              seq_id:
+                type: integer
+                example: 0
+              field_name:
+                type: string
+                example: site_id
+              error_code:
+                type: integer
+                example: 1004
+              message:
+                type: string
+                example: "Invalid 'site_id' value"

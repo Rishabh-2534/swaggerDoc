@@ -1,0 +1,21 @@
+type: object
+properties:
+  status:
+    type: string
+    description: Status of the search
+    example: "published"
+  size:
+    type: integer
+    description: Maximum number of results to return
+    example: 4
+  filter:
+    type: string
+    description: Filter criteria for search
+    enum:
+      - popular
+      - latest
+
+  siteId:
+    type: string
+    description: ID of the Site to search for
+    example: "19b963b1-928b-42cd-a002-fc47827c6f58"

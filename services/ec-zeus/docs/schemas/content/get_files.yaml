@@ -1,0 +1,31 @@
+type: object
+properties:
+  size:
+    type: integer
+    description: Maximum number of results to return
+    example: 16
+  siteId:
+    type: string
+    description: ID of the Site to search for
+    example: "39096bec-2115-48bd-94d0-d9c40c74b70d"
+  term:
+    type: string
+    description: Search term
+    example: ""
+  context:
+    type: string
+    description: Context of the search
+    example: "siteFiles"
+  provider:
+    type: string
+    description: Provider of the search
+    example: "intranet"
+  sortBy:
+    type: string
+    description: Technique for sorting results
+    enum:
+      - alphabetical
+      - createdNewest
+      - createdOldest
+      - modifiedNewest
+      - modifiedOldest
