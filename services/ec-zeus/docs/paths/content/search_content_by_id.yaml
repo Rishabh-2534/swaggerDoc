@@ -1,8 +1,8 @@
 get:
   tags:
     - Content
-  summary: Search for Content(page/event) by Id
-  description: This API allows you to search a page or event
+  summary: Search for Content by Id
+  description: This API allows us to search for and retrieve detailed information about a specific page or event by providing its unique ID
   parameters:
     - name: site_id
       in: query

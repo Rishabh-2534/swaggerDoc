@@ -2,9 +2,9 @@ post:
   tags:
     - Content
   summary: Search for Contents
-  description: Use this API to search for Contents
+  description: This API allows us to search for and retrieve a list of contents based on the specified filters provided in the request body
   requestBody :
-     description: Get Files from a Site
+     description: Get list of content based on request body from a Site
      content:
       application/json:
         schema:
