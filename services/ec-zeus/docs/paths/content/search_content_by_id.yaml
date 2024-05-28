@@ -4,18 +4,20 @@ get:
   summary: Search for Content by Id
   description: This API allows us to search for and retrieve detailed information about a specific page or event by providing its unique ID
   parameters:
-    - name: site_id
-      in: query
+    - name: siteId
+      in: path
       description: ID of the Site whose content is to be searched
       schema:
         type: string
         example: "39096bec-2115-48bd-94d0-d9c40c74b70d"
-    - name: content_id
-      in: query
+      required: true
+    - name: contentId
+      in: path
       description: ID of the Content to be searched
       schema:
         type: string
         example: "15df32b8-a917-43bc-974a-3f4671f62f2f"
+      required: true
   responses:
     200:
       $ref: ../../responses/content/searchContentById/search_content_by_id_success.yaml
