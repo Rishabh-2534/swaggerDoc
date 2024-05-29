@@ -1,4 +1,4 @@
-# Common Errors
+# Common responses
 Unauthorized:
   $ref: './common/unauthorized.yaml'
 CommonError:
@@ -8,7 +8,7 @@ Forbidden:
 ValidationError:
   $ref: './common/validation_error.yaml'
 
-# Alert Errors
+# Alert responses
 AlertCreateSuccess:
   $ref: './alerts/create_success.yaml'
 AlertError:
@@ -20,10 +20,10 @@ AlertSearchError:
 AlertUpdateSuccess:
   $ref: './alerts/update_success.yaml'
 
-# Notificaton Errors
+# Notificaton responses
 NotificationCreateSuccess:
   $ref: "./notifications/create_success.yaml"
-NotificationCreatError:
+NotificationCreateError:
   $ref: "./notifications/create_error.yaml"
 NotificationSearchSuccess:
   $ref: "./notifications/search_success.yaml"
@@ -31,3 +31,9 @@ NotificationUpdateSuccess:
   $ref: "./notifications/update_success.yaml"
 NotificationSearchError:
   $ref: "./notifications/search_error.yaml"
+
+# Identity responses
+IdentityAuthSuccess:
+  $ref: "./identity/auth_success.yaml"
+IdentityAuthError:
+  $ref: "./identity/auth_error.yaml"

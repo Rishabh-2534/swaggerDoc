@@ -1,0 +1,22 @@
+required:
+  - grant_type
+  - client_id
+  - client_secret
+type: object
+properties:
+  grant_type:
+    type: string
+    description: If you are exchaning authorization code then grant type should be `authorization_code`\r\nIn case you are using refresh token then grant type should be `refresh_token`
+    example: authorization_code
+    enum:
+      - authorization_code
+      - refresh_token
+  client_id:
+    type: string
+    description: The client id specific to your client application.
+  client_secret:
+    type: string
+    description: The client secret specific to you client application.
+  auth_code:
+    type: string
+    description: This is required only if you are exchanging authorization code for access token.
