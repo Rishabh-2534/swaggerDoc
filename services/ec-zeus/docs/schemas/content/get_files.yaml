@@ -7,19 +7,27 @@ properties:
   siteId:
     type: string
     description: ID of the Site to search for
-    example: "39096bec-2115-48bd-94d0-d9c40c74b70d"
+    example: 'd096db67-954a-4ff5-94a7-ccc437f2fd81'
   term:
     type: string
     description: Search term
-    example: ""
+    example: ''
   context:
     type: string
     description: Context of the search
-    example: "siteFiles"
+    example: 'siteFiles'
   provider:
     type: string
     description: Provider of the search
-    example: "intranet"
+    enum:
+      - intranet
+      - googledrive
+      - sharepoint
+      - onedrive
+      - box
+      - native_video
+      - dropbox
+    example: 'intranet'
   sortBy:
     type: string
     description: Technique for sorting results
@@ -29,3 +37,51 @@ properties:
       - createdOldest
       - modifiedNewest
       - modifiedOldest
+    example: createdNewest
+  fileManagerView:
+    type: boolean
+    description: Whether the user is a file manager or not
+    enum:
+      - true
+      - false
+  isMediaManager:
+    type: boolean
+    description: Whether the user is a media manager or not
+    enum:
+      - true
+      - false
+  filter:
+    type: string
+    description: Filter criteria for search
+    enum:
+      - favorites
+      - write_folders
+      - this_week
+      - this_month
+      - last_week
+      - owned_by_me
+      - recents
+  directory:
+    type: string
+    description: Directory to search in
+  action:
+    type: string
+    description: Action to perform
+    enum:
+      - favorite
+      - unfavorite
+  id:
+    type: string
+    description: ID of the file
+  isFolder:
+    type: boolean
+    description: Whether the file is a folder or not
+    enum:
+      - true
+      - false
+  isDrive:
+    type: boolean
+    description: Whether the file is a drive or not
+    enum:
+      - true
+      - false
