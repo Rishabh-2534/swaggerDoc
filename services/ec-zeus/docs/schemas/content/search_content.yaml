@@ -1,21 +1,74 @@
 type: object
 properties:
+  provider:
+    type: string
+    description: Provider of the search
+    enum:
+      - googlecalendar
+      - outlook
+      - intranet
   status:
     type: string
     description: Status of the search
-    example: "published"
+    enum:
+      - published
+      - org_or_site_onboarding
+      - org_onboarding
+      - site_onboarding
+    example: published
   size:
     type: integer
     description: Maximum number of results to return
-    example: 4
+    example: 2
+  sortBy:
+    type: string
+    description: Technique for sorting results
+    enum:
+      - alphabetical
+      - createdNewest
+      - popularity
+      - featured
+    example: popularity
   filter:
     type: string
     description: Filter criteria for search
     enum:
       - popular
       - latest
-
   siteId:
     type: string
     description: ID of the Site to search for
-    example: "19b963b1-928b-42cd-a002-fc47827c6f58"
+    example: 'd096db67-954a-4ff5-94a7-ccc437f2fd81'
+  isMustRead:
+    type: boolean
+    description: Whether the content is must read or not
+    enum:
+      - true
+      - false
+  feedMustRead:
+    type: boolean
+    description: Whether the feed is must read or not
+    enum:
+      - true
+      - false
+  mustReadsiteId:
+    type: string
+    description: ID of the Site to search for must read content
+  pageCategoryId:
+    type: string
+    description: ID of the Page Category to search for
+  peopleId:
+    type: string
+    description: ID of the People to search for
+  contentIds:
+    type: array
+    description: IDs of the Content to search for
+  type:
+    type: string
+    enum:
+      - album
+      - event
+      - all
+      - page
+      - blogpost
+    example: 'album'
