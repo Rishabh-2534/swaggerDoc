@@ -10,10 +10,47 @@ properties:
     enum:
       - alphabetical
       - createdNewest
-      - createdOldest
-      - modifiedNewest
-      - modifiedOldest
+      - popular
+      - featured
     example: popular
   filter:
     type: string
+    enum:
+      - featured
+      - unfeatured
+      - recentUsedSites
+      - popular
+      - following
+      - member
+      - manager
+      - owner
+      - deactivated
+      - public
+      - private
+      - unlisted
+      - favourites
     example: popular
+  categoryId:
+    type: string
+    description: category of sites to search for
+  term:
+    type: string
+    description: Search term
+  canManage:
+    type: boolean
+    description: Whether the user can manage the site
+    enum:
+      - true
+      - false
+  includeDeactivated:
+    type: boolean
+    description: Whether to include deactivated sites or not
+    enum:
+      - true
+      - false
+  canAccess:
+    type: boolean
+    description: Whether the user can access the site
+    enum:
+      - true
+      - false

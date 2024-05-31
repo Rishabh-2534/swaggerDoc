@@ -4,12 +4,12 @@ get:
   summary: Get Site By Id
   description: This API allows us to obtain detailed information about a site by providing its unique Site ID
   parameters:
-    - name: siteId
+    - name: site_id
       in: path
       description: ID of the Site to search for
       schema:
         type: string
-        example: "19b963b1-928b-42cd-a002-fc47827c6f58"
+        example: 'eb4a3545-05f7-46e8-b17d-107339b6aae6'
       required: true
   responses:
     200:
