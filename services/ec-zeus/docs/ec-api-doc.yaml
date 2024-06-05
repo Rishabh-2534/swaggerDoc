@@ -27,7 +27,7 @@ paths:
     /alerts:
         $ref: "./paths/alerts/create-search.yaml"
     /alerts/{alertId}:
-        $ref: "./paths/alerts/update.yaml"
+        $ref: "./paths/alerts/update-delete.yaml"
 
 
     # Video

@@ -41,6 +41,7 @@ get:
     - name: filter
       in: query
       description: Returns alerts based on the status of the alert. By default it is set to all.
+      required: true
       schema:
         type: string
         default: all

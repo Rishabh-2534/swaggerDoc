@@ -27,9 +27,8 @@ properties:
     description: "true: The Alert can be dismissed by users. \n false: The Alert cannot be dismissed by users."
   status:
     type: string
-    description: "Status of alert. \n delete and expire status is while updating alert"
+    description: "Status of alert. \n expire status is while updating alert"
     enum:
       - active
       - scheduled
-      - delete
       - expire
