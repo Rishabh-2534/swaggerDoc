@@ -10,7 +10,7 @@ tags:
 
 servers:
     # - url: https://platform.dev.simpplr.xyz/v1
-    - url: https://platform.test.simpplr.xyz/v1
+    - url: https://platform.app.simpplr.xyz/v1
     # - url: https://platform.qa.simpplr.xyz/v1
 paths:
     # Authorization
