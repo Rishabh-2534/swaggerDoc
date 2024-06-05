@@ -29,6 +29,9 @@ paths:
     /alerts/{alertId}:
         $ref: "./paths/alerts/update.yaml"
 
+    # Audience
+    /identity/audience:
+        $ref: "./paths/identity/audience.yaml"
 
     # Video
     /video/tokens:
