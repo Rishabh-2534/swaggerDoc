@@ -9,14 +9,14 @@ get:
       description: ID of the Site whose content is to be searched
       schema:
         type: string
-        example: 'eb4a3545-05f7-46e8-b17d-107339b6aae6'
+        example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
       required: true
     - name: content_id
       in: path
       description: ID of the Content to be searched
       schema:
         type: string
-        example: '8b989940-32c9-491f-965c-b92ccd61ae3e'
+        example: "8b989940-32c9-491f-965c-b92ccd61ae3e"
       required: true
   responses:
     200:

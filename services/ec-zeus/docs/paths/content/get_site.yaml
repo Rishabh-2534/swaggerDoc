@@ -9,7 +9,7 @@ get:
       description: ID of the Site to search for
       schema:
         type: string
-        example: 'eb4a3545-05f7-46e8-b17d-107339b6aae6'
+        example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
       required: true
   responses:
     200:
