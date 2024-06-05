@@ -1,0 +1,72 @@
+post:
+  tags:
+    - Audience
+  summary: Create a new Audience
+  description: This API allows you to create a new Audience for a tenant.
+  requestBody:
+    description: Create a new Audience
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/identity/audience/create_request.yaml'
+    required: true
+  responses:
+    200:
+      $ref: '../../responses/identity/audience/create_success.yaml'
+    400:
+      $ref: '../../responses/identity/audience/audience_error.yaml'
+    401:
+      $ref: '../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../responses/common/forbidden.yaml'
+
+put:
+  tags:
+    - Audience
+  summary: Update Audience
+  description: This API allows you to update existing Audience.
+  parameters:
+    - name: audienceId
+      in: path
+      description: "ID of Audience to update"
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: Update Audience
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/identity/audience/update_request.yaml"
+    required: true
+  responses:
+    200:
+      $ref: "../../responses/identity/audience/update_success.yaml"
+    401:
+      $ref: "../../responses/common/unauthorized.yaml"
+    403:
+      $ref: "../../responses/common/forbidden.yaml"
+    400:
+      $ref: "../../responses/common/validation_error.yaml"
+
+delete:
+  tags:
+    - Audience
+  summary: delete a Audience
+  description: This API allows you to delete Audience.
+  parameters:
+    - name: audienceId
+      in: path
+      description: "ID of Audience to delete"
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      $ref: '../../responses/identity/audience/delete_success.yaml'
+    400:
+      $ref: '../../responses/identity/audience/audience_error.yaml'
+    401:
+      $ref: '../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../responses/common/forbidden.yaml'

@@ -1,0 +1,55 @@
+required:
+  - name
+  - type
+  - listOfPeople
+  - listOfConditions
+type: object
+properties:
+  name:
+    type: string
+    minLength: 1
+    maxLength: 100
+  fileSize:
+    type: number
+    minimum: 1
+  fileTitle:
+    type: string
+    minLength: 1
+    maxLength: 256
+  fileId:
+    type: string
+    format: uuid
+  type:
+    type: string
+    enum:
+      - conditions
+      - people
+      - csv
+  listOfConditions:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        label:
+          type: string
+        values:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+            required:
+              - id
+              - name
+          minItems: 1
+  listOfPeople:
+    type: array
+    items:
+      type: string
+      format: uuid
+additionalProperties: false

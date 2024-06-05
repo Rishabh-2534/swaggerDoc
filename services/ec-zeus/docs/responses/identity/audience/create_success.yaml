@@ -1,0 +1,110 @@
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: integer
+          example: 200
+        message:
+          type: string
+          example: Audience created successfully.
+        result:
+          type: object
+          properties:
+            name:
+              type: string
+              example: vipulsimpplr
+            audienceId:
+              type: string
+              format: uuid
+              example: ca5242d7-a233-4446-93d1-66905d0290b4
+            type:
+              type: string
+              example: conditions
+            audienceCount:
+              type: integer
+              example: 4
+            createdAt:
+              type: string
+              format: date-time
+              example: 2024-06-04T11:15:46.283Z
+            modifiedAt:
+              type: string
+              format: date-time
+              example: 2024-06-04T11:15:46.283Z
+            createdBy:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  format: uuid
+                  example: 55526ef2-752a-47e3-affa-2fa0eaadc5eb
+                name:
+                  type: string
+                  example: Vipul Chaursiya
+                status:
+                  type: string
+                  example: Active
+            status:
+              type: string
+              nullable: true
+              example: null
+            listOfPeople:
+              type: array
+              items:
+                type: object
+            listOfConditions:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: department
+                  label:
+                    type: string
+                    example: Department
+                  values:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: Engineering
+                        name:
+                          type: string
+                          example: Engineering
+                        userCount:
+                          type: integer
+                          example: 0
+                        authoredBy:
+                          type: string
+                          nullable: true
+                          example: null
+                        canEdit:
+                          type: string
+                          nullable: true
+                          example: null
+                        canDelete:
+                          type: string
+                          nullable: true
+                          example: null
+                        isNew:
+                          type: string
+                          nullable: true
+                          example: null
+                        isFollowing:
+                          type: string
+                          nullable: true
+                          example: null
+                        img:
+                          type: string
+                          nullable: true
+                          example: null
+                  conditionSet:
+                    type: array
+                    items:
+                      type: string
+                      example: Engineering
