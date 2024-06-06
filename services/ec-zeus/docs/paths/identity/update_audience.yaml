@@ -1,25 +1,3 @@
-post:
-  tags:
-    - Audience
-  summary: Create a new Audience
-  description: This API allows you to create a new Audience for a tenant.
-  requestBody:
-    description: Create a new Audience
-    content:
-      application/json:
-        schema:
-          $ref: '../../schemas/identity/audience/create_request.yaml'
-    required: true
-  responses:
-    200:
-      $ref: '../../responses/identity/audience/create_success.yaml'
-    400:
-      $ref: '../../responses/identity/audience/audience_error.yaml'
-    401:
-      $ref: '../../responses/common/unauthorized.yaml'
-    403:
-      $ref: '../../responses/common/forbidden.yaml'
-
 put:
   tags:
     - Audience
@@ -62,11 +40,11 @@ delete:
       schema:
         type: string
   responses:
-    200:
-      $ref: '../../responses/identity/audience/delete_success.yaml'
-    400:
-      $ref: '../../responses/identity/audience/audience_error.yaml'
-    401:
-      $ref: '../../responses/common/unauthorized.yaml'
-    403:
-      $ref: '../../responses/common/forbidden.yaml'
+  200:
+    $ref: '../../responses/identity/audience/delete_success.yaml'
+  400:
+    $ref: '../../responses/identity/audience/audience_error.yaml'
+  401:
+    $ref: '../../responses/common/unauthorized.yaml'
+  403:
+    $ref: '../../responses/common/forbidden.yaml'

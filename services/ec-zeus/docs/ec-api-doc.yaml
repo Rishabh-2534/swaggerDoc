@@ -31,7 +31,9 @@ paths:
 
     # Audience
     /identity/audience:
-        $ref: "./paths/identity/audience.yaml"
+        $ref: "./paths/identity/create_audience.yaml"
+    /identity/audience/{audienceId}:
+        $ref: "./paths/identity/update_audience.yaml"
 
     # Video
     /video/tokens:
