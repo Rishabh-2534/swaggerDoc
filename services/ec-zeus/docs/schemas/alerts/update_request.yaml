@@ -30,5 +30,4 @@ properties:
     description: "Status of alert. \n expire status is while updating alert"
     enum:
       - active
-      - scheduled
       - expire
