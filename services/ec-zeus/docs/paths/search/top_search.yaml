@@ -1,0 +1,44 @@
+post:
+  tags:
+    - Enterprise Search
+  summary: Perform enterprise search
+  parameters:
+    - name: x-smtip-platform
+      in: header
+      required: false
+      schema:
+        type: string
+      description: The platform identifier
+    - name: x-smtip-search-source
+      in: header
+      required: false
+      schema:
+        type: string
+      description: The source of the search
+    - name: x-smtip-tid
+      in: header
+      required: true
+      schema:
+        type: string
+      description: The team identifier
+    - name: x-smtip-uid
+      in: header
+      required: true
+      schema:
+        type: string
+      description: The user identifier
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/search/top_search_request.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/search/top_search_success.yaml'
+    '401':
+      $ref: "../../responses/search/top_search_unauthorized_error.yaml"
+    "400":
+      $ref: "../../responses/search/top_search_bad_request.yaml"
+    "500":
+      $ref: "../../responses/search/top_search_internal_server_error.yaml"
