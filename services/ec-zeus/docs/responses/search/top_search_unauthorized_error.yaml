@@ -1,0 +1,15 @@
+description: Unauthorized Error
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        success:
+          type: boolean
+          example: false
+        status_code:
+          type: number
+          example: 401
+        message:
+          type: string
+          example: "Missing Authorization Token"

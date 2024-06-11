@@ -56,6 +56,10 @@ paths:
         $ref: "./paths/content/search_content_by_id.yaml"
     /content/files/list:
         $ref: "./paths/content/get_files.yaml"
+
+     # Enterprise Search
+    /enterprise/search:
+        $ref: "./paths/search/top_search.yaml"     
     
 components:
     schemas:
