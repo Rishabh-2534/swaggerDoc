@@ -1,0 +1,81 @@
+---
+openapi: 3.0.2
+info:
+    version: 1.0.0
+    title: Simpplr API Documentation
+    description: ""
+tags:
+    - name: Alerts
+      description: Everything about Alerts
+
+servers:
+     - url: https://platform.dev.simpplr.xyz/v1
+     - url: https://platform.test.simpplr.xyz/v1
+     - url: https://platform.qa.simpplr.xyz/v1
+paths:
+    # Authorization
+    /identity/oauth/authorize:
+        $ref: "./paths/identity/authorize.yaml"
+
+    # Notifications
+    /notifications:
+        $ref: "./paths/notifications/create-search.yaml"
+    /notifications/{notificationId}:
+        $ref: "./paths/notifications/update.yaml"
+
+    # Alerts
+    /alerts:
+        $ref: "./paths/alerts/create-search.yaml"
+    /alerts/{alertId}:
+        $ref: "./paths/alerts/update-delete.yaml"
+
+    # Audience
+    /identity/audience:
+        $ref: "./paths/identity/create_audience.yaml"
+    /identity/audience/{audienceId}:
+        $ref: "./paths/identity/update_audience.yaml"
+
+    # Video
+    /video/tokens:
+        $ref: "./paths/video/tokens.yaml"
+    /video/entry/update:
+        $ref: "./paths/video/update_status.yaml"
+    /video/languages:
+        $ref: "./paths/video/languages.yaml"
+    /video/search:
+        $ref: "./paths/video/search.yaml"
+
+    # Content
+    /content/sites/{site_id}:
+        $ref: "./paths/content/get_site.yaml"
+    /content/sites/content/list:
+        $ref: "./paths/content/search_content.yaml"
+    /content/sites/list: 
+        $ref: "./paths/content/search_sites.yaml"
+    /content/sites/{site_id}/content/{content_id}:
+        $ref: "./paths/content/search_content_by_id.yaml"
+    /content/files/list:
+        $ref: "./paths/content/get_files.yaml"
+
+     # Enterprise Search
+    /enterprise/search:
+        $ref: "./paths/search/top_search.yaml"     
+    
+components:
+    schemas:
+        $ref: "./schemas/_index.yaml"
+    responses:
+        $ref: "./responses/_index.yaml"
+    securitySchemes:
+        apiAuthSecurity:
+            type: "oauth2"
+            description: "This API uses OAuth 2 with the implicit grant flow."
+            flows:
+                implicit:
+                    authorizationUrl:  https://platform.test.simpplr.xyz/v1
+                    scopes:
+                        read: "read data"
+                        write: "create/update data"
+                        everything: "allow full access"
+security:
+    - apiAuthSecurity: []
