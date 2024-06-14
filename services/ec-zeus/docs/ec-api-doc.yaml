@@ -58,7 +58,7 @@ paths:
         $ref: "./paths/content/get_files.yaml"
 
      # Enterprise Search
-    /enterprise/search:
+    /enterprise-search/search:
         $ref: "./paths/search/top_search.yaml"     
     
 components:
