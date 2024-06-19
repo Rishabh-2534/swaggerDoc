@@ -9,9 +9,12 @@ tags:
       description: Everything about Alerts
 
 servers:
-     - url: https://platform.dev.simpplr.xyz/v1
-     - url: https://platform.test.simpplr.xyz/v1
-     - url: https://platform.qa.simpplr.xyz/v1
+     - url: https://platform.{env}.simpplr.xyz/{version}
+       variables:
+         env:
+            default: dev
+         version:
+            default: v1
 paths:
     # Authorization
     /identity/oauth/authorize:
