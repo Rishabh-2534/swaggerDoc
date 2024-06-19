@@ -38,6 +38,12 @@ paths:
     /identity/audience/{audienceId}:
         $ref: "./paths/identity/update_audience.yaml"
 
+    # People
+    /identity/people:
+        $ref: "./paths/identity/get_people_list.yaml"
+    /identity/people/{peopleId}:
+        $ref: "./paths/identity/update_people.yaml"
+
     # Video
     /video/tokens:
         $ref: "./paths/video/tokens.yaml"
