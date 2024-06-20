@@ -1,0 +1,111 @@
+type: object
+properties:
+  firstName:
+    type: string
+    example: Jhon
+  lastName:
+    type: string
+    example: Smith
+  title:
+    type: string
+    example: Software Developer
+  department:
+    type: string
+    example: Engineering
+  namePronunciation:
+    type: string
+    example: Jhon
+  pronouns:
+    type: string
+    example: he_him_his
+  city:
+    type: string
+    example: Massachusetts
+  state:
+    type: string
+    example: Boston
+  countryName:
+    type: string
+    example: US
+  address1:
+    type: string
+    example: Robert Robertson, 1234 NW Bobcat Lan
+  address2:
+    type: string
+    example: St. Robert,
+  zipCode:
+    type: string
+    example: 65584-5678
+  timezone:
+    type: string
+    example: 14
+  phone:
+    type: string
+    example: 8484849349
+  assistantId:
+    type: string
+    example: f7b4f671-e5c3-437d-930e-1157ba74d308
+  extn:
+    type: string
+    example: 91
+  mobile:
+    type: string
+    example: 8484849349
+  skype:
+    type: string
+    example: 12
+  zoom:
+    type: string
+    example: dees
+  linkedinUrl:
+    type: string
+    example: ""
+  twitterUrl:
+    type: string
+    example: ""
+  instagramUrl:
+    type: string
+    example: ""
+  facebookUrl:
+    type: string
+    example: ""
+  youtubeUrl:
+    type: string
+    example: ""
+  isPhoneDisplayable:
+    type: boolean
+    example: true
+  isMobileDisplayable:
+    type: boolean
+    example: true
+  isEmailDisplayable:
+    type: boolean
+    example: true
+  employeeNumber:
+    type: string
+    example: emp12344
+  businessUnit:
+    type: string
+    example: Design
+  userType:
+    type: string
+    example: Contractor
+  division:
+    type: string
+    example: Developer
+  companyName:
+    type: string
+    example: simpplr
+  peopleCategoryId:
+    type: string
+    example: 79e8498c-ba31-4b2d-95ba-f7b70ef3c26f
+  supportedLanguageId:
+    type: string
+    example: "1"
+  33b17729-9085-40f5-bc56-6d3533337349:
+    type: string
+    example: swimming
+    description: To edit custom field need to send the mapping key of the custom field
+  managerId:
+    type: string
+    example: c5b28423-b2d9-4a3d-83bf-55b050d45ac1
