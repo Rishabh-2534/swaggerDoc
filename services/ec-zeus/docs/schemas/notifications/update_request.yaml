@@ -21,6 +21,3 @@ properties:
   is_deleted:
     type: boolean
     description: If you wish to delete notification, set this to true.
-    enum:
-      - true
-      - false
