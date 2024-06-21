@@ -1,0 +1,133 @@
+type: object
+properties:
+  search_term:
+    type: string
+    nullable: true
+  page_size:
+    type: integer
+    nullable: true
+    maximum: 50
+  page_token:
+    type: string
+    nullable: true
+  explain_relevancy:
+    type: boolean
+    nullable: true
+  connector_type:
+    type: array
+    items:
+      type: string
+      enum: 
+        - odin
+        - zeus
+        - google_drive
+        - confluence
+        - sharepoint_online
+        - onedrive
+        - servicenow
+    nullable: true
+  filters:
+    type: object
+    properties:
+      connector_type:
+        type: array
+        items:
+          type: string
+          enum: 
+            - odin
+            - zeus
+            - google_drive
+            - confluence
+            - sharepoint_online
+            - onedrive
+            - servicenow
+        nullable: true
+      object_type:
+        type: array
+        items:
+          type: string
+        nullable: true
+      pinned_document_ids:
+        type: array
+        items:
+          type: string
+        nullable: true
+      owner_ids:
+        type: array
+        items:
+          type: string
+        nullable: true
+      date_range:
+        type: object
+        properties:
+          start_date:
+            type: string
+            format: date
+          end_date:
+            type: string
+            format: date
+      curated_object_types:
+        type: array
+        items:
+          type: string
+          enum:
+            - video
+            - page
+            - album
+            - event
+            - blog
+            - document
+            - presentation
+            - spreadsheet
+            - audio
+            - markup
+            - file
+            - site_tile
+            - home_tile
+        nullable: true
+      simpplr_site_ids:
+        type: array
+        items:
+          type: string
+        nullable: true
+      confluence_space_ids:
+        type: array
+        items:
+          type: integer
+        nullable: true
+      people_manager_ids:
+        type: array
+        items:
+          type: string
+        nullable: true
+      simpplr_people_department_ids:
+        type: array
+        items:
+          type: string
+        nullable: true
+      simpplr_people_expertise_ids:
+        type: array
+        items:
+          type: string
+        nullable: true
+      simpplr_people_location_ids:
+        type: array
+        items:
+          type: string
+        nullable: true
+  sort_by:
+    type: string
+    enum:
+      - name
+      - relevance
+      - recency
+    nullable: true
+  sort_by_order:
+    type: string
+    enum:
+      - asc
+      - desc
+    nullable: true
+  neural_search_override:
+    type: boolean
+    nullable: true
