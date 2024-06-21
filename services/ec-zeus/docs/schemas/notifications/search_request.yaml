@@ -4,8 +4,11 @@ properties:
     type: integer
     description: Since
   include_actioned:
-    type: boolean
+    type: integer
     description: This allows to include the actioned notification in search result. By default actioned notification will not be part of result.
+    enum:
+      - 0
+      - 1
   filter:
     type: string
     description: This allows to filter the notifications based on the status. By default all the notifications will be returned.
