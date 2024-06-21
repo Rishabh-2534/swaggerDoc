@@ -67,8 +67,10 @@ paths:
         $ref: "./paths/content/get_files.yaml"
 
      # Enterprise Search
-    /enterprise/search:
+    /enterprise-search/search:
         $ref: "./paths/search/top_search.yaml"     
+    /enterprise-search/autocomplete:
+        $ref: "./paths/search/autocomplete_search.yaml"      
     
 components:
     schemas:
