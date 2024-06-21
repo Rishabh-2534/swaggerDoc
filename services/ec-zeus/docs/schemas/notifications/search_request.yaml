@@ -2,13 +2,10 @@ type: object
 properties:
   since:
     type: integer
-    description: Since 
+    description: Since
   include_actioned:
     type: boolean
     description: This allows to include the actioned notification in search result. By default actioned notification will not be part of result.
-    enum:
-      - true
-      - false
   filter:
     type: string
     description: This allows to filter the notifications based on the status. By default all the notifications will be returned.
