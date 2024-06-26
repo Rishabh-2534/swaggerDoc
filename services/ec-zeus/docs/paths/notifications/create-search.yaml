@@ -29,10 +29,7 @@ get:
       description: This allows to include the actioned notification in search result. By default actioned notification will not be part of result.
       required: false
       schema:
-        type: integer
-        enum:
-        - 0
-        - 1
+        type: boolean
   responses:
     200:
       $ref: "../../responses/notifications/search_success.yaml"
