@@ -7,24 +7,15 @@ type: object
 properties:
   name:
     type: string
-    minLength: 1
-    maxLength: 100
-  fileSize:
-    type: number
-    minimum: 1
-  fileTitle:
-    type: string
-    minLength: 1
-    maxLength: 256
-  fileId:
-    type: string
-    format: uuid
+    example: "Engineers"
   type:
     type: string
-    enum:
-      - conditions
-      - people
-      - csv
+    example: "conditions"
+  listOfPeople:
+    type: array
+    items:
+      type: object
+    example: []
   listOfConditions:
     type: array
     items:
@@ -32,8 +23,10 @@ properties:
       properties:
         name:
           type: string
+          example: "department"
         label:
           type: string
+          example: "Department"
         values:
           type: array
           items:
@@ -41,15 +34,34 @@ properties:
             properties:
               id:
                 type: string
+                example: "Engineering"
               name:
                 type: string
-            required:
-              - id
-              - name
-          minItems: 1
-  listOfPeople:
-    type: array
-    items:
-      type: string
-      format: uuid
-additionalProperties: false
+                example: "Engineering"
+              userCount:
+                type: integer
+                example: 0
+              authoredBy:
+                type: string
+                nullable: true
+                example: null
+              canEdit:
+                type: boolean
+                nullable: true
+                example: null
+              canDelete:
+                type: boolean
+                nullable: true
+                example: null
+              isNew:
+                type: boolean
+                nullable: true
+                example: null
+              isFollowing:
+                type: boolean
+                nullable: true
+                example: null
+              img:
+                type: string
+                nullable: true
+                example: null
