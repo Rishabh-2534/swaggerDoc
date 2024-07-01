@@ -23,10 +23,10 @@ properties:
       properties:
         name:
           type: string
-          example: "department"
+          description: company_name, country, department, title, start_date, city, division, state, segment can be possible values. Note - for custom fields respected field name should be used.
         label:
           type: string
-          example: "Department"
+          description: Company name, Country, Department, Job Title, Start date, User city, User division, User state, Segment can be possible values. Note - for custom fields respected label should be used.
         values:
           type: array
           items:

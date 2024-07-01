@@ -32,6 +32,9 @@ properties:
     type: array
     items:
       type: string
+    enum:
+      - Active
+      - ProfileCompletionPending
     description: List of user status to filter by.
     example: ["Active"]
   peopleCategoryId:
