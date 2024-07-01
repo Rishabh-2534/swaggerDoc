@@ -2,7 +2,15 @@ post:
   tags:
     - People
   summary: Get people list with search or filter
-  description: This API allows you to get people list using search and filters.
+  description: >
+    This API allows you to get people list using search and filters.
+    Example body request:
+
+    ```json
+      {
+        "q": "" // if no values to be search, this should be sent as empty string.
+      }
+    ```
   requestBody:
     description: Get people list
     content:

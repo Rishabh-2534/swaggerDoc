@@ -22,7 +22,7 @@ properties:
     example: true
   q:
     type: string
-    description: Query string for searching users.
+    description: Query string for searching users. This should be empty string("") by default in case there is no values to search.
     example: ""
   limitToSegment:
     type: boolean
@@ -32,7 +32,10 @@ properties:
     type: array
     items:
       type: string
-    description: List of user statuses to filter by.
+    enum:
+      - Active
+      - ProfileCompletionPending
+    description: List of user status to filter by.
     example: ["Active"]
   peopleCategoryId:
     type: array

@@ -2,7 +2,40 @@ put:
   tags:
     - Audience
   summary: Update Audience
-  description: This API allows you to update existing Audience.
+  description: >
+      This API allows you to update a existing audience. 
+      Example request body:
+
+      ```json
+
+      when listOfConditions selected
+
+      {
+        "name": "Engineers",
+        "type": "conditions",
+        "listOfPeople": [], // this should be set to empty array 
+        "listOfConditions": [
+          {
+            "name": "department",
+            "label": "Department",
+            "values": [
+              {
+                "id": "Engineering",
+                "name": "Engineering", // required in values
+              }
+            ]
+          }
+        ]
+      }
+
+      when listOfPeople selected
+      {
+        "name": "Engineers",
+        "type": "people",
+        "listOfPeople": [], // array of user ids
+        "listOfConditions": [] // this should be set to empty array 
+      }
+      ```
   parameters:
     - name: audienceId
       in: path
