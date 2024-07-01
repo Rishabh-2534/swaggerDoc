@@ -30,9 +30,6 @@ get:
       required: false
       schema:
         type: boolean
-        enum:
-        - false
-        - true
   responses:
     200:
       $ref: "../../responses/notifications/search_success.yaml"

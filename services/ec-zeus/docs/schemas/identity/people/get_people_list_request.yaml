@@ -1,0 +1,108 @@
+required:
+  - q
+type: object
+properties:
+  sortBy:
+    type: array
+    items:
+      type: string
+    description: List of fields to sort by and the sort order (asc or desc).
+    example: ["user_name", "asc"]
+  size:
+    type: integer
+    description: Number of results to return.
+    example: 16
+  includePendingActivation:
+    type: boolean
+    description: Whether to include users pending activation.
+    example: true
+  includeTotal:
+    type: boolean
+    description: Whether to include the total count of results.
+    example: true
+  q:
+    type: string
+    description: Query string for searching users.
+    example: ""
+  limitToSegment:
+    type: boolean
+    description: Whether to limit the search to a specific segment.
+    example: false
+  status:
+    type: array
+    items:
+      type: string
+    description: List of user statuses to filter by.
+    example: ["Active"]
+  peopleCategoryId:
+    type: array
+    items:
+      type: string
+    description: List of people category IDs to filter by.
+    example: ["Us Team"]
+  timezone:
+    type: array
+    items:
+      type: string
+    description: List of timezones to filter by.
+    example: ["Pacific/Gambier"]
+  expertiseId:
+    type: array
+    items:
+      type: string
+    description: List of expertise IDs to filter by.
+    example: ["Java"]
+  assistant_id:
+    type: array
+    items:
+      type: string
+    description: List of assistant IDs to filter by.
+    example: ["55526ef2-752a-47e3-affa-2fa0eaadc5eb"]
+  location:
+    type: array
+    items:
+      type: string
+    description: List of locations to filter by.
+    example: ["Gurugram#city"]
+  title:
+    type: array
+    items:
+      type: string
+    description: List of titles to filter by.
+    example: ["Software Developer"]
+  user_type:
+    type: array
+    items:
+      type: string
+    description: List of user types to filter by.
+    example: ["Contractor"]
+  division:
+    type: array
+    items:
+      type: string
+    description: List of divisions to filter by.
+    example: ["Developer"]
+  department:
+    type: array
+    items:
+      type: string
+    description: List of departments to filter by.
+    example: ["Engineering"]
+  business_unit:
+    type: array
+    items:
+      type: string
+    description: List of business units to filter by.
+    example: ["Tata"]
+  company_name:
+    type: array
+    items:
+      type: string
+    description: List of company names to filter by.
+    example: ["simpplr"]
+  start_date:
+    type: array
+    items:
+      type: string
+    description: Date range for the start date filter (start and end date).
+    example: ["2024-05-20", "2024-06-18"]

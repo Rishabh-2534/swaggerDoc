@@ -9,9 +9,12 @@ tags:
       description: Everything about Alerts
 
 servers:
-    # - url: https://platform.dev.simpplr.xyz/v1
-    - url: https://platform.app.simpplr.com/v1
-    # - url: https://platform.qa.simpplr.xyz/v1
+     - url: https://platform.{env}.simpplr.xyz/{version}
+       variables:
+         env:
+            default: dev
+         version:
+            default: v1
 paths:
     # Authorization
     /identity/oauth/authorize:
@@ -67,7 +70,7 @@ paths:
     /enterprise-search/search:
         $ref: "./paths/search/top_search.yaml"     
     /enterprise-search/autocomplete:
-        $ref: "./paths/search/autocomplete_search.yaml"     
+        $ref: "./paths/search/autocomplete_search.yaml"      
     
 components:
     schemas:

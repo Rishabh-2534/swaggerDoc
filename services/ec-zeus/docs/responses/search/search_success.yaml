@@ -1,0 +1,105 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        success:
+          type: boolean
+        status_code:
+          type: integer
+        correlation_id:
+          type: string
+        data:
+          type: object
+          properties:
+            list_items:
+              type: array
+              items:
+                type: object
+                properties:
+                  relevancy_score:
+                    type: number
+                  item:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      connector_type:
+                        type: string
+                      object_type:
+                        type: string
+                      title:
+                        type: string
+                      space:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                          url:
+                            type: string
+                      url:
+                        type: string
+                      excerpt:
+                        type: string
+                      created_at:
+                        type: string
+                        format: date-time
+                      updated_at:
+                        type: string
+                        format: date-time
+                required:
+                  - relevancy_score
+                  - item
+            has_more:
+              type: boolean
+            next_page_token:
+              type: string
+            aggregations:
+              type: object
+              properties:
+                total:
+                  type: integer
+                connectors:
+                  type: object
+                  properties:
+                    confluence:
+                      type: object
+                      properties:
+                        total:
+                          type: integer
+                        object_types:
+                          type: object
+                          properties:
+                            page:
+                              type: object
+                              properties:
+                                total:
+                                  type: integer
+                    sharepoint_online:
+                      type: object
+                      properties:
+                        total:
+                          type: integer
+                        object_types: {}
+                    servicenow:
+                      type: object
+                      properties:
+                        total:
+                          type: integer
+                        object_types: {}
+                    zeus:
+                      type: object
+                      properties:
+                        total:
+                          type: integer
+                        object_types:
+                          type: object
+                          properties:
+                            file:
+                              type: object
+                              properties:
+                                total:
+                                  type: integer

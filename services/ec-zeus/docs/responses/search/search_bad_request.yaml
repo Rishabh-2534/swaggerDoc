@@ -1,0 +1,15 @@
+description: Bad Request
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        success:
+          type: boolean
+          example: false
+        status_code:
+          type: number
+          example: 400
+        error:
+          type: string
+          example: "Not a vaild request"

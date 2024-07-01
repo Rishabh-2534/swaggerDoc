@@ -1,0 +1,12 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        status:
+          type: "string"
+          example: "SUCCESS"
+        message:
+          type: "string"
+          example: "People updated successfully."

@@ -1,0 +1,20 @@
+post:
+  tags:
+    - Enterprise Search
+  summary: Perform enterprise top search
+  description: Top Search API
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/search/top_search_request.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/search/search_success.yaml'
+    '401':
+      $ref: "../../responses/search/search_unauthorized_error.yaml"
+    "400":
+      $ref: "../../responses/search/search_bad_request.yaml"
+    "500":
+      $ref: "../../responses/search/search_internal_server_error.yaml"

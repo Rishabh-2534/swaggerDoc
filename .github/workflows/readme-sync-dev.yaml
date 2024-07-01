@@ -1,26 +1,26 @@
-name: Sync OpenAPI definition to ReadMe (PROD ZEUS)
+name: Sync OpenAPI definition to ReadMe (DEV ZEUS)
 
-# Run workflow for every push to the `release` branch
+# Run workflow for every push to the `develop` branch
 on:
   push:
     branches:
-      - release
+      - develop
 
 jobs:
-  SyncToProd:
+  SyncToDev:
     runs-on: ubuntu-latest
     environment: 
-      name: production
-      url: 'https://platform.simpplr.com/'
+      name: development
+      url: 'https://hellosimpplr.readme.io/'
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
 
       # Run GitHub Action to sync OpenAPI file at ./path-to-file.json
-      - name: Sync OpenAPI definition to ReadMe production
+      - name: Sync OpenAPI definition to ReadMe Development
         # We recommend specifying a fixed version, i.e. @v8
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@v8
         with:
           working-directory: ./services/ec-zeus/docs
-          rdme: openapi ec-api-doc.yaml --workingDirectory=./services/ec-zeus/docs --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
+          rdme: openapi ec-api-doc-dev.yaml --workingDirectory=./services/ec-zeus/docs --key=${{ secrets.DEV_README_API_KEY }} --id=${{ secrets.DEV_API_DEFINITION_ID }}
