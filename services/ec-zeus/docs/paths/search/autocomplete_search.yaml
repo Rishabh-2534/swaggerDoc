@@ -1,14 +1,14 @@
 post:
   tags:
     - Enterprise Search
-  summary: Perform enterprise top search
+  summary: Perform enterprise autocomplete search
   description: Top Search API
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: '../../schemas/search/top_search_request.yaml'
+          $ref: '../../schemas/search/autocomplete_search_request.yaml'
   responses:
     '200':
       $ref: '../../responses/search/search_success.yaml'

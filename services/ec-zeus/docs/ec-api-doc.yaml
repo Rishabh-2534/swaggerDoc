@@ -66,6 +66,8 @@ paths:
      # Enterprise Search
     /enterprise-search/search:
         $ref: "./paths/search/top_search.yaml"     
+    /enterprise-search/autocomplete:
+        $ref: "./paths/search/autocomplete_search.yaml"     
     
 components:
     schemas:

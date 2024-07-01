@@ -1,0 +1,16 @@
+microservicesName:
+  slack-api-app:
+    autoscalingMinReplicas: 5
+    autoscalingMaxReplicas: 50
+  slack-event-processor-daemon:
+    autoscalingMinReplicas: 2
+    autoscalingMaxReplicas: 2
+configMap:
+  data:
+    NODE_ENV: PROD
+    PORT: '5000'
+    ENV: PROD
+    AWS_SM_API_VERSION: 2017-10-17
+    AWS_SM_REGION: us-west-2
+    LOG_LEVEL: info
+    
