@@ -27,7 +27,7 @@ properties:
       - people
       - csv
   listOfConditions:
-    description: This should be empty array in case of no selected.
+    description: This should be an empty array in case if it is not selected.
     type: array
     items:
       type: object
@@ -55,7 +55,7 @@ properties:
               - name
           minItems: 1
   listOfPeople:
-    description: This should be empty array in case of no selected.
+    description: This should be an empty array in case if it is not selected.
     type: array
     items:
       type: string
