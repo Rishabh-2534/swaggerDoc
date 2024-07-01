@@ -2,7 +2,40 @@ post:
   tags:
     - Audience
   summary: Create a new Audience
-  description: This API allows you to create a new Audience for a tenant.
+  description: >
+        This API allows you to create a new Audience for a tenant. 
+        Example request body:
+
+        ```json
+
+        when listOfConditions selected
+
+        {
+          "name": "Engineers",
+          "type": "conditions",
+          "listOfPeople": [], // this should be set to empty array 
+          "listOfConditions": [
+            {
+              "name": "department",
+              "label": "Department",
+              "values": [
+                {
+                  "id": "Engineering",
+                  "name": "Engineering", // required in values
+                }
+              ]
+            }
+          ]
+        }
+
+        when listOfPeople selected
+        {
+          "name": "Engineers",
+          "type": "people",
+          "listOfPeople": [] ,// array of user ids
+          "listOfConditions": [] // this should be set to empty array 
+        }
+        ```
   requestBody:
     description: Create a new Audience
     content:

@@ -7,24 +7,15 @@ type: object
 properties:
   name:
     type: string
-    minLength: 1
-    maxLength: 100
-  fileSize:
-    type: number
-    minimum: 1
-  fileTitle:
-    type: string
-    minLength: 1
-    maxLength: 256
-  fileId:
-    type: string
-    format: uuid
+    example: "Engineers"
   type:
     type: string
-    enum:
-      - conditions
-      - people
-      - csv
+    example: "conditions"
+  listOfPeople:
+    type: array
+    items:
+      type: object
+    example: []
   listOfConditions:
     type: array
     items:
@@ -32,8 +23,12 @@ properties:
       properties:
         name:
           type: string
+          description: company_name, country, department, title, start_date, city, division, state, segment can be possible values. Note - for custom fields respected field name should be used.
+          example: department
         label:
           type: string
+          description: Company name, Country, Department, Job Title, Start date, User city, User division, User state, Segment can be possible values. Note - for custom fields respected label should be used.
+          example: Department
         values:
           type: array
           items:
@@ -41,15 +36,7 @@ properties:
             properties:
               id:
                 type: string
+                example: "Engineering"
               name:
                 type: string
-            required:
-              - id
-              - name
-          minItems: 1
-  listOfPeople:
-    type: array
-    items:
-      type: string
-      format: uuid
-additionalProperties: false
+                example: "Engineering"
