@@ -22,13 +22,6 @@ post:
                 {
                   "id": "Engineering",
                   "name": "Engineering", // required in values
-                  "userCount": 0,
-                  "authoredBy": null,
-                  "canEdit": null,
-                  "canDelete": null,
-                  "isNew": null,
-                  "isFollowing": null,
-                  "img": null
                 }
               ]
             }

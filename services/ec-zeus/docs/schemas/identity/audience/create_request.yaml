@@ -47,33 +47,6 @@ properties:
               name:
                 type: string
                 example: "Engineering"
-              userCount:
-                type: integer
-                example: 0
-              authoredBy:
-                type: string
-                nullable: true
-                example: null
-              canEdit:
-                type: boolean
-                nullable: true
-                example: null
-              canDelete:
-                type: boolean
-                nullable: true
-                example: null
-              isNew:
-                type: boolean
-                nullable: true
-                example: null
-              isFollowing:
-                type: boolean
-                nullable: true
-                example: null
-              img:
-                type: string
-                nullable: true
-                example: null
             required:
               - name
           minItems: 1
