@@ -1,17 +1,17 @@
 patch:
   tags:
     - People
-  summary: Update People
+  summary: Update people
   description: This API allows you to update existing People.
   parameters:
     - name: peopleId
       in: path
-      description: "ID of People to update"
+      description: "ID of people to update"
       required: true
       schema:
         type: string
   requestBody:
-    description: Update People
+    description: Update people
     content:
       application/json:
         schema:
