@@ -1,0 +1,32 @@
+name: Microservice Deployment - Non Prod Environment
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment name'
+        type: choice
+        required: true
+        options:
+          - dev
+          - test
+          - perf
+      branch:
+        description: 'Branch name'
+        type: choice
+        required: true
+        options:
+          - develop
+      artifact:
+        description: 'Artifact Version'
+        type: string
+        required: false
+jobs:
+  deploy:
+    name: Service Deployment
+    uses: Simpplr/github-shared-library/.github/workflows/service-deploy.yaml@main
+    with:
+      BRANCH: "${{ inputs.branch }}"
+      ENVIRONMENT: "${{ inputs.environment }}"
+      ARTIFACT: "${{ inputs.artifact }}"
+      TEAM_NAME: "integration"
+    secrets: inherit

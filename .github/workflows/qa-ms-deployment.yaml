@@ -1,0 +1,16 @@
+name: Microservice Deployment - QA Environment
+
+on:
+  push:
+    branches:
+      - hotfix
+      - release
+jobs:
+  deploy:
+    name: Service Deployment
+    uses: Simpplr/github-shared-library/.github/workflows/service-deploy.yaml@main
+    with:
+      BRANCH: "${{ github.ref }}"
+      ENVIRONMENT: "qa"
+      TEAM_NAME: "integration"
+    secrets: inherit
