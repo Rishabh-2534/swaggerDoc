@@ -1,9 +1,9 @@
 put:
   tags:
     - Audience
-  summary: Update Audience
+  summary: Update an audience
   description: >
-      This API allows you to update a existing audience. 
+      This API allows you to update an existing audience. 
       Example request body:
 
       ```json
@@ -39,12 +39,12 @@ put:
   parameters:
     - name: audienceId
       in: path
-      description: "ID of Audience to update"
+      description: "ID of audience to update"
       required: true
       schema:
         type: string
   requestBody:
-    description: Update Audience
+    description: Update an audience
     content:
       application/json:
         schema:
@@ -62,12 +62,12 @@ put:
 delete:
   tags:
     - Audience
-  summary: delete a Audience
-  description: This API allows you to delete Audience.
+  summary: Delete an audience
+  description: This API allows you to delete an audience.
   parameters:
     - name: audienceId
       in: path
-      description: "ID of Audience to delete"
+      description: "ID of audience to delete"
       required: true
       schema:
         type: string

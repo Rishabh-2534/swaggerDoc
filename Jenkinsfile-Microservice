@@ -1,2 +1,0 @@
-@Library('shared-library') _
-serviceDeployment(label: "docker-slave-node-v18-03")

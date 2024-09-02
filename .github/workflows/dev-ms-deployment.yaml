@@ -1,0 +1,14 @@
+name: Microservice Deployment - Dev Environment
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  deploy:
+    name: Service Deployment
+    uses: Simpplr/github-shared-library/.github/workflows/service-deploy.yaml@main
+    with:
+      BRANCH: "${{ github.ref }}"
+      ENVIRONMENT: "dev"
+      TEAM_NAME: "integration"
+    secrets: inherit
