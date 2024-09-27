@@ -9,7 +9,6 @@ properties:
       - pending
       - rejected
       - unpublished
-      - published_draft
     example: published
   size:
     type: integer
