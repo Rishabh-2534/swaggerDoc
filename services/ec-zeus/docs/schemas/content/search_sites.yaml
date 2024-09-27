@@ -16,6 +16,10 @@ properties:
   filter:
     type: string
     enum:
+      - all
+      - public
+      - private
+      - unlisted
       - featured
       - unfeatured
       - recentUsedSites
@@ -25,17 +29,12 @@ properties:
       - manager
       - owner
       - deactivated
-      - public
-      - private
-      - unlisted
+      - active
       - favourites
     example: popular
-  categoryId:
+  category:
     type: string
-    description: category of sites to search for
-  term:
-    type: string
-    description: Search term
+    description: Search on the basis of category Id of a content
   canManage:
     type: boolean
     description: Whether the user can manage the site
