@@ -1,25 +1,19 @@
 type: object
 properties:
-  provider:
-    type: string
-    description: Provider of the search
-    enum:
-      - googlecalendar
-      - outlook
-      - intranet
   status:
     type: string
-    description: Status of the search
+    description: What should be the current status of the content
     enum:
       - published
-      - org_or_site_onboarding
-      - org_onboarding
-      - site_onboarding
+      - draft
+      - pending
+      - rejected
+      - unpublished
     example: published
   size:
     type: integer
     description: Maximum number of results to return
-    example: 2
+    example: 16
   sortBy:
     type: string
     description: Technique for sorting results
@@ -28,17 +22,60 @@ properties:
       - createdNewest
       - popularity
       - featured
-    example: popularity
+      - eventStartOldest
+      - unreadMustReadNewest
+      - modifiedNewest
+      - modifiedOldest
+      - createdOldest
+      - publishedNewest
+      - publishedOldest
+      - eventNewest
+      - eventOldest
+    example: publishedNewest
+  type:
+    type: string
+    enum:
+      - album
+      - event
+      - page
+      - all
+    example: 'page'
+  contentSubType:
+    type: string
+    description: Subtype of the content
+    enum:
+      - news
+      - knowledge
+    example: 'knowledge'
+  timePeriodInDays:
+    type: integer
+    description: Time period in days
+  publishStartDateSpan:
+    type: string
+    description: Filter content according to publish start date
+    enum:
+      - past_year
+      - past_month
+      - past_week
+      - past_24_hours
   filter:
     type: string
     description: Filter criteria for search
     enum:
-      - popular
-      - latest
+      - past
+      - future
+      - managing
+      - owned
+  contribution:
+    type: string
+    description: Filter content according to contribution
+    enum:
+      - contributedByMe
+      - all
   siteId:
     type: string
-    description: ID of the Site to search for
-    example: 'd096db67-954a-4ff5-94a7-ccc437f2fd81'
+    description: ID of the Site in which we have to search for content
+    example: 'c8f81749-0f22-4729-872a-5bd22e3697cb'
   isMustRead:
     type: boolean
     description: Whether the content is must read or not
@@ -57,18 +94,13 @@ properties:
   pageCategoryId:
     type: string
     description: ID of the Page Category to search for
+    example: '124c07e9-3748-45f2-93aa-b1ed52519e36'
   peopleId:
     type: string
     description: ID of the People to search for
   contentIds:
     type: array
     description: IDs of the Content to search for
-  type:
-    type: string
-    enum:
-      - album
-      - event
-      - all
-      - page
-      - blogpost
-    example: 'album'
+    items:
+      type: string 
+  
