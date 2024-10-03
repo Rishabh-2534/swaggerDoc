@@ -1,8 +1,8 @@
 get:
   tags:
     - Notifications
-  summary: Search Notifications
-  description: "Search notifications API retrieves notifications based on certain search criteria provided in the request. The search results are returned in a paginated format."
+  summary: List all notifications
+  description: "Notifications API retrieves notifications based on criteria provided in the request. The results are returned in a paginated format."
   parameters:
     - name: size
       in: query
@@ -24,7 +24,7 @@ get:
       required: false
       schema:
         type: integer
-    - name: include_actioned
+    - name: includeActioned
       in: query
       description: This allows to include the actioned notification in search result. By default actioned notification will not be part of result.
       required: false

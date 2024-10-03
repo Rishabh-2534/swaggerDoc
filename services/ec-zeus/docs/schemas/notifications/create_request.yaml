@@ -13,10 +13,10 @@ properties:
     example: inapp
     enum:
       - inapp
-  sent_to:
+  sentTo:
     type: string
     description: The Email-id of the person who will be receiving this notification.
-  sent_by:
+  sentBy:
     type: string
     description: The Email-id of the person of the person who is sending notification.
   url:
@@ -26,7 +26,7 @@ properties:
     type: string
     description: The notificatoin message that will be display to user. {{fullName}} variable can be used
       in message to display the sender name.
-  notification_type:
+  notificationType:
     type: string
     description: "The notification could be either activity or actionable.\n`actionable` - Notifications which require some action, like
       a follow request, leave approval. \n`activity`- Notification which publishes
