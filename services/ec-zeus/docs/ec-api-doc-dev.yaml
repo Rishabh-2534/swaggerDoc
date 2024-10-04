@@ -38,22 +38,6 @@ paths:
     /identity/audience/{audienceId}:
         $ref: "./paths/identity/update_audience.yaml"
 
-    # People
-    /identity/people:
-        $ref: "./paths/identity/get_people_list.yaml"
-    /identity/people/{peopleId}:
-        $ref: "./paths/identity/update_people.yaml"
-
-    # Video
-    /video/tokens:
-        $ref: "./paths/video/tokens.yaml"
-    /video/entry/update:
-        $ref: "./paths/video/update_status.yaml"
-    /video/languages:
-        $ref: "./paths/video/languages.yaml"
-    /video/search:
-        $ref: "./paths/video/search.yaml"
-
     # Content
     /content/sites/{site_id}:
         $ref: "./paths/content/get_site.yaml"
@@ -71,6 +55,22 @@ paths:
         $ref: "./paths/search/top_search.yaml"     
     /enterprise-search/autocomplete:
         $ref: "./paths/search/autocomplete_search.yaml"      
+
+    # Video
+    /video/tokens:
+        $ref: "./paths/video/tokens.yaml"
+    /video/entry/update:
+        $ref: "./paths/video/update_status.yaml"
+    /video/languages:
+        $ref: "./paths/video/languages.yaml"
+    /video/search:
+        $ref: "./paths/video/search.yaml"
+
+    # People
+    /identity/people:
+        $ref: "./paths/identity/get_people_list.yaml"
+    /identity/people/{peopleId}:
+        $ref: "./paths/identity/update_people.yaml"
     
 components:
     schemas:
