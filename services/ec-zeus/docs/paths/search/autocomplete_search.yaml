@@ -1,6 +1,6 @@
 post:
   tags:
-    - Enterprise Search
+    - Enterprise search
   summary: Perform enterprise autocomplete search
   description: Top Search API
   requestBody:
