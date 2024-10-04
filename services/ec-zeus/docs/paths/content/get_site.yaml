@@ -1,7 +1,7 @@
 get:
   tags:
     - Content
-  summary: Get Site By Id
+  summary: Get site by ID
   description: This API allows us to obtain detailed information about a site by providing its unique Site ID
   parameters:
     - name: site_id
