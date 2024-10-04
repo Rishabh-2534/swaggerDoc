@@ -7,6 +7,10 @@ info:
 tags:
     - name: Alerts
       description: Everything about Alerts
+    - name: Notifications
+      description: Everything about Notifications
+    - name: Content
+      description: Everything about Content
 
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
