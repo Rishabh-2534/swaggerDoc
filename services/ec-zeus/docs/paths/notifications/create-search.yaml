@@ -1,7 +1,7 @@
 get:
   tags:
     - Notifications
-  summary: Search Notifications
+  summary: Search notifications
   description: "Search notifications API retrieves notifications based on certain search criteria provided in the request. The search results are returned in a paginated format."
   parameters:
     - name: size

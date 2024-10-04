@@ -1,7 +1,7 @@
 post:
   tags:
     - Content
-  summary: Search for Sites
+  summary: Search for sites
   description: This API allows us to search for and retrieve a list of sites based on the filter provided in the request body.
   requestBody :
      description: Get list of sites based on request body from a Site
