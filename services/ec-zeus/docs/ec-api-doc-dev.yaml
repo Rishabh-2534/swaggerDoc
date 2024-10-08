@@ -7,6 +7,21 @@ info:
 tags:
     - name: Alerts
       description: Everything about Alerts
+    - name: Audience
+      description: Everything about Audience
+    - name: Authorization
+      description: Everything about Authorization
+    - name: Content
+      description: Everything about Content
+    - name: Enterprise search
+      description: Everything about Enterprise search
+    - name: Notifications
+      description: Everything about Notifications
+    - name: People
+      description: Everything about People
+    - name: Video
+      description: Everything about Video
+
 
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
@@ -38,22 +53,6 @@ paths:
     /identity/audience/{audienceId}:
         $ref: "./paths/identity/update_audience.yaml"
 
-    # People
-    /identity/people:
-        $ref: "./paths/identity/get_people_list.yaml"
-    /identity/people/{peopleId}:
-        $ref: "./paths/identity/update_people.yaml"
-
-    # Video
-    /video/tokens:
-        $ref: "./paths/video/tokens.yaml"
-    /video/entry/update:
-        $ref: "./paths/video/update_status.yaml"
-    /video/languages:
-        $ref: "./paths/video/languages.yaml"
-    /video/search:
-        $ref: "./paths/video/search.yaml"
-
     # Content
     /content/sites/{site_id}:
         $ref: "./paths/content/get_site.yaml"
@@ -71,6 +70,22 @@ paths:
         $ref: "./paths/search/top_search.yaml"     
     /enterprise-search/autocomplete:
         $ref: "./paths/search/autocomplete_search.yaml"      
+
+    # Video
+    /video/tokens:
+        $ref: "./paths/video/tokens.yaml"
+    /video/entry/update:
+        $ref: "./paths/video/update_status.yaml"
+    /video/languages:
+        $ref: "./paths/video/languages.yaml"
+    /video/search:
+        $ref: "./paths/video/search.yaml"
+
+    # People
+    /identity/people:
+        $ref: "./paths/identity/get_people_list.yaml"
+    /identity/people/{peopleId}:
+        $ref: "./paths/identity/update_people.yaml"
     
 components:
     schemas:

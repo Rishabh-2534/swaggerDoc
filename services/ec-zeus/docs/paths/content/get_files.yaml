@@ -1,7 +1,7 @@
 post:
   tags:
     - Content
-  summary: Get Files from a Site
+  summary: Get files from a site
   description: This API allows us to fetch files from a site by providing the corresponding Site ID
   requestBody :
      description: Get Files from a Site
