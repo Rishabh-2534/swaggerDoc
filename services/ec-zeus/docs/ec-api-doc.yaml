@@ -36,7 +36,7 @@ paths:
     /notifications:
         $ref: "./paths/notifications/create-search.yaml"
     /notifications/{notificationId}:
-        $ref: "./paths/notifications/update.yaml"
+        $ref: "./paths/notifications/delete-update.yaml"
 
     # Alerts
     /alerts:
