@@ -12,12 +12,9 @@ properties:
     example: inapp
     enum:
       - inapp
-  action_at:
+  actionAt:
     type: string
     description: Time at which this action was performed. This is UTC time.
-  action_by:
+  actionBy:
     type: string
     description: The Email-id of the person of the person who performed this action.
-  is_deleted:
-    type: boolean
-    description: If you wish to delete notification, set this to true.
