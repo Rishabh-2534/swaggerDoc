@@ -2,7 +2,7 @@ get:
   tags:
     - Content
   summary: Get content by ID
-  description: This API allows us to search for and retrieve detailed information about a specific page or event by providing its unique ID
+  description: This API allows us to retrieve detailed information about a specific page or event by providing its unique ID
   parameters:
     - name: site_id
       in: path
