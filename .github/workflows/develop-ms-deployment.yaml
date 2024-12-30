@@ -11,6 +11,7 @@ on:
         - test
         - perf
         - perft
+        - migt
       branch:
         description: 'Branch name'
         type: choice
