@@ -12,11 +12,11 @@ post:
           properties:
             videoId:
               type: string
-              description: Unique Kaltura entry id for a video.
+              description: Unique entry id for a video.
               example: 1_vt8df700
             videoStatus:
               type: integer
-              description: Updated Kaltura video status to be updated in Native video service.
+              description: Updated video status(1 = in processing state, 2 = ready state) to be updated in native video DB.
               example: 1
   responses:
     200:
