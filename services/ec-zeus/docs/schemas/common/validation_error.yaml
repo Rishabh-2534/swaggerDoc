@@ -6,10 +6,10 @@ items:
       example: 0
     field_name:
       type: string
-      example: "sent_to"
+      example: "sentTo"
     error_code:
       type: integer
       example: "1001"
     message:
       type: "string"
-      example: "should have required property 'sent_to'"
+      example: "should have required property 'sentTo'"

@@ -2,35 +2,24 @@ type: object
 properties:
   search_term:
     type: string
+    description: The search term to be used for the search.
     nullable: true
   page_size:
     type: integer
     nullable: true
+    description: The number of results to be returned in a single page/hit.
     maximum: 50
   page_token:
     type: string
-    nullable: true
-  explain_relevancy:
-    type: boolean
-    nullable: true
-  connector_type:
-    type: array
-    items:
-      type: string
-      enum: 
-        - odin
-        - zeus
-        - google_drive
-        - confluence
-        - sharepoint_online
-        - onedrive
-        - servicenow
+    description: The token for the next page as received in previous response.
     nullable: true
   filters:
     type: object
+    description: Filters to be used for search results
     properties:
       connector_type:
         type: array
+        description: The list of connectors to be used for search results.
         items:
           type: string
           enum: 
@@ -44,21 +33,32 @@ properties:
         nullable: true
       object_type:
         type: array
+        description: The object type to be searched on.
         items:
           type: string
-        nullable: true
-      pinned_document_ids:
-        type: array
-        items:
-          type: string
+          enum: 
+            - people
+            - site
+            - site_role
+            - content
+            - tiles
+            - link
+            - feed
+            - feed_comment
+            - file
+            - file_raptor
+            - native_video
+            - campaign
         nullable: true
       owner_ids:
         type: array
+        description: The list of owner IDs of the documents to be searched for.
         items:
           type: string
         nullable: true
       date_range:
         type: object
+        description: The date range for the documents to be searched for.
         properties:
           start_date:
             type: string
@@ -68,6 +68,7 @@ properties:
             format: date
       curated_object_types:
         type: array
+        description: Special object types to be searched for. These translate into object types and other parameters such as mime types.
         items:
           type: string
           enum:
@@ -87,47 +88,51 @@ properties:
         nullable: true
       simpplr_site_ids:
         type: array
+        description: The site IDs in which the document needs to be searched for . To be used in combination with object_type filter.
         items:
           type: string
         nullable: true
       confluence_space_ids:
         type: array
+        description: The confluence space IDs in which the document needs to be searched for. To be used in combination with connector type filter.
         items:
           type: integer
         nullable: true
       people_manager_ids:
         type: array
+        description: The manager IDs whose reportees needs to be searched for .To be used in combination with object_type filter
         items:
           type: string
         nullable: true
       simpplr_people_department_ids:
         type: array
+        description: The department IDs in which the people needs to be searched for.To be used in combination with object_type filter.
         items:
           type: string
         nullable: true
       simpplr_people_expertise_ids:
         type: array
+        description: The expertise IDs in which the people needs to be searched for.To be used in combination with object_type filter
         items:
           type: string
         nullable: true
       simpplr_people_location_ids:
         type: array
+        description: The location IDs in which the people needs to be searched for.To be used in combination with object_type filter
         items:
           type: string
         nullable: true
   sort_by:
     type: string
+    description: The field based on which we need to sort.
     enum:
       - name
       - relevance
-      - recency
     nullable: true
   sort_by_order:
     type: string
+    description: The order on which we need to sort.
     enum:
       - asc
       - desc
-    nullable: true
-  neural_search_override:
-    type: boolean
     nullable: true

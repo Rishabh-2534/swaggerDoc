@@ -1,7 +1,7 @@
 get:
   tags:
     - Video
-  summary: Get kalatura languages list
+  summary: Get video languages list
   description: This API allows you to get a list of languages available in Kaltura
   responses:
     200:

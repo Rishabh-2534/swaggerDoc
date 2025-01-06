@@ -28,6 +28,8 @@
     "eslint": "8.46.0",
     "prettier": "3.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@simpplr/spectral-rules": "^1.0.0"
+  },
   "prettier": "@simpplr/shared-config-prettier"
 }
