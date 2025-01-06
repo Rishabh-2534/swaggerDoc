@@ -7,15 +7,17 @@ on:
         type: choice
         required: true
         options:
-          - dev
-          - test
-          - perf
+        - dev
+        - test
+        - perf
+        - perft
+        - migt
       branch:
         description: 'Branch name'
         type: choice
         required: true
         options:
-          - develop
+        - develop
       artifact:
         description: 'Artifact Version'
         type: string
