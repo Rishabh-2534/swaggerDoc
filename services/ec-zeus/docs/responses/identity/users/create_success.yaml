@@ -1,0 +1,14 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        userId:
+          type: string
+          format: uuid
+          example: 55526ef2-752a-47e3-affa-2fa0eaadc5eb
+        message:
+          type: string
+          example: The new user is added.
+        
