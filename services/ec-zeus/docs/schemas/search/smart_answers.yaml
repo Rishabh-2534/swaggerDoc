@@ -1,0 +1,9 @@
+type: object
+properties:
+  search_term:
+    type: string
+    description: The search term to be used for the smart answer search.
+  search_token:
+    type: string
+    description: The token generated from the search API (optional)
+    nullable: true

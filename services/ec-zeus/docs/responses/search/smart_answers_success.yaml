@@ -1,0 +1,118 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+        status_code:
+          type: number
+        correlation_id:
+          type: string
+        data:
+          type: object
+          properties:
+            show_smart_answer:
+              type: boolean
+            document_analysed_count:
+              type: number
+            smart_answer:
+              type: string
+            references:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  augmented_text:
+                    type: string
+                  relevancy_score:
+                    type: number
+                  source:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      connector_type:
+                        type: string
+                      object_type:
+                        type: string
+                      url:
+                        type: string
+                      name:
+                        type: string
+                      first_name:
+                        type: string
+                      last_name:
+                        type: string
+                      work_title:
+                        type: string
+                      department:
+                        type: string
+                      location:
+                        type: string
+                      state:
+                        type: string
+                      country:
+                        type: string
+                      is_active:
+                        type: boolean
+                      is_deleted:
+                        type: boolean
+                      user_status:
+                        type: string
+                      thumbnail_image_url:
+                        type: string
+                      profile_image_url:
+                        type: string
+                      email:
+                        type: string
+                      mobile_number:
+                        type: string
+                      external_apps:
+                        type: object
+                        properties:
+                          slack:
+                            type: object
+                            properties:
+                              tenant_id:
+                                type: string
+                              user_id:
+                                type: string
+                              connected_as:
+                                type: string
+                  chunks:
+                    type: array
+                    items:
+                      type: object
+            skipped_answer_generation:
+              type: boolean
+            feature_flags:
+              type: object
+              properties:
+                enterprise_search_relevancy_weights_v2:
+                  type: string
+                neuralsearch_query:
+                  type: boolean
+                search_semantic_chunking:
+                  type: object
+                  properties:
+                    is_chunking_enabled:
+                      type: boolean
+                    is_intent_detection_enabled:
+                      type: boolean
+                    intent_detection_params:
+                      type: object
+                      properties:
+                        intentedFnName:
+                          type: string
+                        args.query:
+                          type: string
+                        locationIntentParams.category:
+                          type: string
+                        recencyIntentParams.category:
+                          type: string
+            conversation_id:
+              type: string

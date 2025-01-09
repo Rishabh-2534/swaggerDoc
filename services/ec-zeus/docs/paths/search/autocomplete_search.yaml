@@ -2,7 +2,7 @@ post:
   tags:
     - Enterprise search
   summary: Perform enterprise autocomplete search
-  description: Top Search API
+  description: Displays results in the dropdown of the search bar as soon as the user begins typing the search term
   requestBody:
     required: true
     content:
