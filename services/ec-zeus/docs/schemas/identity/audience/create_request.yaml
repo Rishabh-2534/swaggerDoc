@@ -10,22 +10,11 @@ properties:
     type: string
     minLength: 1
     maxLength: 100
-  fileSize:
-    type: number
-    minimum: 1
-  fileTitle:
-    type: string
-    minLength: 1
-    maxLength: 256
-  fileId:
-    type: string
-    format: uuid
   type:
     type: string
     enum:
       - conditions
       - people
-      - csv
   listOfConditions:
     description: This should be an empty array in case if it is not selected.
     type: array
