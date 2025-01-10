@@ -102,10 +102,6 @@ properties:
   supportedLanguageId:
     type: string
     example: "1"
-  33b17729-9085-40f5-bc56-6d3533337349:
-    type: string
-    example: swimming
-    description: To edit custom field need to send the mapping key of the custom field
   managerId:
     type: string
     example: c5b28423-b2d9-4a3d-83bf-55b050d45ac1
