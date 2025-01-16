@@ -9,6 +9,8 @@ properties:
       - pending
       - rejected
       - unpublished
+      - validationExpired
+      - validationRequired
     example: published
   size:
     type: integer
