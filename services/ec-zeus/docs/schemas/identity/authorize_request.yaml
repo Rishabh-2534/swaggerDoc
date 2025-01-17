@@ -19,4 +19,4 @@ properties:
     description: The client secret specific to you client application.
   auth_code:
     type: string
-    description: This is required only if you are exchanging authorization code for access token.\nPlease check [this documentation](https://platform.simpplr.com/reference/authenticating-via-an-external-application-1#get-the-authorization-code) about how generate the authorization code.
+    description: This is required only if you are exchanging authorization code for access token.\nPlease check [this documentation](https://platform.simpplr.com/reference/authenticating-via-an-external-application-1#get-the-authorization-code) about how to generate the authorization code.
