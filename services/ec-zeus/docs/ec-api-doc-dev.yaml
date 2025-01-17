@@ -32,7 +32,7 @@ servers:
             default: v1
 paths:
     # Authorization
-    /identity/oauth/authorize:
+    /identity/oauth/token:
         $ref: "./paths/identity/authorize.yaml"
 
     # Notifications
