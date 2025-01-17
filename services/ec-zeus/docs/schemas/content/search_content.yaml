@@ -20,10 +20,8 @@ properties:
     type: string
     description: Technique for sorting results
     enum:
-      - alphabetical
       - createdNewest
       - popularity
-      - featured
       - eventStartOldest
       - unreadMustReadNewest
       - modifiedNewest
