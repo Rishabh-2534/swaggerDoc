@@ -36,13 +36,13 @@ IsDbUpgradeEnabled: 'false'
 
 # Details of all sub-microservices
 microservicesName: # This name is common for all the microservices
-  ec-odin-service:
+  ec-odin-app:
     isServiceEnabled: true # value would be true if you want to create service against this deployment
     serviceName: 'ec-odin-service'
     isHpaEnabled: HPA-REPLACE-WITH-TRUE-FALSE # Keep it as it is, this will be replaced from jenkins
-    name: 'ec-odin-service'
+    name: 'ec-odin-app'
     labels:
-      name: 'ec-odin-service'
+      name: 'ec-odin-app'
       team: 'search-charlie'
     repo: 'ec-odin-api-service' # ECR Repo Name
     dockerFileLocation: 'services/ec-odin-service/'
