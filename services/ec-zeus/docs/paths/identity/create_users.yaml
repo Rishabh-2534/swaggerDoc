@@ -1,0 +1,39 @@
+post:
+  tags:
+    - Users
+  summary: Create users
+  description: >
+      This API allows you create users.
+      Example request body:
+
+      ```json
+
+      {
+        "personalInfo": {
+            "firstName": "",
+            "lastName": "",
+            "timezoneId": 1,
+            "languageId": 1,
+            "localeId": 1,
+            "email": ""
+        },
+        "roleId": "a8d8c6b0-8968-44a7-a034-00110cc25817"
+      }
+
+      ```
+  requestBody:
+    description: Create a user
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/identity/users/create_user.yaml"
+    required: true
+  responses:
+    200:
+      $ref: "../../responses/identity/users/create_success.yaml"
+    401:
+      $ref: "../../responses/common/unauthorized.yaml"
+    403:
+      $ref: "../../responses/common/forbidden.yaml"
+    400:
+      $ref: "../../responses/common/validation_error.yaml"

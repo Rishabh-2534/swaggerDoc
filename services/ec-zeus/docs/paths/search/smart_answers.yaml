@@ -1,17 +1,17 @@
 post:
   tags:
     - Enterprise search
-  summary: Perform enterprise top search
-  description: Displays the results for the searched term in the top search tab
+  summary: Perform smart answer search
+  description: Generates a smart answer for the searched query
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: '../../schemas/search/top_search_request.yaml'
+          $ref: '../../schemas/search/smart_answers.yaml'
   responses:
     '200':
-      $ref: '../../responses/search/search_success.yaml'
+      $ref: '../../responses/search/smart_answers_success.yaml'
     '401':
       $ref: "../../responses/search/search_unauthorized_error.yaml"
     "400":

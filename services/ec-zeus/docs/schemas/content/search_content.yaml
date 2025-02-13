@@ -9,6 +9,8 @@ properties:
       - pending
       - rejected
       - unpublished
+      - validationExpired
+      - validationRequired
     example: published
   size:
     type: integer
@@ -18,10 +20,8 @@ properties:
     type: string
     description: Technique for sorting results
     enum:
-      - alphabetical
       - createdNewest
       - popularity
-      - featured
       - eventStartOldest
       - unreadMustReadNewest
       - modifiedNewest

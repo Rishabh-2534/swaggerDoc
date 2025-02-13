@@ -82,7 +82,9 @@ paths:
     /enterprise-search/search:
         $ref: "./paths/search/top_search.yaml"     
     /enterprise-search/autocomplete:
-        $ref: "./paths/search/autocomplete_search.yaml"     
+        $ref: "./paths/search/autocomplete_search.yaml"
+    /enterprise-search/smartanswers:
+        $ref: "./paths/search/smart_answers.yaml"       
     
 components:
     schemas:
