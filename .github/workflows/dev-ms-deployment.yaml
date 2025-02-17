@@ -1,4 +1,6 @@
 name: Microservice Deployment - Dev Environment
+run-name: Deploying ${{ inputs.artifact }} to ${{ inputs.environment }}
+
 on:
   push:
     branches:

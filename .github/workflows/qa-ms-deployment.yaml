@@ -1,4 +1,5 @@
 name: Microservice Deployment - QA Environment
+run-name: Deploying ${{ inputs.artifact }} to ${{ inputs.environment }}
 
 on:
   push:
