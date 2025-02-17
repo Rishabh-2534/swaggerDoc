@@ -1,4 +1,6 @@
 name: Microservice Deployment - Non Prod Environment
+run-name: Deploying ${{ inputs.artifact }} to ${{ inputs.environment }}
+
 on:
   workflow_dispatch:
     inputs:
@@ -32,3 +34,13 @@ jobs:
       ARTIFACT: "${{ inputs.artifact }}"
       TEAM_NAME: "integration"
     secrets: inherit
+
+  scheduled-deploy:
+    name: Scheduled Service Deployment
+    uses: Simpplr/github-shared-library/.github/workflows/service-deploy.yaml@main
+    with:
+      BRANCH: "develop"
+      ENVIRONMENT: "test" # or any other environment you want to target
+      TEAM_NAME: "integration"
+    secrets: inherit
+    if: github.event_name == 'schedule'
