@@ -1,4 +1,6 @@
 name: Microservice Deployment - Non Prod Environment
+run-name: Deploying ${{ inputs.artifact }} to ${{ inputs.environment }}
+
 on:
   workflow_dispatch:
     inputs:
