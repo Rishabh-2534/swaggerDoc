@@ -34,13 +34,3 @@ jobs:
       ARTIFACT: "${{ inputs.artifact }}"
       TEAM_NAME: "integration"
     secrets: inherit
-
-  scheduled-deploy:
-    name: Scheduled Service Deployment
-    uses: Simpplr/github-shared-library/.github/workflows/service-deploy.yaml@main
-    with:
-      BRANCH: "develop"
-      ENVIRONMENT: "test" # or any other environment you want to target
-      TEAM_NAME: "integration"
-    secrets: inherit
-    if: github.event_name == 'schedule'
