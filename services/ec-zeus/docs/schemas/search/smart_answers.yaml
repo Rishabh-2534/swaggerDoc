@@ -12,4 +12,4 @@ properties:
     description: The value for this can be either "global_search" ->  Starting of a conversation or "follow_up_search" -> Follow up question in current conversation thread. 
   conversation_id:
     type: string
-    description: Unique id that keeps track of the conversation thread. Note -> Same user account can have multiple conversation threads simultaneously.
+    description: Unique id that keeps track of the conversation thread. Note -> Same user account can have multiple conversation threads simultaneously. Example -> 5e9e42603e5d337ec8486d24cca3eb31
