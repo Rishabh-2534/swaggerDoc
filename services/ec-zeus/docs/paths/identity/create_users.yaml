@@ -1,4 +1,4 @@
-post:
+put:
   tags:
     - Users
   summary: Create users
