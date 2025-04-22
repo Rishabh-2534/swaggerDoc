@@ -1,0 +1,75 @@
+get:
+  operationId: getUsers
+  tags:
+    - Users
+  summary: Get Users
+  description: >
+        This API allows you to get all users of a tenant.
+  parameters:
+    - name: pageSize
+      in: query
+      description: The number of users to return per page.
+      required: false
+      schema:
+        type: integer
+        default: 50
+    - name: pageToken
+      in: query
+      description: Should be a integer returned as `nextPageToken` from previous page request
+      required: false
+      schema:
+        type: integer
+        example: 1
+    - name: includeTotal
+      in: query
+      description: >
+        Whether to include the total number of users in the response.
+        for true set it to `1` or `true`
+      required: false
+      schema:
+        type: string
+        example: "1"
+    - name: fields
+      in: query
+      description: >
+        Comma separated list of fields to include in the response.
+        use `all` to include all fields
+        use `minimal` to include only the login identifiers
+        use comma separated field names to include specific fields `Ex: firstName,lastName,etc`
+      required: false
+      schema:
+        type: string
+        default: minimal
+        enum:
+          - all
+          - minimal
+          - firstName,lastName,etc
+        example: firstName,lastName,etc
+    - name: sortBy
+      in: query
+      description: >
+        Field to sort the users by. value can be csv `Ex: firstName:ASC,lastName:DSC`
+      required: false
+      schema:
+        type: string
+        example: firstName:ASC,lastName:DSC
+    - name: filters
+      in: query
+      description: >
+        Filter users by any field. Format is field=value. Multiple filters can be combined with &.
+        Available fields: employeeNumber, firstName, lastName, email, department, etc.
+        `Ex: employeeNumber=123&firstName=abc`
+      required: false
+      schema:
+        type: string
+        example: "employeeNumber=123&firstName=abc"
+          
+  responses:
+    '200':
+      $ref: '../../../responses/identity/b2b/get_users_success.yaml'
+    '400':
+      $ref: '../../../responses/identity/b2b/get_users_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
