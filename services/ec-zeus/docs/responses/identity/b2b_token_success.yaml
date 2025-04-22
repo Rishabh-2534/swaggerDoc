@@ -1,0 +1,9 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        access_token:
+          type: "string"
+          example: "access_token"
