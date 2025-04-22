@@ -1,0 +1,55 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        result:
+          type: object
+          required:
+            - items
+          properties:
+            total:
+              type: integer
+              description: Total number of records found (will come if includeTotal is set to true or 1)
+              example: 7
+            items:
+              type: array
+              description: >
+                List of users
+                {
+                  ...all/minimal fields for a user
+                }
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the user
+                    example: 55526ef2-752a-47e3-affa-2fa0eaadc5eb
+                  firstName:
+                    type: string
+                    description: User's first name
+                    example: Jhon
+                  lastName:
+                    type: string
+                    description: User's last name
+                    example: smith
+                  email:
+                    type: string
+                    description: User's email address
+                    example: jhon.smith@example.com
+                  employeeNumber:
+                    type: string
+                    description: User's employee number
+                    example: "123456"
+                  department:
+                    type: string
+                    description: User's department
+                    example: Engineering
+            nextPageToken:
+              type: string
+              description: >
+                A token that can be used to get the next page of users.
+                This token is returned if there are more users to fetch.
+                The client should pass this token to the server to get the next page of users.
