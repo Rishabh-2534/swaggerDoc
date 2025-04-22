@@ -1,0 +1,15 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        status:
+          type: "string"
+          example: "SUCCESS"
+        result:
+          type: "object"
+          description: "Success response"
+        message:
+          type: "string"
+          example: "Integration with Extensibility Center B2B content management APIs is successful"

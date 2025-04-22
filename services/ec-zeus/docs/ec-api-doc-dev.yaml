@@ -88,10 +88,6 @@ paths:
         $ref: "./paths/identity/get_people_list.yaml"
     /identity/people/{peopleId}:
         $ref: "./paths/identity/update_people.yaml"
-
-    # Users
-    /b2b/identity/users:
-        $ref: "./paths/identity/create_users.yaml"
     
 components:
     schemas:

@@ -1,0 +1,44 @@
+---
+openapi: 3.0.2
+info:
+    version: 1.0.0
+    title: Simpplr B2b API Documentation
+    description: "API documentation for Simpplr B2B integration services"
+    contact:
+      name: Simpplr Support
+tags:
+    - name: Authorization
+      description: Everything about Authorization
+    - name: Users
+      description: Everything about Users
+    - name: Content
+      description: Everything about Content
+      
+
+
+servers:
+    - url: https://platform.{env}.simpplr.com/v1
+      variables:
+        env:
+            default: app
+paths:
+    /identity/oauth/token:
+        $ref: "./paths/identity/b2b_token.yaml"
+    /b2b/identity/users:
+        $ref: "./paths/identity/b2b/get_users.yaml"
+    /b2b/content/test:
+        $ref: "./paths/content/b2b/test.yaml"
+    /b2b/content/sites/list:
+        $ref: "./paths/content/b2b/get_sites.yaml"    
+
+components:
+    securitySchemes:
+        OAuth2ClientCredentials:
+            type: "oauth2"
+            description: "This API uses OAuth 2 with the implicit grant flow."
+            flows:
+                clientCredentials:
+                    tokenUrl: https://platform.{env}.simpplr.xyz/v1/identity/oauth/token
+                    scopes: {}
+security:
+    - OAuth2ClientCredentials: []
