@@ -9,7 +9,8 @@ info:
 tags:
     - name: Users
       description: Everything about Users
-
+    - name: Content
+      description: Everything about Content
 
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
@@ -23,6 +24,12 @@ paths:
         $ref: "./paths/identity/b2b_token.yaml"
     /b2b/identity/users:
         $ref: "./paths/identity/b2b/get_users.yaml"
+    /b2b/content/test:
+        $ref: "./paths/content/b2b/test.yaml"
+    /b2b/content/sites/list:
+        $ref: "./paths/content/b2b/get_sites.yaml"
+
+
 components:
     securitySchemes:
         OAuth2ClientCredentials:

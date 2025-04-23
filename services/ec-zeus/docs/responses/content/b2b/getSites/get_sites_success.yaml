@@ -1,0 +1,117 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains search results data
+          properties:
+            nextPageToken:
+              type: integer
+              example: 4
+              description: Token for retrieving the next page of results
+            totalRecords:
+              type: integer
+              example: 13
+              description: Total number of records matching the search criteria
+            listOfItems:
+              type: array
+              description: List of site search results
+              items:
+                type: object
+                properties:
+                  landingPage:
+                    type: string
+                    example: dashboard
+                    description: Default landing page for the site
+                    enum: [dashboard, feed, about]
+                  hasDashboard:
+                    type: boolean
+                    example: true
+                    description: Whether the site has a dashboard
+                  id:
+                    type: string
+                    example: 74a26dad-8a34-4303-b846-1ddd584aed95
+                    description: Unique identifier for the site
+                  name:
+                    type: string
+                    example: "$%#$%^$#^#%^%$#^%&$%^&$"
+                    description: Name of the site
+                  memberCount:
+                    type: integer
+                    example: 1
+                    description: Number of members in the site
+                  managerCount:
+                    type: integer
+                    example: 1
+                    description: Number of managers for the site
+                  followerCount:
+                    type: integer
+                    example: 0
+                    description: Number of followers for the site
+                  isFeatured:
+                    type: boolean
+                    example: false
+                    description: Whether the site is featured
+                  isActive:
+                    type: boolean
+                    example: true
+                    description: Whether the site is active
+                  category:
+                    type: object
+                    description: Category information for the site
+                    properties:
+                      name:
+                        type: string
+                        example: Uncategorized
+                        description: Name of the category
+                      id:
+                        type: string
+                        example: 73f929f9-5306-41f1-a59f-a7ab495633bc
+                        description: Unique identifier for the category
+                  siteType:
+                    type: string
+                    example: Public
+                    description: Type of the site
+                    enum: [Public, Private, Unlisted]
+                  img:
+                    type: string
+                    example: null
+                    description: URL to the site's image
+                  canCreatePages:
+                    type: boolean
+                    example: true
+                    description: Whether the current user can create pages in the site
+                  canCreateEvents:
+                    type: boolean
+                    example: true
+                    description: Whether the current user can create events in the site
+                  canCreateAlbums:
+                    type: boolean
+                    example: true
+                    description: Whether the current user can create albums in the site
+                  isContentSubmissionsEnabled:
+                    type: boolean
+                    example: true
+                    description: Whether content submissions are enabled for the site
+                  isMembershipAutoApproved:
+                    type: boolean
+                    example: false
+                    description: Whether membership requests are automatically approved
+                  createdOn:
+                    type: string
+                    format: date-time
+                    example: "2024-07-18T07:34:26.032Z"
+                    description: Date and time when the site was created
+                  updatedOn:
+                    type: string
+                    format: date-time
+                    example: "2025-04-14T22:45:31.219Z"
+                    description: Date and time when the site was last updated
