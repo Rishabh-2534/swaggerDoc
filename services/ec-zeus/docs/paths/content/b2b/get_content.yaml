@@ -1,0 +1,23 @@
+
+post:
+  operationId: getContentList
+  tags:
+    - Content
+  summary: Get content list
+  description: This API allows us to obtain list of content based on various filters
+  requestBody :
+     description: Get list of content based on request body from a Site
+     content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/b2b/request/get_content_request.yaml'
+     required: true
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/getContent/get_content_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/getContent/get_content_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

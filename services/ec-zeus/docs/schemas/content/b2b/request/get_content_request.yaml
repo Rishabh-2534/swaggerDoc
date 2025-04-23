@@ -1,0 +1,57 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: "Get Content List B2B Request Schema"
+description: "Schema for validating content list B2B API request"
+type: object
+properties:
+  updatedAfter:
+    type: string
+    format: date-time
+    description: "Filter content updated after this timestamp"
+
+  includeDeleted:
+    type: boolean
+    default: false
+    description: "Include deleted records in the response"
+
+  includeContentFromDeactivatedSites:
+    type: boolean
+    default: false
+    description: "Include content from deactivated sites in the response"
+
+  topicId:
+    type: string
+    format: uuid
+    description: "Filter content by topic ID"
+
+  filter:
+    type: string
+    enum: ["latest", "popular", "featured", "topic"]
+    description: "Filter criteria for content"
+
+  status:
+    type: string
+    enum: ["all", "published"]
+    description: "Status of content to filter. Use 'all' to fetch content with any status"
+    default: "published"
+
+  size:
+    type: integer
+    minimum: 1
+    maximum: 100
+    default: 16
+    description: "Number of items to return per page"
+
+  nextPageToken:
+    type: integer
+    description: Token for fetching the next page of results  
+
+if:
+  properties:
+    filter: 
+      const: "topic"
+  required: ["filter"]
+
+then:
+  required: ["topicId"]
+
+additionalProperties: false
