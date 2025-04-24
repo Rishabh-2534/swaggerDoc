@@ -53,16 +53,20 @@ get:
       schema:
         type: string
         example: firstName:ASC,lastName:DSC
-    - name: filters
+    - name: employeeNumber
       in: query
-      description: >
-        Filter users by any field. Format is field=value. Multiple filters can be combined with &.
-        Available fields: employeeNumber, firstName, lastName, email, department, etc.
-        `Ex: employeeNumber=123&firstName=abc`
+      description: filter users by employee number
       required: false
       schema:
         type: string
-        example: "employeeNumber=123&firstName=abc"
+        example: "E123"
+    - name: firstName
+      in: query
+      description: filter users by first name
+      required: false
+      schema:
+        type: string
+        example: "John"
           
   responses:
     '200':
