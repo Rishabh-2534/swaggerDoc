@@ -28,7 +28,7 @@ paths:
         $ref: "./paths/content/b2b/test.yaml"
     /b2b/content/sites/list:
         $ref: "./paths/content/b2b/get_sites.yaml"
-    /b2b/content/sites/content/list:
+    /b2b/content/sites/contents:
         $ref: "./paths/content/b2b/get_content.yaml"
 
 
