@@ -1,8 +1,8 @@
 get:
-  operationId: getContentList
+  operationId: getContents
   tags:
     - Content
-  summary: Get content list
+  summary: Get contents
   description: This API allows us to obtain list of content based on various filters
   parameters:
     $ref: '../../../schemas/content/b2b/request/get_content_request.yaml'
