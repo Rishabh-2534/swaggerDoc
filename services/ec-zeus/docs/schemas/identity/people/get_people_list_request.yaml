@@ -14,7 +14,7 @@ properties:
   pageToken:
     type: string
     description: >
-      Page token to get the next page of results.
+      Page token to get the next page of results. (can also be sent as `offset`)
       should be a string returned as `nextPageToken` from previous page request
   q:
     type: string
