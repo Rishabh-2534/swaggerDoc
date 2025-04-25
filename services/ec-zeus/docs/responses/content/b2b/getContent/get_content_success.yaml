@@ -1,0 +1,233 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains search results data
+          properties:
+            nextPageToken:
+              type: integer
+              example: 1
+              description: Token for retrieving the next page of results
+            totalRecords:
+              type: integer
+              example: 1
+              description: Total number of records matching the search criteria
+            listOfItems:
+              type: array
+              description: List of content items
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    example: 3091c303-7858-46f7-a9e2-ee59f2061481
+                    description: Unique identifier for the content
+                  title:
+                    type: string
+                    example: Test Page
+                    description: Title of the content
+                  type:
+                    type: string
+                    example: page
+                    description: Type of content
+                  status:
+                    type: string
+                    example: published
+                    description: Status of the content
+                  excerpt:
+                    type: string
+                    example: test
+                    description: Short excerpt of the content
+                  body:
+                    type: string
+                    example: "<p indentation=\"0\" textalign=\"left\" class=\"\">test</p>"
+                    description: Content body
+                  url:
+                    type: string
+                    example: 'https://test.com'
+                    description: URL of the content
+                  popularityScore:
+                    type: integer
+                    example: 10
+                    description: Popularity score of the content
+                  isPublished:
+                    type: boolean
+                    example: true
+                    description: Whether the content is published
+                  isDeleted:
+                    type: boolean
+                    example: false
+                    description: Whether the content is deleted
+                  isMustRead:
+                    type: boolean
+                    example: false
+                    description: Whether the content is must read
+                  isScheduled:
+                    type: boolean
+                    example: false
+                    description: Whether the content is scheduled
+                  contentSubType:
+                    type: string
+                    example: news
+                    description: Subtype of the content
+                  category:
+                    type: object
+                    description: Category information for the content
+                    properties:
+                      name:
+                        type: string
+                        example: Uncategorized
+                        description: Name of the category
+                      id:
+                        type: string
+                        format: uuid
+                        example: 9b08b57b-1142-4973-ab49-4b851d580b41
+                        description: Unique identifier for the category
+                  site:
+                    type: object
+                    description: Site information for the content
+                    properties:
+                      siteId:
+                        type: string
+                        format: uuid
+                        example: a5598e8d-16cd-43f1-9df0-399f34901d1b
+                        description: Unique identifier for the site
+                      siteName:
+                        type: string
+                        example: FunAjay
+                        description: Name of the site
+                  authoredBy:
+                    type: object
+                    description: Author information for the content
+                    properties:
+                      name:
+                        type: string
+                        example: Surajit Deka
+                        description: Name of the author
+                      id:
+                        type: string
+                        format: uuid
+                        example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
+                        description: Unique identifier for the author
+                  img:
+                    type: object
+                    description: Image information for the content
+                    properties:
+                      original:
+                        type: string
+                        nullable: true
+                        description: Original image URL
+                      landscape:
+                        type: string
+                        nullable: true
+                        description: Landscape image URL
+                      square:
+                        type: string
+                        nullable: true
+                        description: Square image URL
+                  contentAttribute:
+                    type: object
+                    description: Content engagement attributes
+                    properties:
+                      postCount:
+                        type: integer
+                        example: 0
+                        description: Number of posts
+                      likesCount:
+                        type: integer
+                        example: 0
+                        description: Number of likes
+                  createdAt:
+                    type: string
+                    format: date-time
+                    example: "2025-04-11T08:12:57.999Z"
+                    description: Date and time when the content was created
+                  updatedAt:
+                    type: string
+                    format: date-time
+                    example: "2025-04-23T02:24:12.406Z"
+                    description: Date and time when the content was last updated
+                  publishAt:
+                    type: string
+                    format: date-time
+                    example: "2025-04-11T08:12:00.000Z"
+                    description: Date and time when the content was published
+                  editedOn:
+                    type: string
+                    format: date-time
+                    example: "2025-04-11T08:12:57.999Z"
+                    description: Date and time when the content was last edited
+                  first_published_on:
+                    type: string
+                    format: date-time
+                    example: "2025-04-11T08:12:57.997Z"
+                    description: Date and time when the content was first published
+                  expiresAt:
+                    type: string
+                    format: date-time
+                    nullable: true
+                    description: Date and time when the content expires
+                  publishUntilTime:
+                    type: string
+                    format: date-time
+                    nullable: true
+                    description: Date and time until which the content is published
+                  lastDismissedAt:
+                    type: string
+                    format: date-time
+                    nullable: true
+                    description: Date and time when the content was last dismissed
+                  validationRequired:
+                    type: boolean
+                    example: false
+                    description: Whether validation is required for the content
+                  validationExpired:
+                    type: boolean
+                    example: false
+                    description: Whether validation has expired for the content
+                  isManualTrans:
+                    type: boolean
+                    nullable: true
+                    description: Whether manual translation is enabled for the content
+                  manualTransEnabled:
+                    type: boolean
+                    example: false
+                    description: Whether manual translation is enabled for the content
+                  versionId:
+                    type: integer
+                    example: 1
+                    description: Version identifier for the content
+                  language:
+                    type: string
+                    example: en
+                    description: Language of the content
+                  coverImgPublicUrl:
+                    type: string
+                    nullable: true
+                    description: Public URL of the cover image
+                  listOfTopics:
+                    type: array
+                    items: {}
+                    description: List of topics associated with the content
+                  listOfInlineTopics:
+                    type: array
+                    items: {}
+                    description: List of inline topics associated with the content
+                  summary:
+                    type: string
+                    nullable: true
+                    description: Summary of the content
+        message:
+          type: string
+          example: ""
+          description: Response message

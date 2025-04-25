@@ -1,0 +1,58 @@
+- name: updatedAfter
+  in: query
+  description: Filter content updated after this timestamp
+  schema:
+    type: string
+    format: date-time
+  required: false
+- name: includeDeleted
+  in: query
+  description: Include deleted records in the response
+  schema:
+    type: boolean
+    default: false
+  required: false
+- name: includeContentFromDeactivatedSites
+  in: query
+  description: Include content from deactivated sites in the response
+  schema:
+    type: boolean
+    default: false
+  required: false
+- name: topicId
+  in: query
+  description: Filter content by topic ID. Required when filter is set to "topic"
+  schema:
+    type: string
+    format: uuid
+  required: false
+- name: filter
+  in: query
+  description: Filter criteria for content. When set to "topic", topicId parameter is required
+  schema:
+    type: string
+    enum: ["latest", "popular", "featured", "topic"]
+  required: false
+- name: status
+  in: query
+  description: Status of content to filter. Use 'all' to fetch content with any status
+  schema:
+    type: string
+    enum: ["all", "published"]
+    default: "published"
+  required: false
+- name: size
+  in: query
+  description: Number of items to return per page
+  schema:
+    type: integer
+    minimum: 1
+    maximum: 100
+    default: 16
+  required: false
+- name: nextPageToken
+  in: query
+  description: Token for fetching the next page of results
+  schema:
+    type: integer
+  required: false

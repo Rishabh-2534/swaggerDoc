@@ -1,17 +1,11 @@
-
-get: 
-  operationId: getSiteList
+get:
+  operationId: getSites
   tags:
     - Content
-  summary: Get site list 
+  summary: Get sites
   description: This API allows us to obtain list of sites based on various filters
-  requestBody :
-     description: Get list of sites based on request body from a Site
-     content:
-      application/json:
-        schema:
-          $ref: ../../../schemas/content/b2b/request/get_sites_request.yaml
-     required: true
+  parameters:
+    $ref: '../../../schemas/content/b2b/request/get_sites_request.yaml'
   responses:
     '200':
       $ref: '../../../responses/content/b2b/getSites/get_sites_success.yaml'
