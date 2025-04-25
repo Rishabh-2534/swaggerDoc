@@ -6,15 +6,9 @@ properties:
       type: string
     description: List of fields to sort by and the sort order (asc or desc).
     example: ["user_name", "asc"]
-  size:
-    type: integer
-    description: Number of results to return.
-    default: 16
-    maximum: 200
-    example: 16
   pageSize:
     type: integer
-    description: Number of results to return. (size will be given preference)
+    description: Number of results to return. (can also be sent as `size`)
     maximum: 200
     example: 16
   pageToken:
