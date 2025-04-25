@@ -12,24 +12,20 @@ properties:
     default: 16
     maximum: 200
     example: 16
-  pageToken:
+  pageSize:
     type: integer
+    description: Number of results to return. (size will be given preference)
+    maximum: 200
+    example: 16
+  pageToken:
+    type: string
     description: >
       Page token to get the next page of results.
       should be a string returned as `nextPageToken` from previous page request
-    example: 21
   q:
     type: string
     description: Query string for searching users.
     example: ""
-  status:
-    type: array
-    items:
-      type: string
-      enum:
-        - Active
-    description: List of user status to filter by.
-    example: ["Active"]
   peopleCategoryId:
     type: array
     items:
