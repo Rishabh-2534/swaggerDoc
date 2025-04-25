@@ -7,6 +7,8 @@ info:
     contact:
       name: Simpplr Support
 tags:
+    - name: Authorization
+      description: Everything about Authorization
     - name: Users
       description: Everything about Users
     - name: Content

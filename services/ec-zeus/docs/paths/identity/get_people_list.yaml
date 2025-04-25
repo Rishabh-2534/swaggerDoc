@@ -1,16 +1,9 @@
 post:
+  operationId: getPeopleList
   tags:
     - People
   summary: Get people list with search or filter
-  description: >
-    This API allows you to get people list using search and filters.
-    Example body request:
-
-    ```json
-      {
-        "q": "" // if no values to be search, this should be sent as empty string.
-      }
-    ```
+  description: This API allows you to search/list people
   requestBody:
     description: Get people list
     content:
@@ -19,11 +12,11 @@ post:
           $ref: '../../schemas/identity/people/get_people_list_request.yaml'
     required: true
   responses:
-    200:
+    "200":
       $ref: '../../responses/identity/people/get_people_list_success.yaml'
-    400:
+    "400":
       $ref: '../../responses/identity/people/people_error.yaml'
-    401:
+    "401":
       $ref: '../../responses/common/unauthorized.yaml'
-    403:
+    "403":
       $ref: '../../responses/common/forbidden.yaml'
