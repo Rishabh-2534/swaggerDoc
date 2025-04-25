@@ -1,55 +1,63 @@
-type: object
-properties:
-  size:
+- name: size
+  in: query
+  description: Maximum number of results to return
+  schema:
     type: integer
-    description: Maximum number of results to return
-    example: 16
-    default: 16  
-    minimum: 1   
-    maximum: 500 
+    minimum: 1
+    maximum: 500
+    default: 16
+  required: false
 
-  nextPageToken:
+- name: nextPageToken
+  in: query
+  description: Token for fetching the next page of results
+  schema:
     type: integer
-    description: Token for fetching the next page of results  
+  required: false
 
-  filter:
+- name: filter
+  in: query
+  description: Optional filter for results
+  schema:
     type: string
-    description: Optional filter for results
-    enum:
-      - featured  
-    minLength: 1  
+    enum: ["featured"]
+    minLength: 1
     maxLength: 200
-    example: featured
+  required: false
 
-  sortBy:
+- name: sortBy
+  in: query
+  description: Technique for sorting results
+  schema:
     type: string
-    description: Technique for sorting results
-    default: alphabetical  
-    enum:
-      - alphabetical
-      - featured
-      - createdNewest
-      - popular
-      - updatedNewest
+    enum: ["alphabetical", "featured", "createdNewest", "popular", "updatedNewest"]
+    default: "alphabetical"
     minLength: 1
     maxLength: 255
-    example: popular
+  required: false
 
-  siteIds:
+- name: siteIds
+  in: query
+  description: Optional list of site UUIDs to filter the results
+  schema:
     type: array
     items:
       type: string
       format: uuid
-    description: Optional list of site UUIDs to filter the results  
+  required: false
 
-  updatedAfter:
+- name: updatedAfter
+  in: query
+  description: Only return results updated after this date-time
+  schema:
     type: string
     format: date-time
-    description: Only return results updated after this date-time  
+  required: false
 
-  includeDeactivated:
+- name: includeDeactivated
+  in: query
+  description: Whether to include deactivated sites or not
+  schema:
     type: boolean
-    description: Whether to include deactivated sites or not
-    default: false  
-
-additionalProperties: false
+    default: false
+  required: false
