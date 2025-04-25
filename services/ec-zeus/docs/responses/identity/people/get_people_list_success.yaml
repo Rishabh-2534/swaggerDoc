@@ -479,3 +479,6 @@ content:
                         description: Custom profile field 25
                         nullable: true
                         example: null
+            nextPageToken:
+              type: string
+              description: Next page token
