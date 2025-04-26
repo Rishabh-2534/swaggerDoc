@@ -28,10 +28,12 @@ paths:
         $ref: "./paths/identity/b2b/get_users.yaml"
     /b2b/content/test:
         $ref: "./paths/content/b2b/test.yaml"
+    /b2b/content/sites:
+        $ref: "./paths/content/b2b/get_sites.yaml"
     /b2b/content/sites/contents:
         $ref: "./paths/content/b2b/get_content.yaml"
-    /b2b/content/sites:
-        $ref: "./paths/content/b2b/get_sites.yaml"    
+    /b2b/content/sites/members:
+        $ref: "./paths/content/b2b/get_sites_members.yaml"
 
 components:
     securitySchemes:
