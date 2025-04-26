@@ -4,7 +4,7 @@ get:
   tags:
     - Content
   summary: Get site members list
-  description: This API allows us to obtain list of sites based on various filters
+  description: This API allows us to obtain list of sites members based on various filters
   parameters:
     $ref: '../../../schemas/content/b2b/request/get_sites_members_request.yaml'
   responses:

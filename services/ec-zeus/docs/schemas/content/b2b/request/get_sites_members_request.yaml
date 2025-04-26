@@ -4,8 +4,8 @@
   schema:
     type: integer
     minimum: 1
-    maximum: 500
-    default: 16
+    maximum: 1000
+    default: 50
   required: false
 
 - name: nextPageToken
@@ -49,4 +49,12 @@
       - manager
       - content_manager
       - member
+  required: false
+
+- name: includeDeleted
+  in: query
+  description: Whether to include deleted members in the response
+  schema:
+    type: boolean
+    default: false
   required: false
