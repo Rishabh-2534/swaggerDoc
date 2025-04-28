@@ -1,0 +1,53 @@
+type: object
+properties:
+  alertId:
+    type: "string"
+    example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+  authoredBy:
+    type: object
+    properties:
+      name:
+        type: "string"
+        example: "Joy"
+      id:
+        type: "string"
+        example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+  displayFrom:
+    type: "string"
+    example: "2024-02-28T21:00:00.000Z"
+  displayUntil:
+    type: "string"
+    example: "2024-02-28T21:00:00.000Z"
+  link:
+    type: "string"
+    example: "http://example.com"
+  message:
+    type: "string"
+    example: "Alert to organization"
+  recipientCount:
+    type: "integer"
+    example: 10
+  seenCount:
+    type: "integer"
+    example: 10
+  status:
+    type: "string"
+    example: "scheduled"    
+  audiences:
+    type: object
+    properties:
+      audienceName:
+        type: "string"
+        example: "HR Audience"
+      audienceId:
+        type: "string"
+        example: "7d99373a-8a8c-440a-8d90-e1c897498b3f"
+      isDeleted:
+        type: boolean
+        example: false 
+      usersCount:
+        type: integer
+        example: 10
+  createdAt:
+    type: "string"
+    example: "2024-02-14T12:36:38.151Z"
