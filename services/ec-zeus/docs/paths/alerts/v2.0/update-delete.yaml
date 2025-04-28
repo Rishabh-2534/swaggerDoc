@@ -1,0 +1,58 @@
+put:
+  tags:
+    - Alerts
+  summary: Update alert
+  description: Use this API to update/expire alert
+  parameters:
+    - name: alertId
+      in: path
+      description: "ID of alert to update"
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: Update alert
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/alerts/v2.0/update_request.yaml"
+    required: true
+  responses:
+    200:
+      $ref: "../../responses/alerts/update_success.yaml"
+    401:
+      $ref: "../../responses/common/unauthorized.yaml"
+    403:
+      $ref: "../../responses/common/forbidden.yaml"
+    400:
+      $ref: "../../responses/common/validation_error.yaml"
+
+delete:
+  tags:
+    - Alerts
+  summary: Delete alert
+  description: This API allows us to delete an Alert using alert id. But you can only delete schedueled alerts.
+  parameters:
+    - name: alertId
+      in: path
+      description: "ID of alert to delete"
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: Delete alert
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/alerts/v2.0/delete_request.yaml"
+    required: true
+  responses:
+    200:
+      $ref: "../../responses/alerts/delete_success.yaml"
+    401:
+      $ref: "../../responses/common/unauthorized.yaml"
+    400:
+      $ref: "../../responses/common/validation_error.yaml"
+    403:
+      $ref: "../../responses/common/forbidden.yaml"
+

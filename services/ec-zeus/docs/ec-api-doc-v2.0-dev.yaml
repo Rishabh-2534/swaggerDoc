@@ -20,9 +20,9 @@ paths:
 
     # Alerts
     /alerts:
-        $ref: "./paths/alerts/create-search.yaml"
+        $ref: "./paths/alerts/v2.0/create-search.yaml"
     /alerts/{alertId}:
-        $ref: "./paths/alerts/update-delete.yaml"
+        $ref: "./paths/alerts/v2.0/update-delete.yaml"
     
 components:
     schemas:
@@ -35,7 +35,7 @@ components:
             description: "This API uses OAuth 2 with the implicit grant flow."
             flows:
                 implicit:
-                    authorizationUrl:  https://platform.test.simpplr.xyz/v2
+                    authorizationUrl:  https://platform.test.simpplr.xyz/v1
                     scopes:
                         read: "read data"
                         write: "create/update data"

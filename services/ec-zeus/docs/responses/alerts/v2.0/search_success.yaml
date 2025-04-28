@@ -1,0 +1,22 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: "integer"
+          example: 200
+        result:
+          type: object
+          properties:
+            listOfItems:
+              type: "array"
+              items:
+                $ref: "../../schemas/alerts/v2.0/alert.yaml"
+            nextPageToken:
+              type: integer
+              example: 16
+        message:
+          type: "string"
+          example: "Alerts retrived successfully."
