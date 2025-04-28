@@ -31,7 +31,7 @@ jobs:
         uses: readmeio/rdme@v8
         with:
           working-directory: ./services/ec-zeus/docs
-          rdme: openapi ec-api-doc-v2.0-dev.yaml --workingDirectory=./services/ec-zeus/docs --key=${{ secrets.DEV_README_API_KEY }} --id=${{ secrets.DEV_API_DEFINITION_ID }} --version=2.0
+          rdme: openapi ec-api-doc-v2.0-dev.yaml --workingDirectory=./services/ec-zeus/docs --key=${{ secrets.DEV_README_API_KEY }} --id=${{ secrets.DEV_API_DEFINITION_V2_ID }} --version=2.0
 
 
       - name: Sync OpenAPI B2B definition to ReadMe Development
