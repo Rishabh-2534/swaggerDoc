@@ -13,7 +13,7 @@ content:
             listOfItems:
               type: "array"
               items:
-                $ref: "../../schemas/alerts/v2.0/alert.yaml"
+                $ref: "../../../schemas/alerts/v2.0/alert.yaml"
             nextPageToken:
               type: integer
               example: 16
