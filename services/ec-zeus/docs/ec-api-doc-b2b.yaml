@@ -22,10 +22,15 @@ servers:
         env:
             default: app
 paths:
+    # Authorization
     /identity/oauth/token:
         $ref: "./paths/identity/b2b_token.yaml"
+    # Users
     /b2b/identity/users:
-        $ref: "./paths/identity/b2b/get_users.yaml"
+        $ref: "./paths/identity/b2b/get_create_users.yaml"
+    /b2b/identity/users/{userId}:
+        $ref: "./paths/identity/b2b/get_update_user.yaml"
+    # Content
     /b2b/content/test:
         $ref: "./paths/content/b2b/test.yaml"
     /b2b/content/sites:

@@ -1,0 +1,5 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      $ref: "../../../schemas/identity/Users/get_user.yaml"

@@ -1,0 +1,36 @@
+required:
+  - message
+  - displayFrom
+  - displayUntil
+  - isDismissable
+  - status
+type: object
+properties:
+  message:
+    type: string
+    description: The Alert message to be displayed on the pop up
+    example: This is alert
+  link:
+    type: string
+    description: Target link for the Alert
+    example: https://example.com
+  audiences:
+    type: string
+    description: ID of the recipient
+  displayFrom:
+    type: string
+    description: UTC Time from which this Alert should be displayed
+    example: "2024-02-28T21:00:00.000Z"
+  displayUntil:
+    type: string
+    description: UTC Time to which this Alert should be displayed
+    example: "2024-02-29T21:00:00.000Z"
+  isDismissable:
+    type: boolean
+    description: "true: The Alert can be dismissed by users. \n false: The Alert cannot be dismissed by users."
+  status:
+    type: string
+    description: "Status of alert."
+    enum:
+      - active
+      - scheduled

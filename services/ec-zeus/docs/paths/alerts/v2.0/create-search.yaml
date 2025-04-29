@@ -1,0 +1,84 @@
+get:
+  tags:
+    - Alerts
+  summary: Search alerts
+  description: Search api allows us to retrieves list of alerts, encompassing active, scheduled and expired alerts.
+  parameters:
+    - name: size
+      in: query
+      description: A limit on the number of alerts to return in a request.
+      schema:
+        type: integer
+        format: int64
+        example: 10
+    - name: nextPageToken
+      in: query
+      description: Token for next page
+      schema:
+        type: string
+    - name: recipient
+      in: query
+      description: 'Returns alerts based on the receiving audience.'
+      schema:
+        type: string
+    - name: term
+      in: query
+      description: 'Search term'
+      schema:
+        type: string
+    - name: sortBy
+      in: query
+      description: Allows the alerts to be Sorted in order based on the created on or display timestamp.
+      schema:
+        type: string
+        enum:
+        - created_newest
+        - created_oldest
+        - display_from_date_newest
+        - display_from_date_oldest
+        - display_to_date_newest
+        - display_to_date_oldest
+    - name: filter
+      in: query
+      description: Returns alerts based on the status of the alert. By default it is set to all.
+      required: true
+      schema:
+        type: string
+        default: all
+        enum:
+        - all
+        - scheduled
+        - active
+        - expired
+  responses:
+    200:
+      $ref: "../../../responses/alerts/v2.0/search_success.yaml"
+    401:
+      $ref: "../../../responses/common/unauthorized.yaml"
+    403:
+      $ref: "../../../responses/common/forbidden.yaml"
+    500:
+      $ref: "../../../responses/alerts/search_error.yaml"
+post:
+  tags:
+    - Alerts
+  summary: Create a new alert
+  description: Create API allows us to create a new alert, whose status can be either active or schedueled.
+  requestBody:
+    description: Create a new alert
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/alerts/v2.0/create_request.yaml'
+    required: true
+  responses:
+    200:
+      $ref: '../../../responses/alerts/create_success.yaml'
+    400:
+      $ref: '../../../responses/alerts/create_error.yaml'
+    401:
+      $ref: '../../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../../responses/common/forbidden.yaml'
+    500:
+      $ref: "../../../responses/alerts/search_error.yaml"
