@@ -48,7 +48,7 @@
 
 - name: modifiedAfter
   in: query
-  description: Only return results modified after this date-time
+  description: Only return results modified after this date-time. Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)
   schema:
     type: string
     format: date-time
