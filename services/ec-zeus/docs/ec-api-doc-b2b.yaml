@@ -37,6 +37,8 @@ paths:
         $ref: "./paths/content/b2b/get_sites.yaml"
     /b2b/content/sites/contents:
         $ref: "./paths/content/b2b/get_content.yaml"
+    /b2b/content/sites/members:
+        $ref: "./paths/content/b2b/get_sites_members.yaml"
 
 components:
     securitySchemes:
