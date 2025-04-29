@@ -3,7 +3,7 @@ get:
   operationId: getSiteMembersList
   tags:
     - Content
-  summary: Get site members list
+  summary: Get site members
   description: This API allows us to obtain list of sites members based on various filters
   parameters:
     $ref: '../../../schemas/content/b2b/request/get_sites_members_request.yaml'

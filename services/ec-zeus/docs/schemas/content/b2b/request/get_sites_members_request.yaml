@@ -31,9 +31,9 @@
     format: uuid
   required: false
 
-- name: updatedAfter
+- name: modifiedAfter
   in: query
-  description: Only return results updated after this date-time
+  description: Only return results modified after this date-time
   schema:
     type: string
     format: date-time

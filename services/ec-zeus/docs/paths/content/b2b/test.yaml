@@ -1,11 +1,11 @@
 get:
   operationId: test
   tags:
-    - Content
+    - Authorization
   summary: Test
   description: >
         This API allows you to test integration with extensibility center B2B api
- 
+
   responses:
     '200':
       $ref: '../../../responses/content/b2b/test/success.yaml'
