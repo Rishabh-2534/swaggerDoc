@@ -1,0 +1,12 @@
+description: "not found error"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message indicating validation failure
+          example: "User not found"
+      required:
+        - message
