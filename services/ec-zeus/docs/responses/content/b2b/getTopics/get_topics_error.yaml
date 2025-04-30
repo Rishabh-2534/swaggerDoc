@@ -1,0 +1,45 @@
+description: Error
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Error status
+          enum: [error]
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              seq_id:
+                type: integer
+                example: 0
+              field_name:
+                type: string
+                example: "size"
+              error_code:
+                type: integer
+                example: 1004
+              message:
+                type: string
+                example: "Invalid 'size' value. Must be between 1 and 50"
+          examples:
+            - seq_id: 0
+              field_name: size
+              error_code: 1004
+              message: "Invalid 'size' value. Must be between 1 and 50"
+            - seq_id: 1
+              field_name: modifiedAfter
+              error_code: 1005
+              message: "Invalid 'modifiedAfter' value - Filter topics modified after this date-time. Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)"
+            - seq_id: 2
+              field_name: includeDeleted
+              error_code: 1006
+              message: "Invalid 'includeDeleted' value - must be 'true' or 'false'"
+        message:
+          type: string
+          example: "Validation failed - one or more parameters are invalid"
+          description: General error message

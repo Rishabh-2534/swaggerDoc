@@ -37,6 +37,10 @@ paths:
         $ref: "./paths/content/b2b/get_sites.yaml"
     /b2b/content/sites/contents:
         $ref: "./paths/content/b2b/get_content.yaml"
+    /b2b/content/carousel-items:
+        $ref: "./paths/content/b2b/get_carousel_items.yaml"
+    /b2b/content/topics:
+        $ref: "./paths/content/b2b/get_topics.yaml"
     /b2b/content/sites/members:
         $ref: "./paths/content/b2b/get_sites_members.yaml"
 

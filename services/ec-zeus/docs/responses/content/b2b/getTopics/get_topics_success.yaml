@@ -1,0 +1,37 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains topics results data
+          properties:
+            listOfItems:
+              type: array
+              description: List of topics
+              example:
+                - id: "39326777-37ac-4f89-a91d-54212ddc1356"
+                  name: "Marketing"
+                - id: "d6fe438a-d956-4292-a25b-6e777cbc26d4"
+                  name: "Product Updates"
+                - id: "070b353d-68e1-4d64-aa5b-d59ed15036b5"
+                  name: "Company News"
+                - id: "aaab3dcd-7e6f-4958-891d-dad8a0ad35b1"
+                  name: "HR Announcements"
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    description: Unique identifier for the topic
+                  name:
+                    type: string
+                    description: Name of the topic
