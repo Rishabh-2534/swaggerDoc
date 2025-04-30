@@ -26,30 +26,35 @@ content:
               message:
                 type: string
                 example: "Invalid 'siteId' value - must be a valid UUID format"
-          examples:
-            - seq_id: 0
-              field_name: siteId
-              error_code: 1004
-              message: "Invalid 'siteId' value - must be a valid UUID format"
-            - seq_id: 1
-              field_name: segmentId
-              error_code: 1004
-              message: "Invalid 'segmentId' value - must be a valid UUID format"
-            - seq_id: 2
-              field_name: modifiedAfter
-              error_code: 1005
-              message: "Invalid 'modifiedAfter' value - must be a valid date-time format. Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)"
-            - seq_id: 3
-              message: "Invalid 'includeDeleted' value - must be 'true' or 'false'"
-            - seq_id: 4
-              field_name: includeDisabledContentTypes
-              error_code: 1006
-              message: "Invalid 'includeDisabledContentTypes' value - must be 'true' or 'false'"
-            - seq_id: 5
-              field_name: ignoreCarouselDisablement
-              error_code: 1006
-              message: "Invalid 'ignoreCarouselDisablement' value - must be 'true' or 'false'"
         message:
           type: string
           example: "Validation failed - one or more parameters are invalid"
           description: General error message
+    examples:
+      invalidSiteId:
+        value:
+          status: error
+          errors:
+            - seq_id: 0
+              field_name: siteId
+              error_code: 1004
+              message: "Invalid 'siteId' value - must be a valid UUID format"
+          message: "Validation failed - one or more parameters are invalid"
+      invalidSegmentId:
+        value:
+          status: error
+          errors:
+            - seq_id: 1
+              field_name: segmentId
+              error_code: 1004
+              message: "Invalid 'segmentId' value - must be a valid UUID format"
+          message: "Validation failed - one or more parameters are invalid"
+      invalidModifiedAfter:
+        value:
+          status: error
+          errors:
+            - seq_id: 2
+              field_name: modifiedAfter
+              error_code: 1005
+              message: "Invalid 'modifiedAfter' value - must be a valid date-time format. Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)"
+          message: "Validation failed - one or more parameters are invalid"
