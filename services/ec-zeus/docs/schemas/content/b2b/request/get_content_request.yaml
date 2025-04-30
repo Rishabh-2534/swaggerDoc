@@ -1,9 +1,10 @@
-- name: updatedAfter
+- name: modifiedAfter
   in: query
-  description: Filter content updated after this timestamp
+  description: Filter content modified after this date-time. Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)
   schema:
     type: string
     format: date-time
+    example: "2025-04-09T18:30:00.000Z"
   required: false
 - name: includeDeleted
   in: query
