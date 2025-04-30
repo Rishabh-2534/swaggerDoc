@@ -1,14 +1,14 @@
 get:
-  operationId: test
+  operationId: testToken
   tags:
     - Authorization
   summary: Test
   description: >
-        This API allows you to test integration with extensibility center B2B api
+        This API allows you to test integration with Extensibility Center B2B API's
 
   responses:
     '200':
-      $ref: '../../../responses/content/b2b/test/success.yaml'
+      $ref: '../../../responses/identity/b2b/test/success.yaml'
     '400':
       $ref: '../../../responses/common/error.yaml'
     '401':

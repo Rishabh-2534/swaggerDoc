@@ -30,9 +30,9 @@ paths:
         $ref: "./paths/identity/b2b/get_create_users.yaml"
     /b2b/identity/users/{userId}:
         $ref: "./paths/identity/b2b/get_update_user.yaml"
+    /b2b/identity/test:
+        $ref: "./paths/identity/b2b/test.yaml"
     # Content
-    /b2b/content/test:
-        $ref: "./paths/content/b2b/test.yaml"
     /b2b/content/sites:
         $ref: "./paths/content/b2b/get_sites.yaml"
     /b2b/content/sites/contents:
