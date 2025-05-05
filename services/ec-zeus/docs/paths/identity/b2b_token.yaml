@@ -2,7 +2,7 @@ post:
   operationId: b2b_token
   tags:
     - Authorization
-  summary: Authorization
+  summary: Get Access Token
   description: This API allows you to generate the access token.
   requestBody:
     content:
@@ -19,3 +19,5 @@ post:
       $ref: '../../responses/common/unauthorized.yaml'
     '403':
       $ref: '../../responses/common/forbidden.yaml'
+  security:
+    - {}

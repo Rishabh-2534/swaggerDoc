@@ -2,7 +2,7 @@
 openapi: 3.0.2
 info:
     version: 1.0.0
-    title: Simpplr API Documentation
+    title: Simpplr User API Documentation
     description: ""
 tags:
     - name: Alerts
