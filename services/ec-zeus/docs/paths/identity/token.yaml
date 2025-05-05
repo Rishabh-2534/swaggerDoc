@@ -2,7 +2,7 @@ post:
   operationId: authorize
   tags:
     - Authorization
-  summary: Authorization
+  summary: Get Access & Refresh Token
   description: This API allows you to generate the access token or refresh token for authorization code.
   requestBody:
     content:
@@ -19,3 +19,5 @@ post:
       $ref: '../../responses/common/unauthorized.yaml'
     '403':
       $ref: '../../responses/common/forbidden.yaml'
+  security:
+    - {}

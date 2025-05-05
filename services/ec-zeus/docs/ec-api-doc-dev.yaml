@@ -2,15 +2,15 @@
 openapi: 3.0.2
 info:
     version: 1.0.0
-    title: Simpplr API Documentation
+    title: Simpplr User API Documentation
     description: ""
 tags:
+    - name: Authorization
+      description: Everything about Authorization
     - name: Alerts
       description: Everything about Alerts
     - name: Audience
       description: Everything about Audience
-    - name: Authorization
-      description: Everything about Authorization
     - name: Content
       description: Everything about Content
     - name: Enterprise search
@@ -33,7 +33,7 @@ servers:
 paths:
     # Authorization
     /identity/oauth/token:
-        $ref: "./paths/identity/authorize.yaml"
+        $ref: "./paths/identity/token.yaml"
 
     # Notifications
     /notifications:
