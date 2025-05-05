@@ -4,14 +4,8 @@
   schema:
     type: integer
     minimum: 1
-    maximum: 50
-    default: 16
-  required: false
-- name: term
-  in: query
-  description: Search term to filter topics by name
-  schema:
-    type: string
+    maximum: 1000
+    default: 50
   required: false
 - name: modifiedAfter
   in: query
