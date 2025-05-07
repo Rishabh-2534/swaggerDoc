@@ -18,7 +18,7 @@ get:
       description: Should be a integer returned as `nextPageToken` from previous page request
       required: false
       schema:
-        type: integer
+        type: string
     - name: includeTotal
       in: query
       description: >
@@ -26,8 +26,8 @@ get:
         To include set it to `true`
       required: false
       schema:
-        type: string
-        example: "false"
+        type: boolean
+        default: false
     - name: fields
       in: query
       description: |
