@@ -18,17 +18,16 @@ get:
       description: Should be a integer returned as `nextPageToken` from previous page request
       required: false
       schema:
-        type: integer
-        example: 1
+        type: string
     - name: includeTotal
       in: query
       description: >
         Whether to include the total number of users in the response.
-        for true set it to `1` or `true`
+        To include set it to `true`
       required: false
       schema:
-        type: string
-        example: "1"
+        type: boolean
+        default: false
     - name: fields
       in: query
       description: |

@@ -56,5 +56,6 @@
   description: Whether to include deleted members in the response
   schema:
     type: boolean
+    example: false
     default: false
   required: false

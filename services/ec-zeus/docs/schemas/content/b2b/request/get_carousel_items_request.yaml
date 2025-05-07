@@ -18,29 +18,28 @@
   schema:
     type: string
     format: date-time
-    example: "2025-04-09T18:30:00.000Z"
   required: false
 - name: includeDeleted
   in: query
   description: Include deleted carousel items in the response
   schema:
-    type: string
-    enum: ["true", "false"]
-    default: "false"
+    type: boolean
+    example: false
+    default: false
   required: false
 - name: includeDisabledContentTypes
   in: query
   description: Include items with disabled content types in the response
   schema:
-    type: string
-    enum: ["true", "false"]
-    default: "false"
+    type: boolean
+    example: false
+    default: false
   required: false
 - name: ignoreCarouselDisablement
   in: query
   description: Ignore carousel disablement settings
   schema:
-    type: string
-    enum: ["true", "false"]
-    default: "false"
+    type: boolean
+    example: false
+    default: false
   required: false
