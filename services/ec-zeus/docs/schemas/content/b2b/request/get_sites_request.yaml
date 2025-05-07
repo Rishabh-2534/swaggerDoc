@@ -31,6 +31,7 @@
   schema:
     type: string
     enum: ["alphabetical", "featured", "createdNewest", "popular", "updatedNewest"]
+    example: "alphabetical"
     default: "alphabetical"
     minLength: 1
     maxLength: 255
@@ -59,5 +60,6 @@
   description: Whether to include deactivated sites or not
   schema:
     type: boolean
+    example: false
     default: false
   required: false

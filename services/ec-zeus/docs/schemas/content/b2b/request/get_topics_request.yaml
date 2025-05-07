@@ -13,15 +13,14 @@
   schema:
     type: string
     format: date-time
-    example: "2025-04-09T18:30:00.000Z"
   required: false
 - name: includeDeleted
   in: query
   description: Include deleted topics in the response
   schema:
-    type: string
-    enum: ["true", "false"]
-    default: "false"
+    type: boolean
+    example: false
+    default: false"
   required: false
 - name: nextPageToken
   in: query
