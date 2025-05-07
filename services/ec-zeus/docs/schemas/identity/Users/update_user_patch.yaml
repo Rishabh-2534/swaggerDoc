@@ -1,9 +1,6 @@
 type: object
+description: Update user request
 properties:
-  id:
-    type: string
-    description: Unique identifier for the user
-    example: 55526ef2-752a-47e3-affa-2fa0eaadc5eb
   username:
     type: string
     description: User's username
@@ -11,7 +8,10 @@ properties:
   status:
     type: string
     description: User's status
-    example: Active
+    enum:
+      - Active
+      - Inactive
+      - Freezed
   firstName:
     type: string
     description: User's first name
@@ -60,22 +60,10 @@ properties:
     type: string
     description: URL to the user's cover image
     example: /cover-image/55526ef2-752a-47e3-affa-2fa0eaadc5eb
-  birthDayDay:
-    type: string
-    description: User's birth day
-    example: "30"
-  birthDayMonth:
-    type: string
-    description: User's birth month
-    example: "10"
   peopleCategory:
     type: string
     description: User's people category
     example: Employee
-  segmentId:
-    type: string
-    description: User's segment id
-    example: 55526ef2-752a-47e3-affa-2fa0eaadc5eb
   timezone:
     type: string
     description: User's timezone
@@ -84,14 +72,6 @@ properties:
     type: string
     description: User's locale
     example: en_IN
-  reprovOn:
-    type: string
-    description: User's reprovisioning date
-    example: 2021-01-01
-  deprovOn:
-    type: string
-    description: User's deprovisioning date
-    example: 2021-01-01
   managerId:
     type: string
     description: User's manager id
@@ -144,14 +124,175 @@ properties:
     type: string
     description: User's pay currency
     example: USD
-  createdOn:
-    type: string
-    description: User's creation timestamp
-    example: 2024-12-18T12:54:06.729Z
-  modifiedOn:
-    type: string
-    description: User's update timestamp
-    example: 2024-12-18T12:54:06.729Z
+    enum:
+      - AED
+      - AFN
+      - ALL
+      - AMD
+      - ANG
+      - AOA
+      - ARS
+      - AUD
+      - AWG
+      - AZN
+      - BAM
+      - BBD
+      - BDT
+      - BGN
+      - BHD
+      - BIF
+      - BMD
+      - BND
+      - BOB
+      - BOV
+      - BRL
+      - BSD
+      - BTN
+      - BWP
+      - BYN
+      - BZD
+      - CAD
+      - CDF
+      - CHE
+      - CHF
+      - CHW
+      - CLF
+      - CLP
+      - CNY
+      - COP
+      - COU
+      - CRC
+      - CUC
+      - CUP
+      - CVE
+      - CZK
+      - DJF
+      - DKK
+      - DOP
+      - DZD
+      - EGP
+      - ERN
+      - ETB
+      - EUR
+      - FJD
+      - FKP
+      - GBP
+      - GEL
+      - GHS
+      - GIP
+      - GMD
+      - GNF
+      - GTQ
+      - GYD
+      - HKD
+      - HNL
+      - HTG
+      - HUF
+      - IDR
+      - ILS
+      - INR
+      - IQD
+      - IRR
+      - ISK
+      - JMD
+      - JOD
+      - JPY
+      - KES
+      - KGS
+      - KHR
+      - KMF
+      - KPW
+      - KRW
+      - KWD
+      - KYD
+      - KZT
+      - LAK
+      - LBP
+      - LKR
+      - LRD
+      - LSL
+      - LYD
+      - MAD
+      - MDL
+      - MGA
+      - MKD
+      - MMK
+      - MNT
+      - MOP
+      - MRU
+      - MUR
+      - MVR
+      - MWK
+      - MXN
+      - MXV
+      - MYR
+      - MZN
+      - NAD
+      - NGN
+      - NIO
+      - NOK
+      - NPR
+      - NZD
+      - OMR
+      - PAB
+      - PEN
+      - PGK
+      - PHP
+      - PKR
+      - PLN
+      - PYG
+      - QAR
+      - RON
+      - RSD
+      - RUB
+      - RWF
+      - SAR
+      - SBD
+      - SCR
+      - SDG
+      - SEK
+      - SGD
+      - SHP
+      - SLE
+      - SOS
+      - SRD
+      - SSP
+      - STN
+      - SVC
+      - SYP
+      - SZL
+      - THB
+      - TJS
+      - TMT
+      - TND
+      - TOP
+      - TRY
+      - TTD
+      - TWD
+      - TZS
+      - UAH
+      - UGX
+      - USD
+      - USN
+      - UYI
+      - UYU
+      - UZS
+      - VED
+      - VEF
+      - VND
+      - VUV
+      - WST
+      - XAF
+      - XCD
+      - XDR
+      - XOF
+      - XPF
+      - XSU
+      - XUA
+      - YER
+      - ZAR
+      - ZMW
+      - ZWL
   licenseType:
     type: string
     description: User's license type

@@ -299,14 +299,6 @@ properties:
       - ZAR
       - ZMW
       - ZWL
-  createdOn:
-    type: string
-    description: User creation timestamp
-    example: 2024-12-18T12:54:06.729Z
-  modifiedOn:
-    type: string
-    description: User modification timestamp
-    example: 2024-12-18T12:54:06.729Z
   licenseType:
     type: string
     description: User's license type
