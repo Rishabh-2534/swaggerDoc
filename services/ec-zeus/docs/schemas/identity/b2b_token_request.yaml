@@ -16,3 +16,7 @@ properties:
   client_secret:
     type: string
     description: The client secret specific to you client application.
+  scope:
+    type: string
+    enum: ['read', 'write', 'everything']
+    description: The client secret specific to you client application.

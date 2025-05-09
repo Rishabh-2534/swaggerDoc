@@ -24,7 +24,7 @@ servers:
 paths:
     # Authorization
     /identity/oauth/token:
-        $ref: "./paths/identity/b2b_token.yaml"
+        $ref: "./paths/identity/b2b/token.yaml"
     # Users
     /b2b/identity/users:
         $ref: "./paths/identity/b2b/get_create_users.yaml"
