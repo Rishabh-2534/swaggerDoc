@@ -19,4 +19,5 @@ properties:
   scope:
     type: string
     enum: ['read', 'write', 'everything']
-    description: The client secret specific to you client application.
+    default: 'read'
+    description: Use scope to limit access token privileges.
