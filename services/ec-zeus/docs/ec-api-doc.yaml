@@ -29,7 +29,7 @@ servers:
             default: app
 paths:
     # Authorization
-    /identity/oauth/authorize:
+    /identity/oauth/token:
         $ref: "./paths/identity/token.yaml"
 
     # Notifications
