@@ -1,0 +1,23 @@
+post:
+  operationId: b2b_token
+  tags:
+    - Authorization
+  summary: Get Access Token
+  description: This API allows you to generate the access token.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/identity/b2b_token_request.yaml'
+    required: true
+  responses:
+    '200':
+      $ref: '../../../responses/identity/b2b_token_success.yaml'
+    '400':
+      $ref: '../../../responses/identity/auth_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+  security:
+    - {}

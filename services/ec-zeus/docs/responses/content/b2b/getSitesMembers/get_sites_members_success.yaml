@@ -1,0 +1,73 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains site members data
+          properties:
+            totalRows:
+              type: integer
+              example: 3
+              description: Total number of records matching the criteria
+            listOfItems:
+              type: array
+              description: List of site members
+              items:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                    example: 0f0c82eb-1c72-4614-9524-6f7c3eda6bd6
+                    description: Unique identifier for the user
+                  siteId:
+                    type: string
+                    example: 3c585787-8ab8-4efd-9044-a638592bb7fc
+                    description: Identifier for the site
+                  membershipRequestId:
+                    type: string
+                    example: 25482d46-7a67-4a81-b826-497cd19c015d
+                    description: Unique identifier for the site membership
+                  role:
+                    type: object
+                    description: Role information for the user in the site
+                    properties:
+                      siteRoleId:
+                        type: integer
+                        example: 2
+                        description: Role identifier for the user in the site
+                      siteRoleName:
+                        type: string
+                        example: manager
+                        description: Role name for the user in the site
+                        enum: [manager, member, follower]
+                  status:
+                    type: string
+                    example: Active
+                    description: Status of the membership
+                    enum: [Active, Inactive, Pending]
+                  createdOn:
+                    type: string
+                    format: date-time
+                    example: "2025-04-23T04:17:58.966Z"
+                    description: Date and time when the membership was created
+                  modifiedOn:
+                    type: string
+                    format: date-time
+                    example: "2025-04-23T04:19:38.056Z"
+                    description: Date and time when the membership was last modified
+                  createdBy:
+                    type: string
+                    example: 0f0c82eb-1c72-4614-9524-6f7c3eda6bd6
+                    description: Unique identifier of the user who created the membership
+                  modifiedBy:
+                    type: string
+                    example: a87db71b-95d2-400b-ad21-6edce232b87a
+                    description: Unique identifier of the user who last modified the membership

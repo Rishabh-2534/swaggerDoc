@@ -1,0 +1,61 @@
+- name: size
+  in: query
+  description: Maximum number of results to return
+  schema:
+    type: integer
+    minimum: 1
+    maximum: 1000
+    default: 50
+  required: false
+
+- name: nextPageToken
+  in: query
+  description: Token for fetching the next page of results
+  schema:
+    type: integer
+  required: false
+
+- name: userId
+  in: query
+  description: Optional user ID to filter the results
+  schema:
+    type: string
+    format: uuid
+  required: false
+
+- name: siteId
+  in: query
+  description: Optional site ID to filter the results
+  schema:
+    type: string
+    format: uuid
+  required: false
+
+- name: modifiedAfter
+  in: query
+  description: Only return results modified after this date-time. Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)
+  schema:
+    type: string
+    format: date-time
+  required: false
+
+- name: roleType
+  in: query
+  description: Optional role type to filter the results
+  schema:
+    type: string
+    enum:
+      - owner
+      - manager
+      - content_manager
+      - member
+  required: false
+
+- name: includeDeleted
+  in: query
+  description: Whether to include deleted members in the response
+  schema:
+    type: boolean
+    example: false
+    default: false
+  required: false

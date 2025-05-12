@@ -1,0 +1,17 @@
+get:
+  operationId: getTopics
+  tags:
+    - Content
+  summary: Get topics
+  description: This API allows us to obtain a list of topics
+  parameters:
+    $ref: '../../../schemas/content/b2b/request/get_topics_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/getTopics/get_topics_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/getTopics/get_topics_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

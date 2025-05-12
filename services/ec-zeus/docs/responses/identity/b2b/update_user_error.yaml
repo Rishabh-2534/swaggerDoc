@@ -1,0 +1,45 @@
+description: "Validation Error Response"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message indicating validation failure
+          example: "Invalid user object"
+        errors:
+          type: array
+          description: List of validation errors
+          oneOf:
+            - items:
+                type: object
+                properties:
+                  fieldName:
+                    type: string
+                    description: Name of the parameter that failed validation
+                    example: "firstName"
+                  message:
+                    type: string
+                    description: Detailed error message for the validation failure
+                    example: "Invalid first name"
+                required:
+                  - fieldName
+                  - message
+            - items:
+                type: object
+                properties:
+                  pathParam:
+                    type: string
+                    description: Name of the parameter that failed validation
+                    example: "userId"
+                  message:
+                    type: string
+                    description: Detailed error message for the validation failure
+                    example: "Invalid user ID"
+                required:
+                  - pathParam
+                  - message
+      required:
+        - message
+        - errors 

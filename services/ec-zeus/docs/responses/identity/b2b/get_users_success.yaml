@@ -1,0 +1,30 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        result:
+          type: object
+          required:
+            - items
+          properties:
+            total:
+              type: integer
+              description: Total number of records found (will come if includeTotal is set to true or 1)
+              example: 7
+            items:
+              type: array
+              description: >
+                List of users
+                {
+                  ...all/minimal fields for a user
+                }
+              items:
+                $ref: "../../../schemas/identity/Users/get_user.yaml"
+            nextPageToken:
+              type: string
+              description: >
+                A token that can be used to get the next page of users.
+                This token is returned if there are more users to fetch.
+                The client should pass this token to the server to get the next page of users.

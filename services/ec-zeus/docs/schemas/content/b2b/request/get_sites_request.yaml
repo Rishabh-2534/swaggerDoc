@@ -1,0 +1,65 @@
+- name: size
+  in: query
+  description: Maximum number of results to return
+  schema:
+    type: integer
+    minimum: 1
+    maximum: 1000
+    default: 50
+  required: false
+
+- name: nextPageToken
+  in: query
+  description: Token for fetching the next page of results
+  schema:
+    type: integer
+  required: false
+
+- name: filter
+  in: query
+  description: Optional filter for results
+  schema:
+    type: string
+    enum: ["featured"]
+    minLength: 1
+    maxLength: 200
+  required: false
+
+- name: sortBy
+  in: query
+  description: Technique for sorting results
+  schema:
+    type: string
+    enum: ["alphabetical", "featured", "createdNewest", "popular", "updatedNewest"]
+    example: "alphabetical"
+    default: "alphabetical"
+    minLength: 1
+    maxLength: 255
+  required: false
+
+- name: siteIds
+  in: query
+  description: Optional list of site UUIDs to filter the results
+  schema:
+    type: array
+    items:
+      type: string
+      format: uuid
+  required: false
+
+- name: modifiedAfter
+  in: query
+  description: Only return results modified after this date-time. Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)
+  schema:
+    type: string
+    format: date-time
+  required: false
+
+- name: includeDeactivated
+  in: query
+  description: Whether to include deactivated sites or not
+  schema:
+    type: boolean
+    example: false
+    default: false
+  required: false
