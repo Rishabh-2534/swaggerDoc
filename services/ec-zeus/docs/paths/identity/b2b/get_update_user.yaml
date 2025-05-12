@@ -35,7 +35,7 @@ put:
   parameters:
     - name: userId
       in: path
-      description: The ID of the user to get
+      description: The ID of the user to update
       required: true
       schema:
         type: string
@@ -75,7 +75,7 @@ patch:
   parameters:
     - name: userId
       in: path
-      description: The ID of the user to get
+      description: The ID of the user to update
       required: true
       schema:
         type: string

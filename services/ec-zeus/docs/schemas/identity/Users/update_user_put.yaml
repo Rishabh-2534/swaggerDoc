@@ -351,10 +351,10 @@ properties:
     example: Employee
   "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$":
     type: string
-    description: User's custom fields (if available)
+    description: User's custom fields (if applicable)
   "^.*__c$":
     type: string
-    description: User's custom fields (if available) 
+    description: User's custom fields (if applicable) 
 required:
   - username
   - status
