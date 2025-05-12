@@ -1,9 +1,17 @@
 type: object
+description: Update user request
 properties:
   username:
     type: string
     description: User's username
     example: jhon.smith
+  status:
+    type: string
+    description: User's status
+    enum:
+      - Active
+      - Inactive
+      - Freezed
   firstName:
     type: string
     description: User's first name
@@ -52,20 +60,6 @@ properties:
     type: string
     description: URL to the user's cover image
     example: /cover-image/55526ef2-752a-47e3-affa-2fa0eaadc5eb
-  birthDate:
-    type: string
-    description: |
-      User's birth date `YYYY-MM-DD` or `MM-DD` format
-      if birthDate is provided, `birthDayDay` and `birthDayMonth` will be ignored
-    example: "12-18"
-  birthDayDay:
-    type: string
-    description: User's birth day
-    example: "30"
-  birthDayMonth:
-    type: string
-    description: User's birth month
-    example: "10"
   peopleCategory:
     type: string
     description: User's people category
@@ -361,6 +355,3 @@ properties:
   "^.*__c$":
     type: string
     description: User's custom fields (if applicable) 
-required:
-  - firstName
-  - lastName
