@@ -6,6 +6,7 @@ info:
     description: "API documentation for Simpplr B2B integration services"
     contact:
       name: Simpplr Support
+x-proxy-enabled: false
 tags:
     - name: Authorization
       description: Everything about Authorization
