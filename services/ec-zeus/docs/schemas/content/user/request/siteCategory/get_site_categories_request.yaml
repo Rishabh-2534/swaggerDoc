@@ -1,0 +1,36 @@
+- name: size
+  in: query
+  description: Number of site categories to return per page
+  schema:
+    type: integer
+    minimum: 1
+    maximum: 1000
+    default: 50
+  required: false
+
+- name: nextPageToken
+  in: query
+  description: Token for fetching the next page of results
+  schema:
+    type: integer
+  required: false
+
+- name: sortBy
+  in: query
+  description: Sorting method for site categories
+  schema:
+    type: string
+    enum:
+      - alphabetical
+      - natural
+      - latest
+    default: alphabetical
+  required: false
+
+- name: term
+  in: query
+  description: Search term for filtering site categories
+  schema:
+    type: string
+    maxLength: 255
+  required: false

@@ -1,0 +1,23 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains updated site category information
+          properties:
+            id:
+              type: string
+              example: "1a708b7b-2077-4272-8432-6720e1abe171"
+              description: Unique identifier for the updated site category
+        message:
+          type: string
+          example: "Site category updated successfully"
+          description: Success message

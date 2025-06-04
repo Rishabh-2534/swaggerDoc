@@ -1,0 +1,10 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Name of the site category
+    example: "Testing"
+  access:
+    type: string
+    description: Access level for the site category
+    example: "all"

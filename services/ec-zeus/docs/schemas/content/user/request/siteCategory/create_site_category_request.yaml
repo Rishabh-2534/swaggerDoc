@@ -1,0 +1,19 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Name of the site category
+    minLength: 1
+    maxLength: 100
+    example: "Site Category"
+  access:
+    type: string
+    description: Access level for the site category
+    minLength: 1
+    maxLength: 20
+    enum: ["all", "app_manager"]
+    example: "all"
+required:
+  - name
+  - access
+additionalProperties: false 

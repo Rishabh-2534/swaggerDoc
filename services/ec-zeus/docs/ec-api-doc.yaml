@@ -78,6 +78,10 @@ paths:
         $ref: "./paths/content/get_content_by_id.yaml"
     /content/files/list:
         $ref: "./paths/content/get_files.yaml"
+    /content/site-categories:
+        $ref: "./paths/content/user/site_categories.yaml"
+    /content/site-categories/{siteCategoryId}:
+        $ref: "./paths/content/user/site_category_by_id.yaml"  
 
      # Enterprise Search
     /enterprise-search/search:
