@@ -1,0 +1,15 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Name of the site category
+    example: "Testing"
+  access:
+    type: string
+    description: Access level for the site category
+    example: "all"
+  modifiedBy:
+    type: string
+    format: uuid
+    description: ID of the user modifying the site category
+    example: "a40cf504-b39f-4219-8d96-11ba48f7cced" 

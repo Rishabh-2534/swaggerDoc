@@ -1,0 +1,38 @@
+get:
+  operationId: getSiteCategories
+  tags:
+    - Content
+  summary: Get site categories
+  description: This API allows us to obtain list of site categories
+  parameters:
+    $ref: '../../../schemas/content/b2b/request/siteCategory/get_site_categories_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/getSiteCategories/get_site_categories_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/getSiteCategories/get_site_categories_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+
+post:
+  operationId: createSiteCategory
+  tags:
+    - Content
+  summary: Create site category
+  description: This API allows us to create a new site category
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/b2b/request/siteCategory/create_site_category_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/createSiteCategory/create_site_category_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/createSiteCategory/create_site_category_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

@@ -1,0 +1,8 @@
+name: deletedBy
+in: query
+description: ID of the user deleting the site category
+required: true
+schema:
+  type: string
+  format: uuid
+  example: "a40cf504-b39f-4219-8d96-11ba48f7cced" 

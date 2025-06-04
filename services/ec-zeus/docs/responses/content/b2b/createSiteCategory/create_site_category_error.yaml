@@ -1,0 +1,19 @@
+description: Bad Request
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "error"
+          description: Response status
+          enum: [success, error]
+        errorCode:
+          type: string
+          example: "BAD_REQUEST"
+          description: Error code identifying the type of error
+        message:
+          type: string
+          example: "Failed to create site category"
+          description: Detailed error message 
