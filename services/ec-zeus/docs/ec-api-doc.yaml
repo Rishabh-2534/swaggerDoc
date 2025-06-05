@@ -22,6 +22,8 @@ tags:
       description: Everything about People
     - name: Video
       description: Everything about Video
+    - name: Site
+      description: Everything about Site
 
 servers:
     - url: https://platform.{env}.simpplr.com/v1
@@ -72,7 +74,7 @@ paths:
         $ref: "./paths/content/get_site.yaml"
     /content/sites/content/list:
         $ref: "./paths/content/search_content.yaml"
-    /content/sites/list: 
+    /content/sites/list:
         $ref: "./paths/content/search_sites.yaml"
     /content/sites/{site_id}/content/{content_id}:
         $ref: "./paths/content/get_content_by_id.yaml"
@@ -85,12 +87,17 @@ paths:
 
      # Enterprise Search
     /enterprise-search/search:
-        $ref: "./paths/search/top_search.yaml"     
+        $ref: "./paths/search/top_search.yaml"
     /enterprise-search/autocomplete:
         $ref: "./paths/search/autocomplete_search.yaml"
     /enterprise-search/smartanswers:
-        $ref: "./paths/search/smart_answers.yaml"       
-    
+        $ref: "./paths/search/smart_answers.yaml"
+
+    # Site
+    /content/site:
+        $ref: "./paths/content/user/sites-user.yaml"
+
+
 components:
     schemas:
         $ref: "./schemas/_index.yaml"
