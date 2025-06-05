@@ -4,7 +4,7 @@ info:
     version: 1.0.0
     title: Simpplr User API Documentation
     description: ""
-x-proxy-enabled: false
+x-proxy-enabled: true
 tags:
     - name: Authorization
       description: Everything about Authorization
