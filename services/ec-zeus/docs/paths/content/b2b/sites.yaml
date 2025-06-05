@@ -1,6 +1,6 @@
 get:
   summary: Get sites
-  operationId: getSites
+  operationId: getSitesB2b
   tags:
     - Content
   description: This API allows us to obtain list of sites based on various filters
@@ -18,7 +18,7 @@ get:
 
 post:
   summary: Add site
-  operationId: addSite
+  operationId: addSiteB2b
   tags:
     - Content
   description: This API allows us to add a new site
@@ -36,7 +36,7 @@ post:
 
 put:
   summary: Update site
-  operationId: updateSite
+  operationId: updateSiteB2b
   tags:
     - Content
   description: This API allows us to update an existing site

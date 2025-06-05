@@ -3,7 +3,7 @@ post:
   summary: Add site
   operationId: addSiteUser
   tags:
-    - Site
+    - Sites
   description: This API allows us to add a new site user
   requestBody:
     $ref: '../../../schemas/content/user/request/add_site_user_request.yaml'
@@ -21,7 +21,7 @@ put:
   summary: Update site
   operationId: updateSiteUser
   tags:
-    - Site
+    - Sites
   description: This API allows us to update an existing site user
   requestBody:
     $ref: '../../../schemas/content/user/request/update_site_user_request.yaml'

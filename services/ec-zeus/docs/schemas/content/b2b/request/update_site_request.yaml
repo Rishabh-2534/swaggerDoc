@@ -13,7 +13,6 @@ content:
         - hasPages
         - hasEvents
         - hasAlbums
-        - hasContent
         - landingPage
         - isContentSubmissionsEnabled
         - isContentFeedEnabled
@@ -87,10 +86,6 @@ content:
         hasAlbums:
           type: boolean
           description: Whether the site supports albums
-          example: true
-        hasContent:
-          type: boolean
-          description: Whether the site has content
           example: true
         landingPage:
           type: string
