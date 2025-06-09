@@ -35,7 +35,7 @@ paths:
         $ref: "./paths/identity/b2b/test.yaml"
     # Content
     /b2b/content/sites:
-        $ref: "./paths/content/b2b/get_sites.yaml"
+        $ref: "./paths/content/b2b/sites.yaml"
     /b2b/content/sites/contents:
         $ref: "./paths/content/b2b/get_content.yaml"
     /b2b/content/carousel-items:

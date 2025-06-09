@@ -1,0 +1,53 @@
+get:
+  summary: Get sites
+  operationId: getSitesB2b
+  tags:
+    - Content
+  description: This API allows us to obtain list of sites based on various filters
+  parameters:
+    $ref: '../../../schemas/content/b2b/request/get_sites_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/getSites/get_sites_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/getSites/get_sites_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+
+post:
+  summary: Add site
+  operationId: addSiteB2b
+  tags:
+    - Content
+  description: This API allows us to add a new site
+  requestBody:
+    $ref: '../../../schemas/content/b2b/request/add_site_request.yaml'
+  responses:
+    '201':
+      $ref: '../../../responses/content/b2b/addSite/add_site_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/addSite/add_site_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+
+put:
+  summary: Update site
+  operationId: updateSiteB2b
+  tags:
+    - Content
+  description: This API allows us to update an existing site
+  requestBody:
+    $ref: '../../../schemas/content/b2b/request/update_site_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/updateSite/update_site_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/updateSite/update_site_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

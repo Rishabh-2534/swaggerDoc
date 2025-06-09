@@ -1,0 +1,23 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains the ID of the newly created site
+          properties:
+            siteId:
+              type: string
+              example: 49502e9f-a6e6-4773-a0b4-64be9388b7b1
+              description: Unique identifier of the newly created site
+        message:
+          type: string
+          example: Site created successfully
+          description: Descriptive message about the operation result

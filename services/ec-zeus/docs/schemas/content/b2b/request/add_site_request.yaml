@@ -1,0 +1,99 @@
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - name
+        - access
+        - category
+        - isContentSubmissionsEnabled
+        - isOwner
+        - hasPages
+        - hasEvents
+        - hasAlbums
+        - hasDashboard
+        - landingPage
+        - isBroadcast
+        - isContentFeedEnabled
+        - createdBy
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 40
+          description: Name of the site
+          example: Sample Site
+        createdBy:
+          type: string
+          format: uuid
+          description: UUID of the user creating the site
+          example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
+        access:
+          type: string
+          enum: [public, private, unlisted]
+          description: Site access level
+          example: public
+        category:
+          type: object
+          required:
+            - name
+            - categoryId
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              description: Name of the category
+              example: Education
+            categoryId:
+              type: string
+              nullable: true
+              description: UUID of the category or null
+              example: cc3af825-6801-4197-88f3-268e351fcba2
+          additionalProperties: false
+        isContentSubmissionsEnabled:
+          type: boolean
+          description: Whether content submissions are enabled
+          example: true
+        isContentFeedEnabled:
+          type: boolean
+          description: Whether content feed is enabled
+          example: true
+        isOwner:
+          type: boolean
+          description: Whether the user is the owner of the site
+          example: true
+        hasPages:
+          type: boolean
+          description: Whether the site supports pages
+          example: true
+        hasEvents:
+          type: boolean
+          description: Whether the site supports events
+          example: true
+        hasAlbums:
+          type: boolean
+          description: Whether the site supports albums
+          example: true
+        hasDashboard:
+          type: boolean
+          description: Whether the site includes a dashboard
+          example: true
+        landingPage:
+          type: string
+          enum: [feed, dashboard, content, files, about]
+          description: Default landing page for the site
+          example: dashboard
+        isBroadcast:
+          type: boolean
+          description: Whether the site is broadcast-only
+          example: false
+        isMembershipAutoApproved:
+          type: boolean
+          description: Whether membership requests are auto-approved
+          example: false
+        isQuestionAnswerEnabled:
+          type: boolean
+          description: Whether Q&A is enabled for the site
+          example: true
+      additionalProperties: false

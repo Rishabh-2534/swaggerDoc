@@ -22,6 +22,8 @@ tags:
       description: Everything about People
     - name: Video
       description: Everything about Video
+    - name: Sites
+      description: Everything about Sites
 
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
@@ -58,7 +60,7 @@ paths:
         $ref: "./paths/content/get_site.yaml"
     /content/sites/content/list:
         $ref: "./paths/content/search_content.yaml"
-    /content/sites/list: 
+    /content/sites/list:
         $ref: "./paths/content/search_sites.yaml"
     /content/sites/{site_id}/content/{content_id}:
         $ref: "./paths/content/get_content_by_id.yaml"
@@ -67,15 +69,15 @@ paths:
     /content/site-categories:
         $ref: "./paths/content/user/site_categories.yaml"
     /content/site-categories/{siteCategoryId}:
-        $ref: "./paths/content/user/site_category_by_id.yaml"  
+        $ref: "./paths/content/user/site_category_by_id.yaml"
 
      # Enterprise Search
     /enterprise-search/search:
-        $ref: "./paths/search/top_search.yaml"     
+        $ref: "./paths/search/top_search.yaml"
     /enterprise-search/autocomplete:
         $ref: "./paths/search/autocomplete_search.yaml"
     /enterprise-search/smartanswers:
-        $ref: "./paths/search/smart_answers.yaml"              
+        $ref: "./paths/search/smart_answers.yaml"
 
     # Video
     /video/tokens:
@@ -92,7 +94,11 @@ paths:
         $ref: "./paths/identity/get_people_list.yaml"
     /identity/people/{peopleId}:
         $ref: "./paths/identity/update_people.yaml"
-    
+
+    # Sites
+    /content/site:
+        $ref: "./paths/content/user/sites.yaml"
+
 components:
     schemas:
         $ref: "./schemas/_index.yaml"
