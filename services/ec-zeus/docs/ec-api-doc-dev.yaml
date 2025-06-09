@@ -58,6 +58,8 @@ paths:
     # Content
     /content/sites/{site_id}:
         $ref: "./paths/content/get_site.yaml"
+    /content/sites/{site_id}/membership/manage:
+        $ref: "./paths/content/user/manage_site_membership.yaml"
     /content/sites/content/list:
         $ref: "./paths/content/search_content.yaml"
     /content/sites/list:

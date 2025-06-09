@@ -1,0 +1,67 @@
+content:
+  application/json:
+    schema:
+      type: object
+      oneOf:
+        - type: object
+          required:
+            - userId
+            - action
+            - permission
+          properties:
+            userId:
+              type: string
+              format: uuid
+              description: UUID of the user to add to the site
+              example: 123e4567-e89b-12d3-a456-426614174000
+            action:
+              type: string
+              enum: [addPeople]
+              description: Action to add a person to the site
+              example: addPeople
+            permission:
+              type: string
+              enum: [member, follower]
+              description: Permission level to assign to the user
+              example: member
+          additionalProperties: false
+
+        - type: object
+          required:
+            - userId
+            - action
+            - permission
+          properties:
+            userId:
+              type: string
+              format: uuid
+              description: UUID of the user whose permission is being set
+              example: 123e4567-e89b-12d3-a456-426614174000
+            action:
+              type: string
+              enum: [setPeoplePermission]
+              description: Action to set a person's permission
+              example: setPeoplePermission
+            permission:
+              type: string
+              enum: [owner, manager, contentManager, member, follower]
+              description: New permission level for the user
+              example: manager
+          additionalProperties: false
+
+        - type: object
+          required:
+            - userId
+            - action
+          properties:
+            userId:
+              type: string
+              format: uuid
+              description: UUID of the user to remove from the site
+              example: 123e4567-e89b-12d3-a456-426614174000
+            action:
+              type: string
+              enum: [removePeople]
+              description: Action to remove a person from the site
+              example: removePeople
+          additionalProperties: false

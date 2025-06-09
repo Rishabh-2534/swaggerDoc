@@ -1,0 +1,19 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Result object (empty for this operation)
+          example: {}
+        message:
+          type: string
+          example: Operation completed successfully
+          description: Descriptive message about the operation result
