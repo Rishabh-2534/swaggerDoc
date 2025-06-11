@@ -54,6 +54,10 @@ paths:
         $ref: "./paths/content/b2b/site_categories.yaml"
     /b2b/content/site-categories/{siteCategoryId}:
         $ref: "./paths/content/b2b/site_category_by_id.yaml"
+    /b2b/content/sites/{site_id}/page-categories:
+        $ref: "./paths/content/b2b/site_page_categories.yaml"
+    /b2b/content/sites/{site_id}/page-categories/{category_id}:
+        $ref: "./paths/content/b2b/site_page_category_by_id.yaml"
 
 components:
     securitySchemes:

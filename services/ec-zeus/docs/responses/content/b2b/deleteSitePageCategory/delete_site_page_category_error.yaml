@@ -1,0 +1,32 @@
+description: Error
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Response status
+          enum: [success, error]
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              seq_id:
+                type: integer
+                example: 0
+                description: Sequence identifier for the error
+              field_name:
+                type: string
+                example: pageCategoryId
+                description: Name of the field that caused the error
+              error_code:
+                type: integer
+                example: 1004
+                description: Numeric code identifying the type of error
+              message:
+                type: string
+                example: "The 'pageCategoryId' must be a valid UUID"
+                description: Human-readable error message 

@@ -1,0 +1,24 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains the deleted page category information
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: "27335f43-6d7e-4edc-85e1-4f9020abd052"
+              description: Unique identifier for the deleted page category
+        message:
+          type: string
+          example: "Page category deleted successfully"
+          description: Success message 

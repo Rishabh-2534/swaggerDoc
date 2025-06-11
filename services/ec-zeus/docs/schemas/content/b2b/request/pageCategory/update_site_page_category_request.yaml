@@ -1,0 +1,17 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Name of the page category
+    minLength: 1
+    maxLength: 100
+    example: "Testing"
+  modifiedBy:
+    type: string
+    format: uuid
+    description: ID of the user modifying the page category
+    example: "a40cf504-b39f-4219-8d96-11ba48f7cced"
+required:
+  - name
+  - modifiedBy
+additionalProperties: false 

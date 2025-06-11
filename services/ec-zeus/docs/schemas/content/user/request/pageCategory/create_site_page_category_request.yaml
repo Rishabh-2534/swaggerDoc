@@ -1,0 +1,11 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Name of the page category
+    minLength: 1
+    maxLength: 100
+    example: "page Category"
+required:
+  - name
+additionalProperties: false 
