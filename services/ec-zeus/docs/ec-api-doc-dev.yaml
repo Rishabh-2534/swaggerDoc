@@ -55,6 +55,12 @@ paths:
     /identity/audience/{audienceId}:
         $ref: "./paths/identity/update_audience.yaml"
 
+    # Sites
+    /content/sites:
+        $ref: "./paths/content/user/sites.yaml"
+    /content/sites/{site_id}/membership/manage:
+        $ref: "./paths/content/user/manage_site_membership.yaml"
+
     # Content
     /content/sites/{site_id}:
         $ref: "./paths/content/get_site.yaml"
@@ -99,9 +105,6 @@ paths:
     /identity/people/{peopleId}:
         $ref: "./paths/identity/update_people.yaml"
 
-    # Sites
-    /content/site:
-        $ref: "./paths/content/user/sites.yaml"
 
 components:
     schemas:

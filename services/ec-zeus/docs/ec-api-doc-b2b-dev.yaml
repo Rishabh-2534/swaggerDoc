@@ -12,6 +12,8 @@ tags:
       description: Everything about Authorization
     - name: Users
       description: Everything about Users
+    - name: Sites
+      description: Everything about Sites
     - name: Content
       description: Everything about Content
 
@@ -26,6 +28,7 @@ paths:
     # Authorization
     /identity/oauth/token:
         $ref: "./paths/identity/b2b/token.yaml"
+
     # Users
     /b2b/identity/users:
         $ref: "./paths/identity/b2b/get_create_users.yaml"
@@ -33,6 +36,11 @@ paths:
         $ref: "./paths/identity/b2b/get_update_user.yaml"
     /b2b/identity/test:
         $ref: "./paths/identity/b2b/test.yaml"
+
+    #Sites
+    /b2b/content/sites/{siteId}/membership/manage:
+        $ref: "./paths/content/b2b/manage_site_membership.yaml"
+
     # Content
     /b2b/content/sites:
         $ref: "./paths/content/b2b/sites.yaml"
