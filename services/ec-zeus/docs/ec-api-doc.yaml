@@ -69,11 +69,15 @@ paths:
     /video/search:
         $ref: "./paths/video/search.yaml"
 
+    # Sites
+    /content/sites:
+        $ref: "./paths/content/user/sites.yaml"
+    /content/sites/{site_id}/membership/manage:
+        $ref: "./paths/content/user/manage_site_membership.yaml"
+
     # Content
     /content/sites/{site_id}:
         $ref: "./paths/content/get_site.yaml"
-    /content/sites/{site_id}/membership/manage:
-        $ref: "./paths/content/user/manage_site_membership.yaml"
     /content/sites/content/list:
         $ref: "./paths/content/search_content.yaml"
     /content/sites/list:
@@ -95,9 +99,6 @@ paths:
     /enterprise-search/smartanswers:
         $ref: "./paths/search/smart_answers.yaml"
 
-    # Sites
-    /content/site:
-        $ref: "./paths/content/user/sites.yaml"
 
 
 components:

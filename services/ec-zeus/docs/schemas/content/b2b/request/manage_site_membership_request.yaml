@@ -17,7 +17,7 @@ content:
               example: 123e4567-e89b-12d3-a456-426614174000
             action:
               type: string
-              enum: [addPeople, setPeoplePermission, removePeople]
+              enum: [addPeople]
               description: Action to add a person to the site
               example: addPeople
             permission:
