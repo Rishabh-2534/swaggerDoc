@@ -1,7 +1,7 @@
 put:
-  operationId: userUpdateSiteCategory
+  operationId: updateSiteCategoryUser
   tags:
-    - Content
+    - Sites
   summary: Update site category
   description: This API allows us to update a specific site category by its ID
   parameters:
@@ -29,9 +29,9 @@ put:
       $ref: '../../../responses/common/forbidden.yaml'
 
 delete:
-  operationId: userDeleteSiteCategory
+  operationId: deleteSiteCategoryUser
   tags:
-    - Content
+    - Sites
   summary: Delete site category
   description: This API allows us to delete a specific site category by its ID
   parameters:
@@ -53,4 +53,4 @@ delete:
     '403':
       $ref: '../../../responses/common/forbidden.yaml'
 
-  
+

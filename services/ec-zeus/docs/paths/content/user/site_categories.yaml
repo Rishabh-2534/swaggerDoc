@@ -1,7 +1,7 @@
 get:
-  operationId: userGetSiteCategories
+  operationId: getSiteCategoriesUser
   tags:
-    - Content
+    - Sites
   summary: Get site categories
   description: This API allows us to obtain list of site categories
   parameters:
@@ -17,9 +17,9 @@ get:
       $ref: '../../../responses/common/forbidden.yaml'
 
 post:
-  operationId: userCreateSiteCategory
+  operationId: createSiteCategoryUser
   tags:
-    - Content
+    - Sites
   summary: Create site category
   description: This API allows us to create a new site category
   requestBody:

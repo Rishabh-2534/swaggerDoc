@@ -1,7 +1,7 @@
 get:
   operationId: getSiteCategories
   tags:
-    - Content
+    - Sites
   summary: Get site categories
   description: This API allows us to obtain list of site categories
   parameters:
@@ -19,7 +19,7 @@ get:
 post:
   operationId: createSiteCategory
   tags:
-    - Content
+    - Sites
   summary: Create site category
   description: This API allows us to create a new site category
   requestBody:

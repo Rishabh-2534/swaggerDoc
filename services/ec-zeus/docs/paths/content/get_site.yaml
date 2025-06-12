@@ -1,6 +1,7 @@
 get:
+  operationId: getSiteById
   tags:
-    - Content
+    - Sites
   summary: Get site by ID
   description: This API allows us to obtain detailed information about a site by providing its unique Site ID
   parameters:

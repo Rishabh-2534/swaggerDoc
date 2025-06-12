@@ -2,7 +2,7 @@ get:
   summary: Get sites
   operationId: getSitesB2b
   tags:
-    - Content
+    - Sites
   description: This API allows us to obtain list of sites based on various filters
   parameters:
     $ref: '../../../schemas/content/b2b/request/get_sites_request.yaml'
@@ -20,7 +20,7 @@ post:
   summary: Add site
   operationId: addSiteB2b
   tags:
-    - Content
+    - Sites
   description: This API allows us to add a new site
   requestBody:
     $ref: '../../../schemas/content/b2b/request/add_site_request.yaml'
@@ -38,7 +38,7 @@ put:
   summary: Update site
   operationId: updateSiteB2b
   tags:
-    - Content
+    - Sites
   description: This API allows us to update an existing site
   requestBody:
     $ref: '../../../schemas/content/b2b/request/update_site_request.yaml'

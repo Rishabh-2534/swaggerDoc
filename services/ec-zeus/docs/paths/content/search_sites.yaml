@@ -1,6 +1,7 @@
 post:
+  operationId: searchSites
   tags:
-    - Content
+    - Sites
   summary: Search for sites
   description: This API allows us to search for and retrieve a list of sites based on the filter provided in the request body.
   requestBody :
@@ -10,7 +11,7 @@ post:
         schema:
           $ref: '../../schemas/content/search_sites.yaml'
      required: true
-  
+
   responses:
     200:
       $ref: ../../responses/content/searchSites/search_sites_success.yaml
