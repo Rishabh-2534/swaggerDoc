@@ -1,36 +1,18 @@
 
-post:
-  summary: Add site
-  operationId: addSiteUser
-  tags:
-    - Sites
-  description: This API allows us to add a new site user
-  requestBody:
-    $ref: '../../../schemas/content/user/request/add_site_user_request.yaml'
-  responses:
-    '201':
-      $ref: '../../../responses/content/b2b/addSite/add_site_success.yaml'
-    '400':
-      $ref: '../../../responses/content/b2b/addSite/add_site_error.yaml'
-    '401':
-      $ref: '../../../responses/common/unauthorized.yaml'
-    '403':
-      $ref: '../../../responses/common/forbidden.yaml'
-
-put:
-  summary: Update site
-  operationId: updateSiteUser
-  tags:
-    - Sites
-  description: This API allows us to update an existing site user
-  requestBody:
-    $ref: '../../../schemas/content/user/request/update_site_user_request.yaml'
-  responses:
-    '200':
-      $ref: '../../../responses/content/b2b/updateSite/update_site_success.yaml'
-    '400':
-      $ref: '../../../responses/content/b2b/updateSite/update_site_error.yaml'
-    '401':
-      $ref: '../../../responses/common/unauthorized.yaml'
-    '403':
-      $ref: '../../../responses/common/forbidden.yaml'
+  post:
+    summary: Add site
+    operationId: addSiteUser
+    tags:
+      - Sites
+    description: This API allows us to add a new site user
+    requestBody:
+      $ref: '../../../schemas/content/user/request/add_site_user_request.yaml'
+    responses:
+      '201':
+        $ref: '../../../responses/content/b2b/addSite/add_site_success.yaml'
+      '400':
+        $ref: '../../../responses/content/b2b/addSite/add_site_error.yaml'
+      '401':
+        $ref: '../../../responses/common/unauthorized.yaml'
+      '403':
+        $ref: '../../../responses/common/forbidden.yaml'

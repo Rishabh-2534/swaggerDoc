@@ -12,4 +12,4 @@ properties:
     type: string
     format: uuid
     description: ID of the user modifying the site category
-    example: "a40cf504-b39f-4219-8d96-11ba48f7cced" 
+    example: "a40cf504-b39f-4219-8d96-11ba48f7cced"

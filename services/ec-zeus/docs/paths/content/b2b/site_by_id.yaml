@@ -1,0 +1,24 @@
+put:
+  summary: Update site
+  operationId: updateSiteB2b
+  tags:
+    - Sites
+  description: This API allows us to update an existing site
+  parameters:
+    - name: siteId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
+  requestBody:
+    $ref: '../../../schemas/content/b2b/request/update_site_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/updateSite/update_site_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/updateSite/update_site_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

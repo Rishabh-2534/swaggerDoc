@@ -4,6 +4,8 @@ content:
       type: object
       oneOf:
         - type: object
+          title: Add People to Site
+          description: Add a user to the site as a member or follower.
           required:
             - userId
             - action
@@ -33,6 +35,8 @@ content:
           additionalProperties: false
 
         - type: object
+          title: Set People Permission
+          description: Set a user's permission on the site.
           required:
             - userId
             - action
@@ -62,6 +66,8 @@ content:
           additionalProperties: false
 
         - type: object
+          title: Remove People from Site
+          description: Remove a user from the site.
           required:
             - userId
             - action

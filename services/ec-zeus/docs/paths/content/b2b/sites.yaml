@@ -34,20 +34,3 @@ post:
     '403':
       $ref: '../../../responses/common/forbidden.yaml'
 
-put:
-  summary: Update site
-  operationId: updateSiteB2b
-  tags:
-    - Sites
-  description: This API allows us to update an existing site
-  requestBody:
-    $ref: '../../../schemas/content/b2b/request/update_site_request.yaml'
-  responses:
-    '200':
-      $ref: '../../../responses/content/b2b/updateSite/update_site_success.yaml'
-    '400':
-      $ref: '../../../responses/content/b2b/updateSite/update_site_error.yaml'
-    '401':
-      $ref: '../../../responses/common/unauthorized.yaml'
-    '403':
-      $ref: '../../../responses/common/forbidden.yaml'

@@ -3,9 +3,7 @@ content:
     schema:
       type: object
       required:
-        - id
         - name
-        - siteId
         - description
         - category
         - access
@@ -18,16 +16,6 @@ content:
         - isContentFeedEnabled
         - isContentUnfurlEnabled
       properties:
-        id:
-          type: string
-          format: uuid
-          description: UUID of the site
-          example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
-        siteId:
-          type: string
-          format: uuid
-          description: UUID of the site
-          example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
         name:
           type: string
           minLength: 1

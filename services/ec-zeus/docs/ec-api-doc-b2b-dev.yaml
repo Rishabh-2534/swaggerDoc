@@ -38,12 +38,14 @@ paths:
         $ref: "./paths/identity/b2b/test.yaml"
 
     #Sites
+    /b2b/content/sites:
+        $ref: "./paths/content/b2b/sites.yaml"
+    /b2b/content/sites/{siteId}:
+        $ref: "./paths/content/b2b/site_by_id.yaml"
     /b2b/content/sites/{siteId}/membership/manage:
         $ref: "./paths/content/b2b/manage_site_membership.yaml"
 
     # Content
-    /b2b/content/sites:
-        $ref: "./paths/content/b2b/sites.yaml"
     /b2b/content/sites/contents:
         $ref: "./paths/content/b2b/get_content.yaml"
     /b2b/content/carousel-items:
