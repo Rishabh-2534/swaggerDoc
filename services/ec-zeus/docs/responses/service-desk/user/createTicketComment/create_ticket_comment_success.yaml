@@ -1,0 +1,43 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains the created ticket comment data
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: "644893bf-66dd-4b67-9771-76b21d91ce5c"
+              description: Unique identifier for the ticket comment
+            ticketId:
+              type: string
+              format: uuid
+              example: "644893bf-66dd-4b67-9771-76b21d91ce5c"
+              description: ID of the ticket this comment belongs to
+            message:
+              type: string
+              example: "This is a comment on the ticket"
+              description: Content of the ticket comment
+            createdAt:
+              type: string
+              format: date-time
+              example: "2024-03-20T10:30:00Z"
+              description: Timestamp when the comment was created
+            createdBy:
+              type: string
+              format: uuid
+              example: "644893bf-66dd-4b67-9771-76b21d91ce5c"
+              description: ID of the user who created the comment
+        message:
+          type: string
+          example: "Ticket comment created successfully"
+          description: Response message
