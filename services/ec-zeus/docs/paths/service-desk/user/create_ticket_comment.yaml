@@ -1,13 +1,12 @@
 parameters:
-  - name: ticket_id
+  - name: ticketId
     in: path
-    description: ID of the ticket to which the comment is being added
+    required: true
     schema:
       type: string
-      format: uuid
       example: "550e8400-e29b-41d4-a716-446655440000"
-    required: true
- post:
+    description: ID of the ticket to which the comment is being added
+post:
   tags:
     - Service Desk
   summary: Create Ticket Comment

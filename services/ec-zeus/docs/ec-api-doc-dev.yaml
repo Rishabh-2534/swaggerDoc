@@ -107,7 +107,7 @@ paths:
 
     # Service desk
     /service-desk/wtickets/tickets/{ticketId}/comments:
-        $ref: "./paths/service_desk/user/tickets_comments_by_id.yaml"
+        $ref: "./paths/service-desk/user/create_ticket_comment.yaml"
 
 
 components:
