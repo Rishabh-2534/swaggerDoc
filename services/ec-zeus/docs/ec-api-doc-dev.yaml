@@ -106,6 +106,12 @@ paths:
         $ref: "./paths/identity/update_people.yaml"
 
     # Service desk
+    /service-desk/mtickets/workspaces:
+        $ref: "./paths/service-desk/user/get_workspaces.yaml"
+    /service-desk/mtickets/categories:
+        $ref: "./paths/service-desk/user/get_ticket_categories.yaml"
+    /service-desk/mtickets/categories/{categoryId}/items:
+        $ref: "./paths/service-desk/user/get_ticket_category_items.yaml"
     /service-desk/wtickets/tickets/{ticketId}/comments:
         $ref: "./paths/service-desk/user/create_ticket_comment.yaml"
 

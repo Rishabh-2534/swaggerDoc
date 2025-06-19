@@ -1,0 +1,67 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Workspace list fetched successfully.
+        result:
+          type: object
+          properties:
+            listOfItems:
+              type: array
+              items:
+                type: object
+                properties:
+                  workspaceId:
+                    type: string
+                    example: workspace-123
+                  name:
+                    type: string
+                    example: HR Workspace
+                  isPrimary:
+                    type: boolean
+                    example: true
+                  iconImage:
+                    type: string
+                    example: hr-icon.png
+                  formDesignerMetaData:
+                    type: object
+                    properties:
+                      appId:
+                        type: string
+                        example: form-app-123
+                      name:
+                        type: string
+                        example: Form Designer
+                      enabled:
+                        type: boolean
+                        example: true
+                      allowedTypes:
+                        type: array
+                        items:
+                          type: string
+                        example: ["request", "incident"]
+                  workflowAppMeta:
+                    type: object
+                    properties:
+                      appId:
+                        type: string
+                        example: workflow-app-456
+                      isActive:
+                        type: boolean
+                        example: true
+                  description:
+                    type: string
+                    example: Human Resources workspace for employee services
+            size:
+              type: integer
+              example: 40
+            nextPageToken:
+              type: string
+              example: null

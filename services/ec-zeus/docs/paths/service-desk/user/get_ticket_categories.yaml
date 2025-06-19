@@ -1,0 +1,17 @@
+get:
+  operationId: getTicketCategories
+  tags:
+    - Service Desk
+  summary : Get Service Categories
+  description: This API allows users to retrieve a list of service categories associated with the service desk.
+  parameters:
+    $ref: '../../../schemas/service-desk/user/request/get_ticket_categories_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/service-desk/user/getTicketCategories/get_ticket_categories_success.yaml'
+    '400':
+      $ref: '../../../responses/service-desk/user/getTicketCategories/get_ticket_categories_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

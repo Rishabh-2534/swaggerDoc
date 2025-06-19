@@ -1,0 +1,71 @@
+- name: workspaceId
+  in: query
+  description: Workspace ID
+  schema:
+    type: string
+    format: uuid
+    example: "550e8400-e29b-41d4-a716-446655440000"
+  required: true
+- name: search
+  in: query
+  description: Search term (no special characters)
+  schema:
+    type: string
+    maxLength: 50
+  required: false
+
+- name: page
+  in: query
+  description: Page number
+  schema:
+    type: string
+    default: "1"
+  required: false
+
+- name: pageSize
+  in: query
+  description: Number of items per page
+  schema:
+    type: string
+    default: "40"
+  required: false
+
+- name: sortColumn
+  in: query
+  description: Column to sort by
+  schema:
+    type: string
+    enum:
+      - name
+      - description
+      - serviceItemCount
+      - createdAt
+      - modifiedAt
+    default: createdAt
+  required: false
+
+- name: sortOrder
+  in: query
+  description: Sorting order
+  schema:
+    type: string
+    enum:
+      - asc
+      - desc
+    default: desc
+  required: false
+
+- name: q
+  in: query
+  description: Search term
+  schema:
+    type: string
+    maxLength: 50
+  required: false
+
+- name: filter
+  in: query
+  description: Filter criteria
+  schema:
+    type: string
+  required: false

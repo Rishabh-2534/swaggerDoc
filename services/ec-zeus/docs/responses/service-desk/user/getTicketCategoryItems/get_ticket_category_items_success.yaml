@@ -1,0 +1,55 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: "Service category item fetched successfully."
+          description: Response message
+        result:
+          type: object
+          description: Contains service category items data
+          properties:
+            listOfItems:
+              type: array
+              description: Array containing the collection of service category items
+              items:
+                type: object
+                properties:
+                  serviceItemId:
+                    type: string
+                    example: "item-123"
+                    description: Unique identifier for the service item
+                  name:
+                    type: string
+                    example: "Benefits Modification Request"
+                    description: Name of the service item
+                  description:
+                    type: string
+                    example: "Request to update or modify your benefits plan"
+                    description: Detailed description of the service item
+                  shortDescription:
+                    type: string
+                    example: "Modify benefits plan"
+                    description: Short description of the service item
+                  iconImage:
+                    type: string
+                    nullable: true
+                    example: "icon-url-here"
+                    description: URL for the icon image of the service item
+            size:
+              type: integer
+              example: 40
+              description: Total number of items available
+            nextPageToken:
+              type: integer
+              nullable: true
+              example: null
+              description: Token for fetching the next page of results
