@@ -31,22 +31,6 @@ content:
                     type: string
                     example: "string"
                     description: Name of the service category
-                  description:
-                    type: string
-                    example: "string"
-                    description: Description of the service category (optional)
-                  serviceItemCount:
-                    type: number
-                    example: 5
-                    description: Number of service items in the category
-                  createdAt:
-                    type: number
-                    example: 1640995200000
-                    description: Timestamp when the category was created
-                  modifiedAt:
-                    type: number
-                    example: 1640995200000
-                    description: Timestamp when the category was last modified
             page:
               type: number
               example: 1

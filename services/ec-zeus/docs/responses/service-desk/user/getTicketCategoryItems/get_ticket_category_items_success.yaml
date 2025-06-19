@@ -31,19 +31,6 @@ content:
                     type: string
                     example: "Benefits Modification Request"
                     description: Name of the service item
-                  description:
-                    type: string
-                    example: "Request to update or modify your benefits plan"
-                    description: Detailed description of the service item
-                  shortDescription:
-                    type: string
-                    example: "Modify benefits plan"
-                    description: Short description of the service item
-                  iconImage:
-                    type: string
-                    nullable: true
-                    example: "icon-url-here"
-                    description: URL for the icon image of the service item
             size:
               type: integer
               example: 40
