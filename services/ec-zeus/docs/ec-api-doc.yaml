@@ -103,6 +103,9 @@ paths:
     /enterprise-search/smartanswers:
         $ref: "./paths/search/smart_answers.yaml"
 
+    # Service desk
+    /service-desk/wtickets/tickets/{ticketId}/comments:
+        $ref: "./paths/service-desk/user/create_ticket_comment.yaml"
 
 
 components:

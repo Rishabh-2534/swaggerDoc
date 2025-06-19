@@ -1,0 +1,21 @@
+description: Bad Request
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - message
+      properties:
+        status:
+          type: string
+          example: "error"
+          description: Response status
+          enum: [success, error]
+        errorCode:
+          type: string
+          example: "BAD_REQUEST"
+          description: Error code identifying the type of error
+        message:
+          type: string
+          example: "Failed to create ticket comment"
+          description: Detailed error message

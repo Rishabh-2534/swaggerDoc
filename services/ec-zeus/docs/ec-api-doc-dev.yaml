@@ -105,6 +105,10 @@ paths:
     /identity/people/{peopleId}:
         $ref: "./paths/identity/update_people.yaml"
 
+    # Service desk
+    /service-desk/wtickets/tickets/{ticketId}/comments:
+        $ref: "./paths/service-desk/user/create_ticket_comment.yaml"
+
 
 components:
     schemas:
