@@ -1,0 +1,20 @@
+post:
+  operationId: createTicket
+  tags:
+    - Service Desk
+  summary: Create a new Ticket
+  description: This API allows users to create a new ticket in the service desk.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/service-desk/user/request/create_ticket_request.yaml'
+  responses:
+    '201':
+      $ref: '../../../responses/service-desk/user/createTicket/create_ticket_success.yaml'
+    '400':
+      $ref: '../../../responses/service-desk/user/createTicket/create_ticket_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

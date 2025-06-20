@@ -1,0 +1,19 @@
+required:
+  - attachments
+type: object
+properties:
+  attachments:
+    type: array
+    description: List of attachments.
+    items:
+      type: object
+      properties:
+        filename:
+          type: string
+          description: The name of the file.
+        mimeType:
+          type: string
+          description: The MIME type of the file.
+        fileSize:
+          type: integer
+          description: The size of the file in bytes.

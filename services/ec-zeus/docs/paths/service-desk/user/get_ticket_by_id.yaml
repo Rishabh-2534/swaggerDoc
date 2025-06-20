@@ -1,0 +1,23 @@
+get:
+  operationId: getTicketId
+  tags:
+    - Service Desk
+  summary: Get Ticket by ID
+  description: This API allows users to retrieve detailed information about a ticket by providing its unique Ticket ID.
+  parameters:
+    - name: ticketId
+      in: path
+      description: ID of the Ticket to search for
+      schema:
+        type: string
+        example: "SR-1"
+      required: true
+  responses:
+    '200':
+      $ref: '../../../responses/service-desk/user/getTicketId/get_ticket_by_id_success.yaml'
+    '400':
+      $ref: '../../../responses/service-desk/user/getTicketId/get_ticket_by_id_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
