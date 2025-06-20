@@ -16,10 +16,6 @@ content:
             ticketNumber:
               type: "string"
               example: "SR-123"
-            createdAt:
-              type: "integer"
-              format: "int64"
-              example: 1641234567890
             status:
               type: "string"
               example: "open"
