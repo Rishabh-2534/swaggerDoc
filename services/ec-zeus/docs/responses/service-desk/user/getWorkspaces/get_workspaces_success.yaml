@@ -20,7 +20,7 @@ content:
                 properties:
                   workspaceId:
                     type: string
-                    example: workspace-123
+                    example: "0c049254-082f-482d-8494-d62ea3439937"
                   name:
                     type: string
                     example: HR Workspace

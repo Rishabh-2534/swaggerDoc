@@ -25,11 +25,11 @@ content:
                 properties:
                   serviceCategoryId:
                     type: string
-                    example: "string"
+                    example: "0c049254-082f-482d-8494-d62ea3439937"
                     description: Unique identifier for the service category
                   name:
                     type: string
-                    example: "string"
+                    example: "payroll"
                     description: Name of the service category
             page:
               type: number
