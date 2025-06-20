@@ -1,0 +1,28 @@
+post:
+  operationId: addTicketAttachment
+  tags:
+    - Service Desk
+  summary: Add Ticket attachments
+  description: This API allows users to add multiple attachments to an existing ticket in the service desk.
+  parameters:
+  - name: ticketId
+    in: path
+    required: true
+    schema:
+      type: string
+      example: "SR-1"
+    description: ID of the ticket to which the attachment is being added
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          $ref: '../../../schemas/service-desk/user/request/add_ticket_attachments_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/service-desk/user/addTicketAttachments/add_ticket_attachments_success.yaml'
+    '400':
+      $ref: '../../../responses/service-desk/user/addTicketAttachments/add_ticket_attachments_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
