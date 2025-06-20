@@ -1,0 +1,35 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Workspace list fetched successfully.
+        result:
+          type: object
+          properties:
+            listOfItems:
+              type: array
+              items:
+                type: object
+                properties:
+                  workspaceId:
+                    type: string
+                    example: "0c049254-082f-482d-8494-d62ea3439937"
+                  name:
+                    type: string
+                    example: HR Workspace
+                  description:
+                    type: string
+                    example: Human Resources workspace for employee services
+            size:
+              type: integer
+              example: 40
+            nextPageToken:
+              type: string
+              example: null

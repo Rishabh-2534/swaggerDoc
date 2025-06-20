@@ -1,0 +1,27 @@
+- name: search
+  in: query
+  description: Search term for filtering workspaces
+  schema:
+    type: string
+  required: false
+
+- name: checkPermissions
+  in: query
+  description: Check user permissions for workspaces
+  schema:
+    type: string
+  required: false
+
+- name: size
+  in: query
+  description: Number of workspaces to return per page
+  schema:
+    type: string
+  required: false
+
+- name: nextPageToken
+  in: query
+  description: Token for fetching the next page of results
+  schema:
+    type: string
+  required: false

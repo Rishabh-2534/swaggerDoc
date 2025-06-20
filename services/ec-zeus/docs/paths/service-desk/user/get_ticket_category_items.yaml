@@ -1,0 +1,52 @@
+get:
+  operationId: getTicketCategoryItems
+  tags:
+    - Service Desk
+  summary: Get Ticket Category Items By Category ID
+  description: This API allows users to retrieve a list of items associated with a specific ticket category id.
+  parameters:
+    - name: categoryId
+      in: path
+      description: ID of the ticket category to retrieve items for
+      schema:
+        type: string
+        format: uuid
+        example: "1a708b7b-2077-4272-8432-6720e1abe171"
+      required: true
+    - name: workspaceId
+      in: query
+      description: Workspace ID
+      schema:
+        type: string
+        format: uuid
+        example: "550e8400-e29b-41d4-a716-446655440000"
+      required: true
+    - name: search
+      in: query
+      description: Search term (no special characters, max 50 characters)
+      schema:
+        type: string
+        maxLength: 50
+        pattern: "^[a-zA-Z0-9 ]*$"
+      required: false
+    - name: size
+      in: query
+      description: Number of items to return per page (pagination)
+      schema:
+        type: string
+      required: false
+    - name: nextPageToken
+      in: query
+      description: Token for fetching the next page of results (pagination)
+      schema:
+        type: string
+      required: false
+  responses:
+    '200':
+      $ref: '../../../responses/service-desk/user/getTicketCategoryItems/get_ticket_category_items_success.yaml'
+    '400':
+      $ref: '../../../responses/service-desk/user/getTicketCategoryItems/get_ticket_category_items_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

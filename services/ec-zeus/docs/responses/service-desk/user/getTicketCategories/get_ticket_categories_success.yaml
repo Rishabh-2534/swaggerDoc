@@ -1,0 +1,68 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: "Service category fetched successfully."
+          description: Response message
+        result:
+          type: object
+          description: Contains service category data
+          properties:
+            listOfItems:
+              type: array
+              description: Array containing the collection of service categories
+              items:
+                type: object
+                properties:
+                  serviceCategoryId:
+                    type: string
+                    example: "0c049254-082f-482d-8494-d62ea3439937"
+                    description: Unique identifier for the service category
+                  name:
+                    type: string
+                    example: "payroll"
+                    description: Name of the service category
+            page:
+              type: number
+              example: 1
+              description: Current page number
+            pageSize:
+              type: number
+              example: 40
+              description: Number of items per page
+            total:
+              type: number
+              example: 2
+              description: Total number of items
+            totalPages:
+              type: number
+              example: 1
+              description: Total number of pages
+            sortColumn:
+              type: string
+              example: "createdAt"
+              description: Column used for sorting (optional)
+            sortOrder:
+              type: string
+              example: "desc"
+              description: Order of sorting (ascending or descending, optional)
+            q:
+              type: string
+              example: "search term"
+              description: Search term (optional)
+            filter:
+              type: string
+              example: "filter criteria"
+              description: Filter criteria (optional)
+            meta:
+              type: object
+              description: Additional metadata (optional)
