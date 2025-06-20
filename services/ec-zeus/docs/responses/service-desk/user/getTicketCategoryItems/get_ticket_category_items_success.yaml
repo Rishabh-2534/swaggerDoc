@@ -25,7 +25,7 @@ content:
                 properties:
                   serviceItemId:
                     type: string
-                    example: "item-123"
+                    example: "0c049254-082f-482d-8494-d62ea3439937"
                     description: Unique identifier for the service item
                   name:
                     type: string
