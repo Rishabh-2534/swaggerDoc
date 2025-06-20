@@ -14,9 +14,9 @@ get:
       required: true
   responses:
     '200':
-      $ref: '../../../responses/service-desk/user/getTicketById/get_ticket_by_id_success.yaml'
+      $ref: '../../../responses/service-desk/user/getTicketId/get_ticket_by_id_success.yaml'
     '400':
-      $ref: '../../../responses/service-desk/user/getTicketById/get_ticket_by_id_error.yaml'
+      $ref: '../../../responses/service-desk/user/getTicketId/get_ticket_by_id_error.yaml'
     '401':
       $ref: '../../../responses/common/unauthorized.yaml'
     '403':

@@ -12,7 +12,10 @@ put:
         example: "SR-1"
       required: true
   requestBody:
-    $ref: '../../../schemas/service-desk/user/request/update_ticket_request.yaml'
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/service-desk/user/request/update_ticket_request.yaml'
   responses:
     '200':
       $ref: '../../../responses/service-desk/user/updateTicketById/update_ticket_by_id_success.yaml'

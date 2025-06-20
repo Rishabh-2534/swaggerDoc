@@ -1,0 +1,50 @@
+required:
+  - ticketType
+  - requesterId
+type: object
+properties:
+  ticketType:
+    type: string
+    description: The type of ticket being created.
+    enum:
+      - service_request
+      - incident
+  requesterId:
+    type: string
+    format: uuid
+    description: The UUID of the user creating the ticket.
+  serviceId:
+    type: string
+    format: uuid
+    description: The UUID of the service being requested.
+  requestForUserId:
+    type: string
+    format: uuid
+    description: The UUID of the user for whom the request is being made. Required only if `isRequestingForOthers` is true.
+  isRequestingForOthers:
+    type: boolean
+    description: Indicates if the request is being made for another user.
+  workspaceId:
+    type: string
+    format: uuid
+    description: The UUID of the workspace. Required for incidents.
+  title:
+    type: string
+    description: The title of the incident. Must be 2-60 characters long.
+    minLength: 2
+    maxLength: 60
+  attachments:
+    type: array
+    description: Optional list of attachments.
+    items:
+      type: object
+      properties:
+        filename:
+          type: string
+          description: The name of the file.
+        mimeType:
+          type: string
+          description: The MIME type of the file.
+        fileSize:
+          type: integer
+          description: The size of the file in bytes.

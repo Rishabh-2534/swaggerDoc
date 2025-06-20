@@ -1,0 +1,31 @@
+description: "Ticket created successfully"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        status:
+          type: "string"
+          example: "SUCCESS"
+        message:
+          type: "string"
+          example: "Ticket created successfully."
+        result:
+          type: "object"
+          properties:
+            ticketNumber:
+              type: "string"
+              example: "SR-123"
+            createdAt:
+              type: "integer"
+              format: "int64"
+              example: 1641234567890
+            status:
+              type: "string"
+              example: "open"
+            ticketType:
+              type: "string"
+              enum:
+                - "service_request"
+                - "incident"
+              example: "service_request"

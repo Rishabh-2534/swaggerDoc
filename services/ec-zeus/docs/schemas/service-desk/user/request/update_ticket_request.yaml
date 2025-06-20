@@ -1,0 +1,47 @@
+type: object
+required:
+  - ticketId
+properties:
+  ticketId:
+    type: string
+    description: The unique identifier of the ticket to be updated.
+  status:
+    type: string
+    description: The status of the ticket.
+    enum:
+      - open
+      - pending
+      - resolved
+      - closed
+  severity:
+    type: string
+    description: The severity level of the ticket.
+    enum:
+      - low
+      - medium
+      - high
+      - urgent
+  assignment:
+    type: object
+    description: The assignment details for the ticket.
+    properties:
+      agentId:
+        type: string
+        description: The unique identifier of the assigned agent.
+      agentGroupId:
+        type: string
+        description: The unique identifier of the assigned agent group.
+  impact:
+    type: string
+    description: The impact level of the ticket.
+    enum:
+      - low
+      - medium
+      - high
+  urgency:
+    type: string
+    description: The urgency level of the ticket.
+    enum:
+      - low
+      - medium
+      - high
