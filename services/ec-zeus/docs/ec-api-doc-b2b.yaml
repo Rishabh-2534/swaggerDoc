@@ -40,6 +40,8 @@ paths:
         $ref: "./paths/content/b2b/sites.yaml"
     /b2b/content/sites/{siteId}:
         $ref: "./paths/content/b2b/site_by_id.yaml"
+    /b2b/content/sites/{siteId}/status:
+        $ref: "./paths/content/b2b/site_status.yaml"
     /b2b/content/sites/{siteId}/membership/manage:
         $ref: "./paths/content/b2b/manage_site_membership.yaml"
 

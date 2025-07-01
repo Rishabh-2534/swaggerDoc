@@ -74,6 +74,8 @@ paths:
         $ref: "./paths/content/user/sites.yaml"
     /content/sites/{site_id}:
         $ref: "./paths/content/user/site_by_id.yaml"
+    /content/sites/{site_id}/status:
+        $ref: "./paths/content/user/site_status.yaml"
     /content/sites/{site_id}/membership/manage:
         $ref: "./paths/content/user/manage_site_membership.yaml"
 

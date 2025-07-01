@@ -1,0 +1,13 @@
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum: [activated, deactivated]
+          description: Status of the site
+          example: activated
+      additionalProperties: false 
