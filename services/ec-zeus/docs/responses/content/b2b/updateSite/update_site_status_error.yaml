@@ -14,7 +14,7 @@ content:
           example: error
         message:
           type: string
-          example: Failed to update site status
+          example: Error updating site status
         errors:
           type: array
           items:
