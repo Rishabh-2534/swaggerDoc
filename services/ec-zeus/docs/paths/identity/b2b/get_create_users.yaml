@@ -19,6 +19,16 @@ get:
       required: false
       schema:
         type: string
+    - name: parseCustomFields
+      in: query
+      description: Whether to parse custom fields (if custom field types enabled)
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'true'
+          - 'false'
+        default: 'false'
     - name: includeTotal
       in: query
       description: >
