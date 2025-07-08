@@ -1,0 +1,24 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains the details of the file URL
+          properties:
+            file_id:
+              type: string
+              format: uuid
+              example: "644893bf-66dd-4b67-9771-76b21d91ce5c"
+              description: Id of the file to be uploaded
+            upload_url:
+              type: string
+              example: "https://tenant.app.simpplr.com/u/o/277b3c02-c912-4c45-8512-867d92e47b84?Content-Type=image%2Fpng&X-Amz-Algorithm=........."
+              description: Presigned URL to be used for uploading the file
