@@ -5,7 +5,10 @@ post:
     - Files
   description: This API allows us to get a presigned URL for uploading files to Simpplr
   requestBody:
-    $ref: '../../../schemas/content/b2b/request/get_upload_signed_url.yaml'
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/b2b/request/get_upload_signed_url.yaml'
   responses:
     '200':
       $ref: '../../../responses/content/common/getUploadSignedUrl/get_upload_signed_url_success.yaml'

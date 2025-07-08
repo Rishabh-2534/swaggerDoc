@@ -5,34 +5,32 @@ properties:
     description: Name of the file to be uploaded
     minLength: 1
     maxLength: 500
-    example: photo.png
-    required: true
+    example: "photo.png"
   size:
     type: integer
     description: Size of the file in bytes
     minimum: 1
-    example: 1024
-    required: true
+    example: "1024"
   createdBy:
     type: string
     format: uuid
     description: UUID of the user to be associated with the file upload
-    example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
-    required: true
+    example: "02369949-cfc1-49a7-a2a7-d03afa9af84a"
   alt_text:
     type: string
     description: Alt text for the file
     minLength: 0
     maxLength: 500
-    example: This is a photo of a sunset
+    example: "This is a photo of a sunset"
   mime_type:
     type: string
     description: MIME type of the file
     minLength: 0
     maxLength: 100
-    example: image/png
+    example: "image/png"
   uploadContext:
     type: string
+    nullable: true
     description: Context in which the file is being uploaded
     enum:
       - site-feed
@@ -40,13 +38,15 @@ properties:
       - site-files
       - home-feed
       - tiles
-      - null
-    example: content-attachment
+    example: "content-attachment"
     default: null
   siteId:
     type: string
     format: uuid
     description: UUID of the site where the file is being uploaded
-    example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
+    example: "02369949-cfc1-49a7-a2a7-d03afa9af84a"
 
-
+required:
+  - file_name
+  - size
+  - createdBy
