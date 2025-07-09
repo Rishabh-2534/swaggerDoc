@@ -24,6 +24,8 @@ tags:
       description: Everything about Video
     - name: Sites
       description: Everything about Sites
+    - name: Files
+      description: Everything about Files
 
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
@@ -80,6 +82,10 @@ paths:
         $ref: "./paths/content/user/site_page_categories.yaml"
     /content/sites/{site_id}/page-categories/{category_id}:
         $ref: "./paths/content/user/site_page_category_by_id.yaml"
+
+    # Files
+    /content/static/signedurl/upload:
+        $ref: "./paths/content/user/get_upload_signed_url.yaml"
 
      # Enterprise Search
     /enterprise-search/search:

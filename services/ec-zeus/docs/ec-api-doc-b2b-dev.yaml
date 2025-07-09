@@ -16,6 +16,8 @@ tags:
       description: Everything about Sites
     - name: Content
       description: Everything about Content
+    - name: Files
+      description: Everything about Files
 
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
@@ -62,6 +64,11 @@ paths:
         $ref: "./paths/content/b2b/site_page_categories.yaml"
     /b2b/content/sites/{site_id}/page-categories/{category_id}:
         $ref: "./paths/content/b2b/site_page_category_by_id.yaml"
+
+    # Files
+    /b2b/content/static/signedurl/upload:
+        $ref: "./paths/content/b2b/get_upload_signed_url.yaml"
+
 components:
     securitySchemes:
         OAuth2ClientCredentials:

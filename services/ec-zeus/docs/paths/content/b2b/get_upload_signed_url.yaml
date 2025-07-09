@@ -1,0 +1,20 @@
+post:
+  summary: Get a presigned URL to upload a file to Simpplr
+  operationId: getUploadSignedUrlB2b
+  tags:
+    - Files
+  description: This API allows us to get a presigned URL for uploading files to Simpplr
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/b2b/request/get_upload_signed_url.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/common/getUploadSignedUrl/get_upload_signed_url_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/getUploadSignedUrl/get_upload_signed_url_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
