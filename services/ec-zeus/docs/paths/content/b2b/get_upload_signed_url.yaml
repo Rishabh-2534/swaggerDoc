@@ -3,7 +3,12 @@ post:
   operationId: getUploadSignedUrlB2b
   tags:
     - Files
-  description: This API allows us to get a presigned URL for uploading files to Simpplr
+  description: |
+    This API allows us to get a presigned URL for uploading files to Simpplr.
+    Few points to note:
+    * The upload_url(presigned URL) in the response should be used with PUT method to upload the file.
+    * The presigned URL should be invoked with same Bearer token as this API.
+    * The file_id should be saved for linking with entities via other APIs.
   requestBody:
     content:
       application/json:
