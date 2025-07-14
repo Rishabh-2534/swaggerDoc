@@ -83,6 +83,17 @@ content:
               enum: [removePeople]
               description: Action to remove a person from the site
               example: removePeople
+            permission:
+              type: string
+              enum:
+                - all
+                - owner
+                - manager
+                - contentManager
+                - member
+                - follower
+              description: Deselect permission level to remove all permissions (Keep me empty for this action)
+              example: all
             modifiedBy:
               type: string
               format: uuid
