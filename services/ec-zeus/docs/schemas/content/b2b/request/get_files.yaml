@@ -11,7 +11,7 @@ properties:
   contentId:
     type: string
     description: ID of the content associated with the file
-    example: 'd096db67-954a-4ff5-94a7-ccc437f2fd81' 
+    example: 'd096db67-954a-4ff5-94a7-ccc437f2fd81'
   term:
     type: string
     description: Search term
@@ -23,6 +23,7 @@ properties:
   provider:
     type: string
     description: Provider of the search
+    default: intranet
     enum:
       - intranet
       - googledrive
@@ -31,7 +32,7 @@ properties:
       - box
       - native_video
       - dropbox
-    example: 'intranet'
+    example: intranet
   sortBy:
     type: string
     description: Technique for sorting results

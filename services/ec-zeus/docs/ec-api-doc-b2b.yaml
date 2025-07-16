@@ -66,6 +66,8 @@ paths:
     # Files
     /b2b/content/static/signedurl/upload:
         $ref: "./paths/content/b2b/get_upload_signed_url.yaml"
+    /b2b/content/files/list:
+        $ref: "./paths/content/b2b/get_files.yaml"
 
 components:
     securitySchemes:
