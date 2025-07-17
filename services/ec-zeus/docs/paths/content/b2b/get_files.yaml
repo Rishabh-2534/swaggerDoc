@@ -1,7 +1,7 @@
 post:
   operationId: getFilesFromSiteB2B
   tags:
-    - Site
+    - Sites
   summary: Get files from a site
   description: This API allows us to fetch files from a site by providing the corresponding Site ID
   requestBody:
