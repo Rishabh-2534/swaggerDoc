@@ -47,12 +47,9 @@ properties:
     type: string
     description: Filter criteria for search
     enum:
-      - favorites
-      - write_folders
       - this_week
       - this_month
       - last_week
-      - owned_by_me
       - recents
   directory:
     type: string
