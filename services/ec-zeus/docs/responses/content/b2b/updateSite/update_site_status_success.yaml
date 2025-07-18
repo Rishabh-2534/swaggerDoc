@@ -13,6 +13,3 @@ content:
         message:
           type: string
           example: Site status updated successfully
-        site_id:
-          type: string
-          example: 6c41b3fb-b92c-462c-9e1e-e3ffcbe88b52 
