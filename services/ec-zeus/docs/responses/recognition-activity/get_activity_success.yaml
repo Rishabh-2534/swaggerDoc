@@ -1,0 +1,130 @@
+description: "Recognition activity fetched successfully"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - success
+        message:
+          type: string
+          example: "Recognition activity fetched successfully"
+        result:
+          type: object
+          properties:
+            nextPageToken:
+              type: string
+              description: Token for pagination to get next page of results
+              example: ""
+            listOfItems:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the recognition activity
+                    example: "recognition_123"
+                  awardName:
+                    type: string
+                    description: Name of the award given
+                    example: "Employee of the Month"
+                  awardedBy:
+                    type: string
+                    description: Name of the person who gave the award
+                    example: "John Doe"
+                  dateAwarded:
+                    type: string
+                    format: date-time
+                    description: Date and time when the award was given
+                    example: "2024-01-15T10:30:00Z"
+                  recipients:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: User ID of the recipient
+                          example: "user_456"
+                        fullName:
+                          type: string
+                          description: Full name of the recipient
+                          example: "Jane Smith"
+                      required:
+                        - id
+                        - fullName
+                    description: List of recipients who received the award
+                  message:
+                    type: object
+                    properties:
+                      json:
+                        type: string
+                        description: Message in JSON format
+                        example: "{\"text\": \"Great work on the project!\"}"
+                      html:
+                        type: string
+                        description: Message in HTML format
+                        example: "<p>Great work on the project!</p>"
+                    description: Optional message associated with the recognition
+                  awardIcon:
+                    type: object
+                    properties:
+                      value:
+                        type: string
+                        description: Icon value for the award
+                        example: "ACHIEVEMENT"
+                      isDefault:
+                        type: boolean
+                        description: Whether this is the default icon
+                        example: true
+                    required:
+                      - value
+                      - isDefault
+                    description: Icon information for the award
+                  recognitionType:
+                    type: string
+                    description: Type of recognition
+                    example: "peer_recognition"
+                  location:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: Location ID
+                        example: "loc_789"
+                      name:
+                        type: string
+                        description: Location name
+                        example: "San Francisco Office"
+                    description: Optional location information
+                  department:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: Department ID
+                        example: "dept_101"
+                      name:
+                        type: string
+                        description: Department name
+                        example: "Engineering"
+                    description: Optional department information
+                required:
+                  - id
+                  - awardName
+                  - awardedBy
+                  - dateAwarded
+                  - recipients
+                  - awardIcon
+                  - recognitionType
+              description: List of recognition activity items
+          required:
+            - nextPageToken
+            - listOfItems
+      required:
+        - status
+        - message
+        - result 

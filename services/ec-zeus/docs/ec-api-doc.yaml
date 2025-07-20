@@ -26,6 +26,8 @@ tags:
       description: Everything about Sites
     - name: Video
       description: Everything about Video
+    - name: Recognition Activity
+      description: Everything about Recognition Activity
 
 servers:
     - url: https://platform.{env}.simpplr.com/v1
@@ -108,6 +110,10 @@ paths:
         $ref: "./paths/search/autocomplete_search.yaml"
     /enterprise-search/smartanswers:
         $ref: "./paths/search/smart_answers.yaml"
+
+    # Recognition Activity
+    /recognition/activity:
+        $ref: "./paths/recognition-activity/get_activity.yaml"
 
 components:
     schemas:
