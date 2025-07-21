@@ -1,0 +1,15 @@
+description: Site status updated successfully
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        result:
+          type: object
+          example: {}
+        message:
+          type: string
+          example: Site status updated successfully
