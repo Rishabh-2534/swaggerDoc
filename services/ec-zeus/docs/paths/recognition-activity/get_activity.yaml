@@ -27,7 +27,7 @@ get:
       explode: false
     - name: startDate
       in: query
-      description: Array of start dates to filter by
+      description: Start date to filter by
       required: false
       schema:
         type: array
@@ -37,7 +37,7 @@ get:
       explode: false
     - name: endDate
       in: query
-      description: Array of end dates to filter by
+      description: End date to filter by
       required: false
       schema:
         type: array
@@ -52,12 +52,11 @@ get:
       schema:
         type: string
         enum:
-          - peer_recognition
-          - spot_awards
-          - recurring_awards
-          - milestones
-          - recognition_and_awards
-          - all_activity
+          - PEER
+          - SPOT
+          - DIRECT
+          - NOMINATION
+          - MILESTONE
     - name: nextPageToken
       in: query
       description: Token for pagination to get next page of results

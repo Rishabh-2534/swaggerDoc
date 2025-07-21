@@ -14,21 +14,20 @@ properties:
     type: array
     items:
       type: string
-    description: Array of start dates to filter by
+    description: Start date to filter by
   endDate:
     type: array
     items:
       type: string
-    description: Array of end dates to filter by
+    description: End date to filter by
   recognitionType:
     type: string
     enum:
-      - peer_recognition
-      - spot_awards
-      - recurring_awards
-      - milestones
-      - recognition_and_awards
-      - all_activity
+      - PEER
+      - SPOT
+      - DIRECT
+      - NOMINATION
+      - MILESTONE
     description: Type of recognition to filter by
   nextPageToken:
     type: string
