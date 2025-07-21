@@ -1,0 +1,132 @@
+get:
+  tags:
+    - Recognition
+  summary: Get recognition activity
+  description: Retrieve recognition activity data with optional filtering and pagination
+  operationId: getRecognitionActivity
+  parameters:
+    - name: locationIds
+      in: query
+      description: Array of location IDs to filter by
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+      style: form
+      explode: false
+    - name: departmentIds
+      in: query
+      description: Array of department IDs to filter by
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+      style: form
+      explode: false
+    - name: startDate
+      in: query
+      description: Start date to filter by
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+      style: form
+      explode: false
+    - name: endDate
+      in: query
+      description: End date to filter by
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+      style: form
+      explode: false
+    - name: recognitionType
+      in: query
+      description: Type of recognition to filter by
+      required: false
+      schema:
+        type: string
+        enum:
+          - PEER
+          - SPOT
+          - DIRECT
+          - NOMINATION
+          - MILESTONE
+    - name: nextPageToken
+      in: query
+      description: Token for pagination to get next page of results
+      required: false
+      schema:
+        type: string
+    - name: pageSize
+      in: query
+      description: Number of items per page (1-100, default 20)
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+    - name: filter
+      in: query
+      description: Filter type for the activity
+      required: false
+      schema:
+        type: string
+        enum:
+          - department
+          - team
+          - recIGave
+          - recIReceived
+    - name: sort
+      in: query
+      description: Sort order for results
+      required: false
+      schema:
+        type: string
+        enum:
+          - date
+          - relevancy
+    - name: days
+      in: query
+      description: Number of days to look back
+      required: false
+      schema:
+        type: integer
+    - name: awardIds
+      in: query
+      description: Array of award IDs to filter by
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+      style: form
+      explode: false
+    - name: messageType
+      in: query
+      description: Type of message format to return
+      required: false
+      schema:
+        type: string
+        enum:
+          - json
+          - html
+  responses:
+    '200':
+      $ref: '../../responses/recognition-activity/get_activity_success.yaml'
+    '400':
+      $ref: '../../responses/recognition-activity/get_activity_error.yaml'
+    401:
+      $ref: '../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../responses/common/forbidden.yaml'
+    '500':
+      $ref: '../../responses/recognition-activity/get_activity_error.yaml'
+  security:
+    - apiAuthSecurity: [] 

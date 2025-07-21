@@ -22,6 +22,8 @@ tags:
       description: Everything about Notifications
     - name: People
       description: Everything about People
+    - name: Recognition
+      description: Everything about Recognition
     - name: Sites
       description: Everything about Sites
     - name: Video
@@ -110,6 +112,10 @@ paths:
         $ref: "./paths/search/autocomplete_search.yaml"
     /enterprise-search/smartanswers:
         $ref: "./paths/search/smart_answers.yaml"
+
+    # Recognition Activity
+    /recognition/activity:
+        $ref: "./paths/recognition-activity/get_activity.yaml"
 
 components:
     schemas:

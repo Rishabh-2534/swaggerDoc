@@ -1,0 +1,68 @@
+type: object
+properties:
+  locationIds:
+    type: array
+    items:
+      type: string
+    description: Array of location IDs to filter by
+  departmentIds:
+    type: array
+    items:
+      type: string
+    description: Array of department IDs to filter by
+  startDate:
+    type: array
+    items:
+      type: string
+    description: Start date to filter by
+  endDate:
+    type: array
+    items:
+      type: string
+    description: End date to filter by
+  recognitionType:
+    type: string
+    enum:
+      - PEER
+      - SPOT
+      - DIRECT
+      - NOMINATION
+      - MILESTONE
+    description: Type of recognition to filter by
+  nextPageToken:
+    type: string
+    description: Token for pagination to get next page of results
+  pageSize:
+    type: integer
+    minimum: 1
+    maximum: 100
+    default: 20
+    description: Number of items per page
+  filter:
+    type: string
+    enum:
+      - department
+      - team
+      - recIGave
+      - recIReceived
+    description: Filter type for the recognition activity
+  sort:
+    type: string
+    enum:
+      - date
+      - relevancy
+    description: Sort order for results
+  days:
+    type: integer
+    description: Number of days to look back
+  awardIds:
+    type: array
+    items:
+      type: string
+    description: Array of award IDs to filter by
+  messageType:
+    type: string
+    enum:
+      - json
+      - html
+    description: Type of message format to return 
