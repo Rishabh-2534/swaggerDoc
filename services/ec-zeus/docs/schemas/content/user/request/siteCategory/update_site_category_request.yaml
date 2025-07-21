@@ -8,3 +8,7 @@ properties:
     type: string
     description: Access level for the site category
     example: "all"
+required:
+    - name
+    - access
+additionalProperties: false

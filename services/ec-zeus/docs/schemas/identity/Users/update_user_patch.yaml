@@ -350,8 +350,26 @@ properties:
     description: User's user type
     example: Employee
   "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$":
-    type: string
-    description: User's custom fields (if applicable)
+    oneOf:
+      - type: string
+      - type: number
+      - type: boolean
+      - type: array
+        items:
+          type: string
+    description: |
+      User's custom fields (if applicable) (pass it as string if custom field types is not enabled)
+      For multi-select custom fields, pass it as an array of strings or as a string with semicolons (;) separated values
+      For date custom fields, pass it as a string in `YYYY-MM-DD` format
   "^.*__c$":
-    type: string
-    description: User's custom fields (if applicable) 
+    oneOf:
+      - type: string
+      - type: number
+      - type: boolean
+      - type: array
+        items:
+          type: string
+    description: |
+      User's custom fields (if applicable) (pass it as string if custom field types is not enabled)
+      For multi-select custom fields, pass it as an array of strings or as a string with semicolons (;) separated values
+      For date custom fields, pass it as a string in `YYYY-MM-DD` format
