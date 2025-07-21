@@ -128,5 +128,3 @@ get:
       $ref: '../../responses/common/forbidden.yaml'
     '500':
       $ref: '../../responses/recognition-activity/get_activity_error.yaml'
-  security:
-    - apiAuthSecurity: [] 
