@@ -1,6 +1,6 @@
 get:
   tags:
-    - Recognition Activity
+    - Recognition
   summary: Get recognition activity
   description: Retrieve recognition activity data with optional filtering and pagination
   operationId: getRecognitionActivity

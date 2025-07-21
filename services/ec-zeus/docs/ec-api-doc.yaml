@@ -22,12 +22,12 @@ tags:
       description: Everything about Notifications
     - name: People
       description: Everything about People
+    - name: Recognition
+      description: Everything about Recognition
     - name: Sites
       description: Everything about Sites
     - name: Video
       description: Everything about Video
-    - name: Recognition
-      description: Everything about Recognition
 
 servers:
     - url: https://platform.{env}.simpplr.com/v1
