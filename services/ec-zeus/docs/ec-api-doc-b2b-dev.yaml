@@ -10,14 +10,14 @@ x-proxy-enabled: true
 tags:
     - name: Authorization
       description: Everything about Authorization
-    - name: Users
-      description: Everything about Users
-    - name: Sites
-      description: Everything about Sites
     - name: Content
       description: Everything about Content
     - name: Files
       description: Everything about Files
+    - name: Sites
+      description: Everything about Sites
+    - name: Users
+      description: Everything about Users
 
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}

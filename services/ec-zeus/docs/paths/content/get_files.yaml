@@ -1,11 +1,21 @@
 post:
-  operationId: getFilesFromSite
+  operationId: getFilesFromSiteUser
   tags:
-    - Sites
-  summary: Get files from a site
-  description: This API allows us to fetch files from a site by providing the corresponding Site ID
+    - Files
+  summary: Get files
+  description: |
+    This API lets you search for files within a site using multiple parameters.
+
+    Key points:
+    * Use `siteId` to search within a specific site
+    * Use `contentId` to find files linked to specific content
+    * Provide a file `id` for direct retrieval
+    * Filter results using `provider`, `sortBy`, `filter`, `directory`, and `context`
+    * Limit the number of results with the `size` parameter
+    * Use a search `term` to find files by name or content
+
   requestBody :
-     description: Get Files from a Site
+     description: Get Files using site ID, content ID, or file ID
      content:
       application/json:
         schema:

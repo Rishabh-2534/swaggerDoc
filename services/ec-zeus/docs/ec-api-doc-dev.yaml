@@ -16,16 +16,16 @@ tags:
       description: Everything about Content
     - name: Enterprise search
       description: Everything about Enterprise search
+    - name: Files
+      description: Everything about Files
     - name: Notifications
       description: Everything about Notifications
     - name: People
       description: Everything about People
-    - name: Video
-      description: Everything about Video
     - name: Sites
       description: Everything about Sites
-    - name: Files
-      description: Everything about Files
+    - name: Video
+      description: Everything about Video
 
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
@@ -72,8 +72,6 @@ paths:
         $ref: "./paths/content/search_sites.yaml"
     /content/sites/{site_id}/content/{content_id}:
         $ref: "./paths/content/get_content_by_id.yaml"
-    /content/files/list:
-        $ref: "./paths/content/get_files.yaml"
     /content/site-categories:
         $ref: "./paths/content/user/site_categories.yaml"
     /content/site-categories/{siteCategoryId}:
@@ -86,6 +84,8 @@ paths:
     # Files
     /content/static/signedurl/upload:
         $ref: "./paths/content/user/get_upload_signed_url.yaml"
+    /content/files/list:
+        $ref: "./paths/content/get_files.yaml"
 
      # Enterprise Search
     /enterprise-search/search:
