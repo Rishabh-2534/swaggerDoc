@@ -26,12 +26,6 @@ properties:
     default: intranet
     enum:
       - intranet
-      - googledrive
-      - sharepoint
-      - onedrive
-      - box
-      - native_video
-      - dropbox
     example: intranet
   sortBy:
     type: string

@@ -4,16 +4,7 @@ post:
     - Files
   summary: Get files
   description: |
-    This API lets you search for files within a site using multiple parameters.
-
-    Key points:
-    * Use `siteId` to search within a specific site
-    * Use `contentId` to find files linked to specific content
-    * Provide a file `id` for direct retrieval
-    * Filter results using `provider`, `sortBy`, `filter`, `directory`, and `context`
-    * Limit the number of results with the `size` parameter
-    * Use a search `term` to find files by name or content
-
+    This API lets you search for files using multiple parameters including siteId, contentId, file id, and various filtering options.
   requestBody :
      description: Get Files using site ID, content ID, or file ID
      content:
