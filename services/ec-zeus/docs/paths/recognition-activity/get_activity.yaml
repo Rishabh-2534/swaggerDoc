@@ -5,84 +5,40 @@ get:
   description: Retrieve recognition activity data with optional filtering and pagination
   operationId: getRecognitionActivity
   parameters:
-    - name: locationIds
+    - name: locations
       in: query
-      description: Array of location IDs to filter by
-      required: false
-      schema:
-        type: array
-        items:
-          type: string
-      style: form
-      explode: false
-    - name: departmentIds
-      in: query
-      description: Array of department IDs to filter by
-      required: false
-      schema:
-        type: array
-        items:
-          type: string
-      style: form
-      explode: false
-    - name: startDate
-      in: query
-      description: Start date to filter by
-      required: false
-      schema:
-        type: array
-        items:
-          type: string
-      style: form
-      explode: false
-    - name: endDate
-      in: query
-      description: End date to filter by
-      required: false
-      schema:
-        type: array
-        items:
-          type: string
-      style: form
-      explode: false
-    - name: recognitionType
-      in: query
-      description: Type of recognition to filter by
+      description: Comma-separated locations to filter by (e.g., India,US)
       required: false
       schema:
         type: string
-        enum:
-          - PEER
-          - SPOT
-          - DIRECT
-          - NOMINATION
-          - MILESTONE
-    - name: nextPageToken
+    - name: departments
       in: query
-      description: Token for pagination to get next page of results
+      description: Comma-separated departments to filter by (e.g., Engineering,Sales,HR)
       required: false
       schema:
         type: string
-    - name: pageSize
+    - name: type
       in: query
-      description: Number of items per page (1-100, default 20)
+      description: Comma-separated award types to filter by (e.g., SPOT,PEER)
+      required: false
+      schema:
+        type: string
+    - name: size
+      in: query
+      description: Number of items per page (1-20, default 10)
       required: false
       schema:
         type: integer
         minimum: 1
-        maximum: 100
-        default: 20
-    - name: filter
+        maximum: 20
+        default: 10
+    - name: nextPageToken
       in: query
-      description: Filter type for the activity
+      description: A cursor to use in pagination, if provided results will be returned from the token provided.
       required: false
       schema:
-        type: string
-        enum:
-          - department
-          - team
-          - recIGave
-          - recIReceived
+        type: integer
+        minimum: 0
     - name: sort
       in: query
       description: Sort order for results
@@ -97,34 +53,31 @@ get:
       description: Number of days to look back
       required: false
       schema:
-        type: integer
-    - name: awardIds
+        type: number
+    - name: awards
       in: query
-      description: Array of award IDs to filter by
+      description: Comma-separated award names to filter by (e.g., Award 1,Award 2,Award 3)
       required: false
       schema:
-        type: array
-        items:
-          type: string
-      style: form
-      explode: false
+        type: string
     - name: messageType
       in: query
-      description: Type of message format to return
+      description: Type of recognition message to return
       required: false
       schema:
         type: string
         enum:
           - json
           - html
+        default: html
   responses:
-    '200':
+    200:
       $ref: '../../responses/recognition-activity/get_activity_success.yaml'
-    '400':
+    400:
       $ref: '../../responses/recognition-activity/get_activity_error.yaml'
     401:
       $ref: '../../responses/common/unauthorized.yaml'
     403:
       $ref: '../../responses/common/forbidden.yaml'
-    '500':
+    500:
       $ref: '../../responses/recognition-activity/get_activity_error.yaml'
