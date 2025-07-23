@@ -14,6 +14,8 @@ tags:
       description: Everything about Content
     - name: Files
       description: Everything about Files
+    - name: Recognition
+      description: Everything about Recognition
     - name: Sites
       description: Everything about Sites
     - name: Users
@@ -41,6 +43,8 @@ paths:
         $ref: "./paths/content/b2b/sites.yaml"
     /b2b/content/sites/{siteId}:
         $ref: "./paths/content/b2b/site_by_id.yaml"
+    /b2b/content/sites/{siteId}/status:
+        $ref: "./paths/content/b2b/site_status.yaml"
     /b2b/content/sites/{siteId}/membership/manage:
         $ref: "./paths/content/b2b/manage_site_membership.yaml"
 
@@ -67,6 +71,10 @@ paths:
         $ref: "./paths/content/b2b/get_upload_signed_url.yaml"
     /b2b/content/files/list:
         $ref: "./paths/content/b2b/get_files.yaml"
+
+    # Recognition Activity
+    /b2b/recognition/activity:
+        $ref: "./paths/recognition-activity/get_activity.yaml"
 
 components:
     securitySchemes:

@@ -37,3 +37,7 @@ SearchContent:
   $ref: "./content/search_content.yaml"
 SearchSites:
   $ref: "./content/search_sites.yaml"
+
+# Recognition Activity schemas
+GetRecognitionActivity:
+  $ref: "./recognition-activity/get_activity.yaml"

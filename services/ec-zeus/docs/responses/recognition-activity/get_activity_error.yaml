@@ -1,0 +1,33 @@
+description: "Error occurred while fetching recognition activity"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        status:
+          type: "string"
+          enum:
+            - "error"
+        message:
+          type: "string"
+          example: "Error occurred while fetching recognition activity"
+        errors:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              field:
+                type: "string"
+                description: "Field name that caused the error"
+                example: "size"
+              message:
+                type: "string"
+                description: "Error message for the field"
+                example: "Size must be between 1 and 100"
+            required:
+              - field
+              - message
+          description: "List of validation errors"
+      required:
+        - status
+        - message 
