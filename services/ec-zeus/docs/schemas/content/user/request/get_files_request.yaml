@@ -8,6 +8,10 @@ properties:
     type: string
     description: ID of the Site to search for
     example: 'd096db67-954a-4ff5-94a7-ccc437f2fd81'
+  contentId:
+    type: string
+    description: ID of the content associated with the file
+    example: 'd096db67-954a-4ff5-94a7-ccc437f2fd81' 
   term:
     type: string
     description: Search term

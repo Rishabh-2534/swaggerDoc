@@ -21,7 +21,6 @@ tags:
     - name: Users
       description: Everything about Users
 
-
 servers:
     - url: https://platform.{env}.simpplr.com/v1
       variables:
@@ -70,6 +69,8 @@ paths:
     # Files
     /b2b/content/static/signedurl/upload:
         $ref: "./paths/content/b2b/get_upload_signed_url.yaml"
+    /b2b/content/files/list:
+        $ref: "./paths/content/b2b/get_files.yaml"
 
     # Recognition Activity
     /b2b/recognition/activity:
