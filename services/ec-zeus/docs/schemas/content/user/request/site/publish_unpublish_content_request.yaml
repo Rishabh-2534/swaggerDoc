@@ -1,0 +1,15 @@
+content:
+  application/json:
+    schema:
+      type: object
+      title: Publish/Unpublish Site Content for EC User
+      description: Update the status of site content to publish or unpublish
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum: [publish, unpublish]
+          description: The status to set for the content
+          example: publish
+      additionalProperties: false

@@ -18,7 +18,7 @@ tags:
       description: Everything about Sites
     - name: Users
       description: Everything about Users
-   
+
 
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
@@ -47,6 +47,8 @@ paths:
         $ref: "./paths/content/b2b/site_by_id.yaml"
     /b2b/content/sites/{siteId}/membership/manage:
         $ref: "./paths/content/b2b/manage_site_membership.yaml"
+    /b2b/content/sites/{siteId}/content/{contentId}/status:
+        $ref: "./paths/content/b2b/publish_unpublish_content.yaml"
 
     # Content
     /b2b/content/sites/contents:

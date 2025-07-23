@@ -1,0 +1,21 @@
+content:
+  application/json:
+    schema:
+      type: object
+      title: Publish/Unpublish Site Content for EC B2B
+      description: Update the status of site content to publish or unpublish
+      required:
+        - status
+        - modifiedBy
+      properties:
+        status:
+          type: string
+          enum: [publish, unpublish]
+          description: The status to set for the content
+          example: publish
+        modifiedBy:
+          type: string
+          format: uuid
+          description: UUID of the user performing the action
+          example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
+      additionalProperties: false
