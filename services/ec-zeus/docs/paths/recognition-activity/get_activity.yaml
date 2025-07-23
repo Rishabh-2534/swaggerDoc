@@ -23,6 +23,20 @@ get:
       required: false
       schema:
         type: string
+    - name: startDate
+      in: query
+      description: Start date to filter by (YYYY-MM-DD)
+      required: false
+      schema:
+        type: string
+        format: date
+    - name: endDate
+      in: query
+      description: End date to filter by (YYYY-MM-DD)
+      required: false
+      schema:
+        type: string
+        format: date
     - name: size
       in: query
       description: Number of items per page (1-20, default 10)
@@ -39,21 +53,6 @@ get:
       schema:
         type: integer
         minimum: 0
-    - name: sort
-      in: query
-      description: Sort order for results
-      required: false
-      schema:
-        type: string
-        enum:
-          - date
-          - relevancy
-    - name: days
-      in: query
-      description: Number of days to look back
-      required: false
-      schema:
-        type: number
     - name: awards
       in: query
       description: Comma-separated award names to filter by (e.g., Award 1,Award 2,Award 3)
