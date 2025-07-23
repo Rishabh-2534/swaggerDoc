@@ -1,0 +1,258 @@
+- name: contentSubType
+  in: body
+  description: Type of content being created
+  schema:
+    type: string
+    enum:
+      - news
+      - knowledge
+  required: true
+
+- name: listOfFiles
+  in: body
+  description: Array of file attachments
+  schema:
+    type: array
+    items:
+      $ref: "../../file/file.yaml"
+  required: false
+
+- name: listOfInlineVideos
+  in: body
+  description: Array of inline video files
+  schema:
+    type: array
+    items:
+      $ref: "../../file/file.yaml"
+  required: false
+
+- name: publishAt
+  in: body
+  description: Date and time when the content should be published (required when publishingStatus is 'schedule')
+  schema:
+    type: string
+    format: date-time
+  required: false
+
+- name: publishTo
+  in: body
+  description: Target audience for publishing
+  schema:
+    type: string
+    nullable: true
+  required: false
+
+- name: bodyHtml
+  in: body
+  description: Main content of the page in HTML format
+  schema:
+    type: string
+  required: true
+
+- name: publishingStatus
+  in: body
+  description: Publishing status of the content
+  schema:
+    type: string
+    enum:
+      - immediate
+      - schedule
+  required: true
+
+- name: imgLayout
+  in: body
+  description: Layout style for the featured image
+  schema:
+    type: string
+    enum:
+      - small
+      - fullscreen
+      - hidden
+      - wide
+  required: false
+
+- name: imgCaption
+  in: body
+  description: Caption for the featured image
+  schema:
+    type: string
+    nullable: true
+    maxLength: 255
+  required: false
+
+- name: imgLandscapeFile
+  in: body
+  description: UUID of the landscape image file
+  schema:
+    type: string
+    format: uuid
+    nullable: true
+  required: false
+
+- name: imgFile
+  in: body
+  description: UUID of the main image file
+  schema:
+    type: string
+    format: uuid
+    nullable: true
+  required: false
+
+- name: imgOriginalFile
+  in: body
+  description: UUID of the original image file
+  schema:
+    type: string
+    format: uuid
+    nullable: true
+  required: false
+
+- name: imgLandscape
+  in: body
+  description: URL of the landscape image
+  schema:
+    type: string
+    nullable: true
+  required: false
+
+- name: title
+  in: body
+  description: Title of the page
+  schema:
+    type: string
+    maxLength: 255
+  required: true
+
+- name: isMaximumWidth
+  in: body
+  description: Whether to use maximum width layout
+  schema:
+    type: boolean
+  required: false
+
+- name: isFeedEnabled
+  in: body
+  description: Whether the page appears in feeds
+  schema:
+    type: boolean
+  required: false
+
+- name: isQuestionAnswerEnabled
+  in: body
+  description: Whether question and answer feature is enabled
+  schema:
+    type: boolean
+  required: false
+
+- name: listOfTopics
+  in: body
+  description: Array of topics associated with the page
+  schema:
+    type: array
+    nullable: true
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      required:
+        - name
+      additionalProperties: false
+  required: false
+
+- name: category
+  in: body
+  description: Category information for the page
+  schema:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+        nullable: true
+      name:
+        type: string
+    required:
+      - id
+      - name
+  required: true
+
+- name: summary
+  in: body
+  description: Summary of the page content
+  schema:
+    type: string
+    nullable: true
+    maxLength: 10000
+  required: false
+
+- name: listOfInlineImages
+  in: body
+  description: Array of inline images
+  schema:
+    type: array
+  required: false
+
+- name: authoredBy
+  in: body
+  description: UUID of the author
+  schema:
+    type: string
+    format: uuid
+  required: false
+
+- name: language
+  in: body
+  description: Language of the content
+  schema:
+    type: string
+  required: false
+
+- name: isNewTiptap
+  in: body
+  description: Whether using new Tiptap editor
+  schema:
+    type: boolean
+  required: false
+
+- name: manualTransEnabled
+  in: body
+  description: Whether manual translation is enabled
+  schema:
+    type: boolean
+  required: false
+
+- name: alteredFields
+  in: body
+  description: Array of fields that have been modified
+  schema:
+    type: array
+  required: false
+
+- name: languagesForAutoTranslation
+  in: body
+  description: Array of languages for automatic translation
+  schema:
+    type: array
+  required: false
+
+- name: templateId
+  in: body
+  description: UUID of the template to use
+  schema:
+    type: string
+    format: uuid
+    nullable: true
+  required: false
+
+- name: createdBy
+  in: body
+  description: UUID of the user creating the page
+  schema:
+    type: string
+    format: uuid
+  required: true

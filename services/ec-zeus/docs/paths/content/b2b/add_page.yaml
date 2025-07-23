@@ -1,0 +1,28 @@
+post:
+  operationId: addPageB2b
+  tags:
+    - Sites
+  summary: Add a page to a site
+  description: This API allows us to add a page to a site
+  parameters:
+    - name: site_id
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
+      description: The ID of the site to add a page to
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/b2b/request/add_page_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/addPage/add_page_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/addPage/add_page_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
