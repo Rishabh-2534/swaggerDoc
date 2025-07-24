@@ -1,0 +1,25 @@
+patch:
+  summary: Update site status
+  operationId: updateSiteStatusB2b
+  tags:
+    - Sites
+  description: This API allows us to update the status of an existing site
+  parameters:
+    - name: siteId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "cffdd6ab-7422-4cfe-be8f-943783cda8a8"
+      description: The ID of the site to update status for
+  requestBody:
+    $ref: '../../../schemas/content/b2b/request/update_site_status_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/updateSite/update_site_status_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/updateSite/update_site_status_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml' 
