@@ -19,7 +19,7 @@ get:
         type: string
     - name: type
       in: query
-      description: Comma-separated award types to filter by (e.g., SPOT,PEER)
+      description: Comma-separated Award types to filter by (eg. PEER,SPOT) | Allowed values are => PEER, NOMINATION, DIRECT, SPOT, MILESTONE
       required: false
       schema:
         type: string
