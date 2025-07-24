@@ -1,153 +1,101 @@
-- name: contentSubType
-  in: body
-  description: Type of content being created
-  schema:
+type: object
+properties:
+  contentSubType:
     type: string
     enum:
       - news
       - knowledge
-  required: true
+    description: Type of content being created
 
-- name: listOfFiles
-  in: body
-  description: Array of file attachments
-  schema:
+  listOfFiles:
     type: array
     items:
-      $ref: "../../file/file.yaml"
-  required: false
+      $ref: "../../../../common/request/file/file.yaml"
+    description: Array of file attachments
 
-- name: listOfInlineVideos
-  in: body
-  description: Array of inline video files
-  schema:
+  listOfInlineVideos:
     type: array
     items:
-      $ref: "../../file/file.yaml"
-  required: false
+      $ref: "../../../../common/request/file/file.yaml"
+    description: Array of inline video files
 
-- name: publishAt
-  in: body
-  description: Date and time when the content should be published (required when publishingStatus is 'schedule')
-  schema:
+  publishAt:
     type: string
     format: date-time
-  required: false
+    description: Date and time when the content should be published (required when publishingStatus is 'schedule')
 
-- name: publishTo
-  in: body
-  description: Target audience for publishing
-  schema:
+  publishTo:
     type: string
     nullable: true
-  required: false
+    description: Target audience for publishing
 
-- name: bodyHtml
-  in: body
-  description: Main content of the page in HTML format
-  schema:
+  bodyHtml:
     type: string
-  required: true
+    description: Main content of the page in HTML format
 
-- name: publishingStatus
-  in: body
-  description: Publishing status of the content
-  schema:
+  publishingStatus:
     type: string
     enum:
       - immediate
       - schedule
-  required: true
+    description: Publishing status of the content
 
-- name: imgLayout
-  in: body
-  description: Layout style for the featured image
-  schema:
+  imgLayout:
     type: string
     enum:
       - small
       - fullscreen
       - hidden
       - wide
-  required: false
+    description: Layout style for the featured image
 
-- name: imgCaption
-  in: body
-  description: Caption for the featured image
-  schema:
+  imgCaption:
     type: string
     nullable: true
     maxLength: 255
-  required: false
+    description: Caption for the featured image
 
-- name: imgLandscapeFile
-  in: body
-  description: UUID of the landscape image file
-  schema:
+  imgLandscapeFile:
     type: string
     format: uuid
     nullable: true
-  required: false
+    description: UUID of the landscape image file
 
-- name: imgFile
-  in: body
-  description: UUID of the main image file
-  schema:
+  imgFile:
     type: string
     format: uuid
     nullable: true
-  required: false
+    description: UUID of the main image file
 
-- name: imgOriginalFile
-  in: body
-  description: UUID of the original image file
-  schema:
+  imgOriginalFile:
     type: string
     format: uuid
     nullable: true
-  required: false
+    description: UUID of the original image file
 
-- name: imgLandscape
-  in: body
-  description: URL of the landscape image
-  schema:
+  imgLandscape:
     type: string
     nullable: true
-  required: false
+    description: URL of the landscape image
 
-- name: title
-  in: body
-  description: Title of the page
-  schema:
+  title:
     type: string
     maxLength: 255
-  required: true
+    description: Title of the page
 
-- name: isMaximumWidth
-  in: body
-  description: Whether to use maximum width layout
-  schema:
+  isMaximumWidth:
     type: boolean
-  required: false
+    description: Whether to use maximum width layout
 
-- name: isFeedEnabled
-  in: body
-  description: Whether the page appears in feeds
-  schema:
+  isFeedEnabled:
     type: boolean
-  required: false
+    description: Whether the page appears in feeds
 
-- name: isQuestionAnswerEnabled
-  in: body
-  description: Whether question and answer feature is enabled
-  schema:
+  isQuestionAnswerEnabled:
     type: boolean
-  required: false
+    description: Whether question and answer feature is enabled
 
-- name: listOfTopics
-  in: body
-  description: Array of topics associated with the page
-  schema:
+  listOfTopics:
     type: array
     nullable: true
     items:
@@ -162,12 +110,9 @@
       required:
         - name
       additionalProperties: false
-  required: false
+    description: Array of topics associated with the page
 
-- name: category
-  in: body
-  description: Category information for the page
-  schema:
+  category:
     type: object
     properties:
       id:
@@ -179,80 +124,58 @@
     required:
       - id
       - name
-  required: true
+    description: Category information for the page
 
-- name: summary
-  in: body
-  description: Summary of the page content
-  schema:
+  summary:
     type: string
     nullable: true
     maxLength: 10000
-  required: false
+    description: Summary of the page content
 
-- name: listOfInlineImages
-  in: body
-  description: Array of inline images
-  schema:
+  listOfInlineImages:
     type: array
-  required: false
+    description: Array of inline images
 
-- name: authoredBy
-  in: body
-  description: UUID of the author
-  schema:
+  authoredBy:
     type: string
     format: uuid
-  required: false
+    description: UUID of the author
 
-- name: language
-  in: body
-  description: Language of the content
-  schema:
+  language:
     type: string
-  required: false
+    description: Language of the content
 
-- name: isNewTiptap
-  in: body
-  description: Whether using new Tiptap editor
-  schema:
+  isNewTiptap:
     type: boolean
-  required: false
+    description: Whether using new Tiptap editor
 
-- name: manualTransEnabled
-  in: body
-  description: Whether manual translation is enabled
-  schema:
+  manualTransEnabled:
     type: boolean
-  required: false
+    description: Whether manual translation is enabled
 
-- name: alteredFields
-  in: body
-  description: Array of fields that have been modified
-  schema:
+  alteredFields:
     type: array
-  required: false
+    description: Array of fields that have been modified
 
-- name: languagesForAutoTranslation
-  in: body
-  description: Array of languages for automatic translation
-  schema:
+  languagesForAutoTranslation:
     type: array
-  required: false
+    description: Array of languages for automatic translation
 
-- name: templateId
-  in: body
-  description: UUID of the template to use
-  schema:
+  templateId:
     type: string
     format: uuid
     nullable: true
-  required: false
+    description: UUID of the template to use
 
-- name: createdBy
-  in: body
-  description: UUID of the user creating the page
-  schema:
+  createdBy:
     type: string
     format: uuid
-  required: true
+    description: UUID of the user creating the page
+
+required:
+  - contentSubType
+  - bodyHtml
+  - publishingStatus
+  - title
+  - category
+  - createdBy

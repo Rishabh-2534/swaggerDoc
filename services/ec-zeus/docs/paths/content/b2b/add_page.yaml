@@ -1,11 +1,11 @@
 post:
   operationId: addPageB2b
   tags:
-    - Sites
+    - Content
   summary: Add a page to a site
   description: This API allows us to add a page to a site
   parameters:
-    - name: site_id
+    - name: siteId
       in: path
       required: true
       schema:
@@ -16,7 +16,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../../schemas/content/b2b/request/add_page_request.yaml'
+          $ref: '../../../schemas/content/b2b/request/site/content/add_page_request.yaml'
   responses:
     '200':
       $ref: '../../../responses/content/b2b/addPage/add_page_success.yaml'

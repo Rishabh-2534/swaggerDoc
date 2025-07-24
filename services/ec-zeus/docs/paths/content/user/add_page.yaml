@@ -2,7 +2,7 @@
 post:
   operationId: addPageUser
   tags:
-    - Sites
+    - Content
   summary: Add a page to a site
   description: This API allows us to add a page to a site
   parameters:

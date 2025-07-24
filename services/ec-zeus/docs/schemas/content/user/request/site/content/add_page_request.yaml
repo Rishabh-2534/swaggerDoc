@@ -10,13 +10,13 @@ properties:
   listOfFiles:
     type: array
     items:
-      $ref: "../../file/file.yaml"
+      $ref: "../../../../common/request/file/file.yaml"
     description: Array of file attachments
 
   listOfInlineVideos:
     type: array
     items:
-      $ref: "../../file/file.yaml"
+      $ref: "../../../../common/request/file/file.yaml"
     description: Array of inline video files
 
   publishAt:

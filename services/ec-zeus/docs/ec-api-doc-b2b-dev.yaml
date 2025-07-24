@@ -49,8 +49,6 @@ paths:
         $ref: "./paths/content/b2b/site_by_id.yaml"
     /b2b/content/sites/{siteId}/status:
         $ref: "./paths/content/b2b/site_status.yaml"
-    /b2b/content/sites/{site_id}/page:
-        $ref: "./paths/content/user/add_page.yaml"
     /b2b/content/sites/{siteId}/membership/manage:
         $ref: "./paths/content/b2b/manage_site_membership.yaml"
 
@@ -67,6 +65,8 @@ paths:
         $ref: "./paths/content/b2b/site_categories.yaml"
     /b2b/content/site-categories/{siteCategoryId}:
         $ref: "./paths/content/b2b/site_category_by_id.yaml"
+    /b2b/content/sites/{siteId}/page:
+        $ref: "./paths/content/b2b/add_page.yaml"
     /b2b/content/sites/{site_id}/page-categories:
         $ref: "./paths/content/b2b/site_page_categories.yaml"
     /b2b/content/sites/{site_id}/page-categories/{category_id}:

@@ -20,4 +20,4 @@ post:
     401:
       $ref: "../../../responses/common/unauthorized.yaml"
     403:
-      $ref: "../../../responses/common/forbidden.yaml" 
+      $ref: "../../../responses/common/forbidden.yaml"
