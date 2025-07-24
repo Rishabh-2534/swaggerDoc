@@ -15,7 +15,7 @@ parameters:
     description: Unique identifier of the content
 post:
   tags:
-    - Sites
+    - Content
   summary: Publish/Unpublish Content
   description: This API allows us to publish/unpublish a content
   operationId: publishUnpublishContentB2b

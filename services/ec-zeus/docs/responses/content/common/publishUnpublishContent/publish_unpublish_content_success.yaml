@@ -11,14 +11,14 @@ content:
           enum: [success, error]
         result:
           type: object
-          description: Contains the ID of the site whose status was updated
+          description: Contains the ID of the content whose status was updated
           properties:
-            siteId:
+            contentId:
               type: string
               format: uuid
               example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
-              description: Unique identifier of the site whose status was updated
+              description: Unique identifier of the content whose status was updated
         message:
           type: string
-          example: Site status updated successfully
+          example: Content status updated successfully
           description: Descriptive message about the operation result
