@@ -22,7 +22,8 @@ properties:
   publishAt:
     type: string
     format: date-time
-    description: Date and time when the content should be published (required when publishingStatus is 'schedule')
+    example: "2025-04-09T18:30:00.000Z"
+    description: Date and time when the content should be published (required when publishingStatus is 'schedule'). Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)
 
   publishTo:
     type: string
@@ -132,15 +133,6 @@ properties:
     maxLength: 10000
     description: Summary of the page content
 
-  listOfInlineImages:
-    type: array
-    description: Array of inline images
-
-  authoredBy:
-    type: string
-    format: uuid
-    description: UUID of the author
-
   language:
     type: string
     description: Language of the content
@@ -152,20 +144,6 @@ properties:
   manualTransEnabled:
     type: boolean
     description: Whether manual translation is enabled
-
-  alteredFields:
-    type: array
-    description: Array of fields that have been modified
-
-  languagesForAutoTranslation:
-    type: array
-    description: Array of languages for automatic translation
-
-  templateId:
-    type: string
-    format: uuid
-    nullable: true
-    description: UUID of the template to use
 
   createdBy:
     type: string
