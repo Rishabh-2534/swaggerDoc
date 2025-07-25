@@ -120,8 +120,8 @@ content:
                   message:
                     type: string
                     nullable: true
-                    description: Optional message associated with the recognition
-                    example: "Great work on the project!"
+                    description: Message html associated with the recognition
+                    example: "<p>Great work on the project!</p>"
                 required:
                   - id
                   - recipients
