@@ -1,4 +1,4 @@
-description: "Recognition activity success response"
+description: "Success response"
 content:
   application/json:
     schema:
@@ -43,6 +43,14 @@ content:
                         nullable: true
                         description: Returned only if giver type is USER
                         example: "https://example.com/profile.jpg"
+                      location:
+                        type: string
+                        description: Returned only if giver type is USER
+                        example: "uk"
+                      department:
+                        type: string
+                        description: Returned only if giver type is USER
+                        example: "engineering"
                       type:
                         type: string
                         enum:
@@ -71,6 +79,14 @@ content:
                           nullable: true
                           description: Profile image URL of the recipient
                           example: "https://example.com/profile.jpg"
+                        location:
+                          type: string
+                          description: Returned only if giver type is USER
+                          example: "uk"
+                        department:
+                          type: string
+                          description: Returned only if giver type is USER
+                          example: "engineering"
                       required:
                         - userId
                         - name

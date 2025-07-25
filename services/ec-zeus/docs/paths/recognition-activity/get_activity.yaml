@@ -21,6 +21,7 @@ get:
       description: |
         Comma-separated departments to filter by (e.g., Engineering,Sales,HR).
         Maximum of 40 departments can be provided and overall 2000 characters or less.
+        Matches departments of giver or recipient department.
       required: false
       schema:
         type: string
@@ -36,6 +37,7 @@ get:
       description: |
         Comma-separated locations to filter by (e.g., India,US).
         Maximum of 40 locations can be provided and overall 2000 characters or less.
+        Matches locations of giver or recipient location.
       required: false
       schema:
         type: string
