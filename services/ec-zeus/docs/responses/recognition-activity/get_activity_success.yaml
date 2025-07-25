@@ -1,4 +1,4 @@
-description: "Recognition activity fetched successfully"
+description: "Recognition activity success response"
 content:
   application/json:
     schema:
@@ -15,9 +15,9 @@ content:
           type: object
           properties:
             nextPageToken:
-              type: string
+              type: integer
               description: Token for pagination to get next page of results
-              example: ""
+              example: 15
             listOfItems:
               type: array
               items:
@@ -26,100 +26,107 @@ content:
                   id:
                     type: string
                     description: Unique identifier for the recognition activity
-                    example: "recognition_123"
-                  awardName:
-                    type: string
-                    description: Name of the award given
-                    example: "Employee of the Month"
-                  awardedBy:
-                    type: string
-                    description: Name of the person who gave the award
-                    example: "John Doe"
-                  dateAwarded:
-                    type: string
-                    format: date-time
-                    description: Date and time when the award was given
-                    example: "2024-01-15T10:30:00Z"
+                    example: "uuid"
+                  giver:
+                    type: object
+                    properties:
+                      userId:
+                        type: string
+                        description: Returned only if giver type is USER
+                        example: "user_123"
+                      name:
+                        type: string
+                        description: Name of the giver who gave the award, returned only if giver type is not NO_AUTHOR
+                        example: "John Doe"
+                      profileImg:
+                        type: string
+                        nullable: true
+                        description: Returned only if giver type is USER
+                        example: "https://example.com/profile.jpg"
+                      type:
+                        type: string
+                        enum:
+                          - USER
+                          - APPNAME
+                          - NO_AUTHOR
+                          - CUSTOM
+                        description: Type of the giver
+                        example: "USER"
+                    description: Information about the giver who gave the award
                   recipients:
                     type: array
                     items:
                       type: object
                       properties:
-                        id:
+                        userId:
                           type: string
                           description: User ID of the recipient
                           example: "user_456"
-                        fullName:
+                        name:
                           type: string
                           description: Full name of the recipient
                           example: "Jane Smith"
+                        profileImg:
+                          type: string
+                          nullable: true
+                          description: Profile image URL of the recipient
+                          example: "https://example.com/profile.jpg"
                       required:
-                        - id
-                        - fullName
+                        - userId
+                        - name
                     description: List of recipients who received the award
-                  message:
+                  award:
                     type: object
                     properties:
-                      json:
+                      awardName:
                         type: string
-                        description: Message in JSON format
-                        example: "{\"text\": \"Great work on the project!\"}"
-                      html:
+                        description: Name of the award given
+                        example: "Employee of the Month"
+                      description:
                         type: string
-                        description: Message in HTML format
-                        example: "<p>Great work on the project!</p>"
-                    description: Optional message associated with the recognition
-                  awardIcon:
-                    type: object
-                    properties:
-                      value:
+                        nullable: true
+                        description: Description of the award
+                        example: "Award for outstanding performance"
+                      type:
                         type: string
-                        description: Icon value for the award
-                        example: "ACHIEVEMENT"
-                      isDefault:
-                        type: boolean
-                        description: Whether this is the default icon
-                        example: true
+                        enum:
+                          - NOMINATION
+                          - DIRECT
+                          - PEER
+                          - SPOT
+                          - MILESTONE
+                        description: Type of recognition
+                        example: "PEER"
+                      awardIcon:
+                        type: string
+                        nullable: true
+                        description: Icon of the award
+                        example: "https://example.com/icon.jpg"
                     required:
-                      - value
-                      - isDefault
-                    description: Icon information for the award
-                  recognitionType:
+                      - awardName
+                      - type
+                    description: Award information
+                  createdAt:
                     type: string
-                    description: Type of recognition
-                    example: "peer_recognition"
-                  location:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: Location ID
-                        example: "loc_789"
-                      name:
-                        type: string
-                        description: Location name
-                        example: "San Francisco Office"
-                    description: Optional location information
-                  department:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: Department ID
-                        example: "dept_101"
-                      name:
-                        type: string
-                        description: Department name
-                        example: "Engineering"
-                    description: Optional department information
+                    format: date-time
+                    description: Date and time when the recognition was created
+                    example: "2024-01-15T10:30:00Z"
+                  modifiedAt:
+                    type: string
+                    format: date-time
+                    nullable: true
+                    description: Date and time when the recognition was last modified
+                    example: "2024-01-15T11:30:00Z"
+                  message:
+                    type: string
+                    nullable: true
+                    description: Message html associated with the recognition
+                    example: "<p>Great work on the project!</p>"
                 required:
                   - id
-                  - awardName
-                  - awardedBy
-                  - dateAwarded
                   - recipients
-                  - awardIcon
-                  - recognitionType
+                  - award
+                  - createdAt
               description: List of recognition activity items
           required:
             - nextPageToken
