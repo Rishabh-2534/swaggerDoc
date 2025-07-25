@@ -1,4 +1,4 @@
-description: "Recognition activity success response"
+description: "Success response"
 content:
   application/json:
     schema:
