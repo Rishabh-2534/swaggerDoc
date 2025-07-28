@@ -1,0 +1,32 @@
+post:
+  operationId: createUser
+  tags:
+    - Users
+  summary: Create User
+  description: |
+    This API allows you to create a new user.
+
+    ```json
+    {
+      "email": "...",
+      "firstName": "...",
+      "lastName": "..."
+    }
+    ```
+    Above show the minimum set of fields to create a User. `email` is a login identifier in this case.
+
+    **If for tenant other fields are marked as login identifiers one of the login identifiers need to be present**
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/identity/users/create_user.yaml'
+  responses:
+    '201':
+      $ref: '../../../../responses/identity/b2b/create_user_success.yaml'
+    '400':
+      $ref: '../../../../responses/identity/b2b/create_update_user_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'

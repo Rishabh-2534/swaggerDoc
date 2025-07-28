@@ -358,8 +358,6 @@ properties:
   "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$":
     oneOf:
       - type: string
-      - type: number
-      - type: boolean
       - type: array
         items:
           type: string
@@ -370,8 +368,6 @@ properties:
   "^.*__c$":
     oneOf:
       - type: string
-      - type: number
-      - type: boolean
       - type: array
         items:
           type: string
