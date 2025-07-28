@@ -145,10 +145,6 @@ properties:
     type: boolean
     description: Whether manual translation is enabled
 
-  createdBy:
-    type: string
-    format: uuid
-    description: UUID of the user creating the page
 
 required:
   - contentSubType
@@ -156,4 +152,3 @@ required:
   - publishingStatus
   - title
   - category
-  - createdBy
