@@ -2,4 +2,4 @@ description: "Success"
 content:
   application/json:
     schema:
-      $ref: "../../../schemas/identity/Users/get_user.yaml"
+      $ref: "../../../schemas/identity/users/get_user.yaml"

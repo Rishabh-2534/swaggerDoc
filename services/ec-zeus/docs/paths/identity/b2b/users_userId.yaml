@@ -1,0 +1,8 @@
+get:
+  $ref: "./users/get_user.yaml#/get"
+
+put:
+  $ref: "./users/update_user.yaml#/put"
+
+patch:
+  $ref: "./users/update_user.yaml#/patch"

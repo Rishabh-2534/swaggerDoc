@@ -21,7 +21,7 @@ content:
                   ...all/minimal fields for a user
                 }
               items:
-                $ref: "../../../schemas/identity/Users/get_user.yaml"
+                $ref: "../../../schemas/identity/users/get_user.yaml"
             nextPageToken:
               type: string
               description: >
