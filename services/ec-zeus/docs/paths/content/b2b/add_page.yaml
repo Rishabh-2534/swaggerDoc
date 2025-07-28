@@ -12,6 +12,16 @@ post:
         type: string
         example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
       description: The ID of the site to add a page to
+    - name: action
+      in: query
+      required: true
+      schema:
+        type: string
+        example: "publish"
+        enum:
+          - publish
+          - saveDraft
+      description: The action to perform on the page
   requestBody:
     content:
       application/json:
