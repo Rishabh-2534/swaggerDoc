@@ -95,7 +95,7 @@ paths:
 
     # Recognition Activity
     /recognition/activity:
-        $ref: "./paths/recognition-activity/get_activity.yaml"
+        $ref: "./paths/recognition/get_activity.yaml"
 
      # Enterprise Search
     /enterprise-search/search:
