@@ -40,6 +40,6 @@ IdentityAuthError:
 
 # Recognition Activity responses
 RecognitionActivityGetSuccess:
-  $ref: "./recognition-activity/get_activity_success.yaml"
+  $ref: "./recognition/get_activity_success.yaml"
 RecognitionActivityGetError:
-  $ref: "./recognition-activity/get_activity_error.yaml"
+  $ref: "./recognition/get_activity_error.yaml"

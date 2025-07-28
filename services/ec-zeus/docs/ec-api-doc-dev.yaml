@@ -22,6 +22,8 @@ tags:
       description: Everything about Notifications
     - name: People
       description: Everything about People
+    - name: Recognition
+      description: Everything about Recognition
     - name: Sites
       description: Everything about Sites
     - name: Video
@@ -90,6 +92,10 @@ paths:
         $ref: "./paths/content/user/get_upload_signed_url.yaml"
     /content/files/list:
         $ref: "./paths/content/user/get_files.yaml"
+
+    # Recognition Activity
+    /recognition/activity:
+        $ref: "./paths/recognition/get_activity.yaml"
 
      # Enterprise Search
     /enterprise-search/search:
