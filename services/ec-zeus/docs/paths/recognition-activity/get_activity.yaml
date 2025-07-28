@@ -73,13 +73,13 @@ get:
       schema:
         type: string
   responses:
-    200:
+    '200':
       $ref: '../../responses/recognition-activity/get_activity_success.yaml'
-    400:
+    '400':
       $ref: '../../responses/recognition-activity/get_activity_validation.yaml'
-    401:
+    '401':
       $ref: '../../responses/common/unauthorized.yaml'
-    403:
+    '403':
       $ref: '../../responses/common/forbidden.yaml'
-    500:
+    '500':
       $ref: '../../responses/recognition-activity/get_activity_error.yaml'

@@ -1,0 +1,36 @@
+get:
+  operationId: getUser
+  tags:
+    - Users
+  summary: Get User by ID
+  description: This API allows you to get a user by ID
+  parameters:
+    - name: userId
+      in: path
+      description: The ID of the user to get
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "123e4567-e89b-12d3-a456-426614174000"
+    - name: parseCustomFields
+      in: query
+      description: Whether to parse custom fields (if custom field types enabled)
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'true'
+          - 'false'
+        default: 'false'
+  responses:
+    '200':
+      $ref: '../../../../responses/identity/b2b/get_user_success.yaml'
+    '400':
+      $ref: '../../../../responses/identity/b2b/get_user_error.yaml'
+    '404':
+      $ref: '../../../../responses/identity/b2b/get_user_404_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'
