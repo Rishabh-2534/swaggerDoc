@@ -80,7 +80,7 @@ paths:
 
     # Recognition Activity
     /b2b/recognition/activity:
-        $ref: "./paths/recognition-activity/get_activity.yaml"
+        $ref: "./paths/recognition/get_activity.yaml"
 
 components:
     securitySchemes:
