@@ -78,6 +78,8 @@ paths:
         $ref: "./paths/content/get_content_by_id.yaml"
     /content/site-categories:
         $ref: "./paths/content/user/site_categories.yaml"
+    /content/sites/{site_id}/content/{content_id}/status:
+        $ref: "./paths/content/user/publish_unpublish_content.yaml"
     /content/site-categories/{siteCategoryId}:
         $ref: "./paths/content/user/site_category_by_id.yaml"
     /content/sites/{site_id}/page:
