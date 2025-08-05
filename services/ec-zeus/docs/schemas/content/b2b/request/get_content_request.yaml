@@ -52,6 +52,86 @@
     maximum: 50
     default: 16
   required: false
+- name: siteId
+  in: query
+  description: Optional site ID to filter the results
+  schema:
+    type: string
+    format: uuid
+  required: false
+- name: contentIds
+  in: query
+  description: Filter content by specific content IDs (comma-separated UUIDs)
+  schema:
+    type: array
+    items:
+      type: string
+      format: uuid
+  required: false
+- name: sortBy
+  in: query
+  description: Sort criteria for content
+  schema:
+    type: string
+    enum: ["popularity", "createdNewest", "createdOldest", "publishedNewest", "publishedOldest", "modifiedNewest", "modifiedOldest", "eventOldest", "eventNewest", "eventStartOldest"]
+  required: false
+- name: type
+  in: query
+  description: Content type filter
+  schema:
+    type: string
+    enum: ["page", "album", "event"]
+  required: false
+- name: contentSubType
+  in: query
+  description: Content sub-type filter
+  schema:
+    type: string
+    enum: ["news", "knowledge"]
+  required: false
+- name: timePeriodInDays
+  in: query
+  description: Filter content published within specified time period in days
+  schema:
+    type: integer
+    minimum: 0
+  required: false
+- name: publishStartDateSpan
+  in: query
+  description: Filter content by publish date span
+  schema:
+    type: string
+    enum: ["past_year", "past_month", "past_week", "past_24_hours"]
+  required: false
+- name: pageCategoryId
+  in: query
+  description: Filter pages by category ID (only applicable for page content type)
+  schema:
+    type: string
+    format: uuid
+  required: false
+- name: peopleId
+  in: query
+  description: Filter content by author ID
+  schema:
+    type: string
+    format: uuid
+  required: false
+- name: contributionId
+  in: query
+  description: Filter content contributed by this user ID (authored or modified by this user)
+  schema:
+    type: string
+    format: uuid
+  required: false
+- name: isMustRead
+  in: query
+  description: Whether the content is must read or not
+  schema:
+    type: boolean
+    example: false
+    default: false
+  required: false
 - name: nextPageToken
   in: query
   description: Token for fetching the next page of results
