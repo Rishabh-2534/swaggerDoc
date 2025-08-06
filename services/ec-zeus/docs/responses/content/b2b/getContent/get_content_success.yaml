@@ -167,6 +167,11 @@ content:
                     format: date-time
                     example: "2025-04-11T08:12:57.999Z"
                     description: Date and time when the content was last edited
+                  modifiedOn:
+                    type: string
+                    format: date-time
+                    example: "2025-08-01T20:31:46.632Z"
+                    description: Date and time when the content was last modified
                   first_published_on:
                     type: string
                     format: date-time
@@ -227,7 +232,39 @@ content:
                     type: string
                     nullable: true
                     description: Summary of the content
+                  listOfTopAlbumImages:
+                    type: array
+                    description: List of top album images (applicable for album content type)
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                          example: 87cda071-871c-4728-9051-7f61d2f9a7d2
+                          description: Unique identifier for the album image
+                        albumMediaId:
+                          type: string
+                          format: uuid
+                          example: 87cda071-871c-4728-9051-7f61d2f9a7d2
+                          description: Album media identifier
+                        isCover:
+                          type: boolean
+                          example: false
+                          description: Whether this image is the cover image
+                        description:
+                          type: string
+                          example: ""
+                          description: Description of the album image
+                        img:
+                          type: string
+                          example: f51d722d-9d30-45c6-8e93-8c9ac8c04cf6/content/restricted/87cda071-871c-4728-9051-7f61d2f9a7d2
+                          description: Image path or identifier
+                        isVideo:
+                          type: boolean
+                          example: false
+                          description: Whether this media item is a video
         message:
           type: string
-          example: ""
+          example: "Content list retrieved successfully"
           description: Response message
