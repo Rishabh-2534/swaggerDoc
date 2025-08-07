@@ -137,10 +137,6 @@ properties:
     type: string
     description: Language of the content
 
-  isNewTiptap:
-    type: boolean
-    description: Whether using new Tiptap editor
-
   manualTransEnabled:
     type: boolean
     description: Whether manual translation is enabled
