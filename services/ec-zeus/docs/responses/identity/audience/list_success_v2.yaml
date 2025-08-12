@@ -1,0 +1,53 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        apiName:
+          type: string
+          example: "GetAudienceList"
+        status:
+          type: string
+          example: "success"
+        message:
+          type: string
+          example: "Audiences fetched successfully"
+        result:
+          type: object
+          properties:
+            size:
+              type: integer
+              example: 1
+            nextPageToken:
+              type: integer
+              example: 0
+            listOfItems:
+              type: array
+              items:
+                type: object
+                properties:
+                  audienceId:
+                    type: string
+                    example: "8a636d37-4337-4f77-b177-deb3efcfd108"
+                  name:
+                    type: string
+                    example: "sim11sss1we278hijkl ijk"
+                  type:
+                    type: string
+                    example: "mixed"
+                  description:
+                    type: string
+                    nullable: true
+                    example: null
+                  createdAt:
+                    type: string
+                    format: date-time
+                    example: "2025-08-12T04:20:17.782Z"
+                  updatedAt:
+                    type: string
+                    format: date-time
+                    example: "2025-08-12T04:21:52.740Z"
+                  audienceMemberCount:
+                    type: integer
+                    example: 2

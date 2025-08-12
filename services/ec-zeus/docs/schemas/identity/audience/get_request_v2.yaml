@@ -1,0 +1,8 @@
+type: object
+properties:
+  audienceId:
+    type: string
+    description: "ID of the audience to retrieve"
+    example: "8a636d37-4337-4f77-b177-deb3efcfd108"
+required:
+  - audienceId
