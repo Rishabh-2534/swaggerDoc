@@ -1,17 +1,17 @@
 post:
-  operationId: addPageB2b
+  operationId: addAlbum
   tags:
     - Content
-  summary: Add a page to a site
-  description: This API allows us to add a page to a site
+  summary: Add an album to a site
+  description: This API allows us to add an album to a site
   parameters:
-    - name: siteId
+    - name: site_id
       in: path
       required: true
       schema:
         type: string
         example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
-      description: The ID of the site to add a page to
+      description: The ID of the site to add an album to
     - name: action
       in: query
       required: true
@@ -21,18 +21,19 @@ post:
         enum:
           - publish
           - saveDraft
-      description: The action to perform on the page
+      description: The action to perform on the album
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '../../../schemas/content/b2b/request/site/content/add_page_request.yaml'
+          $ref: '../../../schemas/content/user/request/site/content/add_album_request.yaml'
   responses:
     '200':
-      $ref: '../../../responses/content/b2b/addPage/add_page_success.yaml'
+      $ref: '../../../responses/content/user/addAlbum/add_album_success.yaml'
     '400':
       $ref: '../../../responses/content/common/contentCreation/content_creation_error.yaml'
     '401':
       $ref: '../../../responses/common/unauthorized.yaml'
     '403':
       $ref: '../../../responses/common/forbidden.yaml'
+
