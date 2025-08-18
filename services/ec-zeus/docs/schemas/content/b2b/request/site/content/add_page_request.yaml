@@ -13,12 +13,6 @@ properties:
       $ref: "../../../../common/request/file/file.yaml"
     description: Array of file attachments
 
-  listOfInlineVideos:
-    type: array
-    items:
-      $ref: "../../../../common/request/file/file.yaml"
-    description: Array of inline video files
-
   publishAt:
     type: string
     format: date-time
