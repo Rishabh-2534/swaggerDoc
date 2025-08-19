@@ -29,9 +29,9 @@ post:
           $ref: '../../../schemas/content/b2b/request/site/content/add_album_request.yaml'
   responses:
     '200':
-      $ref: '../../../responses/content/b2b/addAlbum/add_album_success.yaml'
+      $ref: '../../../responses/content/common/addAlbum/add_album_success.yaml'
     '400':
-      $ref: '../../../responses/content/common/contentCreation/content_creation_error.yaml'
+      $ref: '../../../responses/content/common/addAlbum/add_album_error.yaml'
     '401':
       $ref: '../../../responses/common/unauthorized.yaml'
     '403':

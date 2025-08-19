@@ -31,7 +31,7 @@ post:
     '200':
       $ref: '../../../responses/content/b2b/addPage/add_page_success.yaml'
     '400':
-      $ref: '../../../responses/content/common/contentCreation/content_creation_error.yaml'
+      $ref: '../../../responses/content/b2b/addPage/add_page_error.yaml'
     '401':
       $ref: '../../../responses/common/unauthorized.yaml'
     '403':
