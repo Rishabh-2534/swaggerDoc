@@ -60,6 +60,14 @@ properties:
     type: string
     description: URL to the user's cover image
     example: /cover-image/55526ef2-752a-47e3-affa-2fa0eaadc5eb
+  photoFileId:
+    type: string
+    description: File id of the user's photo
+    example: 55526ef2-752a-47e3-affa-2fa0eaadc5eb
+  coverImageFileId:
+    type: string
+    description: File id of the user's cover image
+    example: 55526ef2-752a-47e3-affa-2fa0eaadc5eb
   peopleCategory:
     type: string
     description: User's people category
@@ -414,6 +422,8 @@ required:
   - companyName
   - startDate
   - userType
+  - photoFileId
+  - coverImageFileId
   - "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
   - "^.*__c$"
 oneOf:

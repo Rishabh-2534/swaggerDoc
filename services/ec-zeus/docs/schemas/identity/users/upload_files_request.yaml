@@ -1,0 +1,28 @@
+type: object
+properties:
+  useFor:
+    type: string
+    description: Purpose of the file upload
+    enum:
+      - photo
+      - coverImage
+    example: photo
+  userId:
+    type: string
+    format: uuid
+    description: UUID of the user for whom the file is being uploaded
+    example: "123e4567-e89b-12d3-a456-426614174000"
+  mimeType:
+    type: string
+    description: MIME type of the file to be uploaded
+    example: "image/jpeg"
+  size:
+    type: number
+    description: Size of the file in bytes
+    minimum: 1
+    example: 1024000
+required:
+  - useFor
+  - userId
+  - mimeType
+  - size
