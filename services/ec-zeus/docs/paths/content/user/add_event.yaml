@@ -29,9 +29,9 @@ post:
           $ref: '../../../schemas/content/user/request/site/content/add_event_request.yaml'
   responses:
     '200':
-      $ref: '../../../responses/content/user/addEvent/add_event_success.yaml'
+      $ref: '../../../responses/content/common/addEvent/add_event_success.yaml'
     '400':
-      $ref: '../../../responses/content/user/addEvent/add_event_error.yaml'
+      $ref: '../../../responses/content/common/addEvent/add_event_error.yaml'
     '401':
       $ref: '../../../responses/common/unauthorized.yaml'
     '403':
