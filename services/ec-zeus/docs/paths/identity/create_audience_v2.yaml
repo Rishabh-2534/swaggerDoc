@@ -1,0 +1,48 @@
+post:
+  tags:
+    - Audience
+  summary: Create a new audience (v2)
+  description: >
+    This API allows you to create a new Audience for a tenant with enhanced features.
+    Example request body:
+
+    ```json
+    {
+      "name": "Marketing Team v2",
+      "description": "Enhanced marketing team audience",
+      "type": "mixed",
+      "audienceRule": {
+        "AND": [
+          {
+            "values": [{"value": "49a8828d-16d9-4265-a82e-063fc1f10afe"}],
+            "attribute": "segment_id",
+            "operator": "IS",
+            "fieldType": "segment"
+          },
+          {
+            "values": [{"value": "Marketing"}],
+            "attribute": "department",
+            "operator": "IS",
+            "fieldType": "regular"
+          }
+        ]
+      },
+      "categoryId": "57cc74a4-c059-428d-914c-caa4eba702a2"
+    }
+    ```
+  requestBody:
+    description: Create a new audience (v2)
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/identity/audience/create_request_v2.yaml'
+    required: true
+  responses:
+    200:
+      $ref: '../../responses/identity/audience/create_success_v2.yaml'
+    400:
+      $ref: '../../responses/identity/audience/audience_error.yaml'
+    401:
+      $ref: '../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../responses/common/forbidden.yaml'

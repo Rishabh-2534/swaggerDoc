@@ -1,0 +1,91 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        apiName:
+          type: string
+          example: "CreateAudience"
+        status:
+          type: string
+          example: "success"
+        message:
+          type: string
+          example: "Audience created successfully"
+        result:
+          type: object
+          properties:
+            audienceId:
+              type: string
+              example: "8a636d37-4337-4f77-b177-deb3efcfd108"
+            name:
+              type: string
+              example: "sim11sss1we1245 y 78"
+            type:
+              type: string
+              example: "mixed"
+            description:
+              type: string
+              nullable: true
+              example: null
+            status:
+              type: string
+              nullable: true
+              example: null
+            isDeleted:
+              type: boolean
+              example: false
+            isAutoCreated:
+              type: boolean
+              example: false
+            createdBy:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  example: "dcc6dae5-404b-4e4d-b910-0cf0df153a5b"
+            modifiedBy:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  example: "dcc6dae5-404b-4e4d-b910-0cf0df153a5b"
+            accountId:
+              type: string
+              example: "b260b1eb-7eec-438f-9f19-6f175d4e80ba"
+            audienceMemberCount:
+              type: integer
+              example: 1
+            parentId:
+              type: string
+              nullable: true
+              example: null
+            categoryId:
+              type: string
+              example: "57cc74a4-c059-428d-914c-caa4eba702a2"
+            categoryName:
+              type: string
+              nullable: true
+              example: null
+            createdAt:
+              type: string
+              format: date-time
+              example: "2025-08-12T09:50:22.917Z"
+            updatedAt:
+              type: string
+              format: date-time
+              example: "2025-08-12T09:50:22.917Z"
+            usage:
+              type: object
+              properties:
+                subscriptionCount:
+                  type: integer
+                  example: 0
+            audienceRule:
+              type: object
+              properties:
+                AND:
+                  type: array
+                  items:
+                    type: object
