@@ -82,9 +82,9 @@ paths:
     /b2b/content/files/list:
         $ref: "./paths/content/b2b/get_files.yaml"
 
-    # Recognition Activity
-    /b2b/recognition/activity:
-        $ref: "./paths/recognition/get_activity.yaml"
+    # Recognition list
+    /b2b/recognition/list:
+        $ref: "./paths/recognition/get_list.yaml"
 
 components:
     securitySchemes:

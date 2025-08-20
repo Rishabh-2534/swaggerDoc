@@ -1,0 +1,26 @@
+get:
+  tags:
+    - Recognition
+  summary: Get recognition list
+  description: |
+    Retrieve recognition list data with optional filtering and pagination.
+    The response will be paginated and sorted by creation date in descending order(newest first).
+  operationId: getRecognitionList
+  requestBody:
+    description: Get recognition list
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/recognition/get_list_body_schema.yaml'
+    required: false
+  responses:
+    '200':
+      $ref: '../../responses/recognition/get_list_success.yaml'
+    '400':
+      $ref: '../../responses/recognition/get_list_validation.yaml'
+    '401':
+      $ref: '../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../responses/common/forbidden.yaml'
+    '500':
+      $ref: '../../responses/recognition/get_list_error.yaml'
