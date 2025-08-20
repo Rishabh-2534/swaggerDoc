@@ -15,10 +15,10 @@ content:
             properties:
               field:
                 type: "string"
-                example: "nextPageToken"
+                example: "pageToken"
               message:
                 type: "string"
-                example: "nextPageToken must be a non-negative number"
+                example: "pageToken must be a non-negative number"
             required:
               - field
               - message
