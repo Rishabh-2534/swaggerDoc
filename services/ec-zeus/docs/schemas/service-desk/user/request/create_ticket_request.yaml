@@ -7,7 +7,7 @@ properties:
     type: string
     description: The type of ticket being created.
     enum:
-      - service_request
+      - serviceRequest
       - incident
   requesterId:
     type: string
