@@ -64,9 +64,9 @@ properties:
         enum: ["NOMINATION", "DIRECT", "PEER", "SPOT", "MILESTONE"]
       description: Award types to filter by.
       example: ["PEER", "NOMINATION", "DIRECT", "SPOT", "MILESTONE"]
-customField:
-      type: array
-      items:
-        type: string
-      description: Custom field ending with __c, must be an array of strings.
-      example: ["value1", "value2"]
+    customField:
+          type: array
+          items:
+            type: string
+          description: Custom field ending with __c, must be an array of strings.
+          example: ["value1", "value2"]
