@@ -6,14 +6,12 @@ properties:
         type: string
       description: Award names to filter by, each award name must be 100 characters or less.
       example: ["Award one", "Award two", "Award three"]
-      required: false
     department:
       type: array 
       items:
         type: string
       description: Departments to filter by, matches departments of giver or recipient department.
       example: ["Engineering", "Sales", "HR"]
-      required: false
     duration:
       oneOf:
         - type: object
@@ -31,7 +29,6 @@ properties:
           description: Duration string in format <number><unit> where unit is d (days), w (weeks), m (months), or y (years).
           example: "7d"
       description: Duration filter for recognition creation date.
-      required: false
     location:
       type: array
       items:
@@ -52,17 +49,14 @@ properties:
         minProperties: 1
       description: Locations to filter by, matches locations of giver or recipient location.
       example: [{"city": "Mumbai", "country": "India"}, {"state": "California", "country": "US"}]
-      required: false
     pageToken:
       type: string
       description: A cursor to use in pagination, must be a non-negative number as string.
       example: "1"
-      required: false
     pageSize:
       type: integer
       description: Number of items per page (1-100, default 10).
       example: 10
-      required: false
     type:
       type: array
       items:
@@ -70,12 +64,9 @@ properties:
         enum: ["NOMINATION", "DIRECT", "PEER", "SPOT", "MILESTONE"]
       description: Award types to filter by.
       example: ["PEER", "NOMINATION", "DIRECT", "SPOT", "MILESTONE"]
-      required: false
-patternProperties:
-    "^.*__c$":
+customField:
       type: array
       items:
         type: string
       description: Custom field ending with __c, must be an array of strings.
       example: ["value1", "value2"]
-additionalProperties: false
