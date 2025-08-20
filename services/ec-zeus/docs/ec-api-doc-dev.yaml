@@ -28,7 +28,8 @@ tags:
       description: Everything about Sites
     - name: Video
       description: Everything about Video
-
+    - name: Service Desk
+      description: Everything about Service Desk
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
        variables:

@@ -1,10 +1,6 @@
 type: object
-required:
-  - ticketId
+description: Update ticket request
 properties:
-  ticketId:
-    type: string
-    description: The unique identifier of the ticket to be updated.
   status:
     type: string
     description: The status of the ticket.
@@ -31,17 +27,23 @@ properties:
       agentGroupId:
         type: string
         description: The unique identifier of the assigned agent group.
-  impact:
-    type: string
-    description: The impact level of the ticket.
-    enum:
-      - low
-      - medium
-      - high
-  urgency:
-    type: string
-    description: The urgency level of the ticket.
-    enum:
-      - low
-      - medium
-      - high
+  plannedDate:
+    type: object
+    description: The planned date for the ticket resolution.
+    properties:
+      startDate:
+        type: string
+        format: date
+        description: The start date for the planned resolution.
+      endDate:
+        type: string
+        format: date
+        description: The end date for the planned resolution.
+      startTime:
+        type: string
+        format: time
+        description: The start time for the planned resolution.
+      endTime:
+        type: string
+        format: time
+        description: The end time for the planned resolution.

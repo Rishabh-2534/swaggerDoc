@@ -33,6 +33,24 @@ properties:
     description: The title of the incident. Must be 2-60 characters long.
     minLength: 2
     maxLength: 60
+  description:
+    type: string
+    description: A detailed description of the incident. Must be 10-500 characters long.
+    minLength: 10
+    maxLength: 500
+  subject:
+    type: string
+    description: The subject of the service request. Must be 2-60 characters long.
+    minLength: 2
+    maxLength: 60
+  severity:
+    type: string
+    description: The severity level of the ticket.
+    enum:
+      - low
+      - medium
+      - high
+      - urgent
   attachments:
     type: array
     description: Optional list of attachments.
