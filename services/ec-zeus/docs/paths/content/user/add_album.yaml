@@ -1,5 +1,5 @@
 post:
-  operationId: addAlbum
+  operationId: addAlbumUser
   tags:
     - Content
   summary: Add an album to a site

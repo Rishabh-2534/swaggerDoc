@@ -23,8 +23,10 @@ properties:
 
   publishTo:
     type: string
+    format: date-time
     nullable: true
-    description: Target audience for publishing
+    example: "2025-12-31T23:59:59.000Z"
+    description: Date and time when the content should expire/unpublish. Must be in ISO 8601 UTC format
 
   bodyHtml:
     type: string
@@ -160,18 +162,12 @@ properties:
     type: string
     description: ID of the media item to use as cover image
 
-  authoredBy:
-    type: string
-    format: uuid
-    description: UUID of the author
-
   language:
     type: string
     description: Language of the album content
 
 required:
   - publishingStatus
-  - publishAt
   - title
   - coverImageMediaId
   - listOfAlbumMedia
