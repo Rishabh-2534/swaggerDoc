@@ -24,12 +24,12 @@ tags:
       description: Everything about People
     - name: Recognition
       description: Everything about Recognition
+    - name: Service Desk
+      description: Everything about Service Desk
     - name: Sites
       description: Everything about Sites
     - name: Video
       description: Everything about Video
-    - name: Service Desk
-      description: Everything about Service Desk
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
        variables:
@@ -152,9 +152,6 @@ paths:
         $ref: "./paths/service-desk/user/update_ticket_by_id.yaml"
     /service-desk/wtickets/tickets/{ticketId}/comments:
         $ref: "./paths/service-desk/user/create_ticket_comment.yaml"
-    /service-desk/wtickets/tickets/{ticketId}/attachments:
-        $ref: "./paths/service-desk/user/add_ticket_attachments.yaml"
-
 components:
     schemas:
         $ref: "./schemas/_index.yaml"
