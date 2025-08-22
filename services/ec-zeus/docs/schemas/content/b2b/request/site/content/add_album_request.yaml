@@ -17,10 +17,6 @@ properties:
     nullable: true
     description: URL of the landscape image
 
-  listOfInlineImages:
-    type: array
-    description: Array of inline images
-
   publishTo:
     type: string
     format: date-time
