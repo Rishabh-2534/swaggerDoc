@@ -15,6 +15,7 @@ post:
     - The upload_url (presigned URL) in the response should be used with PUT method to upload the file.
     - The presigned URL should be invoked with the same Bearer token as this API.
     - The file_id should be saved for linking with the user via other APIs.
+    - The presigned URL is valid for 5 minutes.
     
     **Example request:**
     ```json

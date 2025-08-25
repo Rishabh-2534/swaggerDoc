@@ -13,24 +13,19 @@ content:
           type: object
           description: Contains the details of the file upload URL
           properties:
-            file_id:
+            fileId:
               type: string
               format: uuid
               example: "27275ee6-d56f-4e52-bc40-a44229d83c86"
               description: Unique identifier for the uploaded file
-            upload_url:
+            signedUrl:
               type: string
               format: uri
               example: "https://fe-domain/u/o/277b3c02-c912-4c45-8512-867d92e47b84?Content-Type=image%2Fjpeg&X-Amz-Algorithm=........."
               description: Presigned URL to be used for uploading the file
-            upload_key:
-              type: string
-              example: "27275ee6-d56f-4e52-bc40-a44229d83c86"
-              description: Upload key/identifier for the file upload operation
           required:
-            - file_id
-            - upload_url
-            - upload_key
+            - fileId
+            - signedUrl
       required:
         - status
         - result
