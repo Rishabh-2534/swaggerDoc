@@ -8,8 +8,12 @@ post:
     This API allows you to get presigned URLs for uploading files (photos or cover images) for users.
     
     The API accepts the following file types:
-    - **photo**: User profile photo
-    - **coverImage**: User cover image
+    - **photo**: User profile photo (recommended size: 200px x 200px square)
+    - **coverImage**: User cover image (recommended size: 746px x 304px)
+
+    **File size limits:**
+    - **photo**: 4MB
+    - **coverImage**: 4MB
     
     **Important notes:**
     - The upload_url (presigned URL) in the response should be used with PUT method to upload the file.
