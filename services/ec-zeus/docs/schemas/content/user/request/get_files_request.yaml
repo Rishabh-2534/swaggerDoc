@@ -59,3 +59,9 @@ properties:
   id:
     type: string
     description: ID of the file
+  extensions:
+    type: array
+    items:
+      type: string
+    description: "Array of file extensions to search for (e.g., ['pdf', 'docx', 'png']). Do not include dots in extension names."
+    example: ["pdf", "png", "docx"]
