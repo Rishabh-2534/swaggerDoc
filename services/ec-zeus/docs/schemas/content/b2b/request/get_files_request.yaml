@@ -51,3 +51,7 @@ properties:
   id:
     type: string
     description: ID of the file
+  nextPageToken:
+    type: string
+    description: Token for fetching the next page of results
+    example: "15"
