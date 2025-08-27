@@ -1,0 +1,15 @@
+description: "validation error while deleting audience"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message indicating validation failure
+          oneOf:
+            - example: "AUDIENCE_USED_IN_USAGE: Audience used in acg groups or features"
+            - example: "AUTO_AUDIENCE_NOT_ALLOWED: Delete of auto created audience not allowed"
+            - example: "AUDIENCE_ID_INVALID_STATUS: invalid status for deletion"
+      required:
+        - message
