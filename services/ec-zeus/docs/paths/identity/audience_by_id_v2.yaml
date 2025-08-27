@@ -1,7 +1,7 @@
 get:
   tags:
     - Audience
-  summary: Get audience by ID (v2)
+  summary: Get audience by ID
   description: >
     This API allows you to retrieve a specific audience by its ID with enhanced response including metadata.
   parameters:
@@ -24,7 +24,7 @@ get:
 delete:
   tags:
     - Audience
-  summary: Delete an audience (v2)
+  summary: Delete an audience
   description: >
     This API allows you to delete an audience.
   parameters:
@@ -35,7 +35,7 @@ delete:
       schema:
         type: string
   requestBody:
-    description: Delete audience (v2)
+    description: Delete audience
     content:
       application/json:
         schema:
