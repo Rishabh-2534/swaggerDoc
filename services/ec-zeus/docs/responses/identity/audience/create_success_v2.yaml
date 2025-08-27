@@ -18,7 +18,7 @@ content:
               example: "8a636d37-4337-4f77-b177-deb3efcfd108"
             name:
               type: string
-              example: "testing audience"
+              example: "Marketing Team"
             type:
               type: string
               example: "mixed"
