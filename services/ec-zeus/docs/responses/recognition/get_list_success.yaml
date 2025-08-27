@@ -1,0 +1,177 @@
+description: "Success response"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - success
+        message:
+          type: string
+          example: "Recognition list fetched successfully"
+        result:
+          type: object
+          properties:
+            nextPageToken:
+              type: string
+              description: Token for pagination to get next page of results
+              example: "10"
+            listOfItems:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the recognition list
+                    example: "78d279d9-f74c-4a62-9f0b-8d9314f1df00"
+                  giver:
+                    type: object
+                    properties:
+                      userId:
+                        type: string
+                        description: User ID of the giver
+                        example: "13d4731d-c0c4-4c17-b7fc-7c8cf7dbcebd"
+                      name:
+                        type: string
+                        description: Name of the giver who gave the award
+                        example: "Pankaj Rajwani"
+                      photo:
+                        type: string
+                        nullable: true
+                        description: Profile photo URL of the giver
+                        example: "https://example.com/profile.jpg"
+                      location:
+                        type: object
+                        properties:
+                          city:
+                            type: string
+                            nullable: true
+                            description: City name
+                            example: "Jaipur"
+                          state:
+                            type: string
+                            nullable: true
+                            description: State name
+                            example: "Rajsathan"
+                          country:
+                            type: string
+                            nullable: true
+                            description: Country name
+                            example: "Uk"
+                      department:
+                        type: string
+                        nullable: true
+                        description: Department of the giver
+                        example: "Engineering - Recognition"
+                      type:
+                        type: string
+                        enum:
+                          - USER
+                          - APPNAME
+                          - NO_AUTHOR
+                          - CUSTOM
+                        description: Type of the giver
+                        example: "USER"
+                    description: Information about the giver who gave the award
+                  recipients:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        userId:
+                          type: string
+                          description: User ID of the recipient
+                          example: "4f747d0f-aa04-45e7-8af0-70a9266b56b2"
+                        name:
+                          type: string
+                          description: Full name of the recipient
+                          example: "Abhishek Saini"
+                        photo:
+                          type: string
+                          nullable: true
+                          description: Profile photo URL of the recipient
+                          example: "https://example.com/profile.jpg"
+                        location:
+                          type: object
+                          properties:
+                            city:
+                              type: string
+                              nullable: true
+                              description: City name
+                              example: "Nagpur"
+                            state:
+                              type: string
+                              nullable: true
+                              description: State name
+                              example: "Maharashtra"
+                            country:
+                              type: string
+                              nullable: true
+                              description: Country name
+                              example: "Toronto"
+                        department:
+                          type: string
+                          nullable: true
+                          description: Department of the recipient
+                          example: "Engineering"
+                      required:
+                        - userId
+                        - name
+                    description: List of recipients who received the award
+                  award:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        description: Name of the award given
+                        example: "Collaborator"
+                      description:
+                        type: string
+                        nullable: true
+                        description: Description of the award
+                        example: "Recognizes individuals or teams who demonstrate exceptional teamwork, fostering strong partnerships and open communication to achieve shared goals and drive organizational success."
+                      type:
+                        type: string
+                        enum:
+                          - NOMINATION
+                          - DIRECT
+                          - PEER
+                          - SPOT
+                          - MILESTONE
+                        description: Type of recognition
+                        example: "PEER"
+                      icon:
+                        type: string
+                        nullable: true
+                        description: Icon URL of the award
+                        example: "https://reco.dev.simpplr.xyz/fs/13b20301-57c3-440b-9704-73ccbe15dac3/rec/p/9b41aad4-5e4d-4a78-a9a8-d9c240bd9003/data"
+                    required:
+                      - name
+                      - type
+                    description: Award information
+                  createdOn:
+                    type: string
+                    format: date-time
+                    description: Date and time when the recognition was created
+                    example: "2025-08-19T10:37:52.286Z"
+                  message:
+                    type: string
+                    nullable: true
+                    description: Message HTML associated with the recognition
+                    example: "<p>Nice work <span data-type=\"user\" data-label=\"Sagar Aggarwal\"><a href=\"/people/\" target=\"_blank\">@Sagar Aggarwal</a></span> and <span data-type=\"user\" data-label=\"Abhishek Saini\"><a href=\"/people/\" target=\"_blank\">@Abhishek Saini</a></span> for this task</p>"
+                required:
+                  - id
+                  - recipients
+                  - award
+                  - createdOn
+              description: List of recognition list items
+          required:
+            - nextPageToken
+            - listOfItems
+      required:
+        - status
+        - result
+        - message 

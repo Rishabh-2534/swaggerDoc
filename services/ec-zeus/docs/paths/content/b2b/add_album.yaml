@@ -1,0 +1,39 @@
+post:
+  operationId: addAlbumB2b
+  tags:
+    - Content
+  summary: Add an album to a site
+  description: This API allows us to add an album to a site
+  parameters:
+    - name: siteId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
+      description: The ID of the site to add an album to
+    - name: action
+      in: query
+      required: true
+      schema:
+        type: string
+        example: "publish"
+        enum:
+          - publish
+          - saveDraft
+      description: The action to perform on the album
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/b2b/request/site/content/add_album_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/common/addAlbum/add_album_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/addAlbum/add_album_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+

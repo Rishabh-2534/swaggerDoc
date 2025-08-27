@@ -10,7 +10,7 @@ content:
             - "error"
         message:
           type: "string"
-          example: "Unknown error occurred while fetching recognition activity, contact support"
+          example: "Unknown error occurred while fetching recognition list"
       required:
         - status
         - message

@@ -1,0 +1,72 @@
+type: object
+properties:
+    award:
+      type: array
+      items:
+        type: string
+      description: Award names to filter by, each award name must be 100 characters or less.
+      example: ["Award one", "Award two", "Award three"]
+    department:
+      type: array 
+      items:
+        type: string
+      description: Departments to filter by, matches departments of giver or recipient department.
+      example: ["Engineering", "Sales", "HR"]
+    duration:
+      oneOf:
+        - type: object
+          properties:
+            start:
+              type: string
+              description: Start date for filtering by creation date (YYYY-MM-DD format).
+              example: "2024-02-28"
+            end:
+              type: string
+              description: End date for filtering by creation date (YYYY-MM-DD format).
+              example: "2024-02-28"
+          required: ["start"]
+        - type: string
+          description: Duration string in format <number><unit> where unit is d (days), w (weeks), m (months), or y (years).
+          example: "7d"
+      description: Duration filter for recognition creation date.
+    location:
+      type: array
+      items:
+        type: object
+        properties:
+          city:
+            type: string
+            description: City name
+            example: "Mumbai"
+          state:
+            type: string
+            description: State name
+            example: "Maharashtra"
+          country:
+            type: string
+            description: Country name
+            example: "India"
+        minProperties: 1
+      description: Locations to filter by, matches locations of giver or recipient location.
+      example: [{"city": "Mumbai", "country": "India"}, {"state": "California", "country": "US"}]
+    pageToken:
+      type: string
+      description: A cursor to use in pagination, must be a non-negative number as string.
+      example: "1"
+    pageSize:
+      type: integer
+      description: Number of items per page (1-100, default 10).
+      example: 10
+    type:
+      type: array
+      items:
+        type: string
+        enum: ["NOMINATION", "DIRECT", "PEER", "SPOT", "MILESTONE"]
+      description: Award types to filter by.
+      example: ["PEER", "NOMINATION", "DIRECT", "SPOT", "MILESTONE"]
+    customField:
+          type: array
+          items:
+            type: string
+          description: Custom field ending with __c, must be an array of strings.
+          example: ["value1", "value2"]
