@@ -28,6 +28,8 @@ tags:
       description: Everything about Sites
     - name: Video
       description: Everything about Video
+    - name: Service Desk
+      description: Everything about Service Desk
 
 servers:
     - url: https://platform.{env}.simpplr.com/v1
@@ -108,6 +110,10 @@ paths:
         $ref: "./paths/content/user/site_category_by_id.yaml"
     /content/sites/{site_id}/page:
         $ref: "./paths/content/user/add_page.yaml"
+    /content/sites/{site_id}/event:
+        $ref: "./paths/content/user/add_event.yaml"
+    /content/sites/{site_id}/album:
+        $ref: "./paths/content/user/add_album.yaml"
     /content/sites/{site_id}/page-categories:
         $ref: "./paths/content/user/site_page_categories.yaml"
     /content/sites/{site_id}/page-categories/{category_id}:
@@ -119,9 +125,9 @@ paths:
     /content/files/list:
         $ref: "./paths/content/user/get_files.yaml"
 
-    # Recognition Activity
-    /recognition/activity:
-        $ref: "./paths/recognition/get_activity.yaml"
+    # Recognition list
+    /recognition/list:
+        $ref: "./paths/recognition/get_list.yaml"
 
      # Enterprise Search
     /enterprise-search/search:
@@ -131,6 +137,21 @@ paths:
     /enterprise-search/smartanswers:
         $ref: "./paths/search/smart_answers.yaml"
 
+    # Service desk
+    /service-desk/mtickets/workspaces:
+        $ref: "./paths/service-desk/user/get_workspaces.yaml"
+    /service-desk/mtickets/categories:
+        $ref: "./paths/service-desk/user/get_ticket_categories.yaml"
+    /service-desk/mtickets/categories/{categoryId}/items:
+        $ref: "./paths/service-desk/user/get_ticket_category_items.yaml"
+    /service-desk/rtickets/tickets/{ticketId}:
+        $ref: "./paths/service-desk/user/get_ticket_by_id.yaml"
+    /service-desk/wtickets/tickets:
+        $ref: "./paths/service-desk/user/create_ticket.yaml"
+    /service-desk/wtickets/tickets/{ticketId}:
+        $ref: "./paths/service-desk/user/update_ticket_by_id.yaml"
+    /service-desk/wtickets/tickets/{ticketId}/comments:
+        $ref: "./paths/service-desk/user/create_ticket_comment.yaml"
 components:
     schemas:
         $ref: "./schemas/_index.yaml"

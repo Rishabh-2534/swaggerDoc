@@ -1,5 +1,6 @@
 put:
   operationId: updateTicketById
+  summary: Update Ticket By Id
   tags:
     - Service Desk
   description: This API allows users to update an existing ticket by providing its unique Ticket ID.
