@@ -1,4 +1,4 @@
-description: "not found error"
+description: "validation error while deleting audience"
 content:
   application/json:
     schema:
