@@ -4,9 +4,6 @@ content:
     schema:
       type: object
       properties:
-        apiName:
-          type: string
-          example: "CreateAudience"
         status:
           type: string
           example: "success"
@@ -21,7 +18,7 @@ content:
               example: "8a636d37-4337-4f77-b177-deb3efcfd108"
             name:
               type: string
-              example: "sim11sss1we1245 y 78"
+              example: "testing audience"
             type:
               type: string
               example: "mixed"
