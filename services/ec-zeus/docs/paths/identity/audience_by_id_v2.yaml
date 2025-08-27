@@ -34,21 +34,14 @@ delete:
       required: true
       schema:
         type: string
-  requestBody:
-    description: Delete audience
-    content:
-      application/json:
-        schema:
-          $ref: '../../schemas/identity/audience/delete_request_v2.yaml'
-    required: false
   responses:
     200:
       $ref: '../../responses/identity/audience/delete_success.yaml'
     400:
-      $ref: '../../responses/identity/audience/audience_error.yaml'
+      $ref: '../../responses/identity/audience/delete_validation_error.yaml'
     401:
       $ref: '../../responses/common/unauthorized.yaml'
     403:
       $ref: '../../responses/common/forbidden.yaml'
     404:
-      $ref: '../../responses/identity/audience/delete_validation_error.yaml'
+      $ref: '../../responses/identity/audience/audience_error.yaml'
