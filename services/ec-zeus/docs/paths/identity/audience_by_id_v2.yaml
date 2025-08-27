@@ -43,27 +43,7 @@ delete:
     required: false
   responses:
     200:
-      description: "Success"
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              apiName:
-                type: string
-                example: "DeleteAudience"
-              status:
-                type: string
-                example: "success"
-              message:
-                type: string
-                example: "audience deleted"
-              result:
-                type: object
-                properties:
-                  audienceId:
-                    type: string
-                    example: "a660a546-a57d-46f9-8f79-a2008dd1d6ae"
+      $ref: '../../responses/identity/audience/delete_success.yaml'
     400:
       $ref: '../../responses/identity/audience/audience_error.yaml'
     401:
@@ -71,4 +51,4 @@ delete:
     403:
       $ref: '../../responses/common/forbidden.yaml'
     404:
-      $ref: '../../responses/identity/audience/audience_error.yaml'
+      $ref: '../../responses/identity/audience/delete_validation_error.yaml'
