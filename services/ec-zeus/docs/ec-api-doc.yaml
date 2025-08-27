@@ -54,20 +54,12 @@ paths:
         $ref: "./paths/alerts/update-delete.yaml"
 
     # Audience
-    /identity/audience:
-        $ref: "./paths/identity/create_audience.yaml"
-    /identity/audience/{audienceId}:
-        $ref: "./paths/identity/update_audience.yaml"
-
-    # Audience v2
     /identity/audiences:
-        $ref: "./paths/identity/create_audience_v2.yaml"
+        $ref: "./paths/identity/audiences.yaml"
     /identity/audiences/{audienceId}:
-        $ref: "./paths/identity/audience_by_id_v2.yaml"
+        $ref: "./paths/identity/audience_by_id.yaml"
     /identity/audiences/{audienceId}/update:
         $ref: "./paths/identity/update_audience_v2.yaml"
-    /identity/audiences/list:
-        $ref: "./paths/identity/list_audiences_v2.yaml"
 
     # People
     /identity/people:
