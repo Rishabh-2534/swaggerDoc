@@ -1,0 +1,41 @@
+type: object
+properties:
+  useFor:
+    type: string
+    description: |
+      Purpose of the file upload:
+      - photo: User profile photo (recommended: square images, preferably 200px x 200px)
+      - coverImage: User cover image (recommended: 746px x 304px)
+    enum:
+      - photo
+      - coverImage
+    example: photo
+  userId:
+    type: string
+    format: uuid
+    description: UUID of the user for whom the file is being uploaded
+    example: "123e4567-e89b-12d3-a456-426614174000"
+  mimeType:
+    type: string
+    description: |
+      MIME type of the file to be uploaded.
+      Supported formats:
+      - image/png
+      - image/jpg
+      - image/jpeg
+      - image/gif
+    example: "image/jpeg"
+  size:
+    type: number
+    description: |
+      Size of the file in bytes.
+      - photo limit: 2097152 (2MB)  
+      - coverImage limit: 4194304 (4MB)
+    minimum: 1
+    maximum: 4194304
+    example: 1024000
+required:
+  - useFor
+  - userId
+  - mimeType
+  - size
