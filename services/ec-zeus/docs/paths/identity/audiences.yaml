@@ -66,11 +66,13 @@ get:
       description: Token for next page
       schema:
         type: integer
+        example: 10
     - name: searchTerm
       in: query
       description: Search term to filter audiences by name
       schema:
         type: string
+        example: "marketing"
   responses:
     200:
       $ref: '../../responses/identity/audience/list_success_v2.yaml'
