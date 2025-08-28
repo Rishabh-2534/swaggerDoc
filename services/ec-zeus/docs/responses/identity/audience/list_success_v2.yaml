@@ -15,7 +15,7 @@ content:
           properties:
             pageSize:
               type: integer
-              example: 1
+              example: 2
             pageToken:
               type: integer
               example: 0
