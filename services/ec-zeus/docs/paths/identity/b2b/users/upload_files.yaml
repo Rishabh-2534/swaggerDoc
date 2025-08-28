@@ -1,0 +1,35 @@
+post:
+  operationId: uploadFilesB2b
+  tags:
+    - Files
+    - Users
+  summary: Upload files for users
+  description: |
+    This API allows generation of upload URL for user photos and cover images. To set the photo on a user object, 
+    - Do a PUT to the response URL with image data returned.
+    - The URL is valid for 5 minutes.
+    - Call user update API (preferably PATCH) to set the `photoFileId` and `coverImageId` to the file IDs returned in this API response.
+    
+    **Example request:**
+    ```json
+    {
+      "useFor": "photo",
+      "userId": "123e4567-e89b-12d3-a456-426614174000",
+      "mimeType": "image/jpeg",
+      "size": 1024000
+    }
+    ```
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/identity/users/upload_files_request.yaml'
+  responses:
+    '201':
+      $ref: '../../../../responses/identity/b2b/upload_files_success.yaml'
+    '400':
+      $ref: '../../../../responses/identity/b2b/upload_files_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'
