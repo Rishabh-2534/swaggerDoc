@@ -57,10 +57,9 @@ paths:
     # Audience
     /identity/audiences:
         $ref: "./paths/identity/audiences.yaml"
-    /identity/audiences/{audienceId}:
-        $ref: "./paths/identity/audience_by_id.yaml"
-    /identity/audiences/{audienceId}/update:
-        $ref: "./paths/identity/update_audience_v2.yaml"
+    # Temporarily disabled audience endpoints
+    # /identity/audiences/{audienceId}:
+    #     $ref: "./paths/identity/audience_by_id.yaml"
 
     # Sites
     /content/sites:

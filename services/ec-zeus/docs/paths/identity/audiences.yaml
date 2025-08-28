@@ -1,51 +1,52 @@
-post:
-  tags:
-    - Audience
-  summary: Create a new audience
-  description: >
-    This API allows you to create a new Audience for a tenant with enhanced features.
-    Example request body:
+# Temporarily disabled - Create audience endpoint
+# post:
+#   tags:
+#     - Audience
+#   summary: Create a new audience
+#   description: >
+#     This API allows you to create a new Audience for a tenant with enhanced features.
+#     Example request body:
 
-    ```json
-    {
-      "name": "Marketing Team v2",
-      "description": "Enhanced marketing team audience",
-      "type": "mixed",
-      "audienceRule": {
-        "AND": [
-          {
-            "values": [{"value": "49a8828d-16d9-4265-a82e-063fc1f10afe"}],
-            "attribute": "segment_id",
-            "operator": "IS",
-            "fieldType": "segment"
-          },
-          {
-            "values": [{"value": "Marketing"}],
-            "attribute": "department",
-            "operator": "IS",
-            "fieldType": "regular"
-          }
-        ]
-      },
-      "categoryId": "57cc74a4-c059-428d-914c-caa4eba702a2"
-    }
-    ```
-  requestBody:
-    description: Create a new audience
-    content:
-      application/json:
-        schema:
-          $ref: '../../schemas/identity/audience/create_request_v2.yaml'
-    required: true
-  responses:
-    200:
-      $ref: '../../responses/identity/audience/create_success_v2.yaml'
-    400:
-      $ref: '../../responses/identity/audience/audience_error.yaml'
-    401:
-      $ref: '../../responses/common/unauthorized.yaml'
-    403:
-      $ref: '../../responses/common/forbidden.yaml'
+#     ```json
+#     {
+#       "name": "Marketing Team",
+#       "description": "Enhanced marketing team audience",
+#       "type": "mixed",
+#       "audienceRule": {
+#         "AND": [
+#           {
+#             "values": [{"value": "49a8828d-16d9-4265-a82e-063fc1f10afe"}],
+#             "attribute": "segment_id",
+#             "operator": "IS",
+#             "fieldType": "segment"
+#           },
+#           {
+#             "values": [{"value": "Marketing"}],
+#             "attribute": "department",
+#             "operator": "IS",
+#             "fieldType": "regular"
+#           }
+#         ]
+#       },
+#       "categoryId": "57cc74a4-c059-428d-914c-caa4eba702a2"
+#     }
+#     ```
+#   requestBody:
+#     description: Create a new audience
+#     content:
+#       application/json:
+#         schema:
+#           $ref: '../../schemas/identity/audience/create_request_v2.yaml'
+#     required: true
+#   responses:
+#     200:
+#       $ref: '../../responses/identity/audience/create_success_v2.yaml'
+#     400:
+#       $ref: '../../responses/identity/audience/audience_error.yaml'
+#     401:
+#       $ref: '../../responses/common/unauthorized.yaml'
+#     403:
+#       $ref: '../../responses/common/forbidden.yaml'
 
 get:
   tags:
@@ -54,18 +55,18 @@ get:
   description: >
     This API allows you to retrieve a list of all audiences for the tenant.
   parameters:
-    - name: size
+    - name: pageSize
       in: query
       description: A limit on the number of audiences to return in a request.
       schema:
         type: integer
         example: 10
-    - name: nextPageToken
+    - name: pageToken
       in: query
       description: Token for next page
       schema:
-        type: string
-    - name: term
+        type: integer
+    - name: searchTerm
       in: query
       description: Search term to filter audiences by name
       schema:

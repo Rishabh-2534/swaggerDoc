@@ -21,6 +21,38 @@ get:
     403:
       $ref: '../../responses/common/forbidden.yaml'
 
+put:
+  tags:
+    - Audience
+  summary: Update an audience
+  description: >
+    This API allows you to update an existing audience.
+  parameters:
+    - name: audienceId
+      in: path
+      description: "ID of audience to update"
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: Update an audience
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/identity/audience/update_request_v2.yaml'
+    required: true
+  responses:
+    200:
+      $ref: '../../responses/identity/audience/update_success_v2.yaml'
+    401:
+      $ref: '../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../responses/common/forbidden.yaml'
+    400:
+      $ref: '../../responses/common/validation_error.yaml'
+    404:
+      $ref: '../../responses/identity/audience/audience_error.yaml'
+
 delete:
   tags:
     - Audience
