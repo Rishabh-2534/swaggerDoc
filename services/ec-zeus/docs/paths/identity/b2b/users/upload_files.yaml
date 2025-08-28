@@ -5,21 +5,10 @@ post:
     - Users
   summary: Upload files for users
   description: |
-    This API allows you to get presigned URLs for uploading files (photos or cover images) for users.
-    
-    The API accepts the following file types:
-    - **photo**: User profile photo (recommended size: 200px x 200px square)
-    - **coverImage**: User cover image (recommended size: 746px x 304px)
-
-    **File size limits:**
-    - **photo**: 4MB
-    - **coverImage**: 4MB
-    
-    **Important notes:**
-    - The upload_url (presigned URL) in the response should be used with PUT method to upload the file.
-    - The presigned URL should be invoked with the same Bearer token as this API.
-    - The file_id should be saved for linking with the user via other APIs.
-    - The presigned URL is valid for 5 minutes.
+    This API allows generation of upload URL for user photos and cover images. To set the photo on a user object, 
+    - Do a PUT to the response URL with image data returned.
+    - The URL is valid for 5 minutes.
+    - Call user update API (preferably PATCH) to set the `photoFileId` and `coverImageId` to the file IDs returned in this API response.
     
     **Example request:**
     ```json
