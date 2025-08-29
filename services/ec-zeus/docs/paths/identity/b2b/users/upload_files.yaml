@@ -1,7 +1,6 @@
 post:
   operationId: uploadFilesB2b
   tags:
-    - Files
     - Users
   summary: Upload files for users
   description: |
