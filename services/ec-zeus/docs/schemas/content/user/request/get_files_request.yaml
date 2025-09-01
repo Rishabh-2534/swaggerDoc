@@ -63,3 +63,5 @@ properties:
     type: string
     description: Token for fetching the next page of results
     example: "15"
+  extensions:
+    $ref: '../../../common/file_extensions.yaml'
