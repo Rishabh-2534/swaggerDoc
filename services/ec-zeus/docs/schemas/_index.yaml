@@ -35,10 +35,6 @@ CreateAudienceV2:
   $ref: "./identity/audience/create_request_v2.yaml"
 UpdateAudienceV2:
   $ref: "./identity/audience/update_request_v2.yaml"
-DeleteAudienceV2:
-  $ref: "./identity/audience/delete_request_v2.yaml"
-GetAudienceV2:
-  $ref: "./identity/audience/get_request_v2.yaml"
 ListAudienceV2:
   $ref: "./identity/audience/list_request_v2.yaml"
 

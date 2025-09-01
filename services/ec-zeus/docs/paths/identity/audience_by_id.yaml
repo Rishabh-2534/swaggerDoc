@@ -1,0 +1,79 @@
+get:
+  tags:
+    - Audience
+  summary: Get audience by ID
+  description: >
+    This API allows you to retrieve a specific audience by its ID with enhanced response including metadata.
+  parameters:
+    - name: audienceId
+      in: path
+      description: "ID of audience to retrieve"
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      $ref: '../../responses/identity/audience/get_success_v2.yaml'
+    404:
+      $ref: '../../responses/identity/audience/audience_error.yaml'
+    401:
+      $ref: '../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../responses/common/forbidden.yaml'
+
+put:
+  tags:
+    - Audience
+  summary: Update an audience
+  description: >
+    This API allows you to update an existing audience.
+  parameters:
+    - name: audienceId
+      in: path
+      description: "ID of audience to update"
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: Update an audience
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/identity/audience/update_request_v2.yaml'
+    required: true
+  responses:
+    200:
+      $ref: '../../responses/identity/audience/update_success_v2.yaml'
+    401:
+      $ref: '../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../responses/common/forbidden.yaml'
+    400:
+      $ref: '../../responses/common/validation_error.yaml'
+    404:
+      $ref: '../../responses/identity/audience/audience_error.yaml'
+
+delete:
+  tags:
+    - Audience
+  summary: Delete an audience
+  description: >
+    This API allows you to delete an audience.
+  parameters:
+    - name: audienceId
+      in: path
+      description: "ID of audience to delete"
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      $ref: '../../responses/identity/audience/delete_success.yaml'
+    400:
+      $ref: '../../responses/identity/audience/delete_validation_error.yaml'
+    401:
+      $ref: '../../responses/common/unauthorized.yaml'
+    403:
+      $ref: '../../responses/common/forbidden.yaml'
+    404:
+      $ref: '../../responses/identity/audience/audience_error.yaml'

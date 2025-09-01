@@ -4,9 +4,6 @@ content:
     schema:
       type: object
       properties:
-        apiName:
-          type: string
-          example: "GetAudience"
         status:
           type: string
           example: "success"

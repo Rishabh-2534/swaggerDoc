@@ -39,6 +39,9 @@ paths:
         $ref: "./paths/identity/b2b/users.yaml"
     /b2b/identity/users/{userId}:
         $ref: "./paths/identity/b2b/users_userId.yaml"
+
+    /b2b/identity/users/files:
+        $ref: "./paths/identity/b2b/users/upload_files.yaml"
     /b2b/identity/test:
         $ref: "./paths/identity/b2b/test.yaml"
 
