@@ -1,0 +1,44 @@
+description: Error updating page
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "error"
+          description: Status of the operation
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              example: "VALIDATION_ERROR"
+              description: Error code
+            message:
+              type: string
+              example: "Invalid request parameters"
+              description: Error message
+            details:
+              type: array
+              items:
+                type: object
+                properties:
+                  field:
+                    type: string
+                    example: "title"
+                  message:
+                    type: string
+                    example: "Title is required"
+              description: Detailed validation errors
+          required:
+            - code
+            - message
+        message:
+          type: string
+          example: "Failed to update page"
+          description: Error message
+      required:
+        - status
+        - error
+        - message
