@@ -25,3 +25,6 @@ content:
                 - "service_request"
                 - "incident"
               example: "service_request"
+            ticketUrl:
+              type: "string"
+              example: "https://dest-98.dev.simpplr.xyz/service-desk/settings/request-management/INC-2024"

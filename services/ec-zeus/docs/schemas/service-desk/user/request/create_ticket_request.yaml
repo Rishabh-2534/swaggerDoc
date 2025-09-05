@@ -1,6 +1,7 @@
 required:
   - ticketType
   - requesterId
+  - workspaceId
 type: object
 properties:
   ticketType:
@@ -16,7 +17,7 @@ properties:
   serviceId:
     type: string
     format: uuid
-    description: The UUID of the service being requested.
+    description: The UUID of the service being requested. Required in case when `ticketType` is serviceRequest.
   requestForUserId:
     type: string
     format: uuid
@@ -27,7 +28,7 @@ properties:
   workspaceId:
     type: string
     format: uuid
-    description: The UUID of the workspace. Required for incidents.
+    description: The UUID of the workspace. Required for tickets.
   title:
     type: string
     description: The title of the incident. Must be 2-60 characters long.
