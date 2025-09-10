@@ -156,7 +156,6 @@ properties:
     description: UUID of the user modifying the page (B2B specific field)
 
 required:
-  - title
-  - category
   - modifiedBy
+minProperties: 2
 additionalProperties: false
