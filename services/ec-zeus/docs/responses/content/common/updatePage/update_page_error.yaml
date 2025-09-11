@@ -26,10 +26,10 @@ content:
                 properties:
                   field:
                     type: string
-                    example: "title"
+                    example: "modifiedBy"
                   message:
                     type: string
-                    example: "Title is required"
+                    example: "modifiedBy is required"
               description: Detailed validation errors
           required:
             - code
