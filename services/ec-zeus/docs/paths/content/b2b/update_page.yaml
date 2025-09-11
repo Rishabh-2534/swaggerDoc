@@ -1,11 +1,11 @@
-put:
+patch:
   operationId: updatePageB2b
   tags:
     - Content
   summary: Update a page in a site
   description: This API allows us to update an existing page in a site
   parameters:
-    - name: siteId
+    - name: site_id
       in: path
       required: true
       schema:
