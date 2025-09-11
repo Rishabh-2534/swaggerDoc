@@ -5,7 +5,7 @@ patch:
   summary: Update a page in a site
   description: This API allows us to update an existing page in a site
   parameters:
-    - name: site_id
+    - name: siteId
       in: path
       required: true
       schema:
