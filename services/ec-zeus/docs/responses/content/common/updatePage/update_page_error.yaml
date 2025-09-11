@@ -8,6 +8,11 @@ content:
           type: string
           example: "error"
           description: Status of the operation
+          enum: [success, error]
+        message:
+          type: string
+          example: "Failed to update page"
+          description: Descriptive error message about the operation failure
         error:
           type: object
           properties:
@@ -17,7 +22,7 @@ content:
               description: Error code
             message:
               type: string
-              example: "Invalid request parameters"
+              example: "Request validation failed"
               description: Error message
             details:
               type: array
@@ -26,19 +31,17 @@ content:
                 properties:
                   field:
                     type: string
-                    example: "modifiedBy"
+                    example: "request"
+                    description: Field that caused the error
                   message:
                     type: string
-                    example: "modifiedBy is required"
+                    example: "At least one field must be provided for update"
+                    description: Error message for the specific field
               description: Detailed validation errors
           required:
             - code
             - message
-        message:
-          type: string
-          example: "Failed to update page"
-          description: Error message
       required:
         - status
-        - error
         - message
+        - error
