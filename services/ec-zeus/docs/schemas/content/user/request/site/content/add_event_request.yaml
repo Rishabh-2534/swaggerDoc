@@ -176,6 +176,7 @@ properties:
 required:
   - publishingStatus
   - title
+  - bodyHtml
   - timezoneIso
   - isAllDay
   - isFeedEnabled
