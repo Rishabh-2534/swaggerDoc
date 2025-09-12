@@ -1,0 +1,47 @@
+description: Error updating page
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "error"
+          description: Status of the operation
+          enum: [success, error]
+        message:
+          type: string
+          example: "Failed to update page"
+          description: Descriptive error message about the operation failure
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              example: "VALIDATION_ERROR"
+              description: Error code
+            message:
+              type: string
+              example: "Request validation failed"
+              description: Error message
+            details:
+              type: array
+              items:
+                type: object
+                properties:
+                  field:
+                    type: string
+                    example: "request"
+                    description: Field that caused the error
+                  message:
+                    type: string
+                    example: "At least one field must be provided for update"
+                    description: Error message for the specific field
+              description: Detailed validation errors
+          required:
+            - code
+            - message
+      required:
+        - status
+        - message
+        - error
