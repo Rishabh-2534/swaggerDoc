@@ -26,8 +26,7 @@ patch:
         type: string
         example: "publish"
         enum:
-          - publish
-          - saveDraft
+          - update
       description: The action to perform on the album
   requestBody:
     content:

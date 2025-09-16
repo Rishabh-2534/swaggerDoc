@@ -26,8 +26,9 @@ patch:
         type: string
         example: "publish"
         enum:
-          - publish
-          - saveDraft
+          - update
+          - updateDraft
+          - updateApprove
       description: The action to perform on the page
   requestBody:
     content:
