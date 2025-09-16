@@ -27,3 +27,34 @@ get:
       $ref: ../../responses/common/unauthorized.yaml
     403:
       $ref: ../../responses/common/forbidden.yaml
+
+delete:
+  operationId: deleteContentUser
+  tags:
+    - Content
+  summary: Delete content from a site
+  description: This API allows us to delete content from a site
+  parameters:
+    - name: site_id
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "b84213f8-0499-4a51-af09-75ff12c8ae50"
+      description: The ID of the site containing the content
+    - name: content_id
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "e62af0b9-bbaf-4a46-bdae-72453716b51d"
+      description: The ID of the content to delete
+  responses:
+    '200':
+      $ref: '../../responses/content/common/deleteContent/delete_content_success.yaml'
+    '400':
+      $ref: '../../responses/content/common/deleteContent/delete_content_error.yaml'
+    '401':
+      $ref: '../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../responses/common/forbidden.yaml'
