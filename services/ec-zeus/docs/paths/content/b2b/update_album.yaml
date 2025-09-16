@@ -27,6 +27,8 @@ patch:
         example: "publish"
         enum:
           - update
+          - updateDraft
+          - updateApprove
       description: The action to perform on the album
   requestBody:
     content:
