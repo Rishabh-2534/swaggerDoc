@@ -76,7 +76,7 @@ paths:
         $ref: "./paths/content/search_content.yaml"
     /content/sites/list:
         $ref: "./paths/content/search_sites.yaml"
-    /content/sites/{site_id}/content/{content_id}:
+    /content/sites/{siteId}/content/{contentId}:
         $ref: "./paths/content/get_content_by_id.yaml"
     /content/site-categories:
         $ref: "./paths/content/user/site_categories.yaml"
@@ -86,12 +86,16 @@ paths:
         $ref: "./paths/content/user/site_category_by_id.yaml"
     /content/sites/{site_id}/page:
         $ref: "./paths/content/user/add_page.yaml"
-    /content/sites/{site_id}/page/{content_id}:
+    /content/sites/{siteId}/page/{contentId}:
         $ref: "./paths/content/user/update_page.yaml"
     /content/sites/{site_id}/event:
         $ref: "./paths/content/user/add_event.yaml"
+    /content/sites/{siteId}/event/{contentId}:
+        $ref: "./paths/content/user/update_event.yaml"
     /content/sites/{site_id}/album:
         $ref: "./paths/content/user/add_album.yaml"
+    /content/sites/{siteId}/album/{contentId}:
+        $ref: "./paths/content/user/update_album.yaml"
     /content/{contentId}/{action}:
         $ref: "./paths/content/user/content_action.yaml"
     /content/sites/{site_id}/page-categories:

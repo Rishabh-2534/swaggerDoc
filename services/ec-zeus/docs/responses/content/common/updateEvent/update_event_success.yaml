@@ -1,0 +1,35 @@
+description: Event updated successfully
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Status of the operation
+          enum: [success, error]
+        message:
+          type: string
+          example: "Event updated successfully"
+          description: Success message about the operation
+        data:
+          type: object
+          properties:
+            eventId:
+              type: string
+              format: uuid
+              example: "d096db67-954a-4ff5-94a7-ccc437f2fd81"
+              description: ID of the updated event
+            updatedAt:
+              type: string
+              format: date-time
+              example: "2025-09-11T14:30:00.000Z"
+              description: Timestamp when the event was updated
+          required:
+            - eventId
+            - updatedAt
+      required:
+        - status
+        - message
+        - data

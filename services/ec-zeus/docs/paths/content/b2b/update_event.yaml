@@ -1,9 +1,9 @@
 patch:
-  operationId: updatePageB2b
+  operationId: updateEventB2b
   tags:
     - Content
-  summary: Update a page in a site
-  description: This API allows us to update an existing page in a site
+  summary: Update an event in a site
+  description: This API allows us to update an existing event in a site
   parameters:
     - name: siteId
       in: path
@@ -11,14 +11,14 @@ patch:
       schema:
         type: string
         example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
-      description: The ID of the site containing the page
+      description: The ID of the site containing the event
     - name: contentId
       in: path
       required: true
       schema:
         type: string
         example: "d096db67-954a-4ff5-94a7-ccc437f2fd81"
-      description: The ID of the content/page to update
+      description: The ID of the content/event to update
     - name: action
       in: query
       required: true
@@ -29,17 +29,17 @@ patch:
           - update
           - updateDraft
           - updateApprove
-      description: The action to perform on the page
+      description: The action to perform on the event
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '../../../schemas/content/b2b/request/site/content/update_page_request.yaml'
+          $ref: '../../../schemas/content/b2b/request/site/content/update_event_request.yaml'
   responses:
     '200':
-      $ref: '../../../responses/content/common/updatePage/update_page_success.yaml'
+      $ref: '../../../responses/content/common/updateEvent/update_event_success.yaml'
     '400':
-      $ref: '../../../responses/content/common/updatePage/update_page_error.yaml'
+      $ref: '../../../responses/content/common/updateEvent/update_event_error.yaml'
     '401':
       $ref: '../../../responses/common/unauthorized.yaml'
     '403':
