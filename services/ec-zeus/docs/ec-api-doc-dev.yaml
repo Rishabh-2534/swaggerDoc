@@ -86,7 +86,7 @@ paths:
         $ref: "./paths/content/user/site_category_by_id.yaml"
     /content/sites/{site_id}/page:
         $ref: "./paths/content/user/add_page.yaml"
-    /content/sites/{site_id}/page/{content_id}:
+    /content/sites/{siteId}/page/{contentId}:
         $ref: "./paths/content/user/update_page.yaml"
     /content/sites/{site_id}/event:
         $ref: "./paths/content/user/add_event.yaml"
@@ -94,6 +94,8 @@ paths:
         $ref: "./paths/content/user/update_event.yaml"
     /content/sites/{site_id}/album:
         $ref: "./paths/content/user/add_album.yaml"
+    /content/sites/{siteId}/album/{contentId}:
+        $ref: "./paths/content/user/update_album.yaml"
     /content/sites/{site_id}/page-categories:
         $ref: "./paths/content/user/site_page_categories.yaml"
     /content/sites/{site_id}/page-categories/{category_id}:

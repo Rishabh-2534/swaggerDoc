@@ -80,6 +80,8 @@ paths:
         $ref: "./paths/content/b2b/update_event.yaml"
     /b2b/content/sites/{siteId}/album:
         $ref: "./paths/content/b2b/add_album.yaml"
+    /b2b/content/sites/{siteId}/album/{contentId}:
+        $ref: "./paths/content/b2b/update_album.yaml"
     /b2b/content/sites/{site_id}/page-categories:
         $ref: "./paths/content/b2b/site_page_categories.yaml"
     /b2b/content/sites/{site_id}/page-categories/{category_id}:
