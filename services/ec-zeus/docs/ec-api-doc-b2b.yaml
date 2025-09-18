@@ -73,6 +73,8 @@ paths:
         $ref: "./paths/content/b2b/add_event.yaml"
     /b2b/content/sites/{siteId}/album:
         $ref: "./paths/content/b2b/add_album.yaml"
+    /b2b/content/{contentId}/{action}:
+        $ref: "./paths/content/b2b/content_action.yaml"
     /b2b/content/site-categories/{siteCategoryId}:
         $ref: "./paths/content/b2b/site_category_by_id.yaml"
     /b2b/content/sites/{site_id}/page-categories:
