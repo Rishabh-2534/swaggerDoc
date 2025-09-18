@@ -105,6 +105,8 @@ paths:
         $ref: "./paths/content/user/update_page.yaml"
     /content/sites/{site_id}/event:
         $ref: "./paths/content/user/add_event.yaml"
+    /content/sites/{siteId}/event/{contentId}:
+        $ref: "./paths/content/user/update_event.yaml"
     /content/sites/{site_id}/album:
         $ref: "./paths/content/user/add_album.yaml"
     /content/sites/{site_id}/page-categories:

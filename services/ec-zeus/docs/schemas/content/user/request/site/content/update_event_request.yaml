@@ -1,0 +1,181 @@
+type: object
+properties:
+  listOfFiles:
+    type: array
+    items:
+      $ref: "../../../../common/request/file/file.yaml"
+    description: Array of file attachments
+
+  publishAt:
+    type: string
+    format: date-time
+    example: "2025-04-09T18:30:00.000Z"
+    description: "Date and time when the content should be published. REQUIRED when publishingStatus is 'schedule'. Must be in ISO 8601 UTC format"
+
+  publishTo:
+    type: string
+    format: date-time
+    nullable: true
+    example: "2025-12-31T23:59:59.000Z"
+    description: Date and time when the content should expire/unpublish. Must be in ISO 8601 UTC format
+
+  authoredBy:
+    type: string
+    format: uuid
+    description: UUID of the user who authored the event
+
+  startsAt:
+    type: string
+    format: date-time
+    example: "2025-04-15T10:00:00.000Z"
+    description: Event start date and time in ISO 8601 UTC format
+
+  endsAt:
+    type: string
+    format: date-time
+    example: "2025-04-15T12:00:00.000Z"
+    description: Event end date and time in ISO 8601 UTC format
+
+  publishingStatus:
+    type: string
+    enum:
+      - immediate
+      - schedule
+    description: Publishing status of the event
+
+  timezoneIso:
+    type: string
+    description: "Event timezone in IANA format (e.g., 'America/Los_Angeles')"
+
+  location:
+    type: string
+    minLength: 1
+    description: Event location
+
+  directions:
+    type: array
+    items:
+      type: string
+    maxItems: 10
+    description: Array of direction instructions
+
+  imgLayout:
+    type: string
+    enum:
+      - small
+      - hidden
+      - fullscreen
+      - wide
+    description: Layout style for the featured image
+
+  listOfOrganizers:
+    type: array
+    items:
+      type: string
+      format: uuid
+    description: Array of organizer UUIDs
+
+  mapURL:
+    type: string
+    nullable: true
+    description: URL to the event location map
+
+  imgCaption:
+    type: string
+    nullable: true
+    maxLength: 255
+    description: Caption for the featured image
+
+  title:
+    type: string
+    maxLength: 255
+    description: Title of the event
+
+  isFeedEnabled:
+    type: boolean
+    description: Whether the event appears in feeds
+
+  isRestricted:
+    type: boolean
+    description: Whether the event has restricted access
+
+  isQuestionAnswerEnabled:
+    type: boolean
+    description: Whether question and answer feature is enabled
+
+  listOfTopics:
+    type: array
+    nullable: true
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      required:
+        - name
+      additionalProperties: false
+    description: Array of topics associated with the event
+
+  summary:
+    type: string
+    nullable: true
+    maxLength: 10000
+    description: Summary of the event content
+
+  imgLandscapeFile:
+    type: string
+    format: uuid
+    nullable: true
+    description: UUID of the landscape image file
+
+  imgFile:
+    type: string
+    format: uuid
+    nullable: true
+    description: UUID of the main image file
+
+  imgOriginalFile:
+    type: string
+    format: uuid
+    nullable: true
+    description: UUID of the original image file
+
+  rsvp:
+    type: object
+    properties:
+      dueAtDate:
+        type: string
+        format: date-time
+        description: RSVP due date
+      hasMaybeOption:
+        type: boolean
+        description: Whether RSVP has maybe option
+      capacityCount:
+        type: integer
+        nullable: true
+        minimum: 1
+        maximum: 1000000
+        default: null
+        description: Event capacity limit
+      noteLabel:
+        type: string
+        nullable: true
+        maxLength: 255
+        description: Label for RSVP note field
+    additionalProperties: false
+    description: RSVP configuration for the event
+
+  isAllDay:
+    type: boolean
+    description: Whether the event is all day
+
+  language:
+    type: string
+    description: Language of the content
+
+minProperties: 1
+additionalProperties: false
