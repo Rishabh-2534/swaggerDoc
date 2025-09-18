@@ -1,0 +1,18 @@
+description: Content validation successful
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+        result:
+          type: object
+          properties:
+            contentId:
+              type: string
+              example: "c93c5528-0950-43ec-92c4-552c8eb2c205"
+        message:
+          type: string
+          example: "Content validation successful"
