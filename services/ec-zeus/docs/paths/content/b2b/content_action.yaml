@@ -1,0 +1,37 @@
+put:
+  operationId: validateContentB2b
+  tags:
+    - Content
+  summary: Validate content
+  description: This API allows us to validate content
+  parameters:
+    - name: contentId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "c93c5528-0950-43ec-92c4-552c8eb2c205"
+      description: The ID of the content to validate
+    - name: action
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "validate"
+        enum:
+          - validate
+      description: The action to perform on the content
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/b2b/request/site/content/validate_content_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/common/validateContent/validate_content_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/validateContent/validate_content_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
