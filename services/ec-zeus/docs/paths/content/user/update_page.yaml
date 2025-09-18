@@ -5,14 +5,14 @@ patch:
   summary: Update a page in a site
   description: This API allows us to update an existing page in a site
   parameters:
-    - name: site_id
+    - name: siteId
       in: path
       required: true
       schema:
         type: string
         example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
       description: The ID of the site containing the page
-    - name: content_id
+    - name: contentId
       in: path
       required: true
       schema:
