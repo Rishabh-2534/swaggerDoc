@@ -1,0 +1,40 @@
+description: Content approved/rejected successfully
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Status of the operation
+        result:
+          type: object
+          properties:
+            contentId:
+              type: string
+              format: uuid
+              example: "f3ae4d72-9454-4804-8c1b-08cb7ecb64c8"
+              description: ID of the content that was approved/rejected
+            action:
+              type: string
+              example: "approve"
+              enum: [approve, reject]
+              description: The action that was performed
+            processedAt:
+              type: string
+              format: date-time
+              example: "2025-01-27T10:30:00.000Z"
+              description: Timestamp when the content was processed
+          required:
+            - contentId
+            - action
+            - processedAt
+        message:
+          type: string
+          example: "Content approved successfully"
+          description: Success message
+      required:
+        - status
+        - result
+        - message

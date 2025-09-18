@@ -1,0 +1,35 @@
+post:
+  operationId: approveContentUser
+  tags:
+    - Content
+  summary: Approve or reject content
+  description: This API allows us to approve or reject content in a site
+  parameters:
+    - name: siteId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "b84213f8-0499-4a51-af09-75ff12c8ae50"
+      description: The ID of the site containing the content
+    - name: contentId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "f3ae4d72-9454-4804-8c1b-08cb7ecb64c8"
+      description: The ID of the content to approve/reject
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/user/request/site/content/approve_content_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/common/approveContent/approve_content_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/approveContent/approve_content_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
