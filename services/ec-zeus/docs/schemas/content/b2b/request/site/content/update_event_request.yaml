@@ -95,10 +95,6 @@ properties:
     type: boolean
     description: Whether the event appears in feeds
 
-  isRestricted:
-    type: boolean
-    description: Whether the event has restricted access
-
   isQuestionAnswerEnabled:
     type: boolean
     description: Whether question and answer feature is enabled

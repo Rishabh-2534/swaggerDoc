@@ -5,7 +5,7 @@ patch:
   summary: Update an album in a site
   description: This API allows us to update an existing album in a site
   parameters:
-    - name: site_id
+    - name: siteId
       in: path
       required: true
       schema:
