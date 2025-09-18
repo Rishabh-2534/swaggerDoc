@@ -1,0 +1,38 @@
+delete:
+  operationId: deleteContentB2b
+  tags:
+    - Content
+  summary: Delete content from a site
+  description: This API allows us to delete content from a site. The deletedBy parameter is required for B2B operations.
+  parameters:
+    - name: siteId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "b84213f8-0499-4a51-af09-75ff12c8ae50"
+      description: The ID of the site containing the content
+    - name: contentId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "e62af0b9-bbaf-4a46-bdae-72453716b51d"
+      description: The ID of the content to delete
+    - name: deletedBy
+      in: query
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "e0853f94-c46d-41ca-89e1-5550a3638490"
+      description: UUID of the user who is deleting the content
+  responses:
+    '200':
+      $ref: '../../../responses/content/common/deleteContent/delete_content_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/deleteContent/delete_content_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

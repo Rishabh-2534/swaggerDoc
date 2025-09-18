@@ -91,7 +91,7 @@ paths:
         $ref: "./paths/content/search_content.yaml"
     /content/sites/list:
         $ref: "./paths/content/search_sites.yaml"
-    /content/sites/{site_id}/content/{content_id}:
+    /content/sites/{siteId}/content/{contentId}:
         $ref: "./paths/content/get_content_by_id.yaml"
     /content/site-categories:
         $ref: "./paths/content/user/site_categories.yaml"

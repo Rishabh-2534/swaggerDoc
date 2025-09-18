@@ -74,6 +74,8 @@ paths:
         $ref: "./paths/content/b2b/add_page.yaml"
     /b2b/content/sites/{siteId}/page/{contentId}:
         $ref: "./paths/content/b2b/update_page.yaml"
+    /b2b/content/sites/{siteId}/content/{contentId}:
+        $ref: "./paths/content/b2b/delete_content_by_id.yaml"
     /b2b/content/sites/{siteId}/event:
         $ref: "./paths/content/b2b/add_event.yaml"
     /b2b/content/sites/{siteId}/event/{contentId}:
