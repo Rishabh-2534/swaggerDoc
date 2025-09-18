@@ -1,9 +1,0 @@
-type: object
-properties:
-  modifiedBy:
-    type: string
-    format: uuid
-    example: "e0853f94-c46d-41ca-89e1-5550a3638490"
-    description: UUID of the user who is modifying/validating the content
-required:
-  - modifiedBy
