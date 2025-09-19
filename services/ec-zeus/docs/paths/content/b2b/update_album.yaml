@@ -2,10 +2,10 @@ patch:
   operationId: updateAlbumB2b
   tags:
     - Content
-  summary: Update an album in a site
-  description: This API allows us to update an existing album in a site
+  summary: Update album content with specified action
+  description: This content API allows us to update an existing album in a site by specifying different actions (update, updateDraft, updateApprove) via the action parameter. The request body contains album properties including media, publishing settings, topics, and metadata.
   parameters:
-    - name: site_id
+    - name: siteId
       in: path
       required: true
       schema:
