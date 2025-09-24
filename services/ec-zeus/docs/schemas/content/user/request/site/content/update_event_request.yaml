@@ -91,6 +91,10 @@ properties:
     maxLength: 255
     description: Title of the event
 
+  bodyHtml:
+    type: string
+    description: Main content of the event in HTML format
+
   isFeedEnabled:
     type: boolean
     description: Whether the event appears in feeds
