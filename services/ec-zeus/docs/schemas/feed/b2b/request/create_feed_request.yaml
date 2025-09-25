@@ -66,7 +66,7 @@ oneOf:
         description: Whether to ignore toxic content detection
       scope:
         type: string
-        const: public
+        enum: [public]
         description: The scope of the feed item - public
       siteId:
         type: string
@@ -76,7 +76,7 @@ oneOf:
         description: The ID of the site (null for public scope)
       type:
         type: string
-        const: post
+        enum: [post]
         description: The type of feed item
       title:
         type: string
@@ -101,7 +101,6 @@ oneOf:
       - textHtml
       - scope
       - type
-      - variant
       - createdBy
     additionalProperties: false
 
@@ -116,7 +115,7 @@ oneOf:
         description: Whether to ignore toxic content detection
       scope:
         type: string
-        const: public
+        enum: [public]
         description: The scope of the feed item - public
       siteId:
         type: string
@@ -126,7 +125,7 @@ oneOf:
         description: The ID of the site (null for public scope)
       type:
         type: string
-        const: question
+        enum: [question]
         description: The type of feed item
       title:
         type: string
@@ -152,7 +151,6 @@ oneOf:
       - scope
       - type
       - title
-      - variant
       - createdBy
     additionalProperties: false
 
@@ -167,7 +165,7 @@ oneOf:
         description: Whether to ignore toxic content detection
       scope:
         type: string
-        const: site
+        enum: [site]
         description: The scope of the feed item - site-specific
       siteId:
         type: string
@@ -177,7 +175,7 @@ oneOf:
         description: The ID of the site (required for site scope)
       type:
         type: string
-        const: post
+        enum: [post]
         description: The type of feed item
       title:
         type: string
@@ -203,7 +201,6 @@ oneOf:
       - scope
       - siteId
       - type
-      - variant
       - createdBy
     additionalProperties: false
 
@@ -218,7 +215,7 @@ oneOf:
         description: Whether to ignore toxic content detection
       scope:
         type: string
-        const: site
+        enum: [site]
         description: The scope of the feed item - site-specific
       siteId:
         type: string
@@ -228,7 +225,7 @@ oneOf:
         description: The ID of the site (required for site scope)
       type:
         type: string
-        const: question
+        enum: [question]
         description: The type of feed item
       title:
         type: string
@@ -255,58 +252,6 @@ oneOf:
       - siteId
       - type
       - title
-      - variant
       - createdBy
     additionalProperties: false
 
-# Examples for different cases
-examples:
-  public_post:
-    summary: Public post example (B2B)
-    value:
-      textHtml: "<p>This is a public feed post via B2B API.</p>"
-      ignoreToxic: false
-      scope: public
-      siteId: null
-      type: post
-      variant: standard
-      listOfAttachedFiles: []
-      createdBy: "12345678-1234-1234-1234-123456789012"
-  
-  public_question:
-    summary: Public question example (B2B)
-    value:
-      textHtml: "<p>What are the best practices for remote work?</p>"
-      ignoreToxic: false
-      scope: public
-      siteId: null
-      type: question
-      title: "Remote Work Best Practices?"
-      variant: standard
-      listOfAttachedFiles: []
-      createdBy: "12345678-1234-1234-1234-123456789012"
-  
-  site_post:
-    summary: Site-specific post example (B2B)
-    value:
-      textHtml: "<p>This is a site-specific feed post via B2B API.</p>"
-      ignoreToxic: false
-      scope: site
-      siteId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-      type: post
-      variant: standard
-      listOfAttachedFiles: []
-      createdBy: "12345678-1234-1234-1234-123456789012"
-  
-  site_question:
-    summary: Site-specific question example (B2B)
-    value:
-      textHtml: "<p>How can we improve our team collaboration?</p>"
-      ignoreToxic: false
-      scope: site
-      siteId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-      type: question
-      title: "Team Collaboration Ideas"
-      variant: standard
-      listOfAttachedFiles: []
-      createdBy: "12345678-1234-1234-1234-123456789012"
