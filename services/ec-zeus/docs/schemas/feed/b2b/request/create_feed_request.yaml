@@ -53,59 +53,260 @@ properties:
     format: uuid
     description: UUID of the user creating the feed (B2B specific field)
 
-required:
-  - textHtml
-  - scope
-  - type
-  - variant
-  - createdBy
+# Use oneOf to handle conditional validation for OpenAPI 3.0.2 compatibility
+oneOf:
+  # Case 1: public scope + post type
+  - properties:
+      textHtml:
+        type: string
+        description: The HTML content of the feed item
+      ignoreToxic:
+        type: boolean
+        default: false
+        description: Whether to ignore toxic content detection
+      scope:
+        type: string
+        const: public
+        description: The scope of the feed item - public
+      siteId:
+        type: string
+        format: uuid
+        nullable: true
+        example: null
+        description: The ID of the site (null for public scope)
+      type:
+        type: string
+        const: post
+        description: The type of feed item
+      title:
+        type: string
+        nullable: true
+        maxLength: 255
+        description: The title of the feed item (optional for posts)
+      variant:
+        type: string
+        default: standard
+        description: The variant of the feed item
+      listOfAttachedFiles:
+        type: array
+        items:
+          $ref: "../../../content/common/request/file/file.yaml"
+        default: []
+        description: Array of attached files
+      createdBy:
+        type: string
+        format: uuid
+        description: UUID of the user creating the feed (B2B specific field)
+    required:
+      - textHtml
+      - scope
+      - type
+      - variant
+      - createdBy
+    additionalProperties: false
 
-# Conditional validation using allOf and if/then/else
-allOf:
-  # If scope is 'site', then siteId is required
-  - if:
-      properties:
-        scope:
-          const: site
-    then:
-      required:
-        - siteId
-      properties:
-        siteId:
-          type: string
-          format: uuid
-          nullable: false
-    else:
-      properties:
-        siteId:
-          nullable: true
+  # Case 2: public scope + question type
+  - properties:
+      textHtml:
+        type: string
+        description: The HTML content of the feed item
+      ignoreToxic:
+        type: boolean
+        default: false
+        description: Whether to ignore toxic content detection
+      scope:
+        type: string
+        const: public
+        description: The scope of the feed item - public
+      siteId:
+        type: string
+        format: uuid
+        nullable: true
+        example: null
+        description: The ID of the site (null for public scope)
+      type:
+        type: string
+        const: question
+        description: The type of feed item
+      title:
+        type: string
+        nullable: false
+        maxLength: 255
+        description: The title of the feed item (required for questions)
+      variant:
+        type: string
+        default: standard
+        description: The variant of the feed item
+      listOfAttachedFiles:
+        type: array
+        items:
+          $ref: "../../../content/common/request/file/file.yaml"
+        default: []
+        description: Array of attached files
+      createdBy:
+        type: string
+        format: uuid
+        description: UUID of the user creating the feed (B2B specific field)
+    required:
+      - textHtml
+      - scope
+      - type
+      - title
+      - variant
+      - createdBy
+    additionalProperties: false
+
+  # Case 3: site scope + post type
+  - properties:
+      textHtml:
+        type: string
+        description: The HTML content of the feed item
+      ignoreToxic:
+        type: boolean
+        default: false
+        description: Whether to ignore toxic content detection
+      scope:
+        type: string
+        const: site
+        description: The scope of the feed item - site-specific
+      siteId:
+        type: string
+        format: uuid
+        nullable: false
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        description: The ID of the site (required for site scope)
+      type:
+        type: string
+        const: post
+        description: The type of feed item
+      title:
+        type: string
+        nullable: true
+        maxLength: 255
+        description: The title of the feed item (optional for posts)
+      variant:
+        type: string
+        default: standard
+        description: The variant of the feed item
+      listOfAttachedFiles:
+        type: array
+        items:
+          $ref: "../../../content/common/request/file/file.yaml"
+        default: []
+        description: Array of attached files
+      createdBy:
+        type: string
+        format: uuid
+        description: UUID of the user creating the feed (B2B specific field)
+    required:
+      - textHtml
+      - scope
+      - siteId
+      - type
+      - variant
+      - createdBy
+    additionalProperties: false
+
+  # Case 4: site scope + question type
+  - properties:
+      textHtml:
+        type: string
+        description: The HTML content of the feed item
+      ignoreToxic:
+        type: boolean
+        default: false
+        description: Whether to ignore toxic content detection
+      scope:
+        type: string
+        const: site
+        description: The scope of the feed item - site-specific
+      siteId:
+        type: string
+        format: uuid
+        nullable: false
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        description: The ID of the site (required for site scope)
+      type:
+        type: string
+        const: question
+        description: The type of feed item
+      title:
+        type: string
+        nullable: false
+        maxLength: 255
+        description: The title of the feed item (required for questions)
+      variant:
+        type: string
+        default: standard
+        description: The variant of the feed item
+      listOfAttachedFiles:
+        type: array
+        items:
+          $ref: "../../../content/common/request/file/file.yaml"
+        default: []
+        description: Array of attached files
+      createdBy:
+        type: string
+        format: uuid
+        description: UUID of the user creating the feed (B2B specific field)
+    required:
+      - textHtml
+      - scope
+      - siteId
+      - type
+      - title
+      - variant
+      - createdBy
+    additionalProperties: false
+
+# Examples for different cases
+examples:
+  public_post:
+    summary: Public post example (B2B)
+    value:
+      textHtml: "<p>This is a public feed post via B2B API.</p>"
+      ignoreToxic: false
+      scope: public
+      siteId: null
+      type: post
+      variant: standard
+      listOfAttachedFiles: []
+      createdBy: "12345678-1234-1234-1234-123456789012"
   
-  # If type is 'question', then title is required
-  - if:
-      properties:
-        type:
-          const: question
-    then:
-      required:
-        - title
-      properties:
-        title:
-          type: string
-          maxLength: 255
-          nullable: false
-    else:
-      properties:
-        title:
-          nullable: true
-
-additionalProperties: false
-
-example:
-  textHtml: "<p>This is a sample feed post for a specific site.</p>"
-  ignoreToxic: false
-  scope: site
-  siteId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-  type: post
-  variant: standard
-  listOfAttachedFiles: []
-  createdBy: "12345678-1234-1234-1234-123456789012"
+  public_question:
+    summary: Public question example (B2B)
+    value:
+      textHtml: "<p>What are the best practices for remote work?</p>"
+      ignoreToxic: false
+      scope: public
+      siteId: null
+      type: question
+      title: "Remote Work Best Practices?"
+      variant: standard
+      listOfAttachedFiles: []
+      createdBy: "12345678-1234-1234-1234-123456789012"
+  
+  site_post:
+    summary: Site-specific post example (B2B)
+    value:
+      textHtml: "<p>This is a site-specific feed post via B2B API.</p>"
+      ignoreToxic: false
+      scope: site
+      siteId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+      type: post
+      variant: standard
+      listOfAttachedFiles: []
+      createdBy: "12345678-1234-1234-1234-123456789012"
+  
+  site_question:
+    summary: Site-specific question example (B2B)
+    value:
+      textHtml: "<p>How can we improve our team collaboration?</p>"
+      ignoreToxic: false
+      scope: site
+      siteId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+      type: question
+      title: "Team Collaboration Ideas"
+      variant: standard
+      listOfAttachedFiles: []
+      createdBy: "12345678-1234-1234-1234-123456789012"
