@@ -1,0 +1,111 @@
+type: object
+properties:
+  textHtml:
+    type: string
+    description: The HTML content of the feed item
+  
+  ignoreToxic:
+    type: boolean
+    default: false
+    description: Whether to ignore toxic content detection
+  
+  scope:
+    type: string
+    enum:
+      - public
+      - site
+    description: The scope of the feed item - public or site-specific
+  
+  siteId:
+    type: string
+    format: uuid
+    nullable: true
+    example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    description: The ID of the site (required when scope is 'site', null for public scope)
+  
+  type:
+    type: string
+    enum:
+      - post
+      - question
+    description: The type of feed item
+  
+  title:
+    type: string
+    nullable: true
+    maxLength: 255
+    description: The title of the feed item (required when type is 'question')
+  
+  variant:
+    type: string
+    default: standard
+    description: The variant of the feed item
+
+  listOfAttachedFiles:
+    type: array
+    items:
+      $ref: "../../../content/common/request/file/file.yaml"
+    default: []
+    description: Array of attached files
+
+  createdBy:
+    type: string
+    format: uuid
+    description: UUID of the user creating the feed (B2B specific field)
+
+required:
+  - textHtml
+  - scope
+  - type
+  - variant
+  - createdBy
+
+# Conditional validation using allOf and if/then/else
+allOf:
+  # If scope is 'site', then siteId is required
+  - if:
+      properties:
+        scope:
+          const: site
+    then:
+      required:
+        - siteId
+      properties:
+        siteId:
+          type: string
+          format: uuid
+          nullable: false
+    else:
+      properties:
+        siteId:
+          nullable: true
+  
+  # If type is 'question', then title is required
+  - if:
+      properties:
+        type:
+          const: question
+    then:
+      required:
+        - title
+      properties:
+        title:
+          type: string
+          maxLength: 255
+          nullable: false
+    else:
+      properties:
+        title:
+          nullable: true
+
+additionalProperties: false
+
+example:
+  textHtml: "<p>This is a sample feed post for a specific site.</p>"
+  ignoreToxic: false
+  scope: site
+  siteId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+  type: post
+  variant: standard
+  listOfAttachedFiles: []
+  createdBy: "12345678-1234-1234-1234-123456789012"

@@ -1,0 +1,29 @@
+put:
+  operationId: updateFeedB2b
+  tags:
+    - Feed
+  summary: Update a feed via B2B API
+  description: This API allows B2B integrations to update a feed
+  parameters:
+    - name: feedId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "49502e9f-a6e6-4773-a0b4-64be9388b7b1"
+      description: The ID of the feed to update
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/feed/b2b/request/update_feed_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/feed/b2b/updateFeed/update_feed_success.yaml'
+    '400':
+      $ref: '../../../responses/feed/b2b/updateFeed/update_feed_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
