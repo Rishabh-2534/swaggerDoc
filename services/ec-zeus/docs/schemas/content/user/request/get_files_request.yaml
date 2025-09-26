@@ -63,3 +63,15 @@ properties:
     type: string
     description: Token for fetching the next page of results
     example: "15"
+  extensions:
+    type: array
+    nullable: true
+    items:
+      type: string
+      pattern: "^[a-zA-Z0-9_-]+$"
+      maxLength: 10
+      minLength: 1
+    minItems: 1
+    maxItems: 20
+    uniqueItems: true
+    description: "Array of file extensions to search for (e.g., ['pdf', 'docx', 'png']). Do not include dots in extension names."

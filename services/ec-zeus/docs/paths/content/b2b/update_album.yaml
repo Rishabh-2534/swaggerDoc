@@ -1,0 +1,46 @@
+patch:
+  operationId: updateAlbumB2b
+  tags:
+    - Content
+  summary: Update album content with specified action
+  description: This content API allows us to update an existing album in a site by specifying different actions (update, updateDraft, updateApprove) via the action parameter. The request body contains album properties including media, publishing settings, topics, and metadata.
+  parameters:
+    - name: siteId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
+      description: The ID of the site containing the album
+    - name: contentId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "d096db67-954a-4ff5-94a7-ccc437f2fd81"
+      description: The ID of the content/album to update
+    - name: action
+      in: query
+      required: true
+      schema:
+        type: string
+        example: "publish"
+        enum:
+          - update
+          - updateDraft
+          - updateApprove
+      description: The action to perform on the album
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/b2b/request/site/content/update_album_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/common/updateAlbum/update_album_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/updateAlbum/update_album_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

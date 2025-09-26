@@ -10,7 +10,7 @@ properties:
     type: string
     format: date-time
     example: "2025-04-09T18:30:00.000Z"
-    description: Date and time when the event should be published (required when publishingStatus is 'schedule'). Must be in ISO 8601 UTC format
+    description: "Date and time when the content should be published. REQUIRED when publishingStatus is 'schedule'. Must be in ISO 8601 UTC format"
 
   publishTo:
     type: string
@@ -19,21 +19,22 @@ properties:
     example: "2025-12-31T23:59:59.000Z"
     description: Date and time when the content should expire/unpublish. Must be in ISO 8601 UTC format
 
+  authoredBy:
+    type: string
+    format: uuid
+    description: UUID of the user who authored the event
+
   startsAt:
     type: string
     format: date-time
-    example: "2025-04-09T10:00:00.000Z"
-    description: Event start date and time in ISO 8601 format
+    example: "2025-04-15T10:00:00.000Z"
+    description: Event start date and time in ISO 8601 UTC format
 
   endsAt:
     type: string
     format: date-time
-    example: "2025-04-09T12:00:00.000Z"
-    description: Event end date and time in ISO 8601 format
-
-  bodyHtml:
-    type: string
-    description: Main content of the event in HTML format
+    example: "2025-04-15T12:00:00.000Z"
+    description: Event end date and time in ISO 8601 UTC format
 
   publishingStatus:
     type: string
@@ -44,8 +45,7 @@ properties:
 
   timezoneIso:
     type: string
-    example: "America/Los_Angeles"
-    description: Timezone ISO string for the event
+    description: "Event timezone in IANA format (e.g., 'America/Los_Angeles')"
 
   location:
     type: string
@@ -57,7 +57,7 @@ properties:
     items:
       type: string
     maxItems: 10
-    description: Array of directions to the event location
+    description: Array of direction instructions
 
   imgLayout:
     type: string
@@ -73,12 +73,12 @@ properties:
     items:
       type: string
       format: uuid
-    description: Array of organizer user IDs
+    description: Array of organizer UUIDs
 
   mapURL:
     type: string
     nullable: true
-    description: URL to map for the event location
+    description: URL to the event location map
 
   imgCaption:
     type: string
@@ -156,7 +156,7 @@ properties:
         minimum: 1
         maximum: 1000000
         default: null
-        description: Maximum capacity for the event
+        description: Event capacity limit
       noteLabel:
         type: string
         nullable: true
@@ -167,20 +167,11 @@ properties:
 
   isAllDay:
     type: boolean
-    description: Whether the event is an all-day event
+    description: Whether the event is all day
 
   language:
     type: string
-    description: Language of the event content
+    description: Language of the content
 
-required:
-  - publishingStatus
-  - title
-  - bodyHtml
-  - timezoneIso
-  - isAllDay
-  - isFeedEnabled
-  - location
-  - startsAt
-  - endsAt
+minProperties: 1
 additionalProperties: false

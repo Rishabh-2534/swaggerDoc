@@ -65,10 +65,22 @@ paths:
         $ref: "./paths/content/b2b/publish_unpublish_content.yaml"
     /b2b/content/sites/{siteId}/page:
         $ref: "./paths/content/b2b/add_page.yaml"
+    /b2b/content/sites/{siteId}/page/{contentId}:
+        $ref: "./paths/content/b2b/update_page.yaml"
+    /b2b/content/sites/{siteId}/content/{contentId}:
+        $ref: "./paths/content/b2b/delete_content_by_id.yaml"
+    /b2b/content/sites/{siteId}/content/{contentId}/approve:
+        $ref: "./paths/content/b2b/approve_content.yaml"
     /b2b/content/sites/{siteId}/event:
         $ref: "./paths/content/b2b/add_event.yaml"
+    /b2b/content/sites/{siteId}/event/{contentId}:
+        $ref: "./paths/content/b2b/update_event.yaml"
     /b2b/content/sites/{siteId}/album:
         $ref: "./paths/content/b2b/add_album.yaml"
+    /b2b/content/sites/{siteId}/album/{contentId}:
+        $ref: "./paths/content/b2b/update_album.yaml"
+    /b2b/content/{contentId}/{action}:
+        $ref: "./paths/content/b2b/content_action.yaml"
     /b2b/content/site-categories/{siteCategoryId}:
         $ref: "./paths/content/b2b/site_category_by_id.yaml"
     /b2b/content/sites/{site_id}/page-categories:

@@ -10,7 +10,7 @@ properties:
     type: string
     format: date-time
     example: "2025-04-09T18:30:00.000Z"
-    description: Date and time when the album should be published (required when publishingStatus is 'schedule'). Must be in ISO 8601 UTC format
+    description: "Date and time when the content should be published. REQUIRED when publishingStatus is 'schedule'. Must be in ISO 8601 UTC format"
 
   imgLandscape:
     type: string
@@ -23,10 +23,6 @@ properties:
     nullable: true
     example: "2025-12-31T23:59:59.000Z"
     description: Date and time when the content should expire/unpublish. Must be in ISO 8601 UTC format
-
-  bodyHtml:
-    type: string
-    description: Main content of the album in HTML format
 
   publishingStatus:
     type: string
@@ -103,20 +99,20 @@ properties:
       properties:
         id:
           type: string
-          description: Media ID
+          description: Media item ID
         description:
           type: string
           nullable: true
           maxLength: 255
-          description: Description of the media
+          description: Description of the media item
         altText:
           type: string
           nullable: true
           maxLength: 255
-          description: Alternative text for the media
+          description: Alternative text for the media item
         fileId:
           type: string
-          description: File ID
+          description: File ID of the media item
         provider:
           type: string
           enum:
@@ -126,25 +122,25 @@ properties:
             - sharepoint
             - dropbox
             - native_video
-          description: Provider of the media file
+          description: Provider of the media item
         name:
           type: string
-          description: Name of the media file
+          description: Name of the media item
         type:
           type: string
-          description: Type of the media file
+          description: Type of the media item
         size:
           type: string
-          description: Size of the media file
+          description: Size of the media item
         thumbnailUrl:
           type: string
-          description: URL of the thumbnail
+          description: Thumbnail URL of the media item
         version:
           type: number
-          description: Version of the media file
+          description: Version of the media item
         videoStatus:
           type: number
-          description: Status of the video if applicable
+          description: Video processing status
       required:
         - id
       additionalProperties: false
@@ -156,16 +152,11 @@ properties:
 
   coverImageMediaId:
     type: string
-    description: ID of the media item to use as cover image
+    description: ID of the cover image media
 
   language:
     type: string
-    description: Language of the album content
+    description: Language of the content
 
-required:
-  - publishingStatus
-  - title
-  - bodyHtml
-  - coverImageMediaId
-  - listOfAlbumMedia
+minProperties: 1
 additionalProperties: false

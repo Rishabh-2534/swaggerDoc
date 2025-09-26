@@ -170,6 +170,7 @@ properties:
 required:
   - publishingStatus
   - title
+  - bodyHtml
   - coverImageMediaId
   - listOfAlbumMedia
   - createdBy
