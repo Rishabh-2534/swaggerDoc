@@ -4,42 +4,5 @@
   schema:
     type: string
     format: uuid
-  required: false
-- name: segmentId
-  in: query
-  description: Filter carousel items by segment ID
-  schema:
-    type: string
-    format: uuid
-  required: false
-- name: modifiedAfter
-  in: query
-  description: Filter carousel items modified after this date-time. Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)
-  schema:
-    type: string
-    format: date-time
-  required: false
-- name: includeDeleted
-  in: query
-  description: Include deleted carousel items in the response
-  schema:
-    type: boolean
-    example: false
-    default: false
-  required: false
-- name: includeDisabledContentTypes
-  in: query
-  description: Include items with disabled content types in the response
-  schema:
-    type: boolean
-    example: false
-    default: false
-  required: false
-- name: ignoreCarouselDisablement
-  in: query
-  description: Ignore carousel disablement settings
-  schema:
-    type: boolean
-    example: false
-    default: false
+    example: "123e4567-e89b-12d3-a456-426614174000"
   required: false
