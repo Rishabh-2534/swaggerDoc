@@ -56,6 +56,10 @@ properties:
     maxLength: 255
     description: Title of the album
 
+  bodyHtml:
+    type: string
+    description: Main content of the album in HTML format
+
   isMaximumWidth:
     type: boolean
     description: Whether to use maximum width layout
