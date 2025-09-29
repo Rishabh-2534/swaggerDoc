@@ -12,6 +12,8 @@ tags:
       description: Everything about Authorization
     - name: Content
       description: Everything about Content
+    - name: Feed
+      description: Everything about Feed
     - name: Files
       description: Everything about Files
     - name: Recognition
@@ -20,8 +22,6 @@ tags:
       description: Everything about Sites
     - name: Users
       description: Everything about Users
-    - name: Feed
-      description: Everything about Feed
 
 servers:
     - url: https://platform.{env}.simpplr.com/v1
@@ -102,9 +102,9 @@ paths:
 
     # Feed
     /b2b/wfeed/feeds:
-        $ref: "./paths/feed/b2b/create_feed.yaml"
+        $ref: "./paths/feed/b2b/feed/create_feed.yaml"
     /b2b/wfeed/feeds/{feedId}:
-        $ref: "./paths/feed/b2b/update_feed.yaml"
+        $ref: "./paths/feed/b2b/feed/update_feed.yaml"
 
 components:
     securitySchemes:

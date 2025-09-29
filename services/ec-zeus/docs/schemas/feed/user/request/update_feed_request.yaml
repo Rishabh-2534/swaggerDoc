@@ -4,11 +4,6 @@ properties:
     type: string
     description: The HTML content of the feed item
   
-  ignoreToxic:
-    type: boolean
-    default: false
-    description: Whether to ignore toxic content detection
-  
   siteId:
     type: string
     format: uuid

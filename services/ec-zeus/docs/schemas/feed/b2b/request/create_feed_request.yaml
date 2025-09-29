@@ -4,11 +4,6 @@ properties:
     type: string
     description: The HTML content of the feed item
   
-  ignoreToxic:
-    type: boolean
-    default: false
-    description: Whether to ignore toxic content detection
-  
   scope:
     type: string
     enum:
@@ -35,11 +30,6 @@ properties:
     nullable: true
     maxLength: 255
     description: The title of the feed item (required when type is 'question')
-  
-  variant:
-    type: string
-    default: standard
-    description: The variant of the feed item
 
   listOfAttachedFiles:
     type: array
@@ -60,10 +50,6 @@ oneOf:
       textHtml:
         type: string
         description: The HTML content of the feed item
-      ignoreToxic:
-        type: boolean
-        default: false
-        description: Whether to ignore toxic content detection
       scope:
         type: string
         enum: [public]
@@ -83,10 +69,6 @@ oneOf:
         nullable: true
         maxLength: 255
         description: The title of the feed item (optional for posts)
-      variant:
-        type: string
-        default: standard
-        description: The variant of the feed item
       listOfAttachedFiles:
         type: array
         items:
@@ -109,10 +91,6 @@ oneOf:
       textHtml:
         type: string
         description: The HTML content of the feed item
-      ignoreToxic:
-        type: boolean
-        default: false
-        description: Whether to ignore toxic content detection
       scope:
         type: string
         enum: [public]
@@ -132,10 +110,6 @@ oneOf:
         nullable: false
         maxLength: 255
         description: The title of the feed item (required for questions)
-      variant:
-        type: string
-        default: standard
-        description: The variant of the feed item
       listOfAttachedFiles:
         type: array
         items:
@@ -159,10 +133,6 @@ oneOf:
       textHtml:
         type: string
         description: The HTML content of the feed item
-      ignoreToxic:
-        type: boolean
-        default: false
-        description: Whether to ignore toxic content detection
       scope:
         type: string
         enum: [site]
@@ -182,10 +152,6 @@ oneOf:
         nullable: true
         maxLength: 255
         description: The title of the feed item (optional for posts)
-      variant:
-        type: string
-        default: standard
-        description: The variant of the feed item
       listOfAttachedFiles:
         type: array
         items:
@@ -209,10 +175,6 @@ oneOf:
       textHtml:
         type: string
         description: The HTML content of the feed item
-      ignoreToxic:
-        type: boolean
-        default: false
-        description: Whether to ignore toxic content detection
       scope:
         type: string
         enum: [site]
@@ -232,10 +194,6 @@ oneOf:
         nullable: false
         maxLength: 255
         description: The title of the feed item (required for questions)
-      variant:
-        type: string
-        default: standard
-        description: The variant of the feed item
       listOfAttachedFiles:
         type: array
         items:
