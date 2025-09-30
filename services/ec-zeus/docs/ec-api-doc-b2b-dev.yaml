@@ -12,10 +12,10 @@ tags:
       description: Everything about Authorization
     - name: Content
       description: Everything about Content
-    - name: Files
-      description: Everything about Files
     - name: Feed
       description: Everything about Feed
+    - name: Files
+      description: Everything about Files
     - name: Recognition
       description: Everything about Recognition
     - name: Sites
