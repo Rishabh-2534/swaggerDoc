@@ -16,6 +16,8 @@ tags:
       description: Everything about Content
     - name: Enterprise search
       description: Everything about Enterprise search
+    - name: Feed
+      description: Everything about Feed
     - name: Files
       description: Everything about Files
     - name: Notifications
@@ -156,6 +158,13 @@ paths:
         $ref: "./paths/service-desk/user/update_ticket_by_id.yaml"
     /service-desk/wtickets/tickets/{ticketId}/comments:
         $ref: "./paths/service-desk/user/create_ticket_comment.yaml"
+
+    # Feed
+    /wfeed/feeds:
+        $ref: "./paths/feed/user/feed/create_feed.yaml"
+    /wfeed/feeds/{feedId}:
+        $ref: "./paths/feed/user/feed/update_feed.yaml"
+
 components:
     schemas:
         $ref: "./schemas/_index.yaml"
