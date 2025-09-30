@@ -1,6 +1,6 @@
 - name: siteId
   in: query
-  description: Optional parameter to filter carousel items by site ID. If not provided, returns all home carousel items. Use null to explicitly request only global items.
+  description: Optional parameter to filter carousel items by site ID. If not provided, returns carousel items from all sites. If provided, returns only carousel items associated with the specified site.
   schema:
     type: string
     format: uuid
