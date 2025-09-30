@@ -1,0 +1,206 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains carousel items data
+          properties:
+            layout:
+              type: string
+              example: showcase
+              description: Layout type for the carousel
+            isPersonalisedCarouselEnabled:
+              type: boolean
+              example: false
+              description: Whether personalized carousel is enabled
+            listOfItems:
+              type: array
+              description: List of carousel items
+              items:
+                type: object
+                properties:
+                  addedAt:
+                    type: string
+                    format: date-time
+                    example: "2025-05-20T05:17:29.607Z"
+                    description: Date and time when the carousel item was added
+                  carouselItemId:
+                    type: string
+                    format: uuid
+                    example: d7618f76-4674-435b-8496-063cf470ce6d
+                    description: Unique identifier for the carousel item
+                  itemType:
+                    type: string
+                    example: content
+                    description: Type of carousel item (external, social_campaign, content)
+                    enum: [external, social_campaign, content]
+                  status:
+                    type: string
+                    example: active
+                    description: Status of the carousel item
+                  order:
+                    type: integer
+                    example: 1
+                    description: Display order of the carousel item
+                  newOrder:
+                    type: integer
+                    example: 1
+                    description: New display order of the carousel item
+                  item:
+                    type: object
+                    description: Details of the carousel item, varies by itemType. Contains different properties based on itemType (content, external, social_campaign)
+                    properties:
+                      # Content type properties
+                      authoredBy:
+                        type: object
+                        description: Author information for content items
+                        properties:
+                          name:
+                            type: string
+                            example: "harsh dubey"
+                          isActive:
+                            type: boolean
+                            example: true
+                          id:
+                            type: string
+                            format: uuid
+                            example: "1475f810-51ae-427b-8d5c-d66a367f2d3a"
+                          peopleId:
+                            type: string
+                            format: uuid
+                            example: "1475f810-51ae-427b-8d5c-d66a367f2d3a"
+                      excerpt:
+                        type: string
+                        nullable: true
+                        example: "asdfs"
+                        description: Content excerpt
+                      contentSubType:
+                        type: string
+                        nullable: true
+                        example: "news"
+                        description: Content subtype
+                      publishAt:
+                        type: string
+                        format: date-time
+                        example: "2025-04-10T07:04:00.000Z"
+                        description: Publish date
+                      isPublished:
+                        type: boolean
+                        example: true
+                        description: Whether content is published
+                      title:
+                        type: string
+                        example: "safasd"
+                        description: Content title
+                      type:
+                        type: string
+                        example: "event"
+                        description: Content type (event, album, page, etc.)
+                      id:
+                        type: string
+                        format: uuid
+                        example: "4eac604a-a434-4d5c-a4d9-70c7b2d3fbb4"
+                        description: Content ID
+                      createdAt:
+                        type: string
+                        format: date-time
+                        example: "2025-04-10T07:04:36.262Z"
+                        description: Content creation date
+                      modifiedAt:
+                        type: string
+                        format: date-time
+                        example: "2025-04-10T07:11:52.189Z"
+                        description: Content modification date
+                      site:
+                        type: object
+                        description: Site information
+                        properties:
+                          siteId:
+                            type: string
+                            format: uuid
+                            example: "fcc2d0d7-3412-4ba4-b25c-baafb70a2f31"
+                          name:
+                            type: string
+                            example: "New Site - Aman"
+                          isMember:
+                            type: boolean
+                            example: false
+                          access:
+                            type: string
+                            example: "public"
+                          isListed:
+                            type: boolean
+                            example: true
+                          isOwner:
+                            type: boolean
+                            example: false
+                          isActive:
+                            type: boolean
+                            example: true
+                          isPublic:
+                            type: boolean
+                            example: true
+                          isPrivate:
+                            type: boolean
+                            example: false
+                          id:
+                            type: string
+                            format: uuid
+                            example: "fcc2d0d7-3412-4ba4-b25c-baafb70a2f31"
+                      # External type properties
+                      url:
+                        type: string
+                        example: "<iframe width=\"1276\" height=\"718\" src=\"https://www.youtube.com/embed/2zMAsTUbO7k\"...>"
+                        description: External URL content
+                      externalType:
+                        type: string
+                        example: "UNSUPPORTED"
+                        description: External content type
+                      # Social campaign type properties
+                      campaignId:
+                        type: string
+                        format: uuid
+                        example: "c90cf74a-2f61-4241-aa77-b8ebe538095a"
+                        description: Campaign ID
+                      message:
+                        type: string
+                        example: "Hi this is testing for carousel"
+                        description: Campaign message
+                      campaignUrl:
+                        type: string
+                        example: "https://www.google.co.in/"
+                        description: Campaign URL
+                      status:
+                        type: string
+                        example: "active"
+                        description: Campaign status
+                      author:
+                        type: object
+                        description: Campaign author
+                        properties:
+                          name:
+                            type: string
+                            example: "Masook Ahmad"
+                          email:
+                            type: string
+                            example: "masook@radiansys.com"
+                          userId:
+                            type: string
+                            format: uuid
+                            example: "e0853f94-c46d-41ca-89e1-5550a3638490"
+                  source:
+                    type: string
+                    example: curated
+                    description: Source of the carousel item
+        message:
+          type: string
+          example: "Carousel items retrieved successfully"
+          description: Response message

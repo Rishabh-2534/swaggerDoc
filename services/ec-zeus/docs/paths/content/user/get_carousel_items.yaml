@@ -1,11 +1,11 @@
 get:
-  operationId: getCarouselItems
+  operationId: getCarouselItemsUser
   tags:
     - Content
   summary: Get carousel items
   description: This API allows us to obtain list of carousel items
   parameters:
-    $ref: '../../../schemas/content/b2b/request/get_carousel_items_request.yaml'
+    $ref: '../../../schemas/content/user/request/get_carousel_items_request.yaml'
   responses:
     '200':
       $ref: '../../../responses/content/common/getCarouselItems/get_carousel_items_success.yaml'
