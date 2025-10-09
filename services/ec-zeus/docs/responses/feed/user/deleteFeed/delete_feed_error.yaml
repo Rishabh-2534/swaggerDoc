@@ -13,25 +13,17 @@ content:
           type: string
           example: Feed not found or already deleted
           description: Error message describing what went wrong
-        error:
-          type: object
-          description: Error details
-          properties:
-            code:
-              type: string
-              example: FEED_NOT_FOUND
-              description: Error code for programmatic handling
-            details:
-              type: array
-              items:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
                 type: string
-              example: ["Feed with ID 49502e9f-a6e6-4773-a0b4-64be9388b7b1 does not exist"]
-              description: Additional error details
-            required:
-              - code
-              - message
-      required:
-        - status
-        - message
-        - error
+                example: FEED_NOT_FOUND
+                description: Error code for programmatic handling
+              message:
+                type: string
+                example: The feed post specified was not found
+                description: Error message for the specific field
 
