@@ -1,0 +1,37 @@
+description: Error response for feed deletion
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: Feed not found or already deleted
+          description: Error message describing what went wrong
+        error:
+          type: object
+          description: Error details
+          properties:
+            code:
+              type: string
+              example: FEED_NOT_FOUND
+              description: Error code for programmatic handling
+            details:
+              type: array
+              items:
+                type: string
+              example: ["Feed with ID 49502e9f-a6e6-4773-a0b4-64be9388b7b1 does not exist"]
+              description: Additional error details
+            required:
+              - code
+              - message
+      required:
+        - status
+        - message
+        - error
+
