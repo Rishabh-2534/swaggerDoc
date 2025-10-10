@@ -22,7 +22,7 @@ content:
             - feedId
         message:
           type: string
-          example: Feed deleted successfully via B2B API
+          example: Feed deleted successfully
           description: Descriptive message about the operation result
       required:
         - status

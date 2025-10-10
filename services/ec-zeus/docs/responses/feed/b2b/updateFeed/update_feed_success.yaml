@@ -19,5 +19,5 @@ content:
               description: Unique identifier of the updated feed
         message:
           type: string
-          example: Feed updated successfully via B2B API
+          example: Feed updated successfully
           description: Descriptive message about the operation result

@@ -2,8 +2,8 @@ post:
   operationId: createFeedB2b
   tags:
     - Feed
-  summary: Create a new feed via B2B API
-  description: This API allows B2B integrations to create a new feed
+  summary: Create a new feed
+  description: This API allows us to create a new feed
   requestBody:
     content:
       application/json:

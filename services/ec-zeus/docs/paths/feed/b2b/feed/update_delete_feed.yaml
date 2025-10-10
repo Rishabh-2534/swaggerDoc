@@ -3,8 +3,8 @@ put:
   operationId: updateFeedB2b
   tags:
     - Feed
-  summary: Update a feed via B2B API
-  description: This API allows B2B integrations to update a feed
+  summary: Update a feed
+  description: This API allows us to update a feed
   parameters:
     - name: feedId
       in: path
@@ -33,8 +33,8 @@ delete:
   operationId: deleteFeedB2b
   tags:
     - Feed
-  summary: Delete a feed (B2B)
-  description: This API allows us to delete a feed by its ID. The deletedBy parameter is required for B2B operations.
+  summary: Delete a feed
+  description: This API allows us to delete a feed
   parameters:
     - name: feedId
       in: path

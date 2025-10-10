@@ -11,7 +11,7 @@ content:
           enum: [success, error]
         message:
           type: string
-          example: Failed to create feed via B2B API
+          example: Failed to create feed
           description: Descriptive error message about the operation failure
         errors:
           type: array
