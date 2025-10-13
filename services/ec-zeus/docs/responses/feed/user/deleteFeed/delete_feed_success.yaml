@@ -1,4 +1,4 @@
-description: Success response for feed deletion
+description: Success
 content:
   application/json:
     schema:

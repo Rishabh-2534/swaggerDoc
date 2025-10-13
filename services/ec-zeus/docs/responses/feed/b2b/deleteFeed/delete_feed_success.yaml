@@ -1,4 +1,4 @@
-description: Success response for B2B feed deletion
+description: Success
 content:
   application/json:
     schema:
