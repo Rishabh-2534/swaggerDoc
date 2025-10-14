@@ -29,4 +29,4 @@ jobs:
         uses: readmeio/rdme@v10
         with:
           working-directory: ./services/ec-zeus/docs
-          rdme: openapi upload ./services/ec-zeus/docs/ec-api-doc-b2b.yaml --key=${{ secrets.README_API_KEY }} --slug=simpplr-b2b-api-documentation.json
+          rdme: openapi upload ./ec-api-doc-b2b.yaml --key=${{ secrets.README_API_KEY }} --slug=simpplr-b2b-api-documentation.json
