@@ -1,0 +1,29 @@
+description: Error
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: Feed not found or already deleted
+          description: Error message describing what went wrong
+        errors:
+        type: array
+        items:
+          type: object
+          properties:
+            code:
+              type: string
+              example: FEED_NOT_FOUND
+              description: Error code for programmatic handling
+            message:
+              type: string
+              example: The feed post specified was not found
+              description: Error message for the specific field
+
