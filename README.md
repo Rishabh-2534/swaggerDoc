@@ -11,7 +11,7 @@
 To run the Spectral linting tool with a custom ruleset, use the following command:
 
 ```bash
-spectral lint services/ec-zeus/docs/ec-api-doc.yaml --ruleset node_modules/@simpplr/spectral-rules/custom-spectral-rule.yaml
+spectral lint services/ec-zeus/docs/ec-api-doc.yaml --ruleset node_modules/@simpplr/spectral-rules/custom-spectral-rule.yaml 
 
 
 
