@@ -1,0 +1,42 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains the created site category data
+          properties:
+            siteCount:
+              type: integer
+              example: 0
+              description: Number of sites associated with this category
+            name:
+              type: string
+              example: "Site Category"
+              description: Name of the site category
+            id:
+              type: string
+              format: uuid
+              example: "644893bf-66dd-4b67-9771-76b21d91ce5c"
+              description: Unique identifier for the site category
+            categoryId:
+              type: string
+              format: uuid
+              example: "644893bf-66dd-4b67-9771-76b21d91ce5c"
+              description: Alias for the site category ID
+            access:
+              type: string
+              example: "all"
+              description: Access level for the site category
+              enum: ["all", "app_manager"]
+        message:
+          type: string
+          example: ""
+          description: Response message 

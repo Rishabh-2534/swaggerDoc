@@ -1,0 +1,102 @@
+content:
+  application/json:
+    schema:
+      type: object
+      oneOf:
+        - type: object
+          title: Add People to Site
+          description: Add a user to the site as a member or follower.
+          required:
+            - userId
+            - action
+            - permission
+            - modifiedBy
+          properties:
+            userId:
+              type: string
+              format: uuid
+              description: UUID of the user to add to the site
+              example: 123e4567-e89b-12d3-a456-426614174000
+            action:
+              type: string
+              enum: [addPeople]
+              description: Action to add a person to the site
+              example: addPeople
+            permission:
+              type: string
+              enum: [member, follower]
+              description: Permission level to assign to the user
+              example: member
+            modifiedBy:
+              type: string
+              format: uuid
+              description: UUID of the user performing the action
+              example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
+          additionalProperties: false
+
+        - type: object
+          title: Set People Permission
+          description: Set a user's permission on the site.
+          required:
+            - userId
+            - action
+            - permission
+            - modifiedBy
+          properties:
+            userId:
+              type: string
+              format: uuid
+              description: UUID of the user whose permission is being set
+              example: 123e4567-e89b-12d3-a456-426614174000
+            action:
+              type: string
+              enum: [setPeoplePermission]
+              description: Action to set a person's permission
+              example: setPeoplePermission
+            permission:
+              type: string
+              enum: [owner, manager, contentManager, member, follower]
+              description: New permission level for the user
+              example: manager
+            modifiedBy:
+              type: string
+              format: uuid
+              description: UUID of the user performing the action
+              example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
+          additionalProperties: false
+
+        - type: object
+          title: Remove People from Site
+          description: Remove a user from the site.
+          required:
+            - userId
+            - action
+            - modifiedBy
+          properties:
+            userId:
+              type: string
+              format: uuid
+              description: UUID of the user to remove from the site
+              example: 123e4567-e89b-12d3-a456-426614174000
+            action:
+              type: string
+              enum: [removePeople]
+              description: Action to remove a person from the site
+              example: removePeople
+            permission:
+              type: string
+              enum:
+                - all
+                - owner
+                - manager
+                - contentManager
+                - member
+                - follower
+              description: Deselect permission level to remove all permissions (Keep me empty for this action)
+              example: all
+            modifiedBy:
+              type: string
+              format: uuid
+              description: UUID of the user performing the action
+              example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
+          additionalProperties: false

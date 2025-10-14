@@ -6,15 +6,20 @@ info:
     description: "API documentation for Simpplr B2B integration services"
     contact:
       name: Simpplr Support
+x-proxy-enabled: true
 tags:
     - name: Authorization
       description: Everything about Authorization
-    - name: Users
-      description: Everything about Users
     - name: Content
       description: Everything about Content
-
-
+    - name: Files
+      description: Everything about Files
+    - name: Recognition
+      description: Everything about Recognition
+    - name: Sites
+      description: Everything about Sites
+    - name: Users
+      description: Everything about Users
 
 servers:
     - url: https://platform.{env}.simpplr.com/v1
@@ -27,14 +32,25 @@ paths:
         $ref: "./paths/identity/b2b/token.yaml"
     # Users
     /b2b/identity/users:
-        $ref: "./paths/identity/b2b/get_create_users.yaml"
+        $ref: "./paths/identity/b2b/users.yaml"
     /b2b/identity/users/{userId}:
-        $ref: "./paths/identity/b2b/get_update_user.yaml"
+        $ref: "./paths/identity/b2b/users_userId.yaml"
+    /b2b/identity/users/files:
+        $ref: "./paths/identity/b2b/users/upload_files.yaml"
     /b2b/identity/test:
         $ref: "./paths/identity/b2b/test.yaml"
-    # Content
+
+    # Sites
     /b2b/content/sites:
-        $ref: "./paths/content/b2b/get_sites.yaml"
+        $ref: "./paths/content/b2b/sites.yaml"
+    /b2b/content/sites/{siteId}:
+        $ref: "./paths/content/b2b/site_by_id.yaml"
+    /b2b/content/sites/{siteId}/status:
+        $ref: "./paths/content/b2b/site_status.yaml"
+    /b2b/content/sites/{siteId}/membership/manage:
+        $ref: "./paths/content/b2b/manage_site_membership.yaml"
+
+    # Content
     /b2b/content/sites/contents:
         $ref: "./paths/content/b2b/get_content.yaml"
     /b2b/content/carousel-items:
@@ -43,6 +59,44 @@ paths:
         $ref: "./paths/content/b2b/get_topics.yaml"
     /b2b/content/sites/members:
         $ref: "./paths/content/b2b/get_sites_members.yaml"
+    /b2b/content/site-categories:
+        $ref: "./paths/content/b2b/site_categories.yaml"
+    /b2b/content/sites/{siteId}/content/{contentId}/status:
+        $ref: "./paths/content/b2b/publish_unpublish_content.yaml"
+    /b2b/content/sites/{siteId}/page:
+        $ref: "./paths/content/b2b/add_page.yaml"
+    /b2b/content/sites/{siteId}/page/{contentId}:
+        $ref: "./paths/content/b2b/update_page.yaml"
+    /b2b/content/sites/{siteId}/content/{contentId}:
+        $ref: "./paths/content/b2b/delete_content_by_id.yaml"
+    /b2b/content/sites/{siteId}/content/{contentId}/approve:
+        $ref: "./paths/content/b2b/approve_content.yaml"
+    /b2b/content/sites/{siteId}/event:
+        $ref: "./paths/content/b2b/add_event.yaml"
+    /b2b/content/sites/{siteId}/event/{contentId}:
+        $ref: "./paths/content/b2b/update_event.yaml"
+    /b2b/content/sites/{siteId}/album:
+        $ref: "./paths/content/b2b/add_album.yaml"
+    /b2b/content/sites/{siteId}/album/{contentId}:
+        $ref: "./paths/content/b2b/update_album.yaml"
+    /b2b/content/{contentId}/{action}:
+        $ref: "./paths/content/b2b/content_action.yaml"
+    /b2b/content/site-categories/{siteCategoryId}:
+        $ref: "./paths/content/b2b/site_category_by_id.yaml"
+    /b2b/content/sites/{site_id}/page-categories:
+        $ref: "./paths/content/b2b/site_page_categories.yaml"
+    /b2b/content/sites/{site_id}/page-categories/{category_id}:
+        $ref: "./paths/content/b2b/site_page_category_by_id.yaml"
+
+    # Files
+    /b2b/content/static/signedurl/upload:
+        $ref: "./paths/content/b2b/get_upload_signed_url.yaml"
+    /b2b/content/files/list:
+        $ref: "./paths/content/b2b/get_files.yaml"
+
+    # Recognition list
+    /b2b/recognition/list:
+        $ref: "./paths/recognition/get_list.yaml"
 
 components:
     securitySchemes:

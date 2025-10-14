@@ -1,0 +1,17 @@
+get:
+  operationId: getWorkspaces
+  tags:
+    - Service Desk
+  summary: Get Workspaces
+  description: This API allows users to retrieve a list of workspaces associated with the service desk.
+  parameters:
+    $ref : '../../../schemas/service-desk/user/request/get_workspaces_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/service-desk/user/getWorkspaces/get_workspaces_success.yaml'
+    '400':
+      $ref: '../../../responses/service-desk/user/getWorkspaces/get_workspaces_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

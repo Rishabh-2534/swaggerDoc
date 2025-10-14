@@ -1,0 +1,103 @@
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - name
+        - description
+        - category
+        - access
+        - isBroadcast
+        - hasPages
+        - hasEvents
+        - hasAlbums
+        - landingPage
+        - isContentSubmissionsEnabled
+        - isContentFeedEnabled
+        - isContentUnfurlEnabled
+        - modifiedBy
+      properties:
+        modifiedBy:
+          type: string
+          format: uuid
+          description: UUID of the user updating the site
+          example: 02369949-cfc1-49a7-a2a7-d03afa9af84a
+        name:
+          type: string
+          minLength: 1
+          maxLength: 40
+          description: Name of the site
+          example: Updated Site Name
+        description:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 1000
+          description: Description of the site
+          example: This is an updated site description
+        category:
+          type: object
+          required:
+            - id
+            - name
+          properties:
+            id:
+              type: string
+              nullable: true
+              format: uuid
+              description: UUID of the category
+              example: cc3af825-6801-4197-88f3-268e351fcba2
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              description: Name of the category
+              example: Education
+          additionalProperties: false
+        access:
+          type: string
+          enum: [public, private, unlisted]
+          description: Site access level
+          example: public
+        isBroadcast:
+          type: boolean
+          description: Whether the site is broadcast-only
+          example: false
+        hasPages:
+          type: boolean
+          description: Whether the site supports pages
+          example: true
+        hasEvents:
+          type: boolean
+          description: Whether the site supports events
+          example: true
+        hasAlbums:
+          type: boolean
+          description: Whether the site supports albums
+          example: true
+        landingPage:
+          type: string
+          enum: [feed, dashboard, content, files, about]
+          description: Default landing page for the site
+          example: dashboard
+        isContentSubmissionsEnabled:
+          type: boolean
+          description: Whether content submissions are enabled
+          example: true
+        isContentFeedEnabled:
+          type: boolean
+          description: Whether content feed is enabled
+          example: true
+        isContentUnfurlEnabled:
+          type: boolean
+          description: Whether content unfurl is enabled
+          example: true
+        isMembershipAutoApproved:
+          type: boolean
+          description: Whether membership requests are auto-approved
+          example: false
+        isQuestionAnswerEnabled:
+          type: boolean
+          description: Whether Q&A is enabled for the site
+          example: true
+      additionalProperties: false

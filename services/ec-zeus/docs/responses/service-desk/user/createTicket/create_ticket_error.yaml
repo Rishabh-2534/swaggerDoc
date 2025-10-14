@@ -1,0 +1,7 @@
+description: "Error"
+content:
+  application/json:
+    schema:
+      oneOf:
+        - $ref: "../../../../schemas/common/message.yaml"
+        - $ref: "../../../../schemas/common/validation_error.yaml"

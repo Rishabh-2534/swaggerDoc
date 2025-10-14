@@ -1,0 +1,41 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: "Site categories retrieved successfully"
+          description: Response message
+        result:
+          type: object
+          description: Contains site categories data
+          properties:
+            nextPageToken:
+              type: integer
+              example: 3
+              description: Token for fetching the next page of results
+            listOfItems:
+              type: array
+              description: Array containing the collection of site categories matching the filter criteria
+              items:
+                type: object
+                properties:
+                  siteCategoryId:
+                    type: string
+                    example: "c778e462-a979-48ff-b5db-0ffdcfdec2ca"
+                    description: Unique identifier for the site category
+                  name:
+                    type: string
+                    example: "Public13"
+                    description: Name of the site category
+                  access:
+                    type: string
+                    example: "all"
+                    description: Access level for the site category

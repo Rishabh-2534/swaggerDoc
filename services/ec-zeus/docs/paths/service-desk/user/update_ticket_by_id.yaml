@@ -1,0 +1,28 @@
+put:
+  operationId: updateTicketById
+  summary: Update Ticket By Id
+  tags:
+    - Service Desk
+  description: This API allows users to update an existing ticket by providing its unique Ticket ID.
+  parameters:
+    - name: ticketId
+      in: path
+      description: ID of the Ticket to update
+      schema:
+        type: string
+        example: "SR-1"
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/service-desk/user/request/update_ticket_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/service-desk/user/updateTicketById/update_ticket_by_id_success.yaml'
+    '400':
+      $ref: '../../../responses/service-desk/user/updateTicketById/update_ticket_by_id_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

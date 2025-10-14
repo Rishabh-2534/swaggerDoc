@@ -1,0 +1,24 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains updated page category information
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: "920d6735-f139-427c-8901-b5ae2f948be8"
+              description: Unique identifier for the updated page category
+        message:
+          type: string
+          example: "Page category updated successfully"
+          description: Success message

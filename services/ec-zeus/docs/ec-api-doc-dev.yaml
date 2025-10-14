@@ -4,6 +4,7 @@ info:
     version: 1.0.0
     title: Simpplr User API Documentation
     description: ""
+x-proxy-enabled: true
 tags:
     - name: Authorization
       description: Everything about Authorization
@@ -15,14 +16,20 @@ tags:
       description: Everything about Content
     - name: Enterprise search
       description: Everything about Enterprise search
+    - name: Files
+      description: Everything about Files
     - name: Notifications
       description: Everything about Notifications
     - name: People
       description: Everything about People
+    - name: Recognition
+      description: Everything about Recognition
+    - name: Service Desk
+      description: Everything about Service Desk
+    - name: Sites
+      description: Everything about Sites
     - name: Video
       description: Everything about Video
-
-
 servers:
      - url: https://platform.{env}.simpplr.xyz/{version}
        variables:
@@ -48,30 +55,73 @@ paths:
         $ref: "./paths/alerts/update-delete.yaml"
 
     # Audience
-    /identity/audience:
-        $ref: "./paths/identity/create_audience.yaml"
-    /identity/audience/{audienceId}:
-        $ref: "./paths/identity/update_audience.yaml"
+    /identity/audiences:
+        $ref: "./paths/identity/audiences.yaml"
+    # Temporarily disabled audience endpoints
+    # /identity/audiences/{audienceId}:
+    #     $ref: "./paths/identity/audience_by_id.yaml"
+
+    # Sites
+    /content/sites:
+        $ref: "./paths/content/user/sites.yaml"
+    /content/sites/{site_id}:
+        $ref: "./paths/content/user/site_by_id.yaml"
+    /content/sites/{site_id}/status:
+        $ref: "./paths/content/user/site_status.yaml"
+    /content/sites/{site_id}/membership/manage:
+        $ref: "./paths/content/user/manage_site_membership.yaml"
 
     # Content
-    /content/sites/{site_id}:
-        $ref: "./paths/content/get_site.yaml"
     /content/sites/content/list:
         $ref: "./paths/content/search_content.yaml"
-    /content/sites/list: 
+    /content/sites/list:
         $ref: "./paths/content/search_sites.yaml"
-    /content/sites/{site_id}/content/{content_id}:
+    /content/sites/{siteId}/content/{contentId}:
         $ref: "./paths/content/get_content_by_id.yaml"
+    /content/sites/{siteId}/content/{contentId}/approve:
+        $ref: "./paths/content/user/approve_content.yaml"
+    /content/site-categories:
+        $ref: "./paths/content/user/site_categories.yaml"
+    /content/sites/{site_id}/content/{content_id}/status:
+        $ref: "./paths/content/user/publish_unpublish_content.yaml"
+    /content/site-categories/{siteCategoryId}:
+        $ref: "./paths/content/user/site_category_by_id.yaml"
+    /content/sites/{site_id}/page:
+        $ref: "./paths/content/user/add_page.yaml"
+    /content/sites/{siteId}/page/{contentId}:
+        $ref: "./paths/content/user/update_page.yaml"
+    /content/sites/{site_id}/event:
+        $ref: "./paths/content/user/add_event.yaml"
+    /content/sites/{siteId}/event/{contentId}:
+        $ref: "./paths/content/user/update_event.yaml"
+    /content/sites/{site_id}/album:
+        $ref: "./paths/content/user/add_album.yaml"
+    /content/sites/{siteId}/album/{contentId}:
+        $ref: "./paths/content/user/update_album.yaml"
+    /content/{contentId}/{action}:
+        $ref: "./paths/content/user/content_action.yaml"
+    /content/sites/{site_id}/page-categories:
+        $ref: "./paths/content/user/site_page_categories.yaml"
+    /content/sites/{site_id}/page-categories/{category_id}:
+        $ref: "./paths/content/user/site_page_category_by_id.yaml"
+
+    # Files
+    /content/static/signedurl/upload:
+        $ref: "./paths/content/user/get_upload_signed_url.yaml"
     /content/files/list:
-        $ref: "./paths/content/get_files.yaml"
+        $ref: "./paths/content/user/get_files.yaml"
+
+    # Recognition list
+    /recognition/list:
+        $ref: "./paths/recognition/get_list.yaml"
 
      # Enterprise Search
     /enterprise-search/search:
-        $ref: "./paths/search/top_search.yaml"     
+        $ref: "./paths/search/top_search.yaml"
     /enterprise-search/autocomplete:
         $ref: "./paths/search/autocomplete_search.yaml"
     /enterprise-search/smartanswers:
-        $ref: "./paths/search/smart_answers.yaml"              
+        $ref: "./paths/search/smart_answers.yaml"
 
     # Video
     /video/tokens:
@@ -88,7 +138,22 @@ paths:
         $ref: "./paths/identity/get_people_list.yaml"
     /identity/people/{peopleId}:
         $ref: "./paths/identity/update_people.yaml"
-    
+
+    # Service desk
+    /service-desk/mtickets/workspaces:
+        $ref: "./paths/service-desk/user/get_workspaces.yaml"
+    /service-desk/mtickets/categories:
+        $ref: "./paths/service-desk/user/get_ticket_categories.yaml"
+    /service-desk/mtickets/categories/{categoryId}/items:
+        $ref: "./paths/service-desk/user/get_ticket_category_items.yaml"
+    /service-desk/rtickets/tickets/{ticketId}:
+        $ref: "./paths/service-desk/user/get_ticket_by_id.yaml"
+    /service-desk/wtickets/tickets:
+        $ref: "./paths/service-desk/user/create_ticket.yaml"
+    /service-desk/wtickets/tickets/{ticketId}:
+        $ref: "./paths/service-desk/user/update_ticket_by_id.yaml"
+    /service-desk/wtickets/tickets/{ticketId}/comments:
+        $ref: "./paths/service-desk/user/create_ticket_comment.yaml"
 components:
     schemas:
         $ref: "./schemas/_index.yaml"

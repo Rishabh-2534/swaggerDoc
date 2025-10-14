@@ -1,0 +1,42 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains page categories data
+          properties:
+            nextPageToken:
+              type: integer
+              example: 3
+              description: Token for fetching the next page of results
+            listOfItems:
+              type: array
+              description: Array containing the collection of page categories matching the filter criteria
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    example: "e8381029-7ca2-441f-86db-ba5430f03d5a"
+                    description: Unique identifier for the page category
+                  name:
+                    type: string
+                    example: "Test"
+                    description: Name of the page category
+                  pageCount:
+                    type: integer
+                    example: 0
+                    description: Total number of pages in this category
+                  publishedPageCount:
+                    type: integer
+                    example: 0
+                    description: Number of published pages in this category 

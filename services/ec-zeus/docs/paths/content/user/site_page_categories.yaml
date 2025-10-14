@@ -1,0 +1,47 @@
+get:
+  operationId: getPageCategoriesUser
+  tags:
+    - Content
+  summary: Get page categories
+  description: This API allows us to obtain list of page categories
+  parameters:
+    $ref: '../../../schemas/content/user/request/pageCategory/get_site_page_categories_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/user/getSitePageCategories/get_site_page_categories_success.yaml'
+    '400':
+      $ref: '../../../responses/content/user/getSitePageCategories/get_site_page_categories_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+
+post:
+  operationId: createPageCategoryUser
+  tags:
+    - Content
+  summary: Create page category
+  description: This API allows us to create a new page category within a site
+  parameters:
+    - name: site_id
+      in: path
+      description: ID of the site
+      schema:
+        type: string
+        format: uuid
+        example: "550e8400-e29b-41d4-a716-446655440000"
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/user/request/pageCategory/create_site_page_category_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/user/createSitePageCategory/create_site_page_category_success.yaml'
+    '400':
+      $ref: '../../../responses/content/user/createSitePageCategory/create_site_page_category_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml' 

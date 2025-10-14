@@ -1,0 +1,34 @@
+description: Content deleted successfully
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Status of the operation
+        result:
+          type: object
+          properties:
+            contentId:
+              type: string
+              format: uuid
+              example: "e62af0b9-bbaf-4a46-bdae-72453716b51d"
+              description: ID of the deleted content
+            deletedAt:
+              type: string
+              format: date-time
+              example: "2025-01-27T10:30:00.000Z"
+              description: Timestamp when the content was deleted
+          required:
+            - contentId
+            - deletedAt
+        message:
+          type: string
+          example: "Content deleted successfully"
+          description: Success message
+      required:
+        - status
+        - result
+        - message

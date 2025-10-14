@@ -1,0 +1,16 @@
+description: "Internal server error"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        status:
+          type: "string"
+          enum:
+            - "error"
+        message:
+          type: "string"
+          example: "Unknown error occurred while fetching recognition list"
+      required:
+        - status
+        - message

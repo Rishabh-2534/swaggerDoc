@@ -1,0 +1,14 @@
+type: object
+properties:
+  pageToken:
+    type: integer
+    description: "Token for next page"
+    example: 0
+  searchTerm:
+    type: string
+    description: "Search term to filter audiences"
+    example: "marketing"
+  pageSize:
+    type: integer
+    description: "Number of audiences to return"
+    example: 10

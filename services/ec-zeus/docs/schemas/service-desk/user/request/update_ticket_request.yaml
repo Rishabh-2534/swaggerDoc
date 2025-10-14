@@ -1,0 +1,49 @@
+type: object
+description: Update ticket request
+properties:
+  status:
+    type: string
+    description: The status of the ticket.
+    enum:
+      - open
+      - pending
+      - resolved
+      - closed
+  severity:
+    type: string
+    description: The severity level of the ticket.
+    enum:
+      - low
+      - medium
+      - high
+      - urgent
+  assignment:
+    type: object
+    description: The assignment details for the ticket.
+    properties:
+      agentId:
+        type: string
+        description: The unique identifier of the assigned agent.
+      agentGroupId:
+        type: string
+        description: The unique identifier of the assigned agent group.
+  plannedDate:
+    type: object
+    description: The planned date for the ticket resolution.
+    properties:
+      startDate:
+        type: string
+        format: date
+        description: The start date for the planned resolution. Must be in ISO 8601 format (e.g. 2025-08-21)
+      endDate:
+        type: string
+        format: date
+        description: The end date for the planned resolution. Must be in ISO 8601 format (e.g. 2025-08-21)
+      startTime:
+        type: string
+        format: time
+        description: The start time for the planned resolution. Must be in ISO 8601 format (e.g. 19:00)
+      endTime:
+        type: string
+        format: time
+        description: The end time for the planned resolution. Must be in ISO 8601 format (e.g. 19:00)

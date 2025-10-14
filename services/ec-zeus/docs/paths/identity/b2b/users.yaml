@@ -1,0 +1,5 @@
+get:
+  $ref: "./users/get_users.yaml#/get"
+
+post:
+  $ref: "./users/create_user.yaml#/post"

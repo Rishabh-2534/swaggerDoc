@@ -1,0 +1,57 @@
+put:
+  operationId: updateSiteCategory
+  tags:
+    - Sites
+  summary: Update site category
+  description: This API allows us to update a specific site category by its ID
+  parameters:
+    - name: siteCategoryId
+      in: path
+      description: ID of the site category to update
+      schema:
+        type: string
+        format: uuid
+        example: "1a708b7b-2077-4272-8432-6720e1abe171"
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/b2b/request/siteCategory/update_site_category_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/updateSiteCategory/update_site_category_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/updateSiteCategory/update_site_category_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+
+delete:
+  operationId: deleteSiteCategory
+  tags:
+    - Sites
+  summary: Delete site category
+  description: This API allows us to delete a specific site category by its ID
+  parameters:
+    - name: siteCategoryId
+      in: path
+      description: ID of the site category to delete
+      schema:
+        type: string
+        format: uuid
+        example: "1a708b7b-2077-4272-8432-6720e1abe171"
+      required: true
+    - $ref: '../../../schemas/content/b2b/request/siteCategory/delete_site_category_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/deleteSiteCategory/delete_site_category_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/deleteSiteCategory/delete_site_category_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+
+

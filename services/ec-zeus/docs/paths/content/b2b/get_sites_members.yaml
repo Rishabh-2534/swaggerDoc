@@ -2,7 +2,7 @@
 get:
   operationId: getSiteMembersList
   tags:
-    - Content
+    - Sites
   summary: Get site members
   description: This API allows us to obtain list of sites members based on various filters
   parameters:

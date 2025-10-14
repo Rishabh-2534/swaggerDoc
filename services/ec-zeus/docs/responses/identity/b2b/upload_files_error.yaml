@@ -1,0 +1,29 @@
+description: "Bad Request"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Invalid user object provided"
+          description: Error message
+        errors:
+          type: array
+          description: List of validation errors
+          items:
+            type: object
+            properties:
+              fieldName:
+                type: string
+                example: "userId"
+                description: Name of the field that has an error
+              message:
+                type: string
+                example: "userId is required"
+                description: Error message for the field
+            required:
+              - fieldName
+              - message
+      required:
+        - message

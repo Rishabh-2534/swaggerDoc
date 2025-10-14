@@ -1,0 +1,16 @@
+type: object
+properties:
+  action:
+    type: string
+    enum:
+      - approve
+      - reject
+    description: The action to perform on the content
+  rejectionComment:
+    type: string
+    minLength: 1
+    maxLength: 250
+    description: Comment explaining why the content was rejected (required when action is 'reject')
+required:
+  - action
+additionalProperties: false

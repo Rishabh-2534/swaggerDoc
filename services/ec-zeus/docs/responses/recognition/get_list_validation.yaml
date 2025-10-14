@@ -1,0 +1,31 @@
+description: "Bad request error"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        status:
+          type: "string"
+          enum:
+            - "error"
+        errors:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              field:
+                type: "string"
+                example: "pageToken"
+              message:
+                type: "string"
+                example: "pageToken must be a non-negative number"
+            required:
+              - field
+              - message
+        message:
+          type: "string"
+          example: "Invalid request parameters"
+      required:
+        - status
+        - errors
+        - message

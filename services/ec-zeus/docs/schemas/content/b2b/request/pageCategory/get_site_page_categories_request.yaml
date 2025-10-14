@@ -1,0 +1,69 @@
+- name: site_id
+  in: path
+  description: ID of the site
+  schema:
+    type: string
+    format: uuid
+    example: "550e8400-e29b-41d4-a716-446655440000"
+  required: true
+
+- name: size
+  in: query
+  description: Number of page categories to return per page
+  schema:
+    type: integer
+    minimum: 1
+    maximum: 1000
+    default: 50
+  required: false
+  
+- name: nextPageToken
+  in: query
+  description: Token for fetching the next page of results
+  schema:
+    type: integer
+  required: false
+
+- name: sortBy
+  in: query
+  description: Sorting method for page categories
+  schema:
+    type: string
+    enum:
+      - createdNewest
+      - createdOldest
+    default: createdNewest
+  required: false
+
+- name: term
+  in: query
+  description: Search term for filtering page categories
+  schema:
+    type: string
+    maxLength: 255
+  required: false
+
+- name: includeDeleted
+  in: query
+  description: Whether to include deleted page categories in the response
+  schema:
+    type: boolean
+    example: false
+    default: false
+  required: false
+  
+- name: skipEmptyPageCategories
+  in: query
+  description: Whether to skip empty page categories in the response
+  schema:
+    type: boolean
+    default: false
+  required: false
+  
+- name: modifiedAfter
+  in: query
+  description: Filter content modified after this date-time. Must be in ISO 8601 UTC format (e.g. 2025-04-09T18:30:00.000Z)
+  schema:
+    type: string
+    format: date-time
+  required: false 

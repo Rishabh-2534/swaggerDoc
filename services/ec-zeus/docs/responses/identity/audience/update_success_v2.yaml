@@ -1,0 +1,97 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        apiName:
+          type: string
+          example: "UpdateAudience"
+        status:
+          type: string
+          example: "success"
+        message:
+          type: string
+          example: "Audience updated successfully"
+        result:
+          type: object
+          properties:
+            audienceId:
+              type: string
+              example: "8a636d37-4337-4f77-b177-deb3efcfd108"
+            name:
+              type: string
+              example: "sim11sss1we278hijkl ijk"
+            type:
+              type: string
+              example: "mixed"
+            description:
+              type: string
+              nullable: true
+              example: null
+            status:
+              type: string
+              nullable: true
+              example: null
+            parentId:
+              type: string
+              nullable: true
+              example: null
+            categoryId:
+              type: string
+              example: "57cc74a4-c059-428d-914c-caa4eba702a2"
+            categoryName:
+              type: string
+              nullable: true
+              example: null
+            isDeleted:
+              type: boolean
+              example: false
+            createdAt:
+              type: string
+              format: date-time
+              example: "2025-08-12T04:20:17.782Z"
+            modifiedBy:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Casey11 Bond"
+                userId:
+                  type: string
+                  example: "a77d33c7-df51-4bac-8532-11a93884bfba"
+                firstName:
+                  type: string
+                  example: "Casey11"
+                lastName:
+                  type: string
+                  example: "Bond"
+            createdBy:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "md. zaid"
+                userId:
+                  type: string
+                  example: "dcc6dae5-404b-4e4d-b910-0cf0df153a5b"
+                firstName:
+                  type: string
+                  example: "md."
+                lastName:
+                  type: string
+                  example: "zaid"
+            updatedAt:
+              type: string
+              format: date-time
+              example: "2025-08-12T09:51:58.327Z"
+            audienceMemberCount:
+              type: integer
+              example: 2
+            audienceRule:
+              type: object
+              properties:
+                AND:
+                  type: array
+                  items:
+                    type: object

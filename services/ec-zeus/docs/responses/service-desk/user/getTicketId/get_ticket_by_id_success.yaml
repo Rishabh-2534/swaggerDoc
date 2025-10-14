@@ -1,0 +1,33 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        result:
+          type: object
+          properties:
+            ticketId:
+              type: integer
+              example: 12345
+            ticketReferenceNumber:
+              type: string
+              example: TKT-2024-001234
+            subject:
+              type: string
+              example: Cannot access company email on mobile device
+            status:
+              type: string
+              example: open
+            severity:
+              type: string
+              example: medium
+            type:
+              type: string
+              example: serviceRequest
+        message:
+          type: string
+          example: Ticket details fetched successfully.

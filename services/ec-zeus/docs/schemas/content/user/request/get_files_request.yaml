@@ -1,0 +1,77 @@
+type: object
+properties:
+  size:
+    type: integer
+    description: Maximum number of results to return
+    example: 16
+  siteId:
+    type: string
+    description: ID of the Site to search for
+    example: 'd096db67-954a-4ff5-94a7-ccc437f2fd81'
+  contentId:
+    type: string
+    description: ID of the content associated with the file
+    example: 'd096db67-954a-4ff5-94a7-ccc437f2fd81' 
+  term:
+    type: string
+    description: Search term
+    example: ''
+  context:
+    type: string
+    description: Context of the search
+    example: 'siteFiles'
+  provider:
+    type: string
+    description: Provider of the search
+    enum:
+      - intranet
+      - googledrive
+      - sharepoint
+      - onedrive
+      - box
+      - native_video
+      - dropbox
+    example: 'intranet'
+  sortBy:
+    type: string
+    description: Technique for sorting results
+    enum:
+      - alphabetical
+      - createdNewest
+      - createdOldest
+      - modifiedNewest
+      - modifiedOldest
+    example: createdNewest
+  filter:
+    type: string
+    description: Filter criteria for search
+    enum:
+      - favorites
+      - write_folders
+      - this_week
+      - this_month
+      - last_week
+      - owned_by_me
+      - recents
+  directory:
+    type: string
+    description: Id(uuid) of the directory to search in
+  id:
+    type: string
+    description: ID of the file
+  nextPageToken:
+    type: string
+    description: Token for fetching the next page of results
+    example: "15"
+  extensions:
+    type: array
+    nullable: true
+    items:
+      type: string
+      pattern: "^[a-zA-Z0-9_-]+$"
+      maxLength: 10
+      minLength: 1
+    minItems: 1
+    maxItems: 20
+    uniqueItems: true
+    description: "Array of file extensions to search for (e.g., ['pdf', 'docx', 'png']). Do not include dots in extension names."

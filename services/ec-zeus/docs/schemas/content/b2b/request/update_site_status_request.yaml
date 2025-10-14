@@ -1,0 +1,19 @@
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - status
+        - modifiedBy
+      properties:
+        status:
+          type: string
+          enum: [activated, deactivated]
+          description: Status of the site
+          example: activated
+        modifiedBy:
+          type: string
+          format: uuid
+          description: ID of the user modifying the site status
+          example: "a40cf504-b39f-4219-8d96-11ba48f7cced"
+      additionalProperties: false 

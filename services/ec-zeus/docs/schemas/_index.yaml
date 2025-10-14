@@ -30,9 +30,17 @@ ActionUpdate:
 Identity:
   $ref: "./identity/authorize_request.yaml"
 
+# Audience schemas
+CreateAudienceV2:
+  $ref: "./identity/audience/create_request_v2.yaml"
+UpdateAudienceV2:
+  $ref: "./identity/audience/update_request_v2.yaml"
+ListAudienceV2:
+  $ref: "./identity/audience/list_request_v2.yaml"
+
 # content schemas
 GetFiles:
-  $ref: "./content/get_files.yaml"
+  $ref: "./content/user/request/get_files_request.yaml"
 SearchContent:
   $ref: "./content/search_content.yaml"
 SearchSites:

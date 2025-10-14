@@ -1,0 +1,25 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Name of the site category
+    minLength: 1
+    maxLength: 100
+    example: "Site Category"
+  access:
+    type: string
+    description: Access level for the site category
+    minLength: 1
+    maxLength: 20
+    enum: ["all", "app_manager"]
+    example: "all"
+  createdBy:
+    type: string
+    format: uuid
+    description: ID of the user creating the site category
+    example: "a40cf504-b39f-4219-8d96-11ba48f7cced"
+required:
+  - name
+  - access
+  - createdBy
+additionalProperties: false 

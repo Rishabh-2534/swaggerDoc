@@ -1,0 +1,12 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "Attachment added successfully."
+        ticketId:
+          type: "string"
+          example: "12345"

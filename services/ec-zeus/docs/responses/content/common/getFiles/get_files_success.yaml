@@ -1,0 +1,275 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        result:
+          type: object
+          properties:
+            nextPageToken:
+              type: string
+              example: "41"
+            canCreateFolder:
+              type: boolean
+              example: true
+            canUpload:
+              type: boolean
+              example: true
+            listOfItems:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: System Folder
+                  title:
+                    type: string
+                    example: Site Videos
+                  provider:
+                    type: string
+                    example: native_video
+                  driveType:
+                    type: string
+                    example: null
+                  owner:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: Sourya kaushik
+                      id:
+                        type: string
+                        example: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                  onlyPDFDownload:
+                    type: boolean
+                    example: false
+                  modifiedAtDateTime:
+                    type: string
+                    example: "2024-04-22T06:07:30.587Z"
+                  modifiedAt:
+                    type: string
+                    example: "2024-04-22T06:07:30.587Z"
+                  createdAt:
+                    type: string
+                    example: "2025-08-25T15:34:28.099Z"
+                  filepk:
+                    type: string
+                    example: "2549994"
+                  listOfSite:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        access:
+                          type: string
+                          example: public
+                        img:
+                          type: string
+                        isListed:
+                          type: boolean
+                          example: true
+                        isPrivate:
+                          type: boolean
+                          example: false
+                        name:
+                          type: string
+                          example: Sopan Test
+                        siteId:
+                          type: string
+                          example: "39096bec-2115-48bd-94d0-d9c40c74b70d"
+                  isDownloadableOniOS:
+                    type: boolean
+                    example: true
+                  id:
+                    type: string
+                    example: 6248d5e2-8bc7-41ba-9419-2b0ae2b81bae
+                  permissions:
+                    type: string
+                    example: readwrite
+                  isDir:
+                    type: boolean
+                    example: true
+                  isSystemDir:
+                    type: boolean
+                    example: true
+                  canDelete:
+                    type: string
+                  canMove:
+                    type: boolean
+                    example: false
+                  canChangeName:
+                    type: boolean
+                    example: false
+                  canSetPermissions:
+                    type: boolean
+                    example: false
+                  canUnlink:
+                    type: boolean
+                    example: false
+                  isLinkedFolder:
+                    type: boolean
+                    example: false
+                  isExternal:
+                    type: boolean
+                    example: false
+                  fileExtension:
+                    type: string
+                    example: webp
+                  isImage:
+                    type: boolean
+                    example: true
+                  isAudio:
+                    type: boolean
+                    example: false
+                  thumbnailImg:
+                    type: string
+                    nullable: true
+                    example: https://example.com/content/r/file-id?ts=timestamp
+                  downloadUrl:
+                    type: string
+                    example: https://example.com/content/r/file-id?ts=timestamp
+                  fileId:
+                    type: string
+                    example: 74079ea4-b33e-440a-9fa9-965bf2110a04
+                  size:
+                    type: string
+                    example: "13304"
+                  version:
+                    type: integer
+                    example: 1
+                  description:
+                    type: string
+                    example: ""
+                  canFavorite:
+                    type: boolean
+                    example: true
+                  canLike:
+                    type: boolean
+                    example: true
+                  isLiked:
+                    type: boolean
+                    example: false
+                  isFavorited:
+                    type: boolean
+                    example: false
+                  canEditDescription:
+                    type: boolean
+                    example: false
+                  canCreateNewVersion:
+                    type: boolean
+                    example: false
+                  canDownload:
+                    type: boolean
+                    example: true
+                  altText:
+                    type: string
+                    nullable: true
+                    example: ""
+                  previewUrl:
+                    type: string
+                    nullable: true
+                    example: https://example.com/content/r/file-id?t=pv&site_id=encoded-site-id
+                  signedThumbnailImg:
+                    type: string
+                    nullable: true
+                    example: https://example.com/signed-file/restricted/file-id?ts=timestamp&isImgOpt=true&Policy=...
+                  signedDownloadUrl:
+                    type: string
+                    example: https://example.com/signed-file/restricted/file-id?ts=timestamp&isImgOpt=true&Policy=...
+                  signedPreviewUrl:
+                    type: string
+                    nullable: true
+                    example: https://example.com/signed-file/restricted/file-id?site_id=encoded-site-id&ts=timestamp&isImgOpt=false&Policy=...
+              example:
+                - type: System Folder
+                  title: Site Videos
+                  provider: native_video
+                  driveType: null
+                  owner:
+                    name: Sourya kaushik
+                    id: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                  onlyPDFDownload: false
+                  modifiedAtDateTime: "2024-04-22T06:07:30.587Z"
+                  modifiedAt: "2024-04-22T06:07:30.587Z"
+                  listOfSite:
+                    - access: public
+                      img: null
+                      isListed: true
+                      isPrivate: false
+                      name: Sopan Test
+                      siteId: "39096bec-2115-48bd-94d0-d9c40c74b70d"
+                  isDownloadableOniOS: true
+                  id: "6248d5e2-8bc7-41ba-9419-2b0ae2b81bae"
+                  permissions: readwrite
+                  isDir: true
+                  isSystemDir: true
+                  canDelete: null
+                  canMove: false
+                  canChangeName: false
+                  canSetPermissions: false
+                  canUnlink: false
+                  isLinkedFolder: false
+                - type: System Folder
+                  title: Feed files
+                  provider: intranet
+                  driveType: null
+                  owner:
+                    name: Sourya kaushik
+                    id: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                  onlyPDFDownload: false
+                  modifiedAtDateTime: "2024-04-25T09:51:52.133Z"
+                  modifiedAt: "2024-04-25T09:51:52.133Z"
+                  listOfSite:
+                    - access: public
+                      img: null
+                      isListed: true
+                      isPrivate: false
+                      name: Sopan Test
+                      siteId: "39096bec-2115-48bd-94d0-d9c40c74b70d"
+                  isDownloadableOniOS: true
+                  id: "e61f7ef7-1421-4222-bcea-782d311c179e"
+                  permissions: read
+                  isDir: true
+                  isSystemDir: true
+                  canDelete: null
+                  canMove: false
+                  canChangeName: false
+                  canSetPermissions: false
+                  canUnlink: false
+                  isLinkedFolder: false
+                - type: System Folder
+                  title: Content files
+                  provider: intranet
+                  driveType: null
+                  owner:
+                    name: Sourya kaushik
+                    id: 0502f3c5-7142-4892-bb28-7d3de6c711cb
+                  onlyPDFDownload: false
+                  modifiedAtDateTime: "2024-05-02T09:02:09.829Z"
+                  modifiedAt: "2024-05-02T09:02:09.829Z"
+                  listOfSite:
+                    - access: public
+                      img: null
+                      isListed: true
+                      isPrivate: false
+                      name: Sopan Test
+                      siteId: "39096bec-2115-48bd-94d0-d9c40c74b70d"
+                  isDownloadableOniOS: true
+                  id: "e773ff2c-b392-42a0-b30d-4461d097e31e"
+                  permissions: read
+                  isDir: true
+                  isSystemDir: true
+                  canDelete: null
+                  canMove: false
+                  canChangeName: false
+                  canSetPermissions: false
+                  canUnlink: false
+                  isLinkedFolder: false
+            listOfParents:
+              type: array
+              example: []

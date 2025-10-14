@@ -37,3 +37,11 @@ IdentityAuthSuccess:
   $ref: "./identity/auth_success.yaml"
 IdentityAuthError:
   $ref: "./identity/auth_error.yaml"
+
+# Recognition list responses
+RecognitionListGetSuccess:
+  $ref: "./recognition/get_list_success.yaml"
+RecognitionListGetError:
+  $ref: "./recognition/get_list_error.yaml"
+RecognitionListGetValidation:
+  $ref: "./recognition/get_list_validation.yaml"

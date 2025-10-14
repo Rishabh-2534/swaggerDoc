@@ -1,0 +1,25 @@
+parameters:
+  - name: site_id
+    in: path
+    required: true
+    schema:
+      type: string
+      example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
+    description: Unique identifier of the site
+post:
+  tags:
+    - Sites
+  summary: Manage site membership
+  description: This API allows us to manage the memberships for a site
+  operationId: manageSiteMembershipUser
+  requestBody:
+    $ref: '../../../schemas/content/user/request/manage_site_membership_request.yaml'
+  responses:
+    '201':
+      $ref: '../../../responses/content/common/manageSiteMembership/manage_site_membership_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/manageSiteMembership/manage_site_membership_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'

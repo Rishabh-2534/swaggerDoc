@@ -1,0 +1,526 @@
+type: object
+properties:
+  name:
+    type: string
+    description: "Name of the audience"
+    example: "Marketing Team Updated"
+  description:
+    type: string
+    nullable: true
+    description: "Description of the audience"
+    example: "Updated audience for marketing team members"
+  type:
+    type: string
+    description: "Type of audience"
+    example: "mixed"
+    enum:
+      - mixed
+  audienceRule:
+    type: object
+    description: "Audience rule configuration with flexible AND/OR structure"
+    oneOf:
+      - type: object
+        description: "AND group - all conditions must be true"
+        properties:
+          AND:
+            type: array
+            description: "All conditions in this array must be true (AND logic)"
+            minItems: 1
+            items:
+              oneOf:
+                - type: object
+                  description: "OR group - any condition can be true"
+                  properties:
+                    OR:
+                      type: array
+                      description: "Array of single conditions (any can be true)"
+                      minItems: 1
+                      items:
+                        type: object
+                        properties:
+                          values:
+                            type: array
+                            description: "Array of values for the condition"
+                            minItems: 1
+                            items:
+                              type: object
+                              properties:
+                                value:
+                                  type: string
+                                  description: "Value for the condition"
+                                label:
+                                  type: string
+                                  description: "Optional label for the value"
+                          attribute:
+                            type: string
+                            description: "Attribute to filter on"
+                            enum:
+                              # User section attributes
+                              - user_id
+                              - first_name
+                              - last_name
+                              # Role section attributes
+                              - title
+                              - company_name
+                              - business_unit
+                              - department
+                              - division
+                              - user_type
+                              - start_date
+                              - is_manager
+                              # Address section attributes
+                              - city
+                              - state
+                              - country_name
+                              # Custom fields
+                              - custom_field_1
+                              - custom_field_2
+                              - custom_field_3
+                              - custom_field_4
+                              - custom_field_5
+                              - custom_field_6
+                              - custom_field_7
+                              - custom_field_8
+                              - custom_field_9
+                              - custom_field_10
+                              - custom_field_11
+                              - custom_field_12
+                              - custom_field_13
+                              - custom_field_14
+                              - custom_field_15
+                              - custom_field_16
+                              - custom_field_17
+                              - custom_field_18
+                              - custom_field_19
+                              - custom_field_20
+                              - custom_field_21
+                              - custom_field_22
+                              - custom_field_23
+                              - custom_field_24
+                              - custom_field_25
+                              # Groups section attributes
+                              - ad_group
+                              # Special attributes
+                              - segment_id
+                          operator:
+                            type: string
+                            description: "Operator for the condition"
+                            enum:
+                              # String operators
+                              - IS
+                              - IS_NOT
+                              - CONTAINS
+                              - STARTS_WITH
+                              - ENDS_WITH
+                              # Date operators
+                              - ON
+                              - ON_OR_BEFORE
+                              - ON_OR_AFTER
+                              - BEFORE
+                              - AFTER
+                              - BETWEEN
+                              # Boolean operators
+                              - IS
+                              # AD Group operators
+                              - ALL
+                          fieldType:
+                            type: string
+                            description: "Type of field"
+                            enum:
+                              - segment
+                              - regular
+                              - adGroup
+                        required:
+                          - values
+                          - attribute
+                          - operator
+                          - fieldType
+                  required:
+                    - OR
+                - type: object
+                  description: "AND group - all conditions must be true"
+                  properties:
+                    AND:
+                      type: array
+                      description: "Array of single conditions (all must be true)"
+                      minItems: 1
+                      items:
+                        type: object
+                        properties:
+                          values:
+                            type: array
+                            description: "Array of values for the condition"
+                            minItems: 1
+                            items:
+                              type: object
+                              properties:
+                                value:
+                                  type: string
+                                  description: "Value for the condition"
+                                label:
+                                  type: string
+                                  description: "Optional label for the value"
+                          attribute:
+                            type: string
+                            description: "Attribute to filter on"
+                            enum:
+                              # User section attributes
+                              - user_id
+                              - first_name
+                              - last_name
+                              # Role section attributes
+                              - title
+                              - company_name
+                              - business_unit
+                              - department
+                              - division
+                              - user_type
+                              - start_date
+                              - is_manager
+                              # Address section attributes
+                              - city
+                              - state
+                              - country_name
+                              # Custom fields
+                              - custom_field_1
+                              - custom_field_2
+                              - custom_field_3
+                              - custom_field_4
+                              - custom_field_5
+                              - custom_field_6
+                              - custom_field_7
+                              - custom_field_8
+                              - custom_field_9
+                              - custom_field_10
+                              - custom_field_11
+                              - custom_field_12
+                              - custom_field_13
+                              - custom_field_14
+                              - custom_field_15
+                              - custom_field_16
+                              - custom_field_17
+                              - custom_field_18
+                              - custom_field_19
+                              - custom_field_20
+                              - custom_field_21
+                              - custom_field_22
+                              - custom_field_23
+                              - custom_field_24
+                              - custom_field_25
+                              # Groups section attributes
+                              - ad_group
+                              # Special attributes
+                              - segment_id
+                          operator:
+                            type: string
+                            description: "Operator for the condition"
+                            enum:
+                              # String operators
+                              - IS
+                              - IS_NOT
+                              - CONTAINS
+                              - STARTS_WITH
+                              - ENDS_WITH
+                              # Date operators
+                              - ON
+                              - ON_OR_BEFORE
+                              - ON_OR_AFTER
+                              - BEFORE
+                              - AFTER
+                              - BETWEEN
+                              # Boolean operators
+                              - IS
+                              # AD Group operators
+                              - ALL
+                          fieldType:
+                            type: string
+                            description: "Type of field"
+                            enum:
+                              - segment
+                              - regular
+                              - adGroup
+                        required:
+                          - values
+                          - attribute
+                          - operator
+                          - fieldType
+                  required:
+                    - AND
+        required:
+          - AND
+      - type: object
+        description: "OR group - any condition can be true"
+        properties:
+          OR:
+            type: array
+            description: "Any condition in this array can be true (OR logic)"
+            minItems: 1
+            items:
+              oneOf:
+                - type: object
+                  description: "OR group - any condition can be true"
+                  properties:
+                    OR:
+                      type: array
+                      description: "Array of single conditions (any can be true)"
+                      minItems: 1
+                      items:
+                        type: object
+                        properties:
+                          values:
+                            type: array
+                            description: "Array of values for the condition"
+                            minItems: 1
+                            items:
+                              type: object
+                              properties:
+                                value:
+                                  type: string
+                                  description: "Value for the condition"
+                                label:
+                                  type: string
+                                  description: "Optional label for the value"
+                          attribute:
+                            type: string
+                            description: "Attribute to filter on"
+                            enum:
+                              # User section attributes
+                              - user_id
+                              - first_name
+                              - last_name
+                              # Role section attributes
+                              - title
+                              - company_name
+                              - business_unit
+                              - department
+                              - division
+                              - user_type
+                              - start_date
+                              - is_manager
+                              # Address section attributes
+                              - city
+                              - state
+                              - country_name
+                              # Custom fields
+                              - custom_field_1
+                              - custom_field_2
+                              - custom_field_3
+                              - custom_field_4
+                              - custom_field_5
+                              - custom_field_6
+                              - custom_field_7
+                              - custom_field_8
+                              - custom_field_9
+                              - custom_field_10
+                              - custom_field_11
+                              - custom_field_12
+                              - custom_field_13
+                              - custom_field_14
+                              - custom_field_15
+                              - custom_field_16
+                              - custom_field_17
+                              - custom_field_18
+                              - custom_field_19
+                              - custom_field_20
+                              - custom_field_21
+                              - custom_field_22
+                              - custom_field_23
+                              - custom_field_24
+                              - custom_field_25
+                              # Groups section attributes
+                              - ad_group
+                              # Special attributes
+                              - segment_id
+                          operator:
+                            type: string
+                            description: "Operator for the condition"
+                            enum:
+                              # String operators
+                              - IS
+                              - IS_NOT
+                              - CONTAINS
+                              - STARTS_WITH
+                              - ENDS_WITH
+                              # Date operators
+                              - ON
+                              - ON_OR_BEFORE
+                              - ON_OR_AFTER
+                              - BEFORE
+                              - AFTER
+                              - BETWEEN
+                              # Boolean operators
+                              - IS
+                              # AD Group operators
+                              - ALL
+                          fieldType:
+                            type: string
+                            description: "Type of field"
+                            enum:
+                              - segment
+                              - regular
+                              - adGroup
+                        required:
+                          - values
+                          - attribute
+                          - operator
+                          - fieldType
+                  required:
+                    - OR
+                - type: object
+                  description: "AND group - all conditions must be true"
+                  properties:
+                    AND:
+                      type: array
+                      description: "Array of single conditions (all must be true)"
+                      minItems: 1
+                      items:
+                        type: object
+                        properties:
+                          values:
+                            type: array
+                            description: "Array of values for the condition"
+                            minItems: 1
+                            items:
+                              type: object
+                              properties:
+                                value:
+                                  type: string
+                                  description: "Value for the condition"
+                                label:
+                                  type: string
+                                  description: "Optional label for the value"
+                          attribute:
+                            type: string
+                            description: "Attribute to filter on"
+                            enum:
+                              # User section attributes
+                              - user_id
+                              - first_name
+                              - last_name
+                              # Role section attributes
+                              - title
+                              - company_name
+                              - business_unit
+                              - department
+                              - division
+                              - user_type
+                              - start_date
+                              - is_manager
+                              # Address section attributes
+                              - city
+                              - state
+                              - country_name
+                              # Custom fields
+                              - custom_field_1
+                              - custom_field_2
+                              - custom_field_3
+                              - custom_field_4
+                              - custom_field_5
+                              - custom_field_6
+                              - custom_field_7
+                              - custom_field_8
+                              - custom_field_9
+                              - custom_field_10
+                              - custom_field_11
+                              - custom_field_12
+                              - custom_field_13
+                              - custom_field_14
+                              - custom_field_15
+                              - custom_field_16
+                              - custom_field_17
+                              - custom_field_18
+                              - custom_field_19
+                              - custom_field_20
+                              - custom_field_21
+                              - custom_field_22
+                              - custom_field_23
+                              - custom_field_24
+                              - custom_field_25
+                              # Groups section attributes
+                              - ad_group
+                              # Special attributes
+                              - segment_id
+                          operator:
+                            type: string
+                            description: "Operator for the condition"
+                            enum:
+                              # String operators
+                              - IS
+                              - IS_NOT
+                              - CONTAINS
+                              - STARTS_WITH
+                              - ENDS_WITH
+                              # Date operators
+                              - ON
+                              - ON_OR_BEFORE
+                              - ON_OR_AFTER
+                              - BEFORE
+                              - AFTER
+                              - BETWEEN
+                              # Boolean operators
+                              - IS
+                              # AD Group operators
+                              - ALL
+                          fieldType:
+                            type: string
+                            description: "Type of field"
+                            enum:
+                              - segment
+                              - regular
+                              - adGroup
+                        required:
+                          - values
+                          - attribute
+                          - operator
+                          - fieldType
+                  required:
+                    - AND
+        required:
+          - OR
+    example:
+      OR:
+        - OR:
+            - values:
+                - value: "49a8828d-16d9-4265-a82e-063fc1f10afe"
+                  label: "Marketing Segment"
+              attribute: "segment_id"
+              operator: "IS"
+              fieldType: "segment"
+            - values:
+                - value: "Marketing"
+                  label: "Marketing Department"
+              attribute: "department"
+              operator: "IS"
+              fieldType: "regular"
+        - AND:
+            - values:
+                - value: "ae54856e-07d9-41a8-be39-7ee481591cc6"
+                  label: "Sales Segment"
+              attribute: "segment_id"
+              operator: "IS"
+              fieldType: "segment"
+            - values:
+                - value: "Manager"
+                  label: "Manager Role"
+              attribute: "title"
+              operator: "CONTAINS"
+              fieldType: "regular"
+        - AND:
+            - values:
+                - value: "true"
+                  label: "Is Manager"
+              attribute: "is_manager"
+              operator: "IS"
+              fieldType: "regular"
+  categoryId:
+    type: string
+    description: "Category ID for the audience"
+    example: "57cc74a4-c059-428d-914c-caa4eba702a2"
+  parentId:
+    type: string
+    description: "Parent audience ID"
+    example: "f50030c2-6368-4b1b-be88-6c33a479a5bd"
+required:
+  - name
+  - type
+  - audienceRule

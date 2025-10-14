@@ -1,0 +1,20 @@
+description: Error
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              field_name:
+                type: string
+                example: "INC-12345"
+              error_code:
+                type: integer
+                example: 2001
+              message:
+                type: string
+                example: "Invalid 'ticket_id' value"
