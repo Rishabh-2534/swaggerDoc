@@ -138,7 +138,7 @@
   schema:
     type: integer
   required: false
-- name: downloadChangeContentAuthorCsv
+- name: isAuthorCsvExportRequest
   in: query
   description: Flag to indicate if this is a download author CSV request
   schema:
@@ -148,7 +148,7 @@
   required: false
 - name: requestedBy
   in: query
-  description: ID of the user who requested the bulk operation (required when downloadChangeContentAuthorCsv is true)
+  description: ID of the user who requested the bulk operation (required when isAuthorCsvExportRequest is true)
   schema:
     type: string
     format: uuid
