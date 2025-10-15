@@ -26,5 +26,7 @@ jobs:
       - name: Install modules on root
         run: npm --version && npm ci
 
-      - name: Run validator on zeus doc
-        run: cd ./services/ec-zeus && npm run validate
+      - name: Run validator on zeus doc (dev)
+        run: cd ./services/ec-zeus && npm run validate:dev
+      - name: Run validator on zeus doc (prod)
+        run: cd ./services/ec-zeus && npm run validate:prod
