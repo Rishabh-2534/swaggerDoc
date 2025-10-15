@@ -27,6 +27,8 @@ jobs:
         run: npm --version && npm ci
 
       - name: Run validator on zeus doc (dev)
-        run: cd ./services/ec-zeus/docs && npm run validate:dev
+        working-directory: ./services/ec-zeus
+        run: npm run validate:dev
       - name: Run validator on zeus doc (prod)
-        run: cd ./services/ec-zeus/docs && npm run validate:prod
+        working-directory: ./services/ec-zeus
+        run: npm run validate:prod

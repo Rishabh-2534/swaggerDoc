@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "description": "Simpplr Zeus",
   "scripts": {
-    "validate:b2b:dev": "cd docs && rdme openapi validate ./ec-api-doc-b2b-dev.yaml",
-    "validate:b2b:prod": "cd docs && rdme openapi validate ./ec-api-doc-b2b.yaml",
-    "validate:user:dev": "cd docs && rdme openapi validate ./ec-api-doc-dev.yaml",
-    "validate:user:prod": "cd docs && rdme openapi validate ./ec-api-doc.yaml",
-    "validate:dev": "rdme openapi validate ./ec-api-doc-dev.yaml && rdme openapi validate ./ec-api-doc-b2b-dev.yaml",
-    "validate:prod": "rdme openapi validate ./ec-api-doc.yaml && rdme openapi validate ./ec-api-doc-b2b.yaml"
+    "validate:dev": "cd docs && rdme openapi validate ./ec-api-doc-dev.yaml && rdme openapi validate ./ec-api-doc-b2b-dev.yaml",
+    "validate:prod": "cd docs && rdme openapi validate ./ec-api-doc.yaml && rdme openapi validate ./ec-api-doc-b2b.yaml"
   },
   "repository": {
     "type": "git",
