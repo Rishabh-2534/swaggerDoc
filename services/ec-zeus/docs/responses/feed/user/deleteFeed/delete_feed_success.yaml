@@ -1,4 +1,4 @@
-description: Success response for B2B feed update
+description: Success
 content:
   application/json:
     schema:
@@ -11,13 +11,21 @@ content:
           enum: [success, error]
         result:
           type: object
-          description: Contains the ID of updated feed
+          description: Contains the ID and deletion timestamp of the deleted feed
           properties:
             feedId:
               type: string
+              format: uuid
               example: 49502e9f-a6e6-4773-a0b4-64be9388b7b1
-              description: Unique identifier of the updated feed
+              description: Unique identifier of the deleted feed
+          required:
+            - feedId
         message:
           type: string
-          example: Feed updated successfully
+          example: Feed deleted successfully
           description: Descriptive message about the operation result
+      required:
+        - status
+        - result
+        - message
+
