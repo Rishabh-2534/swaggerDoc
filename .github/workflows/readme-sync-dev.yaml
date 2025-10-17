@@ -15,19 +15,15 @@ jobs:
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
+      - name: Set Node.js version to 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
       # Run GitHub Action to sync OpenAPI file at ./path-to-file.json
-      - name: Sync OpenAPI definition to ReadMe Development
-        # We recommend specifying a fixed version, i.e. @v8
-        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
-        uses: readmeio/rdme@v10
-        with:
-          working-directory: ./services/ec-zeus/docs
-          rdme: openapi upload ./ec-api-doc-dev.yaml  --key=${{ secrets.DEV_README_API_KEY }} --slug=simpplr-user-api-documentation
-
-      - name: Sync OpenAPI B2B definition to ReadMe Development
-        uses: readmeio/rdme@v10
-        with:
-          working-directory: ./services/ec-zeus/docs
-          rdme: openapi upload ./ec-api-doc-b2b-dev.yaml  --key=${{ secrets.B2B_DEV_README_API_KEY }} --slug=simpplr-b2b-api-documentation
-
+      - name: Validate and upload OpenAPI docs
+        working-directory: ./services/ec-zeus
+        run: |
+          cd docs
+          npx rdme@10 openapi upload ./ec-api-doc-dev.yaml --key=${{ secrets.DEV_README_API_KEY }} --slug=simpplr-user-api-documentation
+          npx rdme@10 openapi upload ./ec-api-doc-b2b-dev.yaml --key=${{ secrets.B2B_DEV_README_API_KEY }} --slug=simpplr-b2b-api-documentation
