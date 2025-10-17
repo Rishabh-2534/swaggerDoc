@@ -69,7 +69,7 @@ content:
               properties:
                 downloadUrl:
                   type: string
-                  example: "https://example.com/bulk-operations/download/file.csv"
+                  example: "https://example.com/bulk-ops/report/file.csv"
                   description: URL to download the result file
                 totalRecords:
                   type: integer
