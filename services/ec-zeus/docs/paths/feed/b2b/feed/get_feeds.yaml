@@ -45,15 +45,15 @@ get:
       required: false
       schema:
         type: string
-        example: "home"
+        enum:
+          - home
+          - site
+          - content
+        default: home
       description: |
         The context of the feeds. 
         - When set to "site", siteId parameter is required
         - When set to "content", both siteId and contentId parameters are required
-      enum:
-        - home
-        - site
-        - content
     - name: type
       in: query
       required: false
