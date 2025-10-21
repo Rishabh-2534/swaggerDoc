@@ -1,0 +1,123 @@
+get:
+  operationId: getFeedsUser
+  tags:
+    - Feed
+  summary: Get feeds
+  description: This API allows you to retrieve all feeds
+  parameters:
+    - name: nextPageToken
+      in: query
+      required: true
+      description: |
+        Token for pagination. 
+        - For initial request, send empty string ""
+        - For subsequent requests, use the nextPageToken returned as integer from previous response
+      schema:
+        type: string
+        example: "1759911721822"
+    - name: size
+      in: query
+      required: true
+      description: The number of feeds to return per page
+      schema:
+        type: string
+        example: "16"
+    - name: sortBy
+      in: query
+      required: false
+      enum:
+        - createdAt
+        - lastActivityAt
+        - preference
+      example: "createdAt"
+    - name: filter
+      in: query
+      required: false
+      schema:
+        type: string
+        example: "all"
+      description: The filter to apply to the feeds
+      enum:
+        - all
+        - iFollow
+        - preference
+        - askedByMe
+        - votedByMe
+        - favourited
+        - toMe
+        - duplicate
+        - unanswered
+        - answeredByMe
+        - answeredAndApproved
+    - name: feedContext
+      in: query
+      required: false
+      schema:
+        type: string
+        example: "home"
+      description: |
+        The context of the feeds. 
+        - When set to "site", siteId parameter is required
+        - When set to "content", both siteId and contentId parameters are required
+      enum:
+        - home
+        - site
+        - content
+    - name: type
+      in: query
+      required: false
+      enum:
+        - post
+        - question
+    - name: siteId
+      in: query
+      required: false
+      schema:
+        type: string
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+      description: |
+        The ID of the site. 
+        Required when feedContext is "site" or "content"
+    - name: contentId
+      in: query
+      required: false
+      schema:
+        type: string
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+      description: |
+        The ID of the content.
+        Required when feedContext is "content"
+    - name: feedIds
+      in: query
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+        example: ["97576a5d-4362-40cb-b8ac-5418b64bf84f"]
+      description: The IDs of the feeds to return
+    - name: exemptFeedIds
+      in: query
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+        example: ["97576a5d-4362-40cb-b8ac-5418b64bf84f"]
+      description: The IDs of the feeds to exempt from the search
+    - name: isSearchForMarkDuplicate
+      in: query
+      required: false
+      schema:
+        type: boolean
+        example: false
+      description: Whether to search for mark duplicate feeds(questions)
+  responses:
+    '200':
+      $ref: '../../../../responses/feed/user/getFeeds/get_feeds_success.yaml'
+    '400':
+      $ref: '../../../../responses/feed/user/getFeeds/get_feeds_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'
