@@ -25,19 +25,21 @@ get:
     - name: sortBy
       in: query
       required: false
-      enum:
-        - createdAt
-        - lastActivityAt
-      example: "createdAt"
+      schema:
+        type: string
+        enum:
+          - createdAt
+          - lastActivityAt
+        default: createdAt
     - name: filter
       in: query
       required: false
       schema:
         type: string
-        example: "all"
+        enum:
+          - all
+        default: all
       description: The filter to apply to the feeds (only all for B2B)
-      enum:
-        - all
     - name: feedContext
       in: query
       required: false
@@ -55,9 +57,13 @@ get:
     - name: type
       in: query
       required: false
-      enum:
-        - post
-        - question
+      schema:
+        type: string
+        enum:
+          - post
+          - question
+        example: post
+        description: The type of feed to return
     - name: siteId
       in: query
       required: false

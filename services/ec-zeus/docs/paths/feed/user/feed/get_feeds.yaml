@@ -25,50 +25,56 @@ get:
     - name: sortBy
       in: query
       required: false
-      enum:
-        - createdAt
-        - lastActivityAt
-        - preference
-      example: "createdAt"
+      schema:
+        type: string
+        enum:
+          - createdAt
+          - lastActivityAt
+          - preference
+        default: createdAt
     - name: filter
       in: query
       required: false
       schema:
         type: string
-        example: "all"
+        enum:
+          - all
+          - iFollow
+          - preference
+          - askedByMe
+          - votedByMe
+          - favourited
+          - toMe
+          - duplicate
+          - unanswered
+          - answeredByMe
+          - answeredAndApproved
+        default: all
       description: The filter to apply to the feeds
-      enum:
-        - all
-        - iFollow
-        - preference
-        - askedByMe
-        - votedByMe
-        - favourited
-        - toMe
-        - duplicate
-        - unanswered
-        - answeredByMe
-        - answeredAndApproved
     - name: feedContext
       in: query
       required: false
       schema:
         type: string
-        example: "home"
+        enum:
+          - home
+          - site
+          - content
+        default: home
       description: |
         The context of the feeds. 
         - When set to "site", siteId parameter is required
         - When set to "content", both siteId and contentId parameters are required
-      enum:
-        - home
-        - site
-        - content
     - name: type
       in: query
       required: false
-      enum:
-        - post
-        - question
+      schema:
+        type: string
+        enum:
+          - post
+          - question
+        example: post
+        description: The type of feed to return
     - name: siteId
       in: query
       required: false
