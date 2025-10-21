@@ -25,7 +25,7 @@ content:
             listOfItems:
               type: array
               items:
-                $ref: '../../../../responses/feed/user/getFeed/get_feed_success.yaml'
+                $ref: '../../../../schemas/feed/feed_object.yaml'
             sortBy:
               type: string
               example: createdAt

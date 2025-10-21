@@ -22,7 +22,7 @@ content:
             listOfItems:
               type: array
               items:
-                $ref: '../../../../responses/feed/b2b/getFeed/get_feed_success.yaml'
+                $ref: '../../../../schemas/feed/feed_object.yaml'
             sortBy:
               type: string
               example: lastActivityAt
