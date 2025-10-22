@@ -1,24 +1,26 @@
 type: object
 properties:
   sortBy:
-    type: array
-    items:
-      type: string
-    description: List of fields to sort by and the sort order (asc or desc).
-    example: ["firstName", "ASC"]
+    type: string
+    description: List of fields to sort by.
+    example: firstName
+  sortOrder:
+    type: string
+    description: sort order (asc or desc).
+    example: ASC/DESC
   pageSize:
     type: integer
-    description: Number of results to return. (can also be sent as `size`)
+    description: Number of results to return.
     maximum: 200
     example: 16
   pageToken:
-    type: string
+    type: integer
     description: >
       Page token to get the next page of results. (can also be sent as `offset`)
       should be a string returned as `nextPageToken` from previous page request
   q:
     type: string
-    description: Query string for searching users.
+    description: Query string for searching users (supported firstname and lastname).
     example: "abc"
   peopleCategory:
     type: array
@@ -187,6 +189,10 @@ properties:
           type: string
           description: State name
           example: "Maharashtra"
+        country:
+          type: string
+          description: Country name
+          example: "India"
       required: ["city"]
     description: List of location objects with city and optional state.
     example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}]
