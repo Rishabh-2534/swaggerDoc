@@ -5,7 +5,7 @@ properties:
     items:
       type: string
     description: List of fields to sort by and the sort order (asc or desc).
-    example: ["user_name", "asc"]
+    example: ["firstName", "ASC"]
   pageSize:
     type: integer
     description: Number of results to return. (can also be sent as `size`)
@@ -19,8 +19,8 @@ properties:
   q:
     type: string
     description: Query string for searching users.
-    example: ""
-  peopleCategoryId:
+    example: "abc"
+  peopleCategory:
     type: array
     items:
       type: string
@@ -32,31 +32,19 @@ properties:
       type: string
     description: List of timezones to filter by.
     example: ["Pacific/Gambier"]
-  expertiseId:
+  expertiseName:
     type: array
     items:
       type: string
-    description: List of expertise IDs to filter by.
+    description: List of expertise names to filter by.
     example: ["Java"]
-  assistant_id:
-    type: array
-    items:
-      type: string
-    description: List of assistant IDs to filter by.
-    example: ["55526ef2-752a-47e3-affa-2fa0eaadc5eb"]
-  location:
-    type: array
-    items:
-      type: string
-    description: List of locations to filter by.
-    example: ["Gurugram#city"]
   title:
     type: array
     items:
       type: string
     description: List of titles to filter by.
     example: ["Software Developer"]
-  user_type:
+  userType:
     type: array
     items:
       type: string
@@ -74,21 +62,131 @@ properties:
       type: string
     description: List of departments to filter by.
     example: ["Engineering"]
-  business_unit:
+  businessUnit:
     type: array
     items:
       type: string
     description: List of business units to filter by.
     example: ["Tata"]
-  company_name:
+  companyName:
     type: array
     items:
       type: string
     description: List of company names to filter by.
     example: ["simpplr"]
-  start_date:
+  startDate:
     type: array
     items:
       type: string
     description: Date range for the start date filter (start and end date).
     example: ["2024-05-20", "2024-06-18"]
+  workAnniversary:
+    oneOf:
+      - type: object
+        properties:
+          start:
+            type: string
+            format: date
+            description: Start date for work anniversary filter
+            example: "2024-01-01"
+          end:
+            type: string
+            format: date
+            description: End date for work anniversary filter
+            example: "2024-12-31"
+        required: ["start"]
+      - type: string
+        pattern: "^(\\d+)(d|m|M|w|y)$"
+        description: Relative date filter for work anniversary (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
+        example: "20d"
+    description: Filter by work anniversary date range. Can be either an object with start/end dates or a relative date string.
+  birthAnniversary:
+    oneOf:
+      - type: object
+        properties:
+          start:
+            type: string
+            format: date
+            description: Start date for birth anniversary filter
+            example: "2024-01-01"
+          end:
+            type: string
+            format: date
+            description: End date for birth anniversary filter
+            example: "2024-12-31"
+        required: ["start"]
+      - type: string
+        pattern: "^(\\d+)(d|m|M|w|y)$"
+        description: Relative date filter for birth anniversary (e.g., "60d" for 60 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
+        example: "60d"
+    description: Filter by birth anniversary date range. Can be either an object with start/end dates or a relative date string.
+  managerId:
+    type: array
+    items:
+      type: string
+    description: List of manager IDs to filter by.
+    example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
+  assistantId:
+    type: array
+    items:
+      type: string
+    description: List of assistant IDs to filter by.
+    example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
+  payCurrency:
+    type: array
+    items:
+      type: string
+    description: List of payment currencies to filter by.
+    example: ["PYG", "ARS"]
+  pronouns:
+    type: array
+    items:
+      type: string
+    description: List of pronouns to filter by.
+    example: ["she_her_hers", "he_him_his"]
+  state:
+    type: array
+    items:
+      type: string
+    description: List of states to filter by.
+    example: ["New Delhi", "Uttarakhand"]
+  city:
+    type: array
+    items:
+      type: string
+    description: List of cities to filter by.
+    example: ["Delhi", "Mumbai"]
+  country:
+    type: array
+    items:
+      type: string
+    description: List of countries to filter by.
+    example: ["India", "USA"]
+  addressLine1:
+    type: array
+    items:
+      type: string
+    description: List of address line 1 values to filter by.
+    example: ["Road no 1"]
+  addressLine2:
+    type: array
+    items:
+      type: string
+    description: List of address line 2 values to filter by.
+    example: ["road no 2"]
+  location:
+    type: array
+    items:
+      type: object
+      properties:
+        city:
+          type: string
+          description: City name
+          example: "Delhi"
+        state:
+          type: string
+          description: State name
+          example: "Maharashtra"
+      required: ["city"]
+    description: List of location objects with city and optional state.
+    example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}]

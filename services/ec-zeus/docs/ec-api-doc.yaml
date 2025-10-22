@@ -63,7 +63,7 @@ paths:
     #     $ref: "./paths/identity/audience_by_id.yaml"
 
     # People
-    /identity/people:
+    /identity/people/list:
         $ref: "./paths/identity/get_people_list.yaml"
     /identity/people/{peopleId}:
         $ref: "./paths/identity/update_people.yaml"
