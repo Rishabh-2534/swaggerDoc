@@ -321,7 +321,7 @@ properties:
           example: "India"
       required: ["city"]
     description: List of location objects with city and optional state.
-    example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}]
+    example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}, {"city": "Amaravati", "state": "Maharashtra", "country": "India"}]
     customField:
           type: array
           items:

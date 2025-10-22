@@ -203,14 +203,10 @@ content:
                     nullable: true
                     example: "1990-05-15T00:00:00.000Z"
             pageToken:
-              type: string
+              type: number
               description: Next page token
-              example: "1"
+              example: 1
         responseTimeStamp:
           type: integer
           description: Response timestamp
           example: 1761108072626
-        apiName:
-          type: string
-          description: API name
-          example: "GetUserECList"
