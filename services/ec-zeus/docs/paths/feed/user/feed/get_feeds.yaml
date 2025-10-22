@@ -99,14 +99,14 @@ get:
       schema:
         type: string
         example: "97576a5d-4362-40cb-b8ac-5418b64bf84f,6d54cb3d-da29-461b-8019-3dfb8aa8afe2"
-      description: The IDs of the feeds to return
+      description: The IDs of the feeds to return (send comma-separated list of feed IDs without spaces)
     - name: exemptFeedIds
       in: query
       required: false
       schema:
         type: string
         example: "97576a5d-4362-40cb-b8ac-5418b64bf84f,6d54cb3d-da29-461b-8019-3dfb8aa8afe2"
-      description: The IDs of the feeds to exempt from the search
+      description: The IDs of the feeds to exempt from the search (send comma-separated list of feed IDs without spaces)
     - name: isSearchForMarkDuplicate
       in: query
       required: false
