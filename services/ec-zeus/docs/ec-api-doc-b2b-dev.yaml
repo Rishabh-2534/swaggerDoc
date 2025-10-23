@@ -111,6 +111,8 @@ paths:
         $ref: "./paths/feed/b2b/feed/create_feed.yaml"
     /b2b/wfeed/feeds/{feedId}:
         $ref: "./paths/feed/b2b/feed/update_delete_feed.yaml"
+    /b2b/rfeed/feeds:
+        $ref: "./paths/feed/b2b/feed/get_feeds.yaml"
     /b2b/rfeed/feeds/{feedId}:
         $ref: "./paths/feed/b2b/feed/feed_by_id.yaml"
 

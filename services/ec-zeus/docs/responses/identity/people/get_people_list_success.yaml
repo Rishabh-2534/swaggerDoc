@@ -5,21 +5,17 @@ content:
       type: object
       properties:
         status:
-          type: integer
-          description: HTTP status code
-          example: 200
+          type: string
+          description: Response status
+          example: "success"
         message:
           type: string
           description: Success message
-          example: People list fetched successfully
+          example: "EC users fetched successfully"
         result:
           type: object
           properties:
-            totalRecords:
-              type: integer
-              description: Total number of records found
-              example: 7
-            listOfItems:
+            items:
               type: array
               items:
                 type: object
@@ -27,458 +23,179 @@ content:
                   id:
                     type: string
                     description: Unique identifier for the user
-                    example: 55526ef2-752a-47e3-affa-2fa0eaadc5eb
-                  firstName:
+                    example: "85dcc783-6afd-4871-9ad6-637abb29841b"
+                  username:
                     type: string
-                    description: User's first name
-                    example: Jhon
-                  peopleId:
-                    type: string
-                    description: Identifier for the user within the people system
-                    example: 55526ef2-752a-47e3-affa-2fa0eaadc5eb
-                  lastName:
-                    type: string
-                    description: User's last name
-                    example: smith
-                  relevancyScore:
-                    type: number
-                    description: Score indicating relevancy of the user in the search results
-                    example: 0
-                  hireDate:
-                    type: string
-                    format: date-time
-                    description: User's hire date
-                    example: 2024-01-15T00:00:00.000Z
-                  email:
-                    type: string
-                    description: User's email address
-                    example: Jhon.smith@simpplr.com
-                  mobile:
-                    type: string
-                    description: User's mobile number
-                    example: 8560018230
+                    description: User's username/email
+                    example: "ankur.gupta+test@simpplr.com"
                   status:
                     type: string
                     description: User's status
-                    example: Active
-                  phone:
+                    example: "Active"
+                  firstName:
                     type: string
-                    description: User's phone number
-                    example: 8560018230
-                  phoneExtension:
+                    description: User's first name
+                    example: "Am Edit User"
+                  lastName:
                     type: string
-                    description: Phone extension number
-                    example: 91
-                  namePronunciation:
-                    type: string
-                    description: Pronunciation of the user's name
-                    example: Jhon
-                  timezoneDetails:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: Timezone identifier
-                        example: 14
-                      name:
-                        type: string
-                        description: Timezone name
-                        example: America/Yakutat
-                  imZoom:
-                    type: string
-                    description: User's Zoom ID
-                    example: dees
-                  imSkype:
-                    type: string
-                    description: User's Skype ID
-                    nullable: true
-                    example: null
-                  imMicrosoftTeam:
-                    type: string
-                    description: User's Microsoft Teams ID
-                    nullable: true
-                    example: null
-                  imSlack:
-                    type: string
-                    description: User's Slack ID
-                    nullable: true
-                    example: null
-                  profileImageUrlOriginal:
-                    type: string
-                    description: URL to the user's original profile image
-                    example: https://tango-new.dev.simpplr.xyz/content/o/0b000dcd-4a0a-422a-8397-908fa3e7a436
-                  about:
-                    type: string
-                    description: JSON string containing details about the user
-                    example: '{"type":"tiptap","value":{"type":"doc","content":[{"type":"paragraph","attrs":{"textAlign":"left"},"content":[{"type":"text","text":""}]}]}}'
-                  microsoftTeamsUserId:
-                    type: string
-                    description: Microsoft Teams User ID
-                    nullable: true
-                    example: null
-                  microsoftTeamsUserName:
-                    type: string
-                    description: Microsoft Teams User Name
-                    nullable: true
-                    example: null
-                  microsoftTeamsConnectedAs:
-                    type: string
-                    description: Connection status for Microsoft Teams
-                    nullable: true
-                    example: null
-                  microsoftTeamsTenantId:
-                    type: string
-                    description: Microsoft Teams Tenant ID
-                    nullable: true
-                    example: null
-                  slackTeamId:
-                    type: string
-                    description: Slack Team ID
-                    nullable: true
-                    example: null
-                  slackUserId:
-                    type: string
-                    description: Slack User ID
-                    nullable: true
-                    example: null
-                  slackConnectedAs:
-                    type: string
-                    description: Connection status for Slack
-                    nullable: true
-                    example: null
-                  slackTeamName:
-                    type: string
-                    description: Slack Team Name
-                    nullable: true
-                    example: null
+                    description: User's last name
+                    example: "Role Testing"
                   pronouns:
                     type: string
                     description: User's preferred pronouns
-                    example: he_him_his
-                  isActive:
-                    type: boolean
-                    description: Indicates if the user is active
-                    example: true
-                  location:
+                    example: "he_him_his"
+                  pronunciationUrl:
                     type: string
-                    description: User's location
-                    example: he_him_his
+                    description: URL to pronunciation audio
+                    nullable: true
+                    example: null
+                  extn:
+                    type: string
+                    description: Phone extension
+                    nullable: true
+                    example: null
+                  photo:
+                    type: string
+                    description: Profile photo path
+                    example: "/content/o/286d4be1-0232-462e-ac01-4049e4a53dae"
+                  coverImage:
+                    type: string
+                    description: Cover image path
+                    example: "/content/o/4702bd35-8c54-411f-8297-6f6be3001e96"
+                  createdOn:
+                    type: string
+                    format: date-time
+                    description: User creation date
+                    example: "2024-10-16T02:16:38.763Z"
+                  modifiedOn:
+                    type: string
+                    format: date-time
+                    description: User last modified date
+                    example: "2025-10-14T09:10:08.075Z"
+                  mobile:
+                    type: string
+                    description: User's mobile number
+                    nullable: true
+                    example: null
+                  phone:
+                    type: string
+                    description: User's phone number
+                    nullable: true
+                    example: null
+                  about:
+                    type: string
+                    description: JSON string containing user's about information
+                    example: '{"type":"tiptap","value":{"type":"doc","content":[{"type":"paragraph","attrs":{"textAlign":"left"},"content":[{"type":"text","text":"Am Edit User Role Testing hasnt added any about text"}]}]}}'
+                  birthDayDay:
+                    type: string
+                    description: Birth day
+                    example: "08"
+                  birthDayMonth:
+                    type: string
+                    description: Birth month
+                    example: "08"
+                  linkedinUrl:
+                    type: string
+                    description: LinkedIn profile URL
+                    nullable: true
+                    example: null
+                  twitterUrl:
+                    type: string
+                    description: Twitter profile URL
+                    nullable: true
+                    example: null
+                  facebookUrl:
+                    type: string
+                    description: Facebook profile URL
+                    nullable: true
+                    example: null
+                  youtubeUrl:
+                    type: string
+                    description: YouTube channel URL
+                    nullable: true
+                    example: null
+                  instagramUrl:
+                    type: string
+                    description: Instagram profile URL
+                    nullable: true
+                    example: null
+                  addressLine2:
+                    type: string
+                    description: Address line 2
+                    nullable: true
+                    example: null
                   city:
                     type: string
                     description: User's city
-                    example: Massachusetts
+                    example: "Delhi"
                   state:
                     type: string
                     description: User's state
+                    example: "Delhi"
+                  postalCode:
+                    type: string
+                    description: Postal/ZIP code
                     nullable: true
-                    example: Boston
+                    example: null
                   country:
                     type: string
                     description: User's country
-                    nullable: true
-                    example: US
-                  zipCode:
-                    type: string
-                    description: User's zip code
-                    nullable: true
-                    example: 65584-5678
-                  street:
-                    type: string
-                    description: User's street address
-                    example:  Robert Robertson, 1234 NW Bobcat Lan
-                  employeeNumber:
-                    type: string
-                    description: User's employee number
-                    example: emp12344
-                  division:
-                    type: string
-                    description: User's division
-                    example: Developer
-                  department:
-                    type: string
-                    description: User's department
-                    example: Engineering
-                  companyName:
-                    type: string
-                    description: User's company name
-                    example: simpplr
+                    example: "India"
                   title:
                     type: string
                     description: User's job title
-                    example: Software Developer
-                  isFavorited:
-                    type: boolean
-                    description: Indicates if the user is favorited
                     nullable: true
                     example: null
-                  locale:
+                  businessUnit:
                     type: string
-                    description: User's locale
-                    example: en-US
-                  isFollowing:
-                    type: boolean
-                    description: Indicates if the user is being followed
-                    example: false
-                  assistantDetails:
-                    type: object
-                    description: Details of the user's assistant
-                    properties:
-                      id:
-                        type: string
-                        description: Assistant's unique identifier
-                        example: f7b4f671-e5c3-437d-930e-1157ba74d308
-                      peopleId:
-                        type: string
-                        description: Identifier for the assistant within the people system
-                        example: f7b4f671-e5c3-437d-930e-1157ba74d308
-                      firstName:
-                        type: string
-                        description: Assistant's first name
-                        example: Ted
-                      lastName:
-                        type: string
-                        description: Assistant's last name
-                        example: baker
-                      email:
-                        type: string
-                        description: Assistant's email address
-                        example: ted.baker+123212@simpplr.com
-                      title:
-                        type: string
-                        description: Assistant's job title
-                        nullable: true
-                        example: null
-                      profileImageUrl:
-                        type: string
-                        description: URL to the assistant's profile image
-                        nullable: true
-                        example: null
-                      phone:
-                        type: string
-                        description: Assistant's phone number
-                        nullable: true
-                        example: null
-                      mobile:
-                        type: string
-                        description: Assistant's mobile number
-                        nullable: true
-                        example: null
-                      timezoneDetails:
-                        type: object
-                        description: Timezone details of the assistant
-                        properties:
-                          id:
-                            type: string
-                            description: Timezone identifier
-                            example: 17
-                          name:
-                            type: string
-                            description: Timezone name
-                            example: America/Los_Angeles
-                      extn:
-                        type: string
-                        description: Assistant's phone extension number
-                        nullable: true
-                        example: null
-                      imSkype:
-                        type: string
-                        description: Assistant's Skype ID
-                        nullable: true
-                        example: null
-                      imZoom:
-                        type: string
-                        description: Assistant's Zoom ID
-                        nullable: true
-                        example: null
-                      slackUserId:
-                        type: string
-                        description: Assistant's Slack User ID
-                        nullable: true
-                        example: null
-                      slackTeamId:
-                        type: string
-                        description: Assistant's Slack Team ID
-                        nullable: true
-                        example: null
-                      slackTeamName:
-                        type: string
-                        description: Assistant's Slack Team Name
-                        nullable: true
-                        example: null
-                      slackConnectedAs:
-                        type: string
-                        description: Connection status for Slack
-                        nullable: true
-                        example: null
-                      microsoftTeamsUserId:
-                        type: string
-                        description: Microsoft Teams User ID
-                        nullable: true
-                        example: null
-                      microsoftTeamsTenantId:
-                        type: string
-                        description: Microsoft Teams Tenant ID
-                        nullable: true
-                        example: null
-                      microsoftTeamsUserName:
-                        type: string
-                        description: Microsoft Teams User Name
-                        nullable: true
-                        example: null
-                      microsoftTeamsConnectedAs:
-                        type: string
-                        description: Connection status for Microsoft Teams
-                        nullable: true
-                        example: null
-                  managerDetails:
-                    type: object
-                    description: Details of the user's manager
+                    description: Business unit
+                    nullable: true
+                    example: null
+                  companyName:
+                    type: string
+                    description: Company name
+                    example: "xabcde"
+                  startDate:
+                    type: string
+                    format: date
+                    description: Start date
+                    example: "2025-10-03"
+                  userType:
+                    type: string
+                    description: User type
                     nullable: true
                     example: null
                   peopleCategory:
-                    type: object
-                    description: Details of the user's people category
-                    properties:
-                      name:
-                        type: string
-                        description: Name of the people category
-                        example: Us Team
-                  businessUnit:
                     type: string
-                    description: Business unit the user belongs to
-                    example: Tataz
-                  userType:
+                    description: People category
+                    example: "New"
+                  segmentId:
                     type: string
-                    description: Type of the user
-                    example: Contractor
-                  custom_fields:
-                    type: object
-                    description: Custom fields associated with the user
-                    properties:
-                      customProfileField1:
-                        type: string
-                        description: Custom profile field 1
-                        example: swimming
-                      customProfileField2:
-                        type: string
-                        description: Custom profile field 2
-                        nullable: true
-                        example: null
-                      customProfileField3:
-                        type: string
-                        description: Custom profile field 3
-                        nullable: true
-                        example: null
-                      customProfileField4:
-                        type: string
-                        description: Custom profile field 4
-                        nullable: true
-                        example: null
-                      customProfileField5:
-                        type: string
-                        description: Custom profile field 5
-                        nullable: true
-                        example: null
-                      customProfileField6:
-                        type: string
-                        description: Custom profile field 6
-                        nullable: true
-                        example: null
-                      customProfileField7:
-                        type: string
-                        description: Custom profile field 7
-                        nullable: true
-                        example: null
-                      customProfileField8:
-                        type: string
-                        description: Custom profile field 8
-                        nullable: true
-                        example: null
-                      customProfileField9:
-                        type: string
-                        description: Custom profile field 9
-                        nullable: true
-                        example: null
-                      customProfileField10:
-                        type: string
-                        description: Custom profile field 10
-                        nullable: true
-                        example: null
-                      customProfileField11:
-                        type: string
-                        description: Custom profile field 11
-                        nullable: true
-                        example: null
-                      customProfileField12:
-                        type: string
-                        description: Custom profile field 12
-                        nullable: true
-                        example: null
-                      customProfileField13:
-                        type: string
-                        description: Custom profile field 13
-                        nullable: true
-                        example: null
-                      customProfileField14:
-                        type: string
-                        description: Custom profile field 14
-                        nullable: true
-                        example: null
-                      customProfileField15:
-                        type: string
-                        description: Custom profile field 15
-                        nullable: true
-                        example: null
-                      customProfileField16:
-                        type: string
-                        description: Custom profile field 16
-                        nullable: true
-                        example: null
-                      customProfileField17:
-                        type: string
-                        description: Custom profile field 17
-                        nullable: true
-                        example: null
-                      customProfileField18:
-                        type: string
-                        description: Custom profile field 18
-                        nullable: true
-                        example: null
-                      customProfileField19:
-                        type: string
-                        description: Custom profile field 19
-                        nullable: true
-                        example: null
-                      customProfileField20:
-                        type: string
-                        description: Custom profile field 20
-                        nullable: true
-                        example: null
-                      customProfileField21:
-                        type: string
-                        description: Custom profile field 21
-                        nullable: true
-                        example: null
-                      customProfileField22:
-                        type: string
-                        description: Custom profile field 22
-                        nullable: true
-                        example: null
-                      customProfileField23:
-                        type: string
-                        description: Custom profile field 23
-                        nullable: true
-                        example: null
-                      customProfileField24:
-                        type: string
-                        description: Custom profile field 24
-                        nullable: true
-                        example: null
-                      customProfileField25:
-                        type: string
-                        description: Custom profile field 25
-                        nullable: true
-                        example: null
-            nextPageToken:
-              type: string
+                    description: Segment ID
+                    example: "ebeb0722-a38b-47b7-aabe-c867d9567f33"
+                  timezone:
+                    type: string
+                    description: User's timezone
+                    example: "America/Los_Angeles"
+                  locale:
+                    type: string
+                    description: User's locale
+                    example: "en-US"
+                  managerId:
+                    type: string
+                    description: Manager ID
+                    nullable: true
+                    example: null
+                  assistantId:
+                    type: string
+                    description: Assistant ID
+                    nullable: true
+                    example: "84c542ac-6fdf-4d37-8788-b0c4546eb9fa"
+            pageToken:
+              type: number
               description: Next page token
+              example: 1
+        responseTimeStamp:
+          type: integer
+          description: Response timestamp
+          example: 1761108072626

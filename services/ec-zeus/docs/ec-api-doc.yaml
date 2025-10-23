@@ -63,7 +63,7 @@ paths:
     #     $ref: "./paths/identity/audience_by_id.yaml"
 
     # People
-    /identity/people:
+    /identity/people/list:
         $ref: "./paths/identity/get_people_list.yaml"
     /identity/people/{peopleId}:
         $ref: "./paths/identity/update_people.yaml"
@@ -165,6 +165,8 @@ paths:
         $ref: "./paths/feed/user/feed/create_feed.yaml"
     /wfeed/feeds/{feedId}:
         $ref: "./paths/feed/user/feed/update_delete_feed.yaml"
+    /rfeed/feeds:
+        $ref: "./paths/feed/user/feed/get_feeds.yaml"
     /rfeed/feeds/{feedId}:
         $ref: "./paths/feed/user/feed/feed_by_id.yaml"
 
