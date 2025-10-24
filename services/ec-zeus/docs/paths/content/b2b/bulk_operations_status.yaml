@@ -1,0 +1,35 @@
+get:
+  summary: Get bulk operation status
+  operationId: getBulkOperationStatusB2b
+  tags:
+    - Content
+  description: This API allows us to retrieve the status of a bulk operation using the request ID
+  parameters:
+    - name: opType
+      in: path
+      required: true
+      schema:
+        type: string
+        enum: ["content-author-change", "content-author-report-generation"]
+        example: "content-author-change"
+      description: The type of bulk operation
+    - name: ackId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "71993b4d-7ea8-459a-a808-aaf333e89808"
+      description: The request ID of the bulk operation
+  responses:
+    '200':
+      $ref: '../../../responses/content/b2b/bulkOperations/bulk_operations_status_success.yaml'
+    '400':
+      $ref: '../../../responses/content/b2b/bulkOperations/bulk_operations_status_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+    '404':
+      $ref: '../../../responses/content/b2b/bulkOperations/bulk_operations_status_not_found.yaml'
+
