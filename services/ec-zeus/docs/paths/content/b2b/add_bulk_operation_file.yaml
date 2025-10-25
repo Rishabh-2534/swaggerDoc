@@ -1,4 +1,4 @@
-put:
+post:
   summary: Add file to bulk operation
   operationId: addBulkOperationFileB2b
   tags:

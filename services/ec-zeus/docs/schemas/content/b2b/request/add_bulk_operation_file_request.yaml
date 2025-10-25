@@ -5,6 +5,7 @@ content:
       type: object
       required:
         - fileId
+        - createdBy
       properties:
         fileId:
           type: string
@@ -17,4 +18,8 @@ content:
           example: "test file for upload author"
           minLength: 1
           maxLength: 500
+        createdBy:
+          type: string
+          description: User ID who created this bulk operation
+          example: "550e8400-e29b-41d4-a716-446655440000"
       additionalProperties: false
