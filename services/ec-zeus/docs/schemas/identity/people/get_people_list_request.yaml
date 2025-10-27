@@ -1,38 +1,106 @@
 type: object
 properties:
   sortBy:
-    type: array
-    items:
-      type: string
-    description: List of fields to sort by and the sort order (asc or desc).
-    example: ["firstName", "ASC"]
+    type: string
+    description: List of fields to sort by.
+    example: firstName
+  sortOrder:
+    type: string
+    description: sort order (asc or desc).
+    example: ASC/DESC
   pageSize:
     type: integer
-    description: Number of results to return. (can also be sent as `size`)
+    description: Number of results to return.
     maximum: 200
     example: 16
   pageToken:
-    type: string
+    type: integer
     description: >
       Page token to get the next page of results. (can also be sent as `offset`)
       should be a string returned as `nextPageToken` from previous page request
   q:
     type: string
-    description: Query string for searching users.
+    description: Query string for searching users (supported firstname and lastname).
     example: "abc"
-  peopleCategory:
+  username:
     type: array
     items:
       type: string
-    description: List of people category IDs to filter by.
+    description: List of usernames to filter by.
+    example: ["john.doe", "jane.smith"]
+  firstName:
+    type: array
+    items:
+      type: string
+    description: List of first names to filter by.
+    example: ["John", "Jane"]
+  lastName:
+    type: array
+    items:
+      type: string
+    description: List of last names to filter by.
+    example: ["Doe", "Smith"]
+  email:
+    type: array
+    items:
+      type: string
+    description: List of email addresses to filter by.
+    example: ["john@example.com", "jane@example.com"]
+  mobile:
+    type: array
+    items:
+      type: string
+    description: List of mobile numbers to filter by.
+    example: ["+1234567890", "+0987654321"]
+  phone:
+    type: array
+    items:
+      type: string
+    description: List of phone numbers to filter by.
+    example: ["+1234567890", "+0987654321"]
+  extn:
+    type: array
+    items:
+      type: string
+    description: List of phone extensions to filter by.
+    example: ["123", "456"]
+  about:
+    type: array
+    items:
+      type: string
+    description: List of about descriptions to filter by.
+    example: ["Software Engineer", "Product Manager"]
+  segmentId:
+    type: array
+    items:
+      type: string
+    description: List of segment IDs to filter by.
+    example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
+  locale:
+    type: array
+    items:
+      type: string
+    description: List of locales to filter by.
+    example: ["en-US", "en-GB"]
+  licenseType:
+    type: array
+    items:
+      type: string
+    description: List of license types to filter by.
+    example: ["Premium", "Basic"]
+  peopleCategoryId:
+    type: array
+    items:
+      type: string
+    description: List of people category names to filter by.
     example: ["Us Team"]
   timezone:
     type: array
     items:
       type: string
     description: List of timezones to filter by.
-    example: ["Pacific/Gambier"]
-  expertiseName:
+    example: ["Asia/Kolkata"]
+  expertiseId:
     type: array
     items:
       type: string
@@ -74,12 +142,72 @@ properties:
       type: string
     description: List of company names to filter by.
     example: ["simpplr"]
-  startDate:
+  employeeNumber:
     type: array
     items:
       type: string
-    description: Date range for the start date filter (start and end date).
-    example: ["2024-05-20", "2024-06-18"]
+    description: List of employee numbers to filter by.
+    example: ["EMP001", "EMP002"]
+  startDate:
+    oneOf:
+      - type: object
+        properties:
+          start:
+            type: string
+            format: date
+            description: Start date for start date filter
+            example: "2024-01-01"
+          end:
+            type: string
+            format: date
+            description: End date for start date filter
+            example: "2024-12-31"
+        required: ["start", "end"]
+      - type: string
+        pattern: "^(\\d+)(d|m|M|w|y)$"
+        description: Relative date filter for start date (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
+        example: "20d"
+    description: Filter by start date range. Can be either an object with start/end dates or a relative date string.
+  createdOn:
+    oneOf:
+      - type: object
+        properties:
+          start:
+            type: string
+            format: date
+            description: Start date for created date filter
+            example: "2024-01-01"
+          end:
+            type: string
+            format: date
+            description: End date for created date filter
+            example: "2024-12-31"
+        required: ["start", "end"]
+      - type: string
+        pattern: "^(\\d+)(d|m|M|w|y)$"
+        description: Relative date filter for created date (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
+        example: "20d"
+    description: Filter by created date range. Can be either an object with start/end dates or a relative date string.
+  modifiedOn:
+    oneOf:
+      - type: object
+        properties:
+          start:
+            type: string
+            format: date
+            description: Start date for modified date filter
+            example: "2024-01-01"
+          end:
+            type: string
+            format: date
+            description: End date for modified date filter
+            example: "2024-12-31"
+        required: ["start", "end"]
+      - type: string
+        pattern: "^(\\d+)(d|m|M|w|y)$"
+        description: Relative date filter for modified date (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
+        example: "20d"
+    description: Filter by modified date range. Can be either an object with start/end dates or a relative date string.
   workAnniversary:
     oneOf:
       - type: object
@@ -94,7 +222,7 @@ properties:
             format: date
             description: End date for work anniversary filter
             example: "2024-12-31"
-        required: ["start"]
+        required: ["start", "end"]
       - type: string
         pattern: "^(\\d+)(d|m|M|w|y)$"
         description: Relative date filter for work anniversary (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
@@ -114,7 +242,7 @@ properties:
             format: date
             description: End date for birth anniversary filter
             example: "2024-12-31"
-        required: ["start"]
+        required: ["start", "end"]
       - type: string
         pattern: "^(\\d+)(d|m|M|w|y)$"
         description: Relative date filter for birth anniversary (e.g., "60d" for 60 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
@@ -187,6 +315,39 @@ properties:
           type: string
           description: State name
           example: "Maharashtra"
+        country:
+          type: string
+          description: Country name
+          example: "India"
       required: ["city"]
     description: List of location objects with city and optional state.
-    example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}]
+    example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}, {"city": "Amaravati", "state": "Maharashtra", "country": "India"}]
+  customFields:
+    type: array
+    items:
+      type: object
+      properties:
+        fieldName:
+          type: string
+          description: Name of the custom field
+          example: "departmentCode__c"
+        fieldValue:
+          oneOf:
+            - type: string
+              description: Single value for the custom field
+              example: "IT001"
+            - type: array
+              items:
+                type: string
+              description: Array of values for the custom field
+              example: ["testing_1234", "abc"]
+          description: Value(s) for the custom field. Can be a single string or array of strings.
+      required: ["fieldName", "fieldValue"]
+    description: List of custom field objects with field name and value. Each object will be converted to fieldName:fieldValue format.
+    example:
+      - fieldName: "departmentCode__c"
+        fieldValue: "IT001"
+      - fieldName: "employeeLevel__c"
+        fieldValue: "senior"
+      - fieldName: "projectIds__c"
+        fieldValue: ["testing_1234", "abc"]
