@@ -1,0 +1,38 @@
+description: "Bad Request - Invalid Input"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Response status
+          example: "error"
+        message:
+          type: string
+          description: Error message
+          example: "The input provided is invalid."
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Specific error message
+                example: "Invalid birth anniversary date range format"
+              code:
+                type: string
+                description: Error code
+                example: "INVALID_INPUT"
+            required: ["message", "code"]
+          description: Array of specific error details
+        timestamp:
+          type: integer
+          description: Response timestamp
+          example: 1761571631200
+        delay:
+          type: number
+          description: Response delay in seconds
+          example: 30.421958
+      required: ["status", "message", "errors", "timestamp", "delay"]
