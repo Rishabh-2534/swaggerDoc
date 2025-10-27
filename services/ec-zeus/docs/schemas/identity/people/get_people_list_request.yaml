@@ -21,7 +21,7 @@ properties:
   q:
     type: string
     description: Query string for searching users (supported firstname and lastname).
-    example: "abc"
+    example: "Simran"
   username:
     type: array
     items:
