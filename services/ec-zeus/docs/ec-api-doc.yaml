@@ -123,6 +123,8 @@ paths:
         $ref: "./paths/content/user/site_page_categories.yaml"
     /content/sites/{site_id}/page-categories/{category_id}:
         $ref: "./paths/content/user/site_page_category_by_id.yaml"
+    /content/sites/content/bulk-ops/{opType}/{ackId}/status:
+        $ref: "./paths/content/user/bulk_operations_status.yaml"
 
     # Files
     /content/static/signedurl/upload:
@@ -163,6 +165,8 @@ paths:
         $ref: "./paths/feed/user/feed/create_feed.yaml"
     /wfeed/feeds/{feedId}:
         $ref: "./paths/feed/user/feed/update_delete_feed.yaml"
+    /rfeed/feeds:
+        $ref: "./paths/feed/user/feed/get_feeds.yaml"
     /rfeed/feeds/{feedId}:
         $ref: "./paths/feed/user/feed/feed_by_id.yaml"
 
