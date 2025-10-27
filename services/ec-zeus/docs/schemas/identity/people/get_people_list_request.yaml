@@ -322,3 +322,24 @@ properties:
       required: ["city"]
     description: List of location objects with city and optional state.
     example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}, {"city": "Amaravati", "state": "Maharashtra", "country": "India"}]
+  customFields:
+    type: array
+    items:
+      type: object
+      properties:
+        fieldName:
+          type: string
+          description: Name of the custom field
+          example: "departmentCode__c"
+        fieldValue:
+          type: string
+          description: Value for the custom field
+          example: "IT001"
+      required: ["fieldName", "fieldValue"]
+    description: List of custom field objects with field name and value. Each object will be converted to fieldName:fieldValue format.
+    example:
+      - fieldName: "departmentCode__c"
+        fieldValue: "IT001"
+      - fieldName: "employeeLevel__c"
+        fieldValue: "senior"
+
