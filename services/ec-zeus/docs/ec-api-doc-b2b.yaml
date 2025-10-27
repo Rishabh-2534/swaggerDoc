@@ -92,7 +92,7 @@ paths:
     /b2b/content/sites/content/bulk-ops/{opType}/{ackId}/status:
         $ref: "./paths/content/b2b/bulk_operations_status.yaml"
     /b2b/content/sites/content/bulk-ops/{opType}:
-        $ref: "./paths/content/b2b/add_bulk_operation_file.yaml"
+        $ref: "./paths/content/b2b/add_bulk_author_change_file.yaml"
         
     # Files
     /b2b/content/static/signedurl/upload:
