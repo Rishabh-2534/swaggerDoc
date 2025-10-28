@@ -123,8 +123,6 @@ paths:
         $ref: "./paths/content/user/site_page_categories.yaml"
     /content/sites/{site_id}/page-categories/{category_id}:
         $ref: "./paths/content/user/site_page_category_by_id.yaml"
-    /content/sites/content/bulk-ops/{opType}/{ackId}/status:
-        $ref: "./paths/content/user/bulk_operations_status.yaml"
 
     # Files
     /content/static/signedurl/upload:
