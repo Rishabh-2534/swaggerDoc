@@ -27,9 +27,11 @@ properties:
     type: string
     nullable: true
     description: Type of file being uploaded
-    example: "bulk-ops"
+    example: "authors"
     enum:
-      - bulk-ops
+      - content
+      - topics
+      - authors
   uploadContext:
     type: string
     nullable: true
