@@ -103,7 +103,7 @@ properties:
     description: IDs of the Content to search for
     items:
       type: string
-  isAuthorCsvExportRequest:
+  downloadChangeContentAuthorCsv:
     type: boolean
     example: false
     default: false
