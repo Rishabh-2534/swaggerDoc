@@ -138,19 +138,3 @@
   schema:
     type: integer
   required: false
-- name: isAuthorCsvExportRequest
-  in: query
-  description: Flag to indicate if this is a download author CSV request
-  schema:
-    type: boolean
-    example: false
-    default: false
-  required: false
-- name: requestedBy
-  in: query
-  description: ID of the user who requested the bulk operation (required when isAuthorCsvExportRequest is true)
-  schema:
-    type: string
-    format: uuid
-    example: "e0853f94-c46d-41ca-89e1-5550a3638490"
-  required: false
