@@ -12,8 +12,6 @@ tags:
       description: Everything about Authorization
     - name: Content
       description: Everything about Content
-    - name: Feed
-      description: Everything about Feed
     - name: Files
       description: Everything about Files
     - name: Recognition
@@ -99,12 +97,6 @@ paths:
     # Recognition list
     /b2b/recognition/list:
         $ref: "./paths/recognition/get_list.yaml"
-
-    # Feed
-    /b2b/wfeed/feeds:
-        $ref: "./paths/feed/b2b/feed/create_feed.yaml"
-    /b2b/wfeed/feeds/{feedId}:
-        $ref: "./paths/feed/b2b/feed/update_feed.yaml"
 
 components:
     securitySchemes:
