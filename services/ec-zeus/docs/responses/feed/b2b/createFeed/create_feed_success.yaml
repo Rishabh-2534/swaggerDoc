@@ -19,5 +19,5 @@ content:
               description: Unique identifier of the newly created feed
         message:
           type: string
-          example: Feed created successfully
+          example: Feed created successfully via B2B API
           description: Descriptive message about the operation result
