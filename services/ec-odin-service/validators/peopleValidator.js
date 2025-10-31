@@ -113,7 +113,6 @@ const getPeopleValidator = (req, res, next) => {
   });
   utils.validateRequest(req, res, next, schema, 0);
 };
-
 const updatePeopleSettingsValidator = (req, res, next) => {
   const schema = Joi.object({
     aboutme: Joi.string().allow(null).optional(),
