@@ -114,45 +114,6 @@ const getPeopleValidator = (req, res, next) => {
   utils.validateRequest(req, res, next, schema, 0);
 };
 
-/**
- * Validates anniversary date ranges (workAnniversary and birthAnniversary)
- * Ensures the difference between start and end dates is not more than 90 days
- */
-const validateAnniversaryRanges = (req, res, next) => {
-  const errors = [];
-
-  // Validate workAnniversary if present
-  if (req.body.workAnniversary || req.query.workAnniversary) {
-    const workAnniversary = req.body.workAnniversary || req.query.workAnniversary;
-    const error = utils.validateAnniversaryDateRange(
-      workAnniversary,
-      'workAnniversary',
-    );
-    if (error) {
-      errors.push(error);
-    }
-  }
-
-  // Validate birthAnniversary if present
-  if (req.body.birthAnniversary || req.query.birthAnniversary) {
-    const birthAnniversary =
-      req.body.birthAnniversary || req.query.birthAnniversary;
-    const error = utils.validateAnniversaryDateRange(
-      birthAnniversary,
-      'birthAnniversary',
-    );
-    if (error) {
-      errors.push(error);
-    }
-  }
-
-  if (errors.length > 0) {
-    return response.invalidParam(res, errors[0].message);
-  }
-
-  return next();
-};
-
 const updatePeopleSettingsValidator = (req, res, next) => {
   const schema = Joi.object({
     aboutme: Joi.string().allow(null).optional(),
@@ -192,5 +153,4 @@ const updatePeopleSettingsValidator = (req, res, next) => {
 module.exports = {
   updatePeopleSettingsValidator,
   getPeopleValidator,
-  validateAnniversaryRanges,
 };
