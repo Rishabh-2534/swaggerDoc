@@ -102,9 +102,5 @@ properties:
     type: array
     description: IDs of the Content to search for
     items:
-      type: string
-  isAuthorCsvExportRequest:
-    type: boolean
-    example: false
-    default: false
-    description: Flag to indicate if this is a download author CSV request
+      type: string 
+  
