@@ -1,4 +1,17 @@
 type: object
+description: >
+  Request schema for getting a list of people with filtering and pagination options.
+  You can filter by standard fields (like department, firstName, email) or custom fields 
+  (ending with __c, like team__c). Custom fields must be specified as arrays of strings.
+  
+  Example request payload showing filter applied on a standard field (department) and a custom field (team__c):
+  The query finds users in one of the two Marketing department teams.
+  
+  {
+    "pageSize": 10,
+    "department": ["Marketing"],
+    "team__c": ["Branding Brainiacs", "Ad-Vengers"]
+  }
 properties:
   sortBy:
     type: string
@@ -14,8 +27,9 @@ properties:
     maximum: 200
     example: 16
   pageToken:
-    type: integer
-    description: Token to retrieve the next page of results. Default value is 0.
+    type: string
+    description: A cursor to use in pagination, must be a non-negative number as string.
+    example: "1"
   q:
     type: string
     description: Query string for searching users (supports first name and last name).

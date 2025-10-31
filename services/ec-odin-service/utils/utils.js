@@ -698,6 +698,54 @@ const checkResultTypeParamValue = (req, res) => {
   }
 };
 
+/**
+ * Validate anniversary date range (workAnniversary or birthAnniversary)
+ * Checks if the difference between start and end dates is not more than 90 days
+ * @param {string|object} anniversaryValue - Either a relative date string or an object with start/end dates
+ * @param {string} fieldName - Name of the field (e.g., 'workAnniversary', 'birthAnniversary')
+ * @returns {object|null} - Returns error object if validation fails, null if valid
+ */
+const validateAnniversaryDateRange = (anniversaryValue, fieldName) => {
+  // If it's a relative date string (e.g., "20d", "2m"), skip validation
+  // as the range is implied by the relative date
+  if (typeof anniversaryValue === 'string') {
+    return null;
+  }
+
+  // If it's an object with start and end dates
+  if (
+    anniversaryValue &&
+    typeof anniversaryValue === 'object' &&
+    anniversaryValue.start &&
+    anniversaryValue.end
+  ) {
+    const startDate = new Date(anniversaryValue.start);
+    const endDate = new Date(anniversaryValue.end);
+
+    // Check if dates are valid
+    if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime())) {
+      return {
+        message: `Invalid date format for ${fieldName}. Dates must be in YYYY-MM-DD format.`,
+        code: 'INVALID_DATE_FORMAT',
+      };
+    }
+
+    // Calculate difference in milliseconds and convert to days
+    const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    // Check if difference is more than 90 days
+    if (diffDays > 90) {
+      return {
+        message: `The difference between start and end dates for ${fieldName} cannot be more than 90 days. Current difference: ${diffDays} days.`,
+        code: 'INVALID_DATE_RANGE',
+      };
+    }
+  }
+
+  return null;
+};
+
 module.exports = {
   getRedirectUri,
   getSfConnection,
@@ -723,4 +771,5 @@ module.exports = {
   makeTextBodyForVideoUpload,
   checkResultTypeParamValue,
   fetchContentForApproval,
+  validateAnniversaryDateRange,
 };
