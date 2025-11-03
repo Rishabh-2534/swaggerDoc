@@ -1,27 +1,39 @@
 type: object
+description: >
+  Request schema for getting a list of people with filtering and pagination options.
+  You can filter by standard fields (like department, firstName, email) or custom fields 
+  (ending with __c, like team__c). Custom fields must be specified as arrays of strings.
+  
+  Example request payload showing filter applied on a standard field (department) and a custom field (team__c):
+  The query finds users in one of the two Marketing department teams.
+  
+  {
+    "pageSize": 10,
+    "department": ["Marketing"],
+    "team__c": ["Branding Brainiacs", "Ad-Vengers"]
+  }
 properties:
   sortBy:
     type: string
-    description: List of fields to sort by.
+    description: List of fields to sort by. If sortBy is not provided, the default sort will be by userId.
     example: firstName
   sortOrder:
     type: string
-    description: sort order (asc or desc).
-    example: ASC/DESC
+    description: Order in which to sort the results. Valid values are ASC (ascending) or DESC (descending).
+    example: DESC 
   pageSize:
     type: integer
-    description: Number of results to return.
+    description: Number of items per page. Default value is 10.
     maximum: 200
     example: 16
   pageToken:
-    type: integer
-    description: >
-      Page token to get the next page of results. (can also be sent as `offset`)
-      should be a string returned as `nextPageToken` from previous page request
+    type: string
+    description: A cursor to use in pagination, must be a non-negative number as string.
+    example: "1"
   q:
     type: string
-    description: Query string for searching users (supported firstname and lastname).
-    example: "Simran"
+    description: Query string for searching users (supports first name and last name).
+    example: "abc"
   username:
     type: array
     items:
@@ -227,7 +239,7 @@ properties:
         pattern: "^(\\d+)(d|m|M|w|y)$"
         description: Relative date filter for work anniversary (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
         example: "20d"
-    description: Filter by work anniversary date range. Can be either an object with start/end dates or a relative date string.
+    description: Filter by work anniversary date range. Can be either an object with start/end dates or a relative date string. The difference between start and end dates cannot be more than 90 days.
   birthAnniversary:
     oneOf:
       - type: object
@@ -247,7 +259,7 @@ properties:
         pattern: "^(\\d+)(d|m|M|w|y)$"
         description: Relative date filter for birth anniversary (e.g., "60d" for 60 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
         example: "60d"
-    description: Filter by birth anniversary date range. Can be either an object with start/end dates or a relative date string.
+    description: Filter by birth anniversary date range. Can be either an object with start/end dates or a relative date string. The difference between start and end dates cannot be more than 90 days.
   managerId:
     type: array
     items:
@@ -260,12 +272,6 @@ properties:
       type: string
     description: List of assistant IDs to filter by.
     example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
-  payCurrency:
-    type: array
-    items:
-      type: string
-    description: List of payment currencies to filter by.
-    example: ["PYG", "ARS"]
   pronouns:
     type: array
     items:
@@ -320,39 +326,16 @@ properties:
           description: Country name
           example: "India"
       required: ["city"]
-    description: List of location objects with city and optional state.
+    description: List of location objects with city and optional state and country.
     example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}, {"city": "Amaravati", "state": "Maharashtra", "country": "India"}]
-  customFields:
+  customField:
     type: array
     items:
-      type: object
-      properties:
-        fieldName:
-          type: string
-          description: Name of the custom field
-          example: "departmentCode__c"
-        fieldValue:
-          oneOf:
-            - type: string
-              description: Single value for the custom field
-              example: "IT001"
-            - type: array
-              items:
-                type: string
-              description: Array of values for the custom field
-              example: ["testing_1234", "abc"]
-          description: Value(s) for the custom field. Can be a single string or array of strings.
-      required: ["fieldName", "fieldValue"]
-    description: List of custom field objects with field name and value. Each object will be converted to fieldName:fieldValue format.
-    example:
-      - fieldName: "departmentCode__c"
-        fieldValue: "IT001"
-      - fieldName: "employeeLevel__c"
-        fieldValue: "senior"
-      - fieldName: "projectIds__c"
-        fieldValue: ["testing_1234", "abc"]
+      type: string
+      description: Custom field ending with __c, must be an array of strings.
+      example: ["value1", "value2"]
   includeTotal:
     type: boolean
-    description: Whether to include the total count in the response
+    description: Whether to include the total user count in the response
     default: false
     example: true
