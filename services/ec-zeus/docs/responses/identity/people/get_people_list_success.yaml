@@ -1,328 +1,205 @@
-type: object
-description: >
-  Request schema for getting a list of people with filtering and pagination options.
-  
-properties:
-  sortBy:
-    type: string
-    description: List of fields to sort by. If sortBy is not provided, the default sort will be by userId.
-    example: firstName
-  sortOrder:
-    type: string
-    description: Order in which to sort the results. Valid values are ASC (ascending) or DESC (descending).
-    example: DESC 
-  pageSize:
-    type: integer
-    description: Number of items per page. Default value is 10.
-    maximum: 200
-    example: 16
-  pageToken:
-    type: string
-    description: A cursor to use in pagination. Should be nextPageToken received in previous page response.
-  includeTotal:
-    type: boolean
-    description: Whether to include the total user count in the response
-    default: false
-    example: true
-  q:
-    type: string
-    description: Query string for searching users (supports first name and last name).
-    example: "abc"
-  # Is this controlled by tenant fields settings
-  # Ideally should be allowed only if available in the UI and is marked
-  # as user displayable.
-  #username:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of usernames to filter by.
-  #  example: ["john.doe", "jane.smith"]
-  # firstName -> extn are all not filterable
-  #firstName:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of first names to filter by.
-  #  example: ["John", "Jane"]
-  #lastName:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of last names to filter by.
-  #  example: ["Doe", "Smith"]
-  #email:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of email addresses to filter by.
-  #  example: ["john@example.com", "jane@example.com"]
-  #mobile:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of mobile numbers to filter by.
-  #  example: ["+1234567890", "+0987654321"]
-  #phone:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of phone numbers to filter by.
-  #  example: ["+1234567890", "+0987654321"]
-  #extn:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of phone extensions to filter by.
-  #  example: ["123", "456"]
-  #
-  # This cannot be exact match and is not filterable per
-  # tenant_fields record as well
-  #about:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of about descriptions to filter by.
-  #  example: ["Software Engineer", "Product Manager"]
-  #
-  # This should change to mySegmentOnly: true/false
-  #segmentId:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of segment IDs to filter by.
-  #  example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
-  #
-  # Tenant fields record marks this is as not filterable
-  #locale:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of locales to filter by.
-  #  example: ["en-US", "en-GB"]
-  #
-  # Being directory listing API we should not allow this
-  #licenseType:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of license types to filter by.
-  #  example: ["Premium", "Basic"]
-  #
-  # Should be simply peopleCategory
-  #peopleCategoryId:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of people category names to filter by.
-  #  example: ["Us Team"]
-  timezone:
-    type: array
-    items:
-      type: string
-    description: List of timezones to filter by.
-    example: ["Asia/Kolkata"]
-  # Should be simply expertise
-  #expertiseId:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of expertise names to filter by.
-  #  example: ["Java"]
-  title:
-    type: array
-    items:
-      type: string
-    description: List of titles to filter by.
-    example: ["Software Developer"]
-  userType:
-    type: array
-    items:
-      type: string
-    description: List of user types to filter by.
-    example: ["Contractor"]
-  division:
-    type: array
-    items:
-      type: string
-    description: List of divisions to filter by.
-    example: ["Developer"]
-  department:
-    type: array
-    items:
-      type: string
-    description: List of departments to filter by.
-    example: ["Engineering"]
-  businessUnit:
-    type: array
-    items:
-      type: string
-    description: List of business units to filter by.
-    example: ["Tata"]
-  companyName:
-    type: array
-    items:
-      type: string
-    description: List of company names to filter by.
-    example: ["simpplr"]
-  # tenant fields marks this as not filterable
-  #employeeNumber:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of employee numbers to filter by.
-  #  example: ["EMP001", "EMP002"]
-  startDate:
-    oneOf:
-      - type: object
-        properties:
-          start:
-            type: string
-            format: date
-            description: Start date for start date filter
-            example: "2024-01-01"
-          end:
-            type: string
-            format: date
-            description: End date for start date filter
-            example: "2024-12-31"
-        required: ["start", "end"]
-      - type: string
-        pattern: "^(\\d+)(d|m|M|w|y)$"
-        description: Relative date filter for start date (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
-        example: "20d"
-    description: Filter by start date range. Can be either an object with start/end dates or a relative date string.
-  workAnniversary:
-    oneOf:
-      - type: object
-        properties:
-          start:
-            type: string
-            format: date
-            description: Start date for work anniversary filter
-            example: "2024-01-01"
-          end:
-            type: string
-            format: date
-            description: End date for work anniversary filter
-            example: "2024-12-31"
-        required: ["start", "end"]
-      - type: string
-        pattern: "^(\\d+)(d|m|M|w|y)$"
-        description: Relative date filter for work anniversary (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
-        example: "20d"
-    description: Filter by work anniversary date range. Can be either an object with start/end dates or a relative date string. The difference between start and end dates cannot be more than 90 days.
-  birthAnniversary:
-    oneOf:
-      - type: object
-        properties:
-          start:
-            type: string
-            format: date
-            description: Start date for birth anniversary filter
-            example: "2024-01-01"
-          end:
-            type: string
-            format: date
-            description: End date for birth anniversary filter
-            example: "2024-12-31"
-        required: ["start", "end"]
-      - type: string
-        pattern: "^(\\d+)(d|m|M|w|y)$"
-        description: Relative date filter for birth anniversary (e.g., "60d" for 60 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
-        example: "60d"
-    description: Filter by birth anniversary date range. Can be either an object with start/end dates or a relative date string. The difference between start and end dates cannot be more than 90 days.
-  # TODO: We may have to support filtering on 
-  # manager email and other login identifiers
-  # Open these up when we also support userId filter
-  #managerId:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of manager IDs to filter by.
-  #  example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
-  #assistantId:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of assistant IDs to filter by.
-  #  example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
-  #
-  # Tenant field record has this marked as false for is_filterable
-  #pronouns:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of pronouns to filter by.
-  #  example: ["she_her_hers", "he_him_his"]
-  state:
-    type: array
-    items:
-      type: string
-    description: List of states to filter by.
-    example: ["New Delhi", "Uttarakhand"]
-  city:
-    type: array
-    items:
-      type: string
-    description: List of cities to filter by.
-    example: ["Delhi", "Mumbai"]
-  country:
-    type: array
-    items:
-      type: string
-    description: List of countries to filter by.
-    example: ["India", "USA"]
-  # is_filterable is false for these
-  #addressLine1:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of address line 1 values to filter by.
-  #  example: ["Road no 1"]
-  #addressLine2:
-  #  type: array
-  #  items:
-  #    type: string
-  #  description: List of address line 2 values to filter by.
-  #  example: ["road no 2"]
-  #
-  location:
-    type: array
-    items:
+description: "Success"
+content:
+  application/json:
+    schema:
       type: object
       properties:
-        city:
+        status:
           type: string
-          description: City name
-          example: "Delhi"
-        state:
+          description: Response status
+          example: "success"
+        message:
           type: string
-          description: State name
-          example: "Maharashtra"
-        country:
-          type: string
-          description: Country name
-          example: "India"
-      required: ["city"]
-    description: >
-      List of location objects.
-
-
-      One of the entries should match for user record to appear in response.
-
-
-      Atleast one of city, state & country should be in an entry.
-
-
-      With in an entry all given props (city, state, country) should match what set for a user.
-    example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}, {"city": "Amaravati", "state": "Maharashtra", "country": "India"}]
-  customField:
-    type: array
-    description: >
-      Filter property name will be UUID or string endig with `__c`.
-      
-
-      Value passed must be an array of strings.
-    items:
-      type: string
-      example: ["value1", "value2"]
+          description: Success message
+          example: "EC users fetched successfully"
+        result:
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the user
+                    example: "85dcc783-6afd-4871-9ad6-637abb29841b"
+                  username:
+                    type: string
+                    description: User's username/email
+                    example: "ankur.gupta+test@simpplr.com"
+                  status:
+                    type: string
+                    description: User's status
+                    example: "Active"
+                  firstName:
+                    type: string
+                    description: User's first name
+                    example: "Am Edit User"
+                  lastName:
+                    type: string
+                    description: User's last name
+                    example: "Role Testing"
+                  pronouns:
+                    type: string
+                    description: User's preferred pronouns
+                    example: "he_him_his"
+                  pronunciationUrl:
+                    type: string
+                    description: URL to pronunciation audio
+                    nullable: true
+                    example: null
+                  extn:
+                    type: string
+                    description: Phone extension
+                    nullable: true
+                    example: null
+                  photo:
+                    type: string
+                    description: Profile photo path
+                    example: "/content/o/286d4be1-0232-462e-ac01-4049e4a53dae"
+                  coverImage:
+                    type: string
+                    description: Cover image path
+                    example: "/content/o/4702bd35-8c54-411f-8297-6f6be3001e96"
+                  createdOn:
+                    type: string
+                    format: date-time
+                    description: User creation date
+                    example: "2024-10-16T02:16:38.763Z"
+                  modifiedOn:
+                    type: string
+                    format: date-time
+                    description: User last modified date
+                    example: "2025-10-14T09:10:08.075Z"
+                  mobile:
+                    type: string
+                    description: User's mobile number
+                    nullable: true
+                    example: null
+                  phone:
+                    type: string
+                    description: User's phone number
+                    nullable: true
+                    example: null
+                  about:
+                    type: string
+                    description: JSON string containing user's about information
+                    example: '{"type":"tiptap","value":{"type":"doc","content":[{"type":"paragraph","attrs":{"textAlign":"left"},"content":[{"type":"text","text":"Am Edit User Role Testing hasnt added any about text"}]}]}}'
+                  birthDayDay:
+                    type: string
+                    description: Birth day
+                    example: "08"
+                  birthDayMonth:
+                    type: string
+                    description: Birth month
+                    example: "08"
+                  linkedinUrl:
+                    type: string
+                    description: LinkedIn profile URL
+                    nullable: true
+                    example: null
+                  twitterUrl:
+                    type: string
+                    description: Twitter profile URL
+                    nullable: true
+                    example: null
+                  facebookUrl:
+                    type: string
+                    description: Facebook profile URL
+                    nullable: true
+                    example: null
+                  youtubeUrl:
+                    type: string
+                    description: YouTube channel URL
+                    nullable: true
+                    example: null
+                  instagramUrl:
+                    type: string
+                    description: Instagram profile URL
+                    nullable: true
+                    example: null
+                  addressLine2:
+                    type: string
+                    description: Address line 2
+                    nullable: true
+                    example: null
+                  city:
+                    type: string
+                    description: User's city
+                    example: "Delhi"
+                  state:
+                    type: string
+                    description: User's state
+                    example: "Delhi"
+                  postalCode:
+                    type: string
+                    description: Postal/ZIP code
+                    nullable: true
+                    example: null
+                  country:
+                    type: string
+                    description: User's country
+                    example: "India"
+                  title:
+                    type: string
+                    description: User's job title
+                    nullable: true
+                    example: null
+                  businessUnit:
+                    type: string
+                    description: Business unit
+                    nullable: true
+                    example: null
+                  companyName:
+                    type: string
+                    description: Company name
+                    example: "Simpplr"
+                  startDate:
+                    type: string
+                    format: date
+                    description: Start date
+                    example: "2025-10-03"
+                  userType:
+                    type: string
+                    description: User type
+                    nullable: true
+                    example: null
+                  peopleCategory:
+                    type: string
+                    description: People category
+                    example: "Country-US"
+                  segmentId:
+                    type: string
+                    description: Segment ID
+                    example: "ebeb0722-a38b-47b7-aabe-c867d9567f33"
+                  timezone:
+                    type: string
+                    description: User's timezone
+                    example: "America/Los_Angeles"
+                  locale:
+                    type: string
+                    description: User's locale
+                    example: "en-US"
+                  managerId:
+                    type: string
+                    description: Manager ID
+                    nullable: true
+                    example: null
+                  assistantId:
+                    type: string
+                    description: Assistant ID
+                    nullable: true
+                    example: "84c542ac-6fdf-4d37-8788-b0c4546eb9fa"
+            total:
+              type: integer
+              description: Total number of users matching the criteria (only included when includeTotal=true in request)
+              example: 2
+            pageToken:
+              type: number
+              description: Next page token
+              example: 1
+        responseTimeStamp:
+          type: integer
+          description: Response timestamp
+          example: 1761108072626
