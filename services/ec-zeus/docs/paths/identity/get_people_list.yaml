@@ -1,9 +1,25 @@
 post:
-  operationId: getPeopleList
+  operationId: listPeople
   tags:
     - People
-  summary: Get people list with search or filter
-  description: This API allows you to search/list people
+  summary: List people with search or filter
+  description: >
+    You can filter by standard fields (like `department`, `firstName`, `email`) or custom fields 
+    (ending with `__c`, like `team__c`).
+
+
+    Example request payload showing filter applied on a standard field (department) and a custom field (team__c):
+    The query finds users in one of the two Marketing department teams.
+
+    ```
+
+    {
+      "pageSize": 10,
+      "department": ["Marketing"],
+      "team__c": ["Branding Brainiacs", "Ad-Vengers"]
+    }
+
+    ```
   requestBody:
     description: Get people list
     content:
