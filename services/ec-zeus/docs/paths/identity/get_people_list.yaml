@@ -15,7 +15,7 @@ post:
     "200":
       $ref: '../../responses/identity/people/get_people_list_success.yaml'
     "400":
-      $ref: '../../responses/identity/people/people_error.yaml'
+      $ref: '../../responses/identity/people/get_people_list_error.yaml'
     "401":
       $ref: '../../responses/common/unauthorized.yaml'
     "403":
