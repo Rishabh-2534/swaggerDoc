@@ -4,7 +4,7 @@ post:
     - People
   summary: List people with search or filter
   description: >
-    You can filter by standard fields (like `department`, `firstName`, `email`) or custom fields 
+    You can filter by standard fields (like `department`, `division`, `title`) or custom fields 
     (ending with `__c`, like `team__c`).
 
 
