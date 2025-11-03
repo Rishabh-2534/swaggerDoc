@@ -1,17 +1,7 @@
 type: object
 description: >
   Request schema for getting a list of people with filtering and pagination options.
-  You can filter by standard fields (like department, firstName, email) or custom fields 
-  (ending with __c, like team__c). Custom fields must be specified as arrays of strings.
   
-  Example request payload showing filter applied on a standard field (department) and a custom field (team__c):
-  The query finds users in one of the two Marketing department teams.
-  
-  {
-    "pageSize": 10,
-    "department": ["Marketing"],
-    "team__c": ["Branding Brainiacs", "Ad-Vengers"]
-  }
 properties:
   sortBy:
     type: string
@@ -28,96 +18,116 @@ properties:
     example: 16
   pageToken:
     type: string
-    description: A cursor to use in pagination, must be a non-negative number as string.
-    example: "1"
+    description: A cursor to use in pagination. Should be nextPageToken received in previous page response.
+  includeTotal:
+    type: boolean
+    description: Whether to include the total user count in the response
+    default: false
+    example: true
   q:
     type: string
     description: Query string for searching users (supports first name and last name).
     example: "abc"
-  username:
-    type: array
-    items:
-      type: string
-    description: List of usernames to filter by.
-    example: ["john.doe", "jane.smith"]
-  firstName:
-    type: array
-    items:
-      type: string
-    description: List of first names to filter by.
-    example: ["John", "Jane"]
-  lastName:
-    type: array
-    items:
-      type: string
-    description: List of last names to filter by.
-    example: ["Doe", "Smith"]
-  email:
-    type: array
-    items:
-      type: string
-    description: List of email addresses to filter by.
-    example: ["john@example.com", "jane@example.com"]
-  mobile:
-    type: array
-    items:
-      type: string
-    description: List of mobile numbers to filter by.
-    example: ["+1234567890", "+0987654321"]
-  phone:
-    type: array
-    items:
-      type: string
-    description: List of phone numbers to filter by.
-    example: ["+1234567890", "+0987654321"]
-  extn:
-    type: array
-    items:
-      type: string
-    description: List of phone extensions to filter by.
-    example: ["123", "456"]
-  about:
-    type: array
-    items:
-      type: string
-    description: List of about descriptions to filter by.
-    example: ["Software Engineer", "Product Manager"]
-  segmentId:
-    type: array
-    items:
-      type: string
-    description: List of segment IDs to filter by.
-    example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
-  locale:
-    type: array
-    items:
-      type: string
-    description: List of locales to filter by.
-    example: ["en-US", "en-GB"]
-  licenseType:
-    type: array
-    items:
-      type: string
-    description: List of license types to filter by.
-    example: ["Premium", "Basic"]
-  peopleCategoryId:
-    type: array
-    items:
-      type: string
-    description: List of people category names to filter by.
-    example: ["Us Team"]
+  # Is this controlled by tenant fields settings
+  # Ideally should be allowed only if available in the UI and is marked
+  # as user displayable.
+  #username:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of usernames to filter by.
+  #  example: ["john.doe", "jane.smith"]
+  # firstName -> extn are all not filterable
+  #firstName:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of first names to filter by.
+  #  example: ["John", "Jane"]
+  #lastName:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of last names to filter by.
+  #  example: ["Doe", "Smith"]
+  #email:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of email addresses to filter by.
+  #  example: ["john@example.com", "jane@example.com"]
+  #mobile:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of mobile numbers to filter by.
+  #  example: ["+1234567890", "+0987654321"]
+  #phone:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of phone numbers to filter by.
+  #  example: ["+1234567890", "+0987654321"]
+  #extn:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of phone extensions to filter by.
+  #  example: ["123", "456"]
+  #
+  # This cannot be exact match and is not filterable per
+  # tenant_fields record as well
+  #about:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of about descriptions to filter by.
+  #  example: ["Software Engineer", "Product Manager"]
+  #
+  # This should change to mySegmentOnly: true/false
+  #segmentId:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of segment IDs to filter by.
+  #  example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
+  #
+  # Tenant fields record marks this is as not filterable
+  #locale:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of locales to filter by.
+  #  example: ["en-US", "en-GB"]
+  #
+  # Being directory listing API we should not allow this
+  #licenseType:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of license types to filter by.
+  #  example: ["Premium", "Basic"]
+  #
+  # Should be simply peopleCategory
+  #peopleCategoryId:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of people category names to filter by.
+  #  example: ["Us Team"]
   timezone:
     type: array
     items:
       type: string
     description: List of timezones to filter by.
     example: ["Asia/Kolkata"]
-  expertiseId:
-    type: array
-    items:
-      type: string
-    description: List of expertise names to filter by.
-    example: ["Java"]
+  # Should be simply expertise
+  #expertiseId:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of expertise names to filter by.
+  #  example: ["Java"]
   title:
     type: array
     items:
@@ -154,12 +164,13 @@ properties:
       type: string
     description: List of company names to filter by.
     example: ["simpplr"]
-  employeeNumber:
-    type: array
-    items:
-      type: string
-    description: List of employee numbers to filter by.
-    example: ["EMP001", "EMP002"]
+  # tenant fields marks this as not filterable
+  #employeeNumber:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of employee numbers to filter by.
+  #  example: ["EMP001", "EMP002"]
   startDate:
     oneOf:
       - type: object
@@ -180,46 +191,6 @@ properties:
         description: Relative date filter for start date (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
         example: "20d"
     description: Filter by start date range. Can be either an object with start/end dates or a relative date string.
-  createdOn:
-    oneOf:
-      - type: object
-        properties:
-          start:
-            type: string
-            format: date
-            description: Start date for created date filter
-            example: "2024-01-01"
-          end:
-            type: string
-            format: date
-            description: End date for created date filter
-            example: "2024-12-31"
-        required: ["start", "end"]
-      - type: string
-        pattern: "^(\\d+)(d|m|M|w|y)$"
-        description: Relative date filter for created date (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
-        example: "20d"
-    description: Filter by created date range. Can be either an object with start/end dates or a relative date string.
-  modifiedOn:
-    oneOf:
-      - type: object
-        properties:
-          start:
-            type: string
-            format: date
-            description: Start date for modified date filter
-            example: "2024-01-01"
-          end:
-            type: string
-            format: date
-            description: End date for modified date filter
-            example: "2024-12-31"
-        required: ["start", "end"]
-      - type: string
-        pattern: "^(\\d+)(d|m|M|w|y)$"
-        description: Relative date filter for modified date (e.g., "20d" for 20 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
-        example: "20d"
-    description: Filter by modified date range. Can be either an object with start/end dates or a relative date string.
   workAnniversary:
     oneOf:
       - type: object
@@ -260,24 +231,29 @@ properties:
         description: Relative date filter for birth anniversary (e.g., "60d" for 60 days, "2m" for 2 months, "1M" for 1 month, "3w" for 3 weeks, "1y" for 1 year)
         example: "60d"
     description: Filter by birth anniversary date range. Can be either an object with start/end dates or a relative date string. The difference between start and end dates cannot be more than 90 days.
-  managerId:
-    type: array
-    items:
-      type: string
-    description: List of manager IDs to filter by.
-    example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
-  assistantId:
-    type: array
-    items:
-      type: string
-    description: List of assistant IDs to filter by.
-    example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
-  pronouns:
-    type: array
-    items:
-      type: string
-    description: List of pronouns to filter by.
-    example: ["she_her_hers", "he_him_his"]
+  # TODO: We may have to support filtering on 
+  # manager email and other login identifiers
+  # Open these up when we also support userId filter
+  #managerId:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of manager IDs to filter by.
+  #  example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
+  #assistantId:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of assistant IDs to filter by.
+  #  example: ["84c542ac-6fdf-4d37-8788-b0c4546eb9fa"]
+  #
+  # Tenant field record has this marked as false for is_filterable
+  #pronouns:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of pronouns to filter by.
+  #  example: ["she_her_hers", "he_him_his"]
   state:
     type: array
     items:
@@ -296,18 +272,20 @@ properties:
       type: string
     description: List of countries to filter by.
     example: ["India", "USA"]
-  addressLine1:
-    type: array
-    items:
-      type: string
-    description: List of address line 1 values to filter by.
-    example: ["Road no 1"]
-  addressLine2:
-    type: array
-    items:
-      type: string
-    description: List of address line 2 values to filter by.
-    example: ["road no 2"]
+  # is_filterable is false for these
+  #addressLine1:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of address line 1 values to filter by.
+  #  example: ["Road no 1"]
+  #addressLine2:
+  #  type: array
+  #  items:
+  #    type: string
+  #  description: List of address line 2 values to filter by.
+  #  example: ["road no 2"]
+  #
   location:
     type: array
     items:
@@ -326,16 +304,25 @@ properties:
           description: Country name
           example: "India"
       required: ["city"]
-    description: List of location objects with city and optional state and country.
+    description: >
+      List of location objects.
+
+
+      One of the entries should match for user record to appear in response.
+
+
+      Atleast one of city, state & country should be in an entry.
+
+
+      With in an entry all given props (city, state, country) should match what set for a user.
     example: [{"city": "Delhi"}, {"city": "Amaravati", "state": "Maharashtra"}, {"city": "Amaravati", "state": "Maharashtra", "country": "India"}]
   customField:
     type: array
+    description: >
+      Filter property name will be UUID or string endig with `__c`.
+      
+
+      Value passed must be an array of strings.
     items:
       type: string
-      description: Custom field ending with __c, must be an array of strings.
       example: ["value1", "value2"]
-  includeTotal:
-    type: boolean
-    description: Whether to include the total user count in the response
-    default: false
-    example: true
