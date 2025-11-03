@@ -26,4 +26,4 @@ jobs:
         run: |
           cd docs
           npx rdme@10 openapi upload ./ec-api-doc-dev.yaml --key=${{ secrets.DEV_README_API_KEY }} --slug=simpplr-user-api-documentation
-          npx rdme@10 openapi upload ./ec-api-doc-b2b-dev.yaml --key=${{ secrets.B2B_DEV_README_API_KEY }} --slug=simpplr-b2b-api-documentation
+          #npx rdme@10 openapi upload ./ec-api-doc-b2b-dev.yaml --key=${{ secrets.B2B_DEV_README_API_KEY }} --slug=simpplr-b2b-api-documentation
