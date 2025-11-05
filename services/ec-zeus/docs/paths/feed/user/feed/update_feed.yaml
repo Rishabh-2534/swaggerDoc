@@ -1,0 +1,29 @@
+put:
+  operationId: updateFeedUser
+  tags:
+    - Feed
+  summary: Update a feed
+  description: This API allows us to update a feed
+  parameters:
+    - name: feedId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "49502e9f-a6e6-4773-a0b4-64be9388b7b1"
+      description: The ID of the feed to update
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/feed/user/request/update_feed_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../../responses/feed/user/updateFeed/update_feed_success.yaml'
+    '400':
+      $ref: '../../../../responses/feed/user/updateFeed/update_feed_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'

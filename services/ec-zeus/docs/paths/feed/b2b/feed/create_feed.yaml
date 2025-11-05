@@ -1,0 +1,20 @@
+post:
+  operationId: createFeedB2b
+  tags:
+    - Feed
+  summary: Create a new feed via B2B API
+  description: This API allows B2B integrations to create a new feed
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/feed/b2b/request/create_feed_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../../responses/feed/b2b/createFeed/create_feed_success.yaml'
+    '400':
+      $ref: '../../../../responses/feed/b2b/createFeed/create_feed_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'
