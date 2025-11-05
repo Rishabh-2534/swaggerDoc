@@ -69,7 +69,7 @@ content:
               properties:
                 downloadUrl:
                   type: string
-                  example: "https://s3.amazonaws.com/bucket/file.csv"
+                  example: "https://example.com/bulk-operations/download/file.csv"
                   description: URL to download the result file
                 totalRecords:
                   type: integer
