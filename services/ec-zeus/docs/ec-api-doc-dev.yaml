@@ -165,7 +165,7 @@ paths:
     /wfeed/feeds:
         $ref: "./paths/feed/user/feed/create_feed.yaml"
     /wfeed/feeds/{feedId}:
-        $ref: "./paths/feed/user/feed/update_feed.yaml"
+        $ref: "./paths/feed/user/feed/update_delete_feed.yaml"
 
 components:
     schemas:

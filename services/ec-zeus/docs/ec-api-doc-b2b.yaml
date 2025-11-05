@@ -106,7 +106,7 @@ paths:
     /b2b/wfeed/feeds:
         $ref: "./paths/feed/b2b/feed/create_feed.yaml"
     /b2b/wfeed/feeds/{feedId}:
-        $ref: "./paths/feed/b2b/feed/update_feed.yaml"
+        $ref: "./paths/feed/b2b/feed/update_delete_feed.yaml"
 
 components:
     securitySchemes:
