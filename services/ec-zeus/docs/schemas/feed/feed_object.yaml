@@ -1,0 +1,144 @@
+type: object
+properties:
+  feedId:
+    type: string
+    example: 49502e9f-a6e6-4773-a0b4-64be9388b7b1
+  title:
+    type: string
+    example: Test Feed
+  description:
+    type: string
+    example: Test Description
+  type:
+    type: string
+    example: post
+  accessType:
+    type: string
+    example: public
+  createdAt:
+    type: string
+    example: 2025-01-01T00:00:00.000Z
+  modifiedAt:
+    type: string
+    example: 2025-01-01T00:00:00.000Z
+  textHtml:
+    type: string
+    example: Test HTML
+  textJson:
+    type: string
+    example: Test JSON
+  siteId:
+    type: string
+    example: 19b963b1-928b-42cd-a002-fc47827c6f58
+  variant:
+    type: string
+    example: standard
+  authoredBy:
+    type: object
+    properties:
+      userId:
+        type: string
+        example: "e5149282-2b89-4588-8b70-590ea3218e83"
+      name:
+        type: string
+        example: "Ajay Tanwar"
+      img:
+        type: string
+        example: ""
+      department:
+        type: string
+        example: ""
+      title:
+        type: string
+        example: ""
+  modifiedBy:
+    type: string
+    example: 19b963b1-928b-42cd-a002-fc47827c6f58
+  listOfAttachedFiles:
+    type: array
+    example: []
+  isDeleted:
+    type: boolean
+    example: false
+  isToxic:
+    type: boolean
+    example: false
+  lastActivityAt:
+    type: string
+    example: 2025-01-01T00:00:00.000Z
+  canEdit:
+    type: boolean
+    example: true
+  listOfMentions:
+    type: array
+    example: []
+  listOfTopics:
+    type: array
+    example: []
+  listOfFiles:
+    type: array
+    example: []
+  listOfLinks:
+    type: array
+    example: []
+  content:
+    type: string
+    nullable: true
+    example: null
+  reactionCount:
+    type: integer
+    example: 0
+  commentCount:
+    type: integer
+    example: 0
+  data:
+    type: string
+    nullable: true
+    example: null
+  shareCount:
+    type: integer
+    example: 0
+  odinFeedId:
+    type: string
+    nullable: true
+    example: null
+  moderationResult:
+    type: string
+    nullable: true
+    example: null
+  duplicateOf:
+    type: string
+    nullable: true
+    example: null
+  listOfDuplicates:
+    type: array
+    example: []
+  audiences:
+    type: array
+    example: []
+  recentComments:
+    type: object
+    properties:
+      listOfItems:
+        type: array
+        example: []
+      nextPageToken:
+        type: string
+        nullable: true
+        example: null
+  canDelete:
+    type: boolean
+    example: true
+  canShare:
+    type: boolean
+    example: true
+  canFavourite:
+    type: boolean
+    example: false
+  reactionStats:
+    type: object
+    nullable: true
+    example: null
+  canMarkDuplicate:
+    type: boolean
+    example: false
