@@ -1,0 +1,85 @@
+type: object
+properties:
+  commentId:
+    type: string
+    example: cd8d44a8-859b-487a-8316-7e0e3997a127
+  listOfFiles:
+    type: array
+    example: []
+  listOfTopics:
+    type: array
+    example: []
+  listOfMentions:
+    type: array
+    example: []
+  listOfLinks:
+    type: array
+    example: []
+  feedId:
+    type: string
+    example: 9e7194af-8186-484b-aba6-365366f9c4c4
+  canEdit:
+    type: boolean
+    example: false
+  canDelete:
+    type: boolean
+    example: false
+  isToxic:
+    type: boolean
+    example: false
+  moderationResult:
+    type: string
+    nullable: true
+    example: null
+  reactionCount:
+    type: integer
+    example: 0
+  createdAt:
+    type: string
+    example: 2025-03-12T12:20:15.027Z
+  modifiedAt:
+    type: string
+    example: 2025-03-12T12:20:15.027Z
+  modifiedBy:
+    type: string
+    example: 00ee8cfb-5879-4e19-9de9-58cf4dca1df3
+  textHtml:
+    type: string
+    nullable: true
+    example: null
+  textJson:
+    type: string
+    example: '{"type":"doc","content":[{"type":"paragraph","attrs":{"className":"","data-sw-sid":null},"content":[{"type":"text","text":"Test comment Q-3"}]}]}'
+  origin:
+    type: string
+    nullable: true
+    example: null
+  authoredBy:
+    type: object
+    properties:
+      userId:
+        type: string
+        example: "00ee8cfb-5879-4e19-9de9-58cf4dca1df3"
+      name:
+        type: string
+        example: "Diksha Gaur"
+      img:
+        type: string
+        example: ""
+      department:
+        type: string
+        example: ""
+      title:
+        type: string
+        example: ""
+  reactionStats:
+    type: object
+    nullable: true
+    example: null
+  isApproved:
+    type: boolean
+    example: false
+  canApproveComment:
+    type: boolean
+    example: false
+

@@ -1,0 +1,31 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: Comments have been fetched successfully
+        result:
+          type: object
+          properties:
+            nextPageToken:
+              type: integer
+              example: 1759911721822
+            size:
+              type: integer
+              example: 16
+            total:
+              type: integer
+              example: 17
+            listOfItems:
+              type: array
+              items:
+                $ref: '../../../../schemas/feed/comment_object.yaml'
+

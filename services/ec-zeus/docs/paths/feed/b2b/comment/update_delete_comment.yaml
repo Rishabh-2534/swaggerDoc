@@ -1,0 +1,72 @@
+
+put:
+  operationId: updateCommentB2B
+  tags:
+    - Feed
+  summary: Update comment
+  description: Use this API to update a feed comment via B2B integration
+  parameters:
+    - name: feedId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "ff411eea-55b7-41ac-87d8-572f80fdf79a"
+      description: The ID of the feed containing the comment
+    - name: commentId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "550e8400-e29b-41d4-a716-446655440000"
+      description: The ID of the comment to update or delete
+  requestBody:
+    $ref: '../../../../schemas/feed/b2b/request/update_comment_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../../responses/feed/b2b/updateComment/update_comment_success.yaml'
+    '400':
+      $ref: '../../../../responses/feed/b2b/updateComment/update_comment_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'
+
+delete:
+  operationId: deleteCommentB2B
+  tags:
+    - Feed
+  summary: Delete comment
+  description: This API allows B2B partners to delete a feed comment
+  parameters:
+    - name: feedId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "ff411eea-55b7-41ac-87d8-572f80fdf79a"
+      description: The ID of the feed containing the comment
+    - name: commentId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "550e8400-e29b-41d4-a716-446655440000"
+      description: The ID of the comment to delete
+    - name: deletedBy
+      in: query
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "e0853f94-c46d-41ca-89e1-5550a3638490"
+      description: UUID of the user who is deleting the comment
+  responses:
+    '200':
+      $ref: '../../../../responses/feed/b2b/deleteComment/delete_comment_success.yaml'
+    '400':
+      $ref: '../../../../responses/feed/b2b/deleteComment/delete_comment_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'

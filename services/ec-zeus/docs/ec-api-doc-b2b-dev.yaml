@@ -115,6 +115,12 @@ paths:
         $ref: "./paths/feed/b2b/feed/get_feeds.yaml"
     /b2b/rfeed/feeds/{feedId}:
         $ref: "./paths/feed/b2b/feed/feed_by_id.yaml"
+    /b2b/wfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/b2b/comment/create_comment.yaml"
+    /b2b/wfeed/feeds/{feedId}/comments/{commentId}:
+        $ref: "./paths/feed/b2b/comment/update_delete_comment.yaml"
+    /b2b/rfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/b2b/comment/get_comments.yaml"
 
 components:
     securitySchemes:

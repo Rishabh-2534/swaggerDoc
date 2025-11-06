@@ -1,0 +1,12 @@
+description: Request body for creating a comment
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        textHtml:
+          type: string
+          example: "<p>Test comment 2</p>"
+          description: HTML content of the comment
+    required:
+      - textHtml

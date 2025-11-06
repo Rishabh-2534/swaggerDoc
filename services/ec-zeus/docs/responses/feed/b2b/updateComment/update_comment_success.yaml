@@ -1,0 +1,21 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: "object"
+      properties:
+        status:
+          type: "string"
+          example: "SUCCESS"
+        result:
+          type: "object"
+          properties:
+            commentId:
+              type: "string"
+              example: "44fa7711-407a-4305-9dff-a01660068238"
+            feedId:
+              type: "string"
+              example: "ff411eea-55b7-41ac-87d8-572f80fdf79a"
+        message:
+          type: "string"
+          example: "Comment updated successfully."
