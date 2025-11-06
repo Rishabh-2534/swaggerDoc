@@ -1,11 +1,3 @@
-parameters:
-  - name: feedId
-    in: path
-    required: true
-    schema:
-      type: string
-      example: "ff411eea-55b7-41ac-87d8-572f80fdf79a"
-    description: ID of the feed to get comments from
 get:
   operationId: getCommentsB2B
   tags:
@@ -13,6 +5,13 @@ get:
   summary: Get comments
   description: This API allows B2B partners to retrieve comments for a feed
   parameters:
+    - name: feedId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "ff411eea-55b7-41ac-87d8-572f80fdf79a"
+      description: ID of the feed to get comments from
     - name: nextPageToken
       in: query
       required: true

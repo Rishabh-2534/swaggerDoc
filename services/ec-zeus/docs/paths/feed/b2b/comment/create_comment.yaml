@@ -13,7 +13,10 @@ post:
   summary: Create Comment
   description: This API allows B2B partners to add a comment to a feed.
   requestBody:
-    $ref: '../../../../schemas/feed/b2b/request/create_comment_request.yaml'
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/feed/b2b/request/create_comment_request.yaml'
   responses:
     '201':
       $ref: '../../../../responses/feed/b2b/createComment/create_comment_success.yaml'

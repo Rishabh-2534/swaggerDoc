@@ -13,7 +13,10 @@ post:
   description: This API allows users to add a comment to a feed.
   operationId: createCommentUser
   requestBody:
-    $ref: '../../../../schemas/feed/user/request/create_comment_request.yaml'
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/feed/user/request/create_comment_request.yaml'
   responses:
     '201':
       $ref: '../../../../responses/feed/user/createComment/create_comment_success.yaml'

@@ -21,7 +21,10 @@ put:
         example: "550e8400-e29b-41d4-a716-446655440000"
       description: The ID of the comment to update or delete
   requestBody:
-    $ref: '../../../../schemas/feed/b2b/request/update_comment_request.yaml'
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/feed/b2b/request/update_comment_request.yaml'
   responses:
     '200':
       $ref: '../../../../responses/feed/b2b/updateComment/update_comment_success.yaml'
