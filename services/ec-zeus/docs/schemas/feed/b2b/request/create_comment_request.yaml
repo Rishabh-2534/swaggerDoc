@@ -1,18 +1,15 @@
-description: Request body for creating a comment
-content:
-  application/json:
-    schema:
-      type: object
-      properties:
-        textHtml:
-          type: string
-          example: "<p>Test B2B comment</p>"
-          description: HTML content of the comment
-        createdBy:
-          type: string
-          format: uuid
-          example: "e5149282-2b89-4588-8b70-590ea3218e83"
-          description: ID of the user creating the comment
-    required:
-      - textHtml
-      - createdBy
+type: object
+properties:
+  textHtml:
+    type: string
+    example: "<p>Test B2B comment</p>"
+    description: HTML content of the comment
+  createdBy:
+    type: string
+    format: uuid
+    example: "e5149282-2b89-4588-8b70-590ea3218e83"
+    description: ID of the user creating the comment
+required:
+  - textHtml
+  - createdBy
+additionalProperties: false

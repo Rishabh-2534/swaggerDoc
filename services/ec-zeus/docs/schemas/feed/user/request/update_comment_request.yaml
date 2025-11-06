@@ -1,12 +1,9 @@
-description: Request body for updating a comment
-content:
-  application/json:
-    schema:
-      type: object
-      properties:
-        textHtml:
-          type: string
-          example: "<p>Updated comment content</p>"
-          description: Updated HTML content of the comment
-    required:
-      - textHtml
+type: object
+properties:
+  textHtml:
+    type: string
+    example: "<p>Updated user comment content</p>"
+    description: Updated HTML content of the comment
+required:
+  - textHtml
+additionalProperties: false
