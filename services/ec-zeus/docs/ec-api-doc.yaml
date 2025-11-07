@@ -169,7 +169,13 @@ paths:
         $ref: "./paths/feed/user/feed/get_feeds.yaml"
     /rfeed/feeds/{feedId}:
         $ref: "./paths/feed/user/feed/feed_by_id.yaml"
-
+    /wfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/user/comment/create_comment.yaml"
+    /wfeed/feeds/{feedId}/comments/{commentId}:
+        $ref: "./paths/feed/user/comment/update_delete_comment.yaml"
+    /rfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/user/comment/get_comments.yaml"
+     
 components:
     schemas:
         $ref: "./schemas/_index.yaml"

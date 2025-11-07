@@ -1,0 +1,15 @@
+type: object
+properties:
+  textHtml:
+    type: string
+    example: "<p>Updated B2B comment content</p>"
+    description: Updated HTML content of the comment
+  modifiedBy:
+    type: string
+    format: uuid
+    example: "e5149282-2b89-4588-8b70-590ea3218e83"
+    description: ID of the user modifying the comment
+required:
+  - textHtml
+  - modifiedBy
+additionalProperties: false

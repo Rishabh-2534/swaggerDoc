@@ -1,0 +1,29 @@
+description: Error
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: Validation failed
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+                example: INVALID_INPUT
+              message:
+                type: string
+                example: An error occurred while processing the request
+              cause:
+                type: string
+                example: nextPageToken is required
+

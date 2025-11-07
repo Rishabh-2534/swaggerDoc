@@ -1,0 +1,41 @@
+get:
+  operationId: getCommentsB2B
+  tags:
+    - Feed
+  summary: Get comments
+  description: This API allows B2B partners to retrieve comments for a feed
+  parameters:
+    - name: feedId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "ff411eea-55b7-41ac-87d8-572f80fdf79a"
+      description: ID of the feed to get comments from
+    - name: nextPageToken
+      in: query
+      required: true
+      description: |
+        Token for pagination. 
+        - For initial request, send empty string ""
+        - For subsequent requests, use the nextPageToken returned as integer from previous response
+      schema:
+        type: string
+        example: "1759911721822"
+    - name: size
+      in: query
+      required: true
+      description: The number of comments to return per page
+      schema:
+        type: string
+        example: "5"
+  responses:
+    '200':
+      $ref: '../../../../responses/feed/b2b/getComments/get_comments_success.yaml'
+    '400':
+      $ref: '../../../../responses/feed/b2b/getComments/get_comments_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'
+

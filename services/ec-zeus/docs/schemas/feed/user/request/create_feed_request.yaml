@@ -9,7 +9,14 @@ properties:
     enum:
       - public
       - site
-    description: The scope of the feed item - public or site-specific
+      - accessible_audience
+      - site_target_audience
+      - site_members
+      - content
+    description: |
+      The scope of the feed item.
+      Non-ABAC scopes: public, site
+      ABAC scopes: accessible_audience (like public scope in ABAC), site_target_audience (when site is public in ABAC), site_members (only for private site), content (for content feed post in ABAC scenarios)
   
   siteId:
     type: string
@@ -38,10 +45,18 @@ properties:
     default: []
     description: Array of attached files
 
+  contentId:
+    type: string
+    format: uuid
+    nullable: true
+    example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    description: The ID of the content (required for content feed posts)
+
 # Use oneOf to handle conditional validation for OpenAPI 3.0.2 compatibility
 oneOf:
   # Case 1: public scope + post type
-  - properties:
+  - description: "Public post (siteId: null)"
+    properties:
       textHtml:
         type: string
         description: The HTML content of the feed item
@@ -77,7 +92,8 @@ oneOf:
     additionalProperties: false
 
   # Case 2: public scope + question type
-  - properties:
+  - description: "Public question (siteId: null, title required)"
+    properties:
       textHtml:
         type: string
         description: The HTML content of the feed item
@@ -114,7 +130,8 @@ oneOf:
     additionalProperties: false
 
   # Case 3: site scope + post type
-  - properties:
+  - description: "Site post (siteId required)"
+    properties:
       textHtml:
         type: string
         description: The HTML content of the feed item
@@ -151,7 +168,8 @@ oneOf:
     additionalProperties: false
 
   # Case 4: site scope + question type
-  - properties:
+  - description: "Site question (siteId and title required)"
+    properties:
       textHtml:
         type: string
         description: The HTML content of the feed item
@@ -186,5 +204,208 @@ oneOf:
       - siteId
       - type
       - title
+    additionalProperties: false
+
+  # Case 5: accessible_audience scope (ABAC) + post type
+  - description: "ABAC accessible audience post (siteId: null)"
+    properties:
+      textHtml:
+        type: string
+        description: The HTML content of the feed item
+      scope:
+        type: string
+        enum: [accessible_audience]
+        description: The scope of the feed item - accessible_audience (ABAC, like public scope)
+      siteId:
+        type: string
+        format: uuid
+        nullable: true
+        example: null
+        description: The ID of the site (null for accessible_audience scope in ABAC)
+      type:
+        type: string
+        enum: [post]
+        description: The type of feed item
+      title:
+        type: string
+        nullable: true
+        maxLength: 255
+        description: The title of the feed item (optional for posts)
+      listOfAttachedFiles:
+        type: array
+        items:
+          $ref: "../../../content/common/request/file/file.yaml"
+        default: []
+        description: Array of attached files
+    required:
+      - textHtml
+      - scope
+      - type
+    additionalProperties: false
+
+  # Case 6: site_target_audience scope (ABAC) + post type
+  - description: "ABAC site target audience post (siteId required)"
+    properties:
+      textHtml:
+        type: string
+        description: The HTML content of the feed item
+      scope:
+        type: string
+        enum: [site_target_audience]
+        description: The scope of the feed item - site_target_audience (ABAC, when site is public)
+      siteId:
+        type: string
+        format: uuid
+        nullable: false
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        description: The ID of the site (required for site_target_audience scope in ABAC)
+      type:
+        type: string
+        enum: [post]
+        description: The type of feed item
+      title:
+        type: string
+        nullable: true
+        maxLength: 255
+        description: The title of the feed item (optional for posts)
+      listOfAttachedFiles:
+        type: array
+        items:
+          $ref: "../../../content/common/request/file/file.yaml"
+        default: []
+        description: Array of attached files
+    required:
+      - textHtml
+      - scope
+      - siteId
+      - type
+    additionalProperties: false
+
+  # Case 7: site_members scope (ABAC) + post type
+  - description: "ABAC site members post (siteId required, private sites only)"
+    properties:
+      textHtml:
+        type: string
+        description: The HTML content of the feed item
+      scope:
+        type: string
+        enum: [site_members]
+        description: The scope of the feed item - site_members (ABAC, only for private site)
+      siteId:
+        type: string
+        format: uuid
+        nullable: false
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        description: The ID of the site (required for site_members scope in ABAC, only for private site)
+      type:
+        type: string
+        enum: [post]
+        description: The type of feed item
+      title:
+        type: string
+        nullable: true
+        maxLength: 255
+        description: The title of the feed item (optional for posts)
+      listOfAttachedFiles:
+        type: array
+        items:
+          $ref: "../../../content/common/request/file/file.yaml"
+        default: []
+        description: Array of attached files
+    required:
+      - textHtml
+      - scope
+      - siteId
+      - type
+    additionalProperties: false
+
+  # Case 8: site scope + post type + contentId (non-ABAC content feed post)
+  - description: "Content feed post (siteId and contentId required)"
+    properties:
+      textHtml:
+        type: string
+        description: The HTML content of the feed item
+      scope:
+        type: string
+        enum: [site]
+        description: The scope of the feed item - site-specific
+      siteId:
+        type: string
+        format: uuid
+        nullable: false
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        description: The ID of the site (required for site scope)
+      type:
+        type: string
+        enum: [post]
+        description: The type of feed item
+      title:
+        type: string
+        nullable: true
+        maxLength: 255
+        description: The title of the feed item (optional for posts)
+      listOfAttachedFiles:
+        type: array
+        items:
+          $ref: "../../../content/common/request/file/file.yaml"
+        default: []
+        description: Array of attached files
+      contentId:
+        type: string
+        format: uuid
+        nullable: false
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        description: The ID of the content (required for content feed posts)
+    required:
+      - textHtml
+      - scope
+      - siteId
+      - type
+      - contentId
+    additionalProperties: false
+
+  # Case 9: content scope (ABAC) + post type + contentId
+  - description: "ABAC content feed post (siteId and contentId required)"
+    properties:
+      textHtml:
+        type: string
+        description: The HTML content of the feed item
+      scope:
+        type: string
+        enum: [content]
+        description: The scope of the feed item - content (ABAC, for content feed post)
+      siteId:
+        type: string
+        format: uuid
+        nullable: false
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        description: The ID of the site (required for content scope in ABAC)
+      type:
+        type: string
+        enum: [post]
+        description: The type of feed item
+      title:
+        type: string
+        nullable: true
+        maxLength: 255
+        description: The title of the feed item (optional for posts)
+      listOfAttachedFiles:
+        type: array
+        items:
+          $ref: "../../../content/common/request/file/file.yaml"
+        default: []
+        description: Array of attached files
+      contentId:
+        type: string
+        format: uuid
+        nullable: false
+        example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        description: The ID of the content (required for content feed posts)
+    required:
+      - textHtml
+      - scope
+      - siteId
+      - type
+      - contentId
     additionalProperties: false
 

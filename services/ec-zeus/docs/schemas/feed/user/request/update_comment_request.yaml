@@ -1,0 +1,9 @@
+type: object
+properties:
+  textHtml:
+    type: string
+    example: "<p>Updated user comment content</p>"
+    description: Updated HTML content of the comment
+required:
+  - textHtml
+additionalProperties: false
