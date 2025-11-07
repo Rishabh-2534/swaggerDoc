@@ -103,8 +103,7 @@ properties:
     description: IDs of the Content to search for
     items:
       type: string
-  isAuthorCsvExportRequest:
-    type: boolean
-    example: false
-    default: false
-    description: Flag to indicate if this is a download author CSV request
+  reportType:
+    type: string
+    enum: ["content_author_report_generation", "content_status_report_generation"]
+    description: Specifies which bulk operation report to generate. Use 'content_author_report_generation' for author change CSV export, or 'content_status_report_generation' for publish/unpublish CSV export.
