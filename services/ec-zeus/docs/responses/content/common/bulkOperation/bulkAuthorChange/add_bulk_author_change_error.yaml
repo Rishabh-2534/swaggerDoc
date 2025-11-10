@@ -1,0 +1,41 @@
+description: Bad Request
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Response status
+          enum: [success, error]
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              seq_id:
+                type: integer
+                example: 0
+              field_name:
+                type: string
+                example: fileId
+              error_code:
+                type: integer
+                example: 1004
+              message:
+                type: string
+                example: "Invalid file ID format"
+          example:
+            - seq_id: 0
+              field_name: fileId
+              error_code: 1004
+              message: "Invalid file ID format"
+            - seq_id: 1
+              field_name: opType
+              error_code: 1005
+              message: "Invalid operation type. Must be one of: content-author-change, content-author-report-generation"
+        message:
+          type: string
+          example: "Failed to upload file for bulk operation"
+          description: General error message

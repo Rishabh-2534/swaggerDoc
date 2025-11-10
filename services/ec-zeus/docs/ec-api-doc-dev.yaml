@@ -110,6 +110,8 @@ paths:
         $ref: "./paths/content/user/site_page_category_by_id.yaml"
     /content/sites/content/bulk-ops/{opType}/{ackId}/status:
         $ref: "./paths/content/user/bulk_operations_status.yaml"
+    /content/sites/content/bulk-ops/{opType}:
+        $ref: "./paths/content/user/add_bulk_author_change_file.yaml"
 
     # Files
     /content/static/signedurl/upload:
@@ -170,6 +172,12 @@ paths:
         $ref: "./paths/feed/user/feed/get_feeds.yaml"
     /rfeed/feeds/{feedId}:
         $ref: "./paths/feed/user/feed/feed_by_id.yaml"
+    /wfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/user/comment/create_comment.yaml"
+    /wfeed/feeds/{feedId}/comments/{commentId}:
+        $ref: "./paths/feed/user/comment/update_delete_comment.yaml"
+    /rfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/user/comment/get_comments.yaml"
 
 components:
     schemas:

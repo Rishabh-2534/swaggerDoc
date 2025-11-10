@@ -91,7 +91,9 @@ paths:
         $ref: "./paths/content/b2b/site_page_category_by_id.yaml"
     /b2b/content/sites/content/bulk-ops/{opType}/{ackId}/status:
         $ref: "./paths/content/b2b/bulk_operations_status.yaml"
-
+    /b2b/content/sites/content/bulk-ops/{opType}:
+        $ref: "./paths/content/b2b/add_bulk_author_change_file.yaml"
+        
     # Files
     /b2b/content/static/signedurl/upload:
         $ref: "./paths/content/b2b/get_upload_signed_url.yaml"
@@ -111,6 +113,12 @@ paths:
         $ref: "./paths/feed/b2b/feed/get_feeds.yaml"
     /b2b/rfeed/feeds/{feedId}:
         $ref: "./paths/feed/b2b/feed/feed_by_id.yaml"
+    /b2b/wfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/b2b/comment/create_comment.yaml"
+    /b2b/wfeed/feeds/{feedId}/comments/{commentId}:
+        $ref: "./paths/feed/b2b/comment/update_delete_comment.yaml"
+    /b2b/rfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/b2b/comment/get_comments.yaml"
 
 components:
     securitySchemes:
