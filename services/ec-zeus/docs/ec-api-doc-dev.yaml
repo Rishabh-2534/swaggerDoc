@@ -110,6 +110,8 @@ paths:
         $ref: "./paths/content/user/site_page_category_by_id.yaml"
     /content/sites/content/bulk-ops/{opType}/{ackId}/status:
         $ref: "./paths/content/user/bulk_operations_status.yaml"
+    /content/sites/content/bulk-ops/{opType}:
+        $ref: "./paths/content/user/add_bulk_author_change_file.yaml"
 
     # Files
     /content/static/signedurl/upload:

@@ -1,0 +1,28 @@
+post:
+  summary: Add file to bulk author change request
+  operationId: addBulkOperationFileUser
+  tags:
+    - Content
+  description: This API allows us to add/associate a file with a bulk author change request
+  parameters:
+    - name: opType
+      in: path
+      required: true
+      schema:
+        type: string
+        enum: ["content-author-change"]
+        example: "content-author-change"
+      description: The type of bulk operation
+  requestBody:
+    $ref: '../../../schemas/content/user/request/add_bulk_author_change_request_file.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/common/bulkOperation/bulkAuthorChange/add_bulk_author_change_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/bulkOperation/bulkAuthorChange/add_bulk_author_change_error.yaml'
+    '401':
+      $ref: '../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../responses/common/forbidden.yaml'
+    '404':
+      $ref: '../../../responses/content/common/bulkOperation/bulkAuthorChange/add_bulk_author_change_not_found.yaml'
