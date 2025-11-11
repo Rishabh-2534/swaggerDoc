@@ -1,0 +1,24 @@
+delete:
+  operationId: deleteAudience
+  tags:
+    - Audience
+  summary: Delete an audience
+  description: >
+    This API allows you to delete an audience.
+  parameters:
+    - name: audienceId
+      in: path
+      description: "ID of audience to delete"
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      $ref: '../../../../responses/identity/b2b/audiences/delete_audience_success.yaml'
+    "401":
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    "403":
+      $ref: '../../../../responses/common/forbidden.yaml'
+    "400":
+      $ref: '../../../../responses/identity/b2b/audiences/audiences_error.yaml'
+

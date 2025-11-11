@@ -10,6 +10,8 @@ x-proxy-enabled: true
 tags:
     - name: Authorization
       description: Everything about Authorization
+    - name: Audience
+      description: Everything about Audience
     - name: Content
       description: Everything about Content
     - name: Feed
@@ -34,6 +36,12 @@ paths:
     # Authorization
     /identity/oauth/token:
         $ref: "./paths/identity/b2b/token.yaml"
+
+    # Audience
+    /b2b/identity/audiences:
+        $ref: "./paths/identity/b2b/audiences.yaml"
+    /b2b/identity/audiences/{audienceId}:
+        $ref: "./paths/identity/b2b/audiences_audienceId.yaml"
 
     # Users
     /b2b/identity/users:

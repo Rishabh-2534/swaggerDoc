@@ -1,0 +1,2 @@
+delete:
+  $ref: "./audiences/delete_audience.yaml#/delete"
