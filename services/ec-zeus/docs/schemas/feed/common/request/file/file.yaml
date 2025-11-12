@@ -1,0 +1,208 @@
+title: Files
+type: object
+description: File object with provider-specific properties
+properties:
+  fileId:
+    type: string
+    description: File identifier
+  provider:
+    type: string
+  name:
+    type: string
+    nullable: true
+    description: File name
+  type:
+    type: string
+    nullable: true
+    description: File type/MIME type
+  size:
+    type: integer
+    minimum: 0
+    nullable: true
+    description: File size in bytes
+  thumbnail:
+    type: string
+    nullable: true
+    description: Thumbnail URL
+required:
+  - fileId
+  - provider
+allOf:
+  - oneOf:
+      - type: object
+        title: Intranet File
+        description: File stored in intranet with UUID fileId
+        properties:
+          provider:
+            type: string
+            enum: [intranet]
+          fileId:
+            type: string
+            format: uuid
+          name:
+            type: string
+            nullable: true
+            description: File name
+          size:
+            type: integer
+            minimum: 0
+            nullable: true
+            description: File size in bytes
+          type:
+            type: string
+            nullable: true
+            description: File type/MIME type
+          thumbnail:
+            type: string
+            nullable: true
+            description: Thumbnail URL
+        required:
+          - provider
+          - fileId
+        additionalProperties: false
+
+      - type: object
+        title: Google Drive File
+        description: File stored in Google Drive with required metadata
+        properties:
+          provider:
+            type: string
+            enum: [googledrive]
+          fileId:
+            type: string
+          name:
+            type: string
+          size:
+            type: integer
+            minimum: 0
+          type:
+            type: string
+            nullable: true
+          thumbnail:
+            type: string
+            nullable: true
+            description: Thumbnail URL
+        required:
+          - provider
+          - fileId
+          - name
+          - size
+          - type
+        additionalProperties: false
+
+      - type: object
+        title: Box File
+        description: File stored in Box with required metadata
+        properties:
+          provider:
+            type: string
+            enum: [box]
+          fileId:
+            type: string
+          name:
+            type: string
+          size:
+            type: integer
+            minimum: 0
+          type:
+            type: string
+            nullable: true
+          thumbnail:
+            type: string
+            nullable: true
+            description: Thumbnail URL
+        required:
+          - provider
+          - fileId
+          - name
+          - size
+          - type
+        additionalProperties: false
+
+      - type: object
+        title: OneDrive File
+        description: File stored in OneDrive with required metadata
+        properties:
+          provider:
+            type: string
+            enum: [onedrive]
+          fileId:
+            type: string
+          name:
+            type: string
+          size:
+            type: integer
+            minimum: 0
+          type:
+            type: string
+            nullable: true
+          thumbnail:
+            type: string
+            nullable: true
+            description: Thumbnail URL
+        required:
+          - provider
+          - fileId
+          - name
+          - size
+          - type
+        additionalProperties: false
+
+      - type: object
+        title: SharePoint File
+        description: File stored in SharePoint with required metadata
+        properties:
+          provider:
+            type: string
+            enum: [sharepoint]
+          fileId:
+            type: string
+          name:
+            type: string
+          size:
+            type: integer
+            minimum: 0
+          type:
+            type: string
+            nullable: true
+          thumbnail:
+            type: string
+            nullable: true
+            description: Thumbnail URL
+        required:
+          - provider
+          - fileId
+          - name
+          - size
+          - type
+        additionalProperties: false
+
+      - type: object
+        title: Dropbox File
+        description: File stored in Dropbox with required metadata
+        properties:
+          provider:
+            type: string
+            enum: [dropbox]
+          fileId:
+            type: string
+          name:
+            type: string
+          size:
+            type: integer
+            minimum: 0
+          type:
+            type: string
+            nullable: true
+          thumbnail:
+            type: string
+            nullable: true
+            description: Thumbnail URL
+        required:
+          - provider
+          - fileId
+          - name
+          - size
+          - type
+        additionalProperties: false
+

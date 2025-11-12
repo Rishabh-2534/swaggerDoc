@@ -4,6 +4,12 @@ properties:
     type: string
     example: "<p>Test comment 2</p>"
     description: HTML content of the comment
+  listOfAttachedFiles:
+    type: array
+    items:
+      $ref: "../../common/request/file/file.yaml"
+    default: []
+    description: Array of attached files
 required:
   - textHtml
 additionalProperties: false

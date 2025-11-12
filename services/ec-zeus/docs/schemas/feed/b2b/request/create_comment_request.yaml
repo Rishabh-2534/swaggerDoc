@@ -9,6 +9,12 @@ properties:
     format: uuid
     example: "e5149282-2b89-4588-8b70-590ea3218e83"
     description: ID of the user creating the comment
+  listOfAttachedFiles:
+    type: array
+    items:
+      $ref: "../../common/request/file/file.yaml"
+    default: []
+    description: Array of attached files
 required:
   - textHtml
   - createdBy
