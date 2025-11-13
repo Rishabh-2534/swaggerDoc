@@ -1,0 +1,27 @@
+description: "Error"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Response status
+        message:
+          type: string
+          description: Error message describing what went wrong
+          example: "AUDIENCE_USED_IN_USAGE: Audience used in acg groups or features"
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+                description: error message
+                example: "AUDIENCE_USED_IN_USAGE: Audience used in acg groups or features"
+              code:
+                type: string
+                description: Error code
+                example: "AUDIENCE_USED_IN_USAGE"
