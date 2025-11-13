@@ -6,57 +6,27 @@ content:
       properties:
         status:
           type: string
-          example: "success"
+          example: success
         message:
           type: string
           example: "Audiences fetched successfully"
         result:
           type: object
+          required:
+            - items
           properties:
-            pageToken:
+            total:
               type: integer
-              example: 0
+              description: Total number of records found (will come if includeTotal is set to true or 1)
+              example: 7
             listOfItems:
               type: array
+              description: List of audiences
               items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                    example: "8a636d37-4337-4f77-b177-deb3efcfd108"
-                  name:
-                    type: string
-                    example: "Marketing Team"
-                  type:
-                    type: string
-                    example: "mixed"
-                  description:
-                    type: string
-                    nullable: true
-                    example: "Marketing team members"
-                  createdOn:
-                    type: string
-                    format: date-time
-                    example: "2025-08-12T04:20:17.782Z"
-                  updatedOn:
-                    type: string
-                    format: date-time
-                    example: "2025-08-12T04:21:52.740Z"
-                  memberCount:
-                    type: integer
-                    example: 25
-              example:
-                - id: "8a636d37-4337-4f77-b177-deb3efcfd108"
-                  name: "Marketing Team"
-                  type: "mixed"
-                  description: "Marketing team members"
-                  createdOn: "2025-08-12T04:20:17.782Z"
-                  updatedOn: "2025-08-12T04:21:52.740Z"
-                  memberCount: 25
-                - id: "9b747e48-5488-5g88-c288-f29efd0e219"
-                  name: "Sales Team"
-                  type: "mixed"
-                  description: "Sales team members"
-                  createdOn: "2025-08-12T05:15:30.123Z"
-                  updatedOn: "2025-08-12T05:16:45.456Z"
-                  memberCount: 15
+                  $ref: "../../../../schemas/identity/audience/get_audience.yaml"
+            nextPageToken:
+              type: string
+              description: >
+                A token that can be used to get the next page of audiences.
+                This token is returned if there are more audiences to fetch.
+                The client should pass this token to the server to get the next page of audiences.

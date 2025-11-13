@@ -8,16 +8,26 @@ get:
   parameters:
     - name: pageSize
       in: query
-      description: A limit on the number of audiences to return in a request.
+      description: The number of audiences to return per page.
+      required: false
       schema:
         type: integer
-        example: 10
+        default: 10
     - name: pageToken
       in: query
-      description: Token for next page
+      description: Should be a integer returned as `nextPageToken` from previous page request,
+      required: false
       schema:
-        type: integer
-        example: 10
+        type: string
+    - name: includeTotal
+      in: query
+      description: >
+        Whether to include the total number of users in the response.
+        To include set it to `true`
+      required: false
+      schema:
+        type: boolean
+        default: false
     - name: searchTerm
       in: query
       description: Search term to filter audiences by name
@@ -30,7 +40,7 @@ get:
         Audience category ID to filter by.
 
 
-        This is valid for only ABAC enabled tenants. For non-ABAC tenants, whatever you pass here will be ignored.
+        This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
       schema:
         type: string
         example: "4ba58d96-9ac2-4820-88ef-28aa4555500d"
@@ -40,7 +50,7 @@ get:
         Parent audience ID to filter by.
 
 
-        This is valid for only ABAC enabled tenants. For non-ABAC tenants, whatever you pass here will be ignored.
+        This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
       schema:
         type: string
         example: "7ca58d96-8ac2-4820-88eu-28aa4555500e"

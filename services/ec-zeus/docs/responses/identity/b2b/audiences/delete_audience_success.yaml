@@ -7,10 +7,14 @@ content:
         status:
           type: string
           description: Response status
-          example: "success"
+          example: "SUCCESS"
+        result:
+          type: "object"
+          properties:
+            audienceId:
+              type: "string"
+              example: "44fa7711-407a-4305-9dff-a01660068238"
         message:
           type: string
           description: Success message
           example: "Audience deleted"
-      required: ["status", "message"]
-

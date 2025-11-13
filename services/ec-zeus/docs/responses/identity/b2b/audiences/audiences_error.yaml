@@ -1,4 +1,4 @@
-description: "Bad Request - Invalid Input"
+description: "Error"
 content:
   application/json:
     schema:
@@ -6,11 +6,11 @@ content:
       properties:
         status:
           type: string
+          example: error
           description: Response status
-          example: "error"
         message:
           type: string
-          description: Error message
+          description: Error message describing what went wrong
           example: "AUDIENCE_USED_IN_USAGE: Audience used in acg groups or features"
         errors:
           type: array
@@ -25,14 +25,3 @@ content:
                 type: string
                 description: Error code
                 example: "AUDIENCE_USED_IN_USAGE"
-            required: ["message", "code"]
-          description: Array of specific error details
-        timestamp:
-          type: integer
-          description: Response timestamp
-          example: 1761571631200
-        delay:
-          type: number
-          description: Response delay in seconds
-          example: 30.421958
-      required: ["status", "message", "errors", "timestamp", "delay"]
