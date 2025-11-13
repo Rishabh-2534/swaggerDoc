@@ -1,0 +1,32 @@
+description: "Error"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Response status
+        message:
+          type: string
+          description: Error message describing what went wrong
+          example: "The input provided is invalid."
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+                description: error message
+                example: "Invalid payload"
+              code:
+                type: string
+                description: Error code
+                example: "INVALID_INPUT"
+              details:
+                type: string
+                description: Detailed error message
+                example: "Payload must not include audienceCategoryId  when parent child feature is disabled."
+

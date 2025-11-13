@@ -20,5 +20,5 @@ delete:
     "403":
       $ref: '../../../../responses/common/forbidden.yaml'
     "400":
-      $ref: '../../../../responses/identity/b2b/audiences/audiences_error.yaml'
+      $ref: '../../../../responses/identity/b2b/audiences/delete_audience_error.yaml'
 
