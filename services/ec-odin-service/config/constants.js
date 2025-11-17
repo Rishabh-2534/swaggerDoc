@@ -74,6 +74,8 @@ const constants = {
     },
     contents: {
       getPageById: '/DataServerRW?target=SiteAddPageDataServer&action=get',
+      getPageCategories:
+        '/DataServerRW?target=CategoryDataServer&action=search',
       getEventById: '/DataServerRW?target=SiteAddEventDataServer&action=get',
       createEvent: '/DataServerRW?target=SiteAddEventDataServer&action=publish',
       createPage: '/DataServerRW?target=SiteAddPageDataServer&action=publish',

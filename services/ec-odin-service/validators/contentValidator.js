@@ -28,6 +28,16 @@ const getPageByIdValidator = (req, res, next) => {
   next();
 };
 
+const getPageCategoriesValidator = (req, res, next) => {
+  const schema = Joi.object({
+    size: Joi.number().optional(),
+    'sort-by': Joi.string().valid('createdNewest', 'createdOldest').optional(),
+    'site-id': Joi.string().optional(),
+    term: Joi.string().optional(),
+  });
+  utils.validateRequest(req, res, next, schema, 1);
+};
+
 const getEventByIdValidator = (req, res, next) => {
   if (!req.params.content_id) {
     return response.invalidParam(
@@ -310,7 +320,7 @@ const getMustReadContentValidator = (req, res, next) => {
 
 const getAllEventsValidator = (req, res, next) => {
   const schema = Joi.object({
-    size: Joi.number().optional(),
+    size: Joi.number().optional().max(50).message('Validation error: "size" must be less than or equal to 50'),
     filter: Joi.string().valid('future', 'past').optional(),
     period: Joi.string()
       .valid('this_week', 'this_month', 'next_week', 'after_this_month')
@@ -318,6 +328,7 @@ const getAllEventsValidator = (req, res, next) => {
     'authored-by': Joi.string().optional(),
     source: Joi.string().valid('all', 'following', 'rsvp').optional(),
     term: Joi.string().optional(),
+    'next-page-token': Joi.number().optional(),
   });
   utils.validateRequest(req, res, next, schema, 0);
 };
@@ -426,6 +437,7 @@ const fetchVideoMetaDataValidator = (req, res, next) => {
 
 module.exports = {
   getPageByIdValidator,
+  getPageCategoriesValidator,
   getEventByIdValidator,
   createPageValidator,
   updatePageValidator,

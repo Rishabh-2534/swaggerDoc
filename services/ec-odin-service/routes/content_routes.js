@@ -48,6 +48,12 @@ contentRouter.get(
   contentService.getPageById,
 );
 
+contentRouter.post(
+  '/page-categories',
+  contentValidator.getPageCategoriesValidator,
+  contentService.getPageCategories,
+);
+
 contentRouter.get(
   '/event/all',
   contentValidator.getAllEventsValidator,
