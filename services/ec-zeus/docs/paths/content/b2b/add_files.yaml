@@ -1,0 +1,14 @@
+post:
+  operationId: addFilesB2B
+  tags:
+    - Files
+  summary: Add files
+  description:
+    This API lets you add files to a site.
+  requestBody:
+    $ref: '../../../schemas/content/b2b/request/add_files_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/common/addFiles/add_files_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/addFiles/add_files_error.yaml'
