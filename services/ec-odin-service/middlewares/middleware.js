@@ -209,7 +209,7 @@ const parseRequestBody = async (req, res, next) => {
 };
 
 const logRequestParams = (req, res, next) => {
-  if (req.url === '/ping') {
+  if (constants.SKIP_PATHS.includes(req.url)) {
     return next();
   }
   const params =
