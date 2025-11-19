@@ -1,0 +1,53 @@
+description: "Error"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "error"
+          description: Response status
+        message:
+          type: string
+          description: Error message describing what went wrong
+          example: "The input provided is invalid."
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message
+                example: "Invalid Input"
+              code:
+                type: string
+                description: Error code
+                example: "INVALID_INPUT"
+              details:
+                oneOf:
+                  - type: string
+                    description: Detailed error information as a string
+                    example: "Audience with the name 'Microsoft Team' already exists."
+                  - type: object
+                    description: Detailed error information as an object
+                    properties:
+                      invalidAttributes:
+                        type: array
+                        items:
+                          type: string
+                        description: List of invalid attribute names
+                        example: ["testing1234__c"]
+                      invalidOperators:
+                        type: array
+                        items:
+                          type: string
+                        description: List of invalid operators
+                        example: []
+                      invalidValues:
+                        type: object
+                        description: Map of invalid values
+                        example: {}
+          description: Array of specific error details
+

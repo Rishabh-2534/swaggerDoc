@@ -1,0 +1,59 @@
+type: object
+description: "Single condition or nested subgroup"
+properties:
+  attribute:
+    type: string
+    description: "Attribute to filter on"
+    example: "segmentId"
+  fieldType:
+    type: string
+    description: "Type of field"
+    enum:
+      - segment
+      - regular
+      - adGroup
+      - oktaGroup
+      - googleGroup
+  operator:
+    type: string
+    description: "Operator for the condition (optional)"
+    enum:
+      - ALL
+      - IS
+      - IS_NOT
+      - CONTAINS
+      - STARTS_WITH
+      - ENDS_WITH
+      - ON
+      - ON_OR_BEFORE
+      - ON_OR_AFTER
+      - BEFORE
+      - AFTER
+      - BETWEEN
+      - TRUE
+      - FALSE
+  values:
+    type: array
+    description: "Array of values for the condition (optional)"
+    minItems: 1
+    items:
+      type: object
+      properties:
+        value:
+          type: string
+          description: "Value for the condition"
+      required: ["value"]
+  AND:
+    type: array
+    description: "Nested AND conditions"
+    items:
+      $ref: './audience_condition_schema.yaml'
+  OR:
+    type: array
+    description: "Nested OR conditions"
+    items:
+      $ref: './audience_condition_schema.yaml'
+required:
+  - attribute
+  - fieldType
+

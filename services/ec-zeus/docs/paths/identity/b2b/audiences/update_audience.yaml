@@ -1,0 +1,73 @@
+put:
+  operationId: updateAudienceB2b
+  tags:
+    - Audience
+  summary: Update an existing audience
+  description: >
+     This API allows you to update an existing audience
+
+      ```
+      {
+        "name": "Marketing Audinece",
+        "description": "audience used for marketing team",
+        "type": "mixed",
+        "rule": {
+            "AND": [
+              {
+                "AND": [
+                  {
+                    "values": [
+                      {
+                        "value": "India"
+                      }
+                    ],
+                    "attribute": "countryName",
+                    "operator": "IS",
+                    "fieldType": "regular"
+                  }
+                ]
+              },
+              {
+                "AND": [
+                  {
+                    "values": [
+                      {
+                        "value": "bef45153-d8fd-4e02-b9ac-d522ae99aabd"
+                      }
+                    ],
+                    "attribute": "microsoft365",
+                    "operator": "IS",
+                    "fieldType": "adGroup"
+                  }
+                ]
+              }
+            ]
+          },
+        "audienceCategoryId": "ccef0b21-d87b-442d-9a29-d7544561d2c8"
+      }
+
+      ```
+
+  parameters:
+    - name: audienceId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "39437d92-9be0-4a25-8543-55bdab74df4e"
+      description: The ID of the audience to update
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/identity/b2b/audience/update_audience_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../../responses/identity/b2b/audience/updateAudience/update_audience_success.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'
+    '400':
+      $ref: '../../../../responses/identity/b2b/audience/updateAudience/update_audience_error.yaml'

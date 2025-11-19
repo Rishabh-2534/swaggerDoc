@@ -1,5 +1,5 @@
 get:
-  operationId: getAudiences
+  operationId: getAudiencesB2B
   tags:
     - Audience
   summary: Get audiences
@@ -56,10 +56,10 @@ get:
         example: "7ca58d96-8ac2-4820-88eu-28aa4555500e"
   responses:
     "200":
-      $ref: '../../../../responses/identity/b2b/audiences/get_audiences_success.yaml'
+      $ref: '../../../../responses/identity/b2b/audience/getAudiences/get_audiences_success.yaml'
+    "400":
+      $ref: '../../../../responses/identity/b2b/audience/getAudiences/get_audiences_error.yaml'
     "401":
       $ref: '../../../../responses/common/unauthorized.yaml'
     "403":
       $ref: '../../../../responses/common/forbidden.yaml'
-    "400":
-      $ref: '../../../../responses/identity/b2b/audiences/get_audiences_error.yaml'

@@ -23,7 +23,7 @@ content:
               type: array
               description: List of audiences
               items:
-                  $ref: "../../../../schemas/identity/audience/get_audience.yaml"
+                  $ref: "../../../../../schemas/identity/b2b/audience/get_audience.yaml"
             nextPageToken:
               type: string
               description: >

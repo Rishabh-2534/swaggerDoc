@@ -1,5 +1,5 @@
 delete:
-  operationId: deleteAudience
+  operationId: deleteAudienceB2b
   tags:
     - Audience
   summary: Delete an audience
@@ -14,11 +14,11 @@ delete:
         type: string
   responses:
     "200":
-      $ref: '../../../../responses/identity/b2b/audiences/delete_audience_success.yaml'
+      $ref: '../../../../responses/identity/b2b/audience/deleteAudience/delete_audience_success.yaml'
     "401":
       $ref: '../../../../responses/common/unauthorized.yaml'
     "403":
       $ref: '../../../../responses/common/forbidden.yaml'
     "400":
-      $ref: '../../../../responses/identity/b2b/audiences/delete_audience_error.yaml'
+      $ref: '../../../../responses/identity/b2b/audience/deleteAudience/delete_audience_error.yaml'
 

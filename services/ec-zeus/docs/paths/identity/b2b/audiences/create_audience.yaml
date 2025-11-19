@@ -1,0 +1,122 @@
+post:
+  operationId: createAudienceB2b
+  tags:
+    - Audience
+  summary: Create a new audience
+  description: > 
+    This API allows you to create a new audience
+
+    ```
+
+    {
+      "name":"Testing audience",
+      "type":"mixed",
+      rule: {
+        "AND": [
+          {
+            "OR": [
+              {
+                "values": [
+                  {
+                    "value": "84c542ac-6fdf-4d37-8788-b0c4546eb9fa"
+                  }
+                ],
+                "attribute": "userId",
+                "operator": "IS",
+                "fieldType": "regular"
+              },
+              {
+                "values": [
+                  {
+                    "value": "sim"
+                  }
+                ],
+                "attribute": "firstName",
+                "operator": "CONTAINS",
+                "fieldType": "regular"
+              },
+              {
+                "values": [
+                  {
+                    "value": "CDX Tech"
+                  }
+                ],
+                "attribute": "businessUnit",
+                "operator": "IS_NOT",
+                "fieldType": "regular"
+              }
+            ]
+          },
+          {
+            "AND": [
+              {
+                "values": [
+                  {
+                    "value": "True"
+                  }
+                ],
+                "attribute": "isManager",
+                "operator": "IS",
+                "fieldType": "regular"
+              },
+              {
+                "values": [
+                  {
+                    "value": "a006a46d-39c4-4cfb-bc8c-7d81e32ce68d"
+                  }
+                ],
+                "attribute": "mail-security",
+                "operator": "IS",
+                "fieldType": "adGroup"
+              }
+            ]
+          },
+          {
+            "AND": [
+              {
+                "attribute": "mail-security",
+                "operator": "ALL",
+                "fieldType": "adGroup"
+              },
+              {
+                "attribute": "ALL",
+                "fieldType": "oktaGroup"
+              }
+            ]
+          },
+          {
+            "AND": [
+              {
+                "values": [
+                  {
+                    "value": "add on name"
+                  }
+                ],
+                "attribute": "office_loc__c",
+                "operator": "IS",
+                "fieldType": "regular"
+              }
+            ]
+          }
+        ]
+      },
+      "sourceType":"app_managed",
+      "parentAudienceId":"39437d92-9be0-4a25-8543-55bdab74df4e"
+    }
+
+    ```
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/identity/b2b/audience/create_audience_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../../responses/identity/b2b/audience/createAudience/create_audience_success.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'
+    '400':
+      $ref: '../../../../responses/identity/b2b/audience/createAudience/create_audience_error.yaml'
+

@@ -1,2 +1,5 @@
 delete:
   $ref: "./audiences/delete_audience.yaml#/delete"
+
+put:
+  $ref: "./audiences/update_audience.yaml#/put"

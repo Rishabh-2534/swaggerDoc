@@ -19,7 +19,7 @@ content:
             properties:
               message:
                 type: string
-                description: error message
+                description: Error message
                 example: "AUDIENCE_USED_IN_USAGE: Audience used in acg groups or features"
               code:
                 type: string
