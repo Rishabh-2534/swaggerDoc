@@ -5,8 +5,8 @@ metadata:
   namespace: test
   annotations:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:693891728731:certificate/99b3286a-619f-478e-bb7d-480efd1e6e0e
-    alb.ingress.kubernetes.io/group.name: simpplr-aws-services
-    alb.ingress.kubernetes.io/load-balancer-name: simpplr-aws-services-alb
+    alb.ingress.kubernetes.io/group.name: ingress-dev-2
+    alb.ingress.kubernetes.io/load-balancer-name: ingress-alb-dev-2
     alb.ingress.kubernetes.io/load-balancer-attributes: access_logs.s3.enabled=true,access_logs.s3.bucket=simmplr-audit-log-159693656053-us-west-2,access_logs.s3.prefix=nonprod/alb-ingress
     kubernetes.io/ingress.class: "alb"
     alb.ingress.kubernetes.io/scheme: internet-facing
