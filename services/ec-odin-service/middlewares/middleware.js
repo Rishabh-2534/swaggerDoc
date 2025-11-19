@@ -101,7 +101,7 @@ const getBaseUrl = async (req, res, next) => {
       logger.error({ message: 'Exception in fetching org info:' });
       throw new Error();
     }
-    logger.info(`Request baseUrl is : ${req.baseUrl}`);
+    logger.debug(`Request baseUrl is : ${req.baseUrl}`);
   } catch (err) {
     logger.error(`Exception in getBaseUrl : ${err}`);
     return res.status(500).json({
