@@ -2,24 +2,23 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ec-services-alb-ingress
-  namespace: test
+  namespace: qa
   annotations:
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:693891728731:certificate/99b3286a-619f-478e-bb7d-480efd1e6e0e
-    alb.ingress.kubernetes.io/group.name: simpplr-aws-services
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:754178572197:certificate/19198889-483b-4ec7-9ab8-985b06bd2499
     alb.ingress.kubernetes.io/load-balancer-name: simpplr-aws-services-alb
-    alb.ingress.kubernetes.io/load-balancer-attributes: access_logs.s3.enabled=true,access_logs.s3.bucket=simmplr-audit-log-159693656053-us-west-2,access_logs.s3.prefix=nonprod/alb-ingress,routing.http.drop_invalid_header_fields.enabled=true
+    alb.ingress.kubernetes.io/load-balancer-attributes: access_logs.s3.enabled=true,access_logs.s3.bucket=simmplr-audit-log-159693656053-us-east-1,access_logs.s3.prefix=qa/alb-ingress,routing.http.drop_invalid_header_fields.enabled=true
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/subnets: subnet-020d04c2deffb4956,subnet-0cc9e4551ac042994,subnet-0a861e33d660cfade
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS13-1-2-2021-06
-    alb.ingress.kubernetes.io/tags: Environment=nonprod,Team=devops
+    alb.ingress.kubernetes.io/tags: Environment=qa,Team=devops
     ## SSL Settings
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
 spec:
   ingressClassName: alb
   rules:
-    - host: ec.test.simpplr.xyz
+    - host: ec.qa.simpplr.xyz
       http:
         paths:
           - path: /*

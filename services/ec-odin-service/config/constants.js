@@ -202,7 +202,7 @@ const constants = {
   GET_USER_INFO: '/DataServerRW?target=UtilityDataServer&action=getAppConfig',
   IP_LIMIT: 20,
   API_TIME_LIMIT: 60,
-  SKIP_PATHS: ['/ping', '/health', '/startUpProbe', '/livenessProbe'],
+  SKIP_PATHS: ['/ping', '/health', '/startUpProbe', '/livenessProbe' ,'/'],
 };
 
 module.exports = constants;
