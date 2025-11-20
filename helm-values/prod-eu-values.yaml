@@ -1,8 +1,3 @@
-microservicesName:
-  slack-api-app:
-    autoscalingMinReplicas: 2
-    autoscalingMaxReplicas: 2
-
 configMap:
   data:
     NODE_ENV: PROD
