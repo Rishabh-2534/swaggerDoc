@@ -133,6 +133,8 @@ paths:
         $ref: "./paths/content/user/get_upload_signed_url.yaml"
     /content/files/list:
         $ref: "./paths/content/user/get_files.yaml"
+    /content/files:
+        $ref: "./paths/content/user/add_files.yaml"
 
     # Recognition list
     /recognition/list:
