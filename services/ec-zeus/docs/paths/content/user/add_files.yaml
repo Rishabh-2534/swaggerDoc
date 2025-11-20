@@ -1,0 +1,17 @@
+post:
+  operationId: addFilesUser
+  tags:
+    - Files
+  summary: Add files
+  description:
+    This API lets you add files to a site.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/content/user/request/add_files_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/content/common/addFiles/add_files_success.yaml'
+    '400':
+      $ref: '../../../responses/content/common/addFiles/add_files_error.yaml'

@@ -1,0 +1,21 @@
+type: object
+properties:
+  parent_dir:
+    type: string
+    format: uuid
+    description: UUID of the parent directory
+    example: "123e4567-e89b-12d3-a456-426614174000"
+  file_id:
+    type: array
+    items:
+      $ref: "../../common/request/file/file.yaml"
+    description: Array of files to be added
+  site_id:
+    type: string
+    format: uuid
+    description: UUID of the site
+    example: "123e4567-e89b-12d3-a456-426614174000"
+required:
+    - file_id
+    - site_id
+additionalProperties: false
