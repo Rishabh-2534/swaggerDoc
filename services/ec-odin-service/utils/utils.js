@@ -15,7 +15,7 @@ const conf = config[config.ENV];
 const getRedirectUri = (accessToken, name, email) => {
   // Prepare JWT Token and redirect to readme
 
-  logger.info(`User name is : ${name} ***  user email is : ${email}`);
+  logger.debug(`User name is : ${name} ***  user email is : ${email}`);
   const user = {
     name,
     email,
@@ -79,7 +79,7 @@ const getOrgInfo = async (email) => {
       json: { email: email, origin: 'api_center', app_type: 'NATIVE' },
     };
     const response = await got.post(ORG_INFO_URL, options);
-    logger.info(`'Post request response - getOrgInfo : ${response.body}`);
+    logger.debug(`'Post request response - getOrgInfo : ${response.body}`);
     return JSON.parse(response.body);
   } catch (err) {
     logger.error(`Exception in makePostRequest - getOrgInfo : ${err}`);
@@ -204,7 +204,7 @@ const makePostRequest = async (
     }
     const gotResponse = await got.post(url, options);
     // Do not log responses in prod!
-    logger.info(`Body of gotResponse is ${gotResponse.body}`);
+    logger.debug(`Body of gotResponse is ${gotResponse.body}`);
     return response.getResponseObj(gotResponse.body);
   } catch (err) {
     logger.error(`Exception in makePostRequest : ${err}`);
@@ -217,7 +217,7 @@ const makePostRequest = async (
 };
 
 const fetchContentForApproval = async (url, accessToken) => {
-  logger.info(
+  logger.debug(
     ` ***  Request url is : ${url} ***  AccessToken is : ${accessToken}`,
   );
   const options = {
@@ -230,7 +230,7 @@ const fetchContentForApproval = async (url, accessToken) => {
   try {
     const gotResponse = await got.get(url, options);
     // Do not log responses in prod!
-    logger.info(`Body of gotResponse is : ${gotResponse.body}`);
+    logger.debug(`Body of gotResponse is : ${gotResponse.body}`);
     return response.getResponseObj(gotResponse.body);
   } catch (err) {
     logger.error(`Exception in fetchContentForApproval : ${err}`);
@@ -243,7 +243,7 @@ const fetchContentForApproval = async (url, accessToken) => {
 };
 
 const makeGetRequest = async (url, accessToken, query, useData = 0) => {
-  logger.info(
+  logger.debug(
     ` *** Request url is : ${url} ***  AccessToken is : ${accessToken} ***  Query is : ${query}`,
   );
   const options = {
@@ -259,7 +259,7 @@ const makeGetRequest = async (url, accessToken, query, useData = 0) => {
       : makeQueryString(query);
     const gotResponse = await got.get(url + body, options);
     // Do not log responses in prod!
-    logger.info(`Body of gotResponse is ${gotResponse.body}`);
+    logger.debug(`Body of gotResponse is ${gotResponse.body}`);
     return response.getResponseObj(gotResponse.body);
   } catch (err) {
     logger.error(`Exception in makeGetRequest : ${err}`);

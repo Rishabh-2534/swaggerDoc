@@ -138,3 +138,18 @@
   schema:
     type: integer
   required: false
+- name: reportType
+  in: query
+  description: Specifies which bulk operation report to generate. Use 'content_author_report_generation' for author change CSV export, or 'content_status_report_generation' for publish/unpublish CSV export.
+  schema:
+    type: string
+    enum: ["content_author_report_generation", "content_status_report_generation"]
+  required: false
+- name: requestedBy
+  in: query
+  description: ID of the user who requested the bulk operation (required when reportType is provided)
+  schema:
+    type: string
+    format: uuid
+    example: "e0853f94-c46d-41ca-89e1-5550a3638490"
+  required: false

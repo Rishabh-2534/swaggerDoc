@@ -8,9 +8,9 @@ get:
     $ref: '../../../schemas/content/b2b/request/get_carousel_items_request.yaml'
   responses:
     '200':
-      $ref: '../../../responses/content/b2b/getCarouselItems/get_carousel_items_success.yaml'
+      $ref: '../../../responses/content/common/getCarouselItems/get_carousel_items_success.yaml'
     '400':
-      $ref: '../../../responses/content/b2b/getCarouselItems/get_carousel_items_error.yaml'
+      $ref: '../../../responses/content/common/getCarouselItems/get_carousel_items_error.yaml'
     '401':
       $ref: '../../../responses/common/unauthorized.yaml'
     '403':

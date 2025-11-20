@@ -1,0 +1,25 @@
+required: true
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - fileId
+        - createdBy
+      properties:
+        fileId:
+          type: string
+          format: uuid
+          description: Unique identifier of the file to be added to the bulk operation
+          example: "e474710d-876c-4938-8301-9a89575e0fee"
+        description:
+          type: string
+          description: Description of the file
+          example: "test file for upload author"
+          minLength: 1
+          maxLength: 500
+        createdBy:
+          type: string
+          description: User ID who created this bulk operation
+          example: "550e8400-e29b-41d4-a716-446655440000"
+      additionalProperties: false

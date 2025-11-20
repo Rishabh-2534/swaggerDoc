@@ -1,0 +1,29 @@
+description: Error
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+          example: Failed to add files
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              seq_id:
+                type: integer
+                example: 0
+              field_name:
+                type: string
+                example: site
+              error_code:
+                type: integer
+                example: 1001
+              message:
+                type: string
+                example: The site is deactivated

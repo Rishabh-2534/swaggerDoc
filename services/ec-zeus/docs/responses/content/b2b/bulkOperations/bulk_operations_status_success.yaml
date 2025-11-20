@@ -1,0 +1,81 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Bulk operation status details
+          properties:
+            requestId:
+              type: string
+              format: uuid
+              example: "71993b4d-7ea8-459a-a808-aaf333e89808"
+              description: The request ID of the bulk operation
+            requestType:
+              type: string
+              example: "content_author_change"
+              description: Type of bulk operation request
+            requestSource:
+              type: string
+              example: "system"
+              description: Source of the request
+              enum: [user, system]
+            requestedBy:
+              type: string
+              format: uuid
+              example: "e0853f94-c46d-41ca-89e1-5550a3638490"
+              description: ID of the user who requested the bulk operation
+            status:
+              type: string
+              example: "completed"
+              description: Current status of the bulk operation
+              enum: [new, in_progress, completed, failed]
+            createdOn:
+              type: string
+              format: date-time
+              example: "2025-10-08T22:09:31.730Z"
+              description: Date and time when the bulk operation was created
+            modifiedOn:
+              type: string
+              format: date-time
+              example: "2025-10-08T22:09:31.730Z"
+              description: Date and time when the bulk operation was last modified
+            progress:
+              type: object
+              description: Progress details (only present when status is in_progress)
+              properties:
+                totalRecords:
+                  type: string
+                  example: "14"
+                  description: Total number of records to be processed
+                processedRecords:
+                  type: string
+                  example: "2"
+                  description: Number of records that have been processed
+            reason:
+              type: string
+              example: "Some reason"
+              description: Failure reason (only present when status is failed)
+            details:
+              type: object
+              description: Completion details (only present when status is completed)
+              properties:
+                downloadUrl:
+                  type: string
+                  example: "https://example.com/bulk-ops/report/file.csv"
+                  description: URL to download the result file
+                totalRecords:
+                  type: integer
+                  example: 14
+                  description: Total number of records processed
+        message:
+          type: string
+          example: "Request status retrieved successfully"
+          description: Response message

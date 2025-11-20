@@ -1,0 +1,62 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Bulk author change request details
+          properties:
+            requestId:
+              type: string
+              format: uuid
+              example: "557cec40-d356-4d47-b312-f8e157e0e54f"
+              description: The request ID of the bulk operation
+            requestType:
+              type: string
+              example: "content_author_change"
+              description: Type of bulk operation request
+            requestSource:
+              type: string
+              example: "system"
+              description: Source of the request
+              enum: [user, system]
+            requestedBy:
+              type: string
+              format: uuid
+              example: "e0853f94-c46d-41ca-89e1-5550a3638490"
+              description: ID of the user who requested the bulk operation
+            fileId:
+              type: string
+              format: uuid
+              example: "e474710d-876c-4938-8301-9a89575e0fee"
+              description: Unique identifier of the uploaded file
+            description:
+              type: string
+              example: "test file for upload author"
+              description: Description of the uploaded file
+            status:
+              type: string
+              example: "new"
+              description: Current status of the bulk operation
+              enum: [new, in_progress, completed, failed]
+            createdOn:
+              type: string
+              format: date-time
+              example: "2025-10-27T04:15:49.251Z"
+              description: Date and time when the bulk operation was created
+            modifiedOn:
+              type: string
+              format: date-time
+              example: "2025-10-27T04:15:49.251Z"
+              description: Date and time when the bulk operation was last modified
+        message:
+          type: string
+          example: "Bulk author change request created successfully"
+          description: Response message

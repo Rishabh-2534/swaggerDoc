@@ -1,0 +1,28 @@
+description: "Error"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: Failed to update comment
+          description: Descriptive error message about the operation failure
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+                example: INVALID_INPUT
+                description: Error code for invalid input
+              message:
+                type: string
+                example: The input provided is invalid.
+                description: Error message for invalid input

@@ -74,6 +74,8 @@ const constants = {
     },
     contents: {
       getPageById: '/DataServerRW?target=SiteAddPageDataServer&action=get',
+      getPageCategories:
+        '/DataServerRW?target=CategoryDataServer&action=search',
       getEventById: '/DataServerRW?target=SiteAddEventDataServer&action=get',
       createEvent: '/DataServerRW?target=SiteAddEventDataServer&action=publish',
       createPage: '/DataServerRW?target=SiteAddPageDataServer&action=publish',
@@ -200,6 +202,7 @@ const constants = {
   GET_USER_INFO: '/DataServerRW?target=UtilityDataServer&action=getAppConfig',
   IP_LIMIT: 20,
   API_TIME_LIMIT: 60,
+  SKIP_PATHS: ['/ping', '/health', '/startUpProbe', '/livenessProbe' ,'/'],
 };
 
 module.exports = constants;

@@ -1,0 +1,15 @@
+description: Not Found
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: "Bulk operation with the provided request ID not found"
+          description: Error message indicating the request ID was not found

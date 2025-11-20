@@ -16,6 +16,8 @@ tags:
       description: Everything about Content
     - name: Enterprise search
       description: Everything about Enterprise search
+    - name: Feed
+      description: Everything about Feed
     - name: Files
       description: Everything about Files
     - name: Notifications
@@ -76,6 +78,8 @@ paths:
         $ref: "./paths/content/search_content.yaml"
     /content/sites/list:
         $ref: "./paths/content/search_sites.yaml"
+    /content/carousel-items:
+        $ref: "./paths/content/user/get_carousel_items.yaml"
     /content/sites/{siteId}/content/{contentId}:
         $ref: "./paths/content/get_content_by_id.yaml"
     /content/sites/{siteId}/content/{contentId}/approve:
@@ -104,12 +108,18 @@ paths:
         $ref: "./paths/content/user/site_page_categories.yaml"
     /content/sites/{site_id}/page-categories/{category_id}:
         $ref: "./paths/content/user/site_page_category_by_id.yaml"
+    /content/sites/content/bulk-ops/{opType}/{ackId}/status:
+        $ref: "./paths/content/user/bulk_operations_status.yaml"
+    /content/sites/content/bulk-ops/{opType}:
+        $ref: "./paths/content/user/add_bulk_author_change_file.yaml"
 
     # Files
     /content/static/signedurl/upload:
         $ref: "./paths/content/user/get_upload_signed_url.yaml"
     /content/files/list:
         $ref: "./paths/content/user/get_files.yaml"
+    /content/files:
+        $ref: "./paths/content/user/add_files.yaml"
 
     # Recognition list
     /recognition/list:
@@ -154,6 +164,23 @@ paths:
         $ref: "./paths/service-desk/user/update_ticket_by_id.yaml"
     /service-desk/wtickets/tickets/{ticketId}/comments:
         $ref: "./paths/service-desk/user/create_ticket_comment.yaml"
+
+    # Feed
+    /wfeed/feeds:
+        $ref: "./paths/feed/user/feed/create_feed.yaml"
+    /wfeed/feeds/{feedId}:
+        $ref: "./paths/feed/user/feed/update_delete_feed.yaml"
+    /rfeed/feeds:
+        $ref: "./paths/feed/user/feed/get_feeds.yaml"
+    /rfeed/feeds/{feedId}:
+        $ref: "./paths/feed/user/feed/feed_by_id.yaml"
+    /wfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/user/comment/create_comment.yaml"
+    /wfeed/feeds/{feedId}/comments/{commentId}:
+        $ref: "./paths/feed/user/comment/update_delete_comment.yaml"
+    /rfeed/feeds/{feedId}/comments:
+        $ref: "./paths/feed/user/comment/get_comments.yaml"
+
 components:
     schemas:
         $ref: "./schemas/_index.yaml"
