@@ -140,10 +140,10 @@
   required: false
 - name: reportType
   in: query
-  description: Specifies which bulk operation report to generate. Use 'content_author_report_generation' for author change CSV export, or 'content_status_report_generation' for publish/unpublish CSV export.
+  description: Specifies which bulk operation report to generate. Use 'content_author_report_generation' for author change CSV export.
   schema:
     type: string
-    enum: ["content_author_report_generation", "content_status_report_generation"]
+    enum: ["content_author_report_generation"]
   required: false
 - name: requestedBy
   in: query
