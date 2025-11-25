@@ -105,5 +105,5 @@ properties:
       type: string
   reportType:
     type: string
-    enum: ["content_author_report_generation", "content_status_report_generation"]
-    description: Specifies which bulk operation report to generate. Use 'content_author_report_generation' for author change CSV export, or 'content_status_report_generation' for publish/unpublish CSV export.
+    enum: ["content_author_report_generation"]
+    description: Specifies which bulk operation report to generate. Use 'content_author_report_generation' for author change CSV export.
