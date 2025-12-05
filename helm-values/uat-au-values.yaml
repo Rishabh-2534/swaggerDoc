@@ -1,0 +1,23 @@
+#***********************************************************************************************************#
+# Dev Deployment Variables #
+#***********************************************************************************************************#
+
+# Below array is required if you need any custome values -- It's optional
+
+# microservicesName: # this name must not be changed
+#   notification-api-app:
+#     autoscalingMinReplicas: 10
+#     autoscalingMaxReplicas: 100
+
+#***********************************************************************************************************#
+# ConfigMap Variables #
+#***********************************************************************************************************#
+configMap:
+  data:
+    NODE_ENV: UAT
+    PORT: '5000'
+    ENV: UAT
+    DB_DIALECT: postgres
+    AWS_SM_REGION: ap-southeast-2
+    AWS_SM_KMS_KEY_ID: 272b60b3-5f25-4119-91c5-3585e4ac33fa
+    LOG_LEVEL: info
