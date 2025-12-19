@@ -6,5 +6,3 @@ content:
       properties:
         result:
           $ref: "../../../../../schemas/identity/b2b/audience/get_audience.yaml"
-
-

@@ -20,7 +20,7 @@ properties:
   rule:
     $ref: './audience_rule_schema.yaml'
   parentId:
-    type: string,
+    type: string
     description: >
         Audience category ID.
 
