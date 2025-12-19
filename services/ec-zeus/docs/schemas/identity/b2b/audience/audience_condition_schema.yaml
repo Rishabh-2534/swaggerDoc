@@ -30,8 +30,6 @@ properties:
       - BEFORE
       - AFTER
       - BETWEEN
-      - TRUE
-      - FALSE
   values:
     type: array
     description: "Array of values for the condition (optional)"
@@ -42,18 +40,7 @@ properties:
         value:
           type: string
           description: "Value for the condition"
+        label:
+          type: string
+          description: "label for the condition"
       required: ["value"]
-  AND:
-    type: array
-    description: "Nested AND conditions"
-    items:
-      $ref: './audience_condition_schema.yaml'
-  OR:
-    type: array
-    description: "Nested OR conditions"
-    items:
-      $ref: './audience_condition_schema.yaml'
-required:
-  - attribute
-  - fieldType
-

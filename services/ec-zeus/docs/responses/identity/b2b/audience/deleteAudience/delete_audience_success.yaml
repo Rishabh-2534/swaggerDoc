@@ -4,17 +4,10 @@ content:
     schema:
       type: object
       properties:
-        status:
+        id:
           type: string
-          description: Response status
-          example: "SUCCESS"
-        result:
-          type: "object"
-          properties:
-            audienceId:
-              type: "string"
-              example: "44fa7711-407a-4305-9dff-a01660068238"
-        message:
-          type: string
-          description: Success message
-          example: "Audience deleted"
+          format: uuid
+          description: Audience's id
+          example: "25526ee2-752a-47e3-affa-2fa0eaadc5ec"
+      required:
+          - id

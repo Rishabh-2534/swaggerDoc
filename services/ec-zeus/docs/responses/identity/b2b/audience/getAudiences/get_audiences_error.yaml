@@ -4,16 +4,13 @@ content:
     schema:
       type: object
       properties:
-        status:
-          type: string
-          example: error
-          description: Response status
         message:
           type: string
           description: Error message describing what went wrong
           example: "The input provided is invalid."
         errors:
           type: array
+          description: List of validation errors
           items:
             type: object
             properties:
@@ -21,11 +18,7 @@ content:
                 type: string
                 description: Error message
                 example: "Invalid payload"
-              code:
-                type: string
-                description: Error code
-                example: "INVALID_INPUT"
               details:
                 type: string
                 description: Detailed error message
-                example: "Payload must not include audienceCategoryId or parentAudienceId when parent child feature is disabled."
+                example: "Payload must not include categoryId or audienceId when parent child feature is disabled."

@@ -4,10 +4,6 @@ content:
     schema:
       type: object
       properties:
-        status:
-          type: string
-          example: "error"
-          description: Response status
         message:
           type: string
           description: Error message describing what went wrong
@@ -21,10 +17,6 @@ content:
                 type: string
                 description: Error message
                 example: "Invalid Input"
-              code:
-                type: string
-                description: Error code
-                example: "INVALID_INPUT"
               details:
                 oneOf:
                   - type: string

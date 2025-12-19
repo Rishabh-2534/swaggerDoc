@@ -4,14 +4,10 @@ content:
     schema:
       type: object
       properties:
-        status:
-          type: string
-          example: error
-          description: Response status
         message:
           type: string
           description: Error message describing what went wrong
-          example: "AUDIENCE_USED_IN_USAGE: Audience used in acg groups or features"
+          example: "The input provided is invalid."
         errors:
           type: array
           items:
@@ -21,7 +17,3 @@ content:
                 type: string
                 description: Error message
                 example: "AUDIENCE_USED_IN_USAGE: Audience used in acg groups or features"
-              code:
-                type: string
-                description: Error code
-                example: "AUDIENCE_USED_IN_USAGE"

@@ -1,3 +1,6 @@
+get:
+  $ref: "./audiences/get_audience.yaml#/get"
+
 delete:
   $ref: "./audiences/delete_audience.yaml#/delete"
 

@@ -19,7 +19,7 @@ properties:
     example: "Audience for marketing team members"
   rule:
     $ref: './audience_rule_schema.yaml'
-  parentAudienceId:
+  parentId:
     type: string,
     description: >
         Audience category ID.
@@ -28,11 +28,11 @@ properties:
         This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
 
 
-        when you pass parentAudienceId in request audience create inside an existing audience. And newly created audience become child of parent audience provied in request.
+        when you pass parentId in request audience create inside an existing audience. And newly created audience become child of parent audience provied in request.
 
     example: "39437d92-9be0-4a25-8543-55bdab74df4e"
     nullable: true
-  audienceCategoryName:
+  categoryName:
     type: string
     description: >
       Audience category name.
@@ -41,13 +41,13 @@ properties:
       This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
 
       
-      When you pass audienceCategoryName in request audience create inside that category. 
+      When you pass categoryName in request audience create inside that category. 
       
       
-      If audience with same name already exist we create audience inside that category otherwise will create new category first and then audience inside it.
+      If audience category with the same name does not exists, we will create one with the name
     example: "Marketing"
     nullable: true
-  audienceCategoryId:
+  categoryId:
     type: string
     format: uuid
     description: >
@@ -57,7 +57,7 @@ properties:
       This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
        
 
-      when you pass audienceCategoryId in request audience create inside that category.
+      when you pass categoryId in request audience create inside that category.
     example: "57cc74a4-c059-428d-914c-caa4eba702a2"
     nullable: true
   sourceType:
@@ -66,11 +66,10 @@ properties:
     example: "app_managed"
     enum:
       - app_managed
-      - user_managed
-      - system_managed
     nullable: true
 required:
   - name
   - type
+  - rule
 additionalProperties: false
 

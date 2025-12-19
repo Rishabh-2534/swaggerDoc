@@ -4,12 +4,6 @@ content:
     schema:
       type: object
       properties:
-        status:
-          type: string
-          example: success
-        message:
-          type: string
-          example: "Audiences fetched successfully"
         result:
           type: object
           required:
@@ -19,11 +13,11 @@ content:
               type: integer
               description: Total number of records found (will come if includeTotal is set to true or 1)
               example: 7
-            listOfItems:
+            items:
               type: array
               description: List of audiences
               items:
-                  $ref: "../../../../../schemas/identity/b2b/audience/get_audience.yaml"
+                  $ref: "../../../../../schemas/identity/b2b/audience/get_audiences_item.yaml"
             nextPageToken:
               type: string
               description: >

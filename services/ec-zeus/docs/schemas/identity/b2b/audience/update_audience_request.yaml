@@ -18,7 +18,7 @@ properties:
     example: "Audience for marketing team members"
   rule:
     $ref: './audience_rule_schema.yaml'
-  audienceCategoryName:
+  categoryName:
     type: string
     description: >
       Audience category name.
@@ -30,13 +30,13 @@ properties:
       When we need to move audience inside an existing category or new category.
 
 
-      When you pass audienceCategoryName in request audience and its children move inside that category if category with same name already exist otherwise will create new category first and move audience inside it.
+      When you pass categoryName in request audience and its children move inside that category if category with same name already exist otherwise will create new category first and move audience inside it.
 
 
       We can only move hierarchy level 1 audience using this field.
     example: "Marketing"
     nullable: true
-  audienceCategoryId:
+  categoryId:
     type: string
     format: uuid
     description: >
@@ -46,12 +46,13 @@ properties:
       This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
       
       
-      When you pass audienceCategoryId in request audience and its children move inside that category.
+      When you pass categoryId in request audience and its children move inside that category.
 
       
       We can only move hierarchy level 1 audience using this field.
 required:
   - name
   - type
+  - rule
 additionalProperties: false
 

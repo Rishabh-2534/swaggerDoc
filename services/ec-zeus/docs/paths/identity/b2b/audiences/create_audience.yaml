@@ -10,13 +10,10 @@ post:
     Note:
 
 
-      You can send only one of parentAudienceId, audienceCategoryId, or audienceCategoryName in a single request.
+      parentId, categoryId, or categoryName are only supported for tenants where ABAC is enabled
 
 
-      This is valid only for ABAC-enabled tenants. For non-ABAC tenants, providing any value for parentAudienceId, audienceCategoryId, or audienceCategoryName will result in an error.
-
-
-      Please login in to simpplr App to find Ids of segment, user, ad group, okta group, google group
+      Please login in to simpplr App to find IDs of segment, user, ad group, okta group, google group
 
     **Example 1: Segment with IS_NOT operator**
 
@@ -43,7 +40,7 @@ post:
         ]
       },
       "sourceType": "app_managed",
-      "parentAudienceId":"39437d92-9be0-4a25-8543-55bdab74df4e"
+      "parentId":"39437d92-9be0-4a25-8543-55bdab74df4e"
     }
     ```
 
@@ -100,7 +97,7 @@ post:
         ]
       },
       "sourceType": "app_managed",
-      "parentAudienceId": "39437d92-9be0-4a25-8543-55bdab74df4e"
+      "parentId": "39437d92-9be0-4a25-8543-55bdab74df4e"
     }
     ```
 
@@ -156,7 +153,7 @@ post:
         ]
       },
       "sourceType": "app_managed",
-      "audienceCategoryId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+      "categoryId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
     }
     ```
 
@@ -197,7 +194,7 @@ post:
                     "value": "India"
                   }
                 ],
-                "attribute": "countryName",
+                "attribute": "country",
                 "operator": "IS",
                 "fieldType": "regular"
               }
@@ -206,7 +203,7 @@ post:
         ]
       },
       "sourceType": "app_managed",
-      "audienceCategoryName": "Marketing Team"
+      "categoryName": "Marketing Team"
     }
     ```
 
@@ -236,7 +233,7 @@ post:
         ]
       },
       "sourceType": "app_managed",
-      "parentAudienceId": "39437d92-9be0-4a25-8543-55bdab74df4e"
+      "parentId": "39437d92-9be0-4a25-8543-55bdab74df4e"
     }
     ```
 
@@ -266,7 +263,7 @@ post:
         ]
       },
       "sourceType": "app_managed",
-      "audienceCategoryId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+      "categoryId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
     }
     ```
 
@@ -299,7 +296,7 @@ post:
         ]
       },
       "sourceType": "app_managed",
-      "audienceCategoryName": "Sales Team"
+      "categoryName": "Sales Team"
     }
     ```
 
@@ -329,7 +326,7 @@ post:
         ]
       },
       "sourceType": "app_managed",
-      "parentAudienceId": "39437d92-9be0-4a25-8543-55bdab74df4e"
+      "parentId": "39437d92-9be0-4a25-8543-55bdab74df4e"
     }
     ```
 
@@ -430,7 +427,7 @@ post:
           ]
         },
         "sourceType":"app_managed",
-        "parentAudienceId":"39437d92-9be0-4a25-8543-55bdab74df4e"
+        "parentId":"39437d92-9be0-4a25-8543-55bdab74df4e"
       }
       ```
       
@@ -507,7 +504,7 @@ post:
         ]
       },
       "sourceType": "app_managed",
-      "audienceCategoryId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+      "categoryId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
     }
     ```
 
@@ -518,7 +515,7 @@ post:
         schema:
           $ref: '../../../../schemas/identity/b2b/audience/create_audience_request.yaml'
   responses:
-    '200':
+    '201':
       $ref: '../../../../responses/identity/b2b/audience/createAudience/create_audience_success.yaml'
     '401':
       $ref: '../../../../responses/common/unauthorized.yaml'
