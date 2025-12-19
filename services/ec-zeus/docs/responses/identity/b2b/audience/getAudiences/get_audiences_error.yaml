@@ -21,4 +21,4 @@ content:
               details:
                 type: string
                 description: Detailed error message
-                example: "Payload must not include categoryId or audienceId when parent child feature is disabled."
+                example: "Payload must not include categoryId or parentId when parent child feature is disabled."
