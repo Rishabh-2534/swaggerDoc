@@ -1,0 +1,42 @@
+type: object
+properties:
+  action:
+    type: string
+    enum:
+      - add
+      - remove
+    description: The action to perform - add or remove a reaction
+
+  reactionType:
+    type: string
+    enum:
+      - like
+      - emoji/1F44D
+      - emoji/2764
+      - emoji/1F606
+      - emoji/1F4A1
+      - emoji/1F64F
+      - emoji/1F44F
+      - emoji/2B06
+    description: |
+      The type of reaction to add or remove.
+      - like: Standard like
+      - emoji/1F44D: Thumbs up 👍
+      - emoji/2764: Love ❤️
+      - emoji/1F606: Haha 😆
+      - emoji/1F4A1: Insightful 💡
+      - emoji/1F64F: Pray 🙏
+      - emoji/1F44F: Clapping 👏
+      - emoji/2B06: Upvote ⬆️ (only applicable for question feeds)
+
+  createdBy:
+    type: string
+    format: uuid
+    description: UUID of the user performing the reaction (B2B specific field)
+
+required:
+  - action
+  - reactionType
+  - createdBy
+
+additionalProperties: false

@@ -1,0 +1,29 @@
+post:
+  operationId: addRemoveReaction
+  tags:
+    - Feed
+  summary: Add or remove a reaction to a feed
+  description: This API allows you to add or remove a reaction (like, emoji) to a feed post
+  parameters:
+    - name: feedId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
+      description: The ID of the feed to add/remove reaction
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../../../schemas/feed/user/request/add_remove_reaction_request.yaml'
+  responses:
+    '200':
+      $ref: '../../../../responses/feed/user/addRemoveReaction/add_remove_reaction_success.yaml'
+    '400':
+      $ref: '../../../../responses/feed/user/addRemoveReaction/add_remove_reaction_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'

@@ -32,7 +32,7 @@ authRouter.get('/login', (req, res) => {
 });
 
 authRouter.get('/oauth2/callback', async (req, res) => {
-  logger.info(`Request query is : ${req.query}`);
+  logger.debug(`Request query is : ${req.query}`);
   let accessToken = '';
   let email = '';
   let userName = '';
@@ -57,7 +57,7 @@ authRouter.get('/oauth2/callback', async (req, res) => {
       logger.error(`Exception in AuthRouter : ${err}`);
       return console.error(err);
     }
-    logger.info(`UserInfo in AuthRouter is : ${userInfo}`);
+    logger.debug(`UserInfo in AuthRouter is : ${userInfo}`);
     accessToken = conn.accessToken;
     return null;
   });

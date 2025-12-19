@@ -154,7 +154,7 @@ content:
                   companyName:
                     type: string
                     description: Company name
-                    example: "xabcde"
+                    example: "Simpplr"
                   startDate:
                     type: string
                     format: date
@@ -168,7 +168,7 @@ content:
                   peopleCategory:
                     type: string
                     description: People category
-                    example: "New"
+                    example: "Country-US"
                   segmentId:
                     type: string
                     description: Segment ID

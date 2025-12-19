@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig":
+      { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:754178572197:certificate/19198889-483b-4ec7-9ab8-985b06bd2499
+    alb.ingress.kubernetes.io/group.name: simpplr-aws-services
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
+    alb.ingress.kubernetes.io/load-balancer-attributes: access_logs.s3.enabled=true,access_logs.s3.bucket=simmplr-audit-log-159693656053-us-east-1,access_logs.s3.prefix=qa/simpplr-aws-services-alb-ingress,routing.http.drop_invalid_header_fields.enabled=true
+    alb.ingress.kubernetes.io/load-balancer-name: simpplr-aws-services-alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS13-1-2-2021-06
+    alb.ingress.kubernetes.io/subnets: subnet-057b5b30caad71556,subnet-06406fa02a327ec17
+    alb.ingress.kubernetes.io/tags: Environment=qa,Team=devops
+    alb.ingress.kubernetes.io/target-type: ip
+  name: ec-services-alb-ingress
+  namespace: qa
+spec:
+  ingressClassName: alb
+  rules:
+    - host: ec.qa.simpplr.xyz
+      http:
+        paths:
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: ec-odin-service
+                port:
+                  number: 80

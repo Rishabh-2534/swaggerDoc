@@ -1,9 +1,9 @@
 post:
-  summary: Add file to bulk author change request
+  summary: Create bulk operation change request
   operationId: addBulkOperationFileB2b
   tags:
     - Content
-  description: This API allows us to add/associate a file with a bulk author change request
+  description: This API allows us to add/associate a file with a bulk operation change request
   parameters:
     - name: opType
       in: path

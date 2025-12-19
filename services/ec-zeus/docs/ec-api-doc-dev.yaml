@@ -4,7 +4,7 @@ info:
     version: 1.0.0
     title: Simpplr User API Documentation
     description: ""
-x-proxy-enabled: true
+x-proxy-enabled: false
 tags:
     - name: Authorization
       description: Everything about Authorization
@@ -111,13 +111,15 @@ paths:
     /content/sites/content/bulk-ops/{opType}/{ackId}/status:
         $ref: "./paths/content/user/bulk_operations_status.yaml"
     /content/sites/content/bulk-ops/{opType}:
-        $ref: "./paths/content/user/add_bulk_author_change_file.yaml"
+        $ref: "./paths/content/user/create_bulk_ops_change_request.yaml"
 
     # Files
     /content/static/signedurl/upload:
         $ref: "./paths/content/user/get_upload_signed_url.yaml"
     /content/files/list:
         $ref: "./paths/content/user/get_files.yaml"
+    /content/files:
+        $ref: "./paths/content/user/add_files.yaml"
 
     # Recognition list
     /recognition/list:
@@ -178,6 +180,8 @@ paths:
         $ref: "./paths/feed/user/comment/update_delete_comment.yaml"
     /rfeed/feeds/{feedId}/comments:
         $ref: "./paths/feed/user/comment/get_comments.yaml"
+    /wfeed/feeds/{feedId}/reactions:
+        $ref: "./paths/feed/user/reaction/add_remove_reaction.yaml"
 
 components:
     schemas:

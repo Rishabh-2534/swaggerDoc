@@ -27,7 +27,7 @@ const getFile = async (fileUploadBaseUrl, accessToken, fileVersionId) => {
     accessToken,
     {},
   );
-  logger.info({ status, data });
+  logger.debug({ status, data });
   const { response } = data;
   if (
     status === 'success' &&
@@ -35,7 +35,7 @@ const getFile = async (fileUploadBaseUrl, accessToken, fileVersionId) => {
     response.records &&
     response.records[0]
   ) {
-    logger.info({ fileId: response.records[0].ContentDocumentId });
+    logger.debug({ fileId: response.records[0].ContentDocumentId });
     return {
       fileId: response.records[0].ContentDocumentId,
       fileVersionId,
@@ -79,7 +79,7 @@ const uploadFile = async (baseUrl, accessToken, fileData) => {
     fileData,
     1,
   );
-  logger.info({ status, data });
+  logger.debug({ status, data });
   const { response } = data;
   // Sample Response : {\"id\":\"0685e000004ZwRZAA0\",\"success\":true,\"errors\":[]}
   if (status === 'success' && response && response.success) {
@@ -90,7 +90,7 @@ const uploadFile = async (baseUrl, accessToken, fileData) => {
       accessToken,
       response.id,
     );
-    logger.info({ fileId, fileVersionId, err });
+    logger.debug({ fileId, fileVersionId, err });
     return {
       fileId,
       fileVersionId,
@@ -120,7 +120,7 @@ const addFileToAlbum = async (req, baseUrl, accessToken, fileData) => {
     fileData,
     req.use_json_headers,
   );
-  logger.info({ status, data });
+  logger.debug({ status, data });
   if (status === 'success' && data && data.id) {
     return data.id;
   }

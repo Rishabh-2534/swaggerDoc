@@ -19,7 +19,7 @@ properties:
   listOfAttachedFiles:
     type: array
     items:
-      $ref: "../../../content/common/request/file/file.yaml"
+      $ref: "../../common/request/file/file.yaml"
     default: []
     description: Array of attached files
     

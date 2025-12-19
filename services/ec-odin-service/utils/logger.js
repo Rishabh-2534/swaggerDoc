@@ -1,7 +1,7 @@
 const pino = require('pino');
 const logger = require('pino-caller')(
   pino({
-    level: process.env.NODE_ENV === 'development' ? 'trace' : 'trace',
+    level: process.env.LOG_LEVEL || 'error',
     timestamp: () => `,"time":"${new Date(Date.now()).toISOString()}"`,
     transport: {
       targets: [
@@ -14,6 +14,7 @@ const logger = require('pino-caller')(
         },
         {
           target: 'pino/file',
+          level: process.env.LOG_LEVEL || 'error',
           options: { destination: 1 },
         },
       ],

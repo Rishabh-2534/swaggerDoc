@@ -276,6 +276,19 @@ const getPageById = async (req, res) => {
   return res.status(resultObj.statusCode).send(resultObj);
 };
 
+const getPageCategories = async (req, res) => {
+  const urn = utils.getRequestUrn('contents', 'getPageCategories');
+  if (!urn) {
+    return response.mapingError(res);
+  }
+  const resultObj = await utils.makePostRequest(
+    req.base_url + urn,
+    req.access_token,
+    req.body,
+  );
+  return res.status(resultObj.statusCode).send(resultObj);
+};
+
 const deleteAlbumImages = async (req, res) => {
   const body = {
     fileId: req.body['file-ids'],
@@ -477,7 +490,7 @@ const updateEvent = async (req, res) => {
         peopleId: req.body['authored-by'],
       };
     }
-    // await fileUploadService.processFileRequest(req, res);
+    await fileUploadService.processFileRequest(req, res);
     req.body.siteId = req.params.site_id;
     const urn = utils.getRequestUrn('contents', 'updateEvent');
     if (!urn) {
@@ -684,6 +697,7 @@ const fetchVideoMetadata = async (req, res) => {
 
 module.exports = {
   getPageById,
+  getPageCategories,
   getEventById,
   createEvent,
   createPage,
