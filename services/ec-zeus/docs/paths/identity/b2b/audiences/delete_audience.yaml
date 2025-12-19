@@ -6,7 +6,7 @@ delete:
   description: >
     This API allows you to delete an audience.
   parameters:
-    - name: id
+    - name: audienceId
       in: path
       description: "ID of audience to delete"
       required: true
