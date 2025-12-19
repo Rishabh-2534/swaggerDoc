@@ -1,5 +1,5 @@
 post:
-  summary: Add file to bulk author change request
+  summary: Create bulk operation change request
   operationId: addBulkOperationFileUser
   tags:
     - Content

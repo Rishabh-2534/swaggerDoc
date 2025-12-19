@@ -101,7 +101,7 @@ const getBaseUrl = async (req, res, next) => {
       logger.error({ message: 'Exception in fetching org info:' });
       throw new Error();
     }
-    logger.info(`Request baseUrl is : ${req.baseUrl}`);
+    logger.debug(`Request baseUrl is : ${req.baseUrl}`);
   } catch (err) {
     logger.error(`Exception in getBaseUrl : ${err}`);
     return res.status(500).json({
@@ -182,6 +182,8 @@ const parseRequestBody = async (req, res, next) => {
       'to',
       'hire-date',
       'file-ids',
+      'title',
+      'location',
     ];
     const keys = Object.keys(req.query);
     for (let i = 0; i < keys.length; i += 1) {
@@ -207,8 +209,7 @@ const parseRequestBody = async (req, res, next) => {
 };
 
 const logRequestParams = (req, res, next) => {
-  try {
-  if (req.url === '/ping') {
+  if (constants.SKIP_PATHS.includes(req.url)) {
     return next();
   }
   const params =
@@ -220,11 +221,6 @@ const logRequestParams = (req, res, next) => {
     `***** Request details ***** URL: ${req.url} ***** Params: ${params}  ***** Query: ${query}  ***** Body: ${body}`,
   );
   return next();
-} catch (error) {
-  logger.error(
-    `Error in middleware logRequestParams ${error}`,
-  );
-}
 };
 
 module.exports = {

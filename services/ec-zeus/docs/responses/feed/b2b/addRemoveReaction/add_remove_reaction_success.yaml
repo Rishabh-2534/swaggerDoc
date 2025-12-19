@@ -1,0 +1,28 @@
+description: Success response for B2B add/remove reaction
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        result:
+          type: object
+          description: Contains the reaction operation result
+          properties:
+            action:
+              type: string
+              enum: [add, remove]
+              example: add
+              description: The action that was performed
+            reactionType:
+              type: string
+              example: like
+              description: The type of reaction that was added/removed
+        message:
+          type: string
+          example: Reaction added successfully
+          description: Descriptive message about the operation result

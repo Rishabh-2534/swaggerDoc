@@ -6,7 +6,7 @@ info:
     description: "API documentation for Simpplr B2B integration services"
     contact:
       name: Simpplr Support
-x-proxy-enabled: true
+x-proxy-enabled: false
 tags:
     - name: Authorization
       description: Everything about Authorization
@@ -101,13 +101,15 @@ paths:
     /b2b/content/sites/content/bulk-ops/{opType}/{ackId}/status:
         $ref: "./paths/content/b2b/bulk_operations_status.yaml"
     /b2b/content/sites/content/bulk-ops/{opType}:
-        $ref: "./paths/content/b2b/add_bulk_author_change_file.yaml"
+        $ref: "./paths/content/b2b/create_bulk_ops_change_request.yaml"
         
     # Files
     /b2b/content/static/signedurl/upload:
         $ref: "./paths/content/b2b/get_upload_signed_url.yaml"
     /b2b/content/files/list:
         $ref: "./paths/content/b2b/get_files.yaml"
+    /b2b/content/files:
+        $ref: "./paths/content/b2b/add_files.yaml"
 
     # Recognition list
     /b2b/recognition/list:
@@ -128,6 +130,8 @@ paths:
         $ref: "./paths/feed/b2b/comment/update_delete_comment.yaml"
     /b2b/rfeed/feeds/{feedId}/comments:
         $ref: "./paths/feed/b2b/comment/get_comments.yaml"
+    /b2b/wfeed/feeds/{feedId}/reactions:
+        $ref: "./paths/feed/b2b/reaction/add_remove_reaction.yaml"
 
 components:
     securitySchemes:

@@ -1,0 +1,140 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        result:
+          type: object
+          properties:
+            listOfFiles:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: PNG
+                  title:
+                    type: string
+                    example: Screenshot 2025-10-14 at 1.05.47 AM.png
+                  provider:
+                    type: string
+                    example: intranet
+                  driveType:
+                    type: string
+                    nullable: true
+                    example: null
+                  owner:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: Ajay Tanwar
+                      id:
+                        type: string
+                        example: e5149282-2b89-4588-8b70-590ea3218e83
+                  onlyPDFDownload:
+                    type: boolean
+                    example: false
+                  modifiedAtDateTime:
+                    type: string
+                    format: date-time
+                    example: 2025-11-18T07:17:14.244Z
+                  modifiedAt:
+                    type: string
+                    format: date-time
+                    example: 2025-11-18T07:17:14.244Z
+                  filepk:
+                    type: string
+                    example: "1186775"
+                  listOfSite:
+                    type: array
+                    items:
+                      type: object
+                    example: []
+                  isDownloadableOniOS:
+                    type: boolean
+                    example: true
+                  id:
+                    type: string
+                    example: f5f4a9db-462d-4a15-8d27-4845ce3b82cc
+                  isExternal:
+                    type: boolean
+                    example: false
+                  isRestricted:
+                    type: boolean
+                    example: false
+                  canMarkRestricted:
+                    type: boolean
+                    example: false
+                  canMarkUnrestricted:
+                    type: boolean
+                    example: false
+                  fileExtension:
+                    type: string
+                    example: png
+                  isImage:
+                    type: boolean
+                    example: true
+                  isAudio:
+                    type: boolean
+                    example: false
+                  thumbnailImg:
+                    type: string
+                    example: https://zeta-qna.dev.simpplr.xyz/content/r/f5f4a9db-462d-4a15-8d27-4845ce3b82cc?site_id=YzVhZWVjNjItNTZmZC00NTJmLWJiNDMtMDU0ZGVmOTQ1OGYy
+                  downloadUrl:
+                    type: string
+                    example: https://zeta-qna.dev.simpplr.xyz/content/r/f5f4a9db-462d-4a15-8d27-4845ce3b82cc?site_id=YzVhZWVjNjItNTZmZC00NTJmLWJiNDMtMDU0ZGVmOTQ1OGYy
+                  fileId:
+                    type: string
+                    example: f5f4a9db-462d-4a15-8d27-4845ce3b82cc
+                  size:
+                    type: string
+                    example: "354007"
+                  version:
+                    type: integer
+                    example: 1
+                  description:
+                    type: string
+                    example: ""
+                  canFavorite:
+                    type: boolean
+                    example: true
+                  canLike:
+                    type: boolean
+                    example: true
+                  isLiked:
+                    type: boolean
+                    example: false
+                  isFavorited:
+                    type: boolean
+                    example: false
+                  canEditDescription:
+                    type: boolean
+                    example: true
+                  canDelete:
+                    type: boolean
+                    example: true
+                  canCreateNewVersion:
+                    type: boolean
+                    example: true
+                  canDownload:
+                    type: boolean
+                    example: true
+                  altText:
+                    type: string
+                    example: ""
+                  canCreatePublicShareLink:
+                    type: boolean
+                    example: false
+                  canRemove:
+                    type: boolean
+                    example: true
+                  canMove:
+                    type: boolean
+                    example: true
+

@@ -30,6 +30,7 @@ properties:
     example: "bulk-ops"
     enum:
       - bulk-ops
+      - content
   uploadContext:
     type: string
     nullable: true
