@@ -27,7 +27,7 @@ on:
 jobs:
   deploy:
     name: Service Deployment
-    uses: Simpplr/github-shared-library/.github/workflows/service-deploy.yaml@main
+    uses: Simpplr/github-shared-library/.github/workflows/service-deploy.yaml@DOPS-10019
     with:
       BRANCH: "${{ inputs.branch }}"
       ENVIRONMENT: "${{ inputs.environment }}"
