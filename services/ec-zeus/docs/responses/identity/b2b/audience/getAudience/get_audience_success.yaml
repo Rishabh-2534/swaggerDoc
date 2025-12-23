@@ -2,7 +2,16 @@ description: "Success"
 content:
   application/json:
     schema:
-      type: object
-      properties:
-        result:
-          $ref: "../../../../../schemas/identity/b2b/audience/get_audience.yaml"
+      allOf:
+        - $ref: "../../../../../schemas/identity/b2b/audience/get_audiences_item.yaml"
+        - type: object
+          properties:
+            sourceType:
+              type: string
+              description: Source type of the audience
+              example: "app_managed"
+              enum:
+                - app_managed
+              nullable: true
+            rule:
+                $ref: "../../../../../schemas/identity/b2b/audience/audience_rule_schema.yaml"

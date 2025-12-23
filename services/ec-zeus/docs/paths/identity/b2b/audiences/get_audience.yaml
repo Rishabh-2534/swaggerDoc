@@ -1,5 +1,5 @@
 get:
-  operationId: getAudience
+  operationId: getAudienceB2B
   tags:
     - Audience
   summary: Get audience by ID
