@@ -14,7 +14,6 @@ on:
         - perf
         - perft
         - migt
-        - devops-infra
       branch:
         description: 'Branch name'
         type: choice
@@ -28,7 +27,7 @@ on:
 jobs:
   deploy:
     name: Service Deployment
-    uses: Simpplr/github-shared-library/.github/workflows/service-deploy.yaml@DOPS-10019
+    uses: Simpplr/github-shared-library/.github/workflows/service-deploy.yaml@main
     with:
       BRANCH: "${{ inputs.branch }}"
       ENVIRONMENT: "${{ inputs.environment }}"
