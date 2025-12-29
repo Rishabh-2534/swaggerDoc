@@ -7,15 +7,15 @@ metadata:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:958465808810:certificate/067ec0b5-3624-45b1-bae3-c87dc3d8a8c9
     alb.ingress.kubernetes.io/group.name: ingress-devops
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
-    #alb.ingress.kubernetes.io/load-balancer-attributes: access_logs.s3.enabled=true,access_logs.s3.bucket=simmplr-audit-log-159693656053-us-west-2,access_logs.s3.prefix=devops-infra/alb-ingress
+    alb.ingress.kubernetes.io/load-balancer-attributes: access_logs.s3.enabled=true,access_logs.s3.bucket=simmplr-audit-log-159693656053-us-west-2,access_logs.s3.prefix=devops-infra/alb-ingress
     alb.ingress.kubernetes.io/load-balancer-name: ingress-alb-devops
-    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/scheme: internal
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
     alb.ingress.kubernetes.io/subnets: subnet-079eb58575c38d55e,subnet-00191da0430303aac,subnet-035c4e938d9dce16a
     alb.ingress.kubernetes.io/tags: Environment=Devops-infra,Team=DevOps
     alb.ingress.kubernetes.io/target-type: ip
   name: ec-services-alb-ingress
-  namespace: prod
+  namespace: common-services
 spec:
   ingressClassName: alb
   rules:
