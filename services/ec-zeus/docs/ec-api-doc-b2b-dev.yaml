@@ -127,6 +127,8 @@ paths:
         $ref: "./paths/feed/b2b/comment/get_comments.yaml"
     /b2b/wfeed/feeds/{feedId}/reactions:
         $ref: "./paths/feed/b2b/reaction/add_remove_reaction.yaml"
+    /b2b/rfeed/feeds/{feedId}/reactions:
+        $ref: "./paths/feed/b2b/reaction/get_reactions.yaml"
 
 components:
     securitySchemes:

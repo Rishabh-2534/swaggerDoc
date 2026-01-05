@@ -1,0 +1,20 @@
+type: object
+properties:
+  count:
+    type: integer
+    example: 5
+    description: The count of reactions for this type
+  reactionType:
+    type: string
+    example: like
+    description: The type of reaction
+    enum:
+      - like
+      - emoji/1F44D
+      - emoji/2764
+      - emoji/1F606
+      - emoji/1F4A1
+      - emoji/1F64F
+      - emoji/1F44F
+      - emoji/2B06
+
