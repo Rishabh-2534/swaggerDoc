@@ -39,6 +39,11 @@ servers:
             default: dev
          version:
             default: v1
+     - url: https://platform.{env}.simpplr.com/v1
+       variables:
+         env:
+            default: uat-au
+
 paths:
     # Authorization
     /identity/oauth/token:
