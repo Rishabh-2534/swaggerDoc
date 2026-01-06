@@ -1,0 +1,12 @@
+description: "Audience not found error"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message indicating audience not found
+          example: "Audience is not found"
+      required:
+        - message

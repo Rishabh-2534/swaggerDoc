@@ -1,0 +1,26 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        result:
+          type: object
+          required:
+            - items
+          properties:
+            total:
+              type: integer
+              description: Total number of records found (will come if includeTotal is set to true or 1)
+              example: 7
+            items:
+              type: array
+              description: List of audiences
+              items:
+                $ref: "../../../../../schemas/identity/b2b/audience/get_audiences_item.yaml"
+            nextPageToken:
+              type: string
+              description: >
+                A token that can be used to get the next page of audiences.
+                This token is returned if there are more audiences to fetch.
+                The client should pass this token to the server to get the next page of audiences.

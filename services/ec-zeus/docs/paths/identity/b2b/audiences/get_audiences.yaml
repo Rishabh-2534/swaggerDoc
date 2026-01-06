@@ -1,0 +1,67 @@
+get:
+  operationId: getAudiencesB2B
+  tags:
+    - Audience
+  summary: Get audiences
+  description: >
+    This API allows you to retrieve a list of all audiences for the tenant.
+  parameters:
+    - name: pageSize
+      in: query
+      description: The number of audiences to return per page.
+      required: false
+      schema:
+        type: integer
+        default: 10
+    - name: pageToken
+      in: query
+      description: Should be what is returned as nextPageToken from a previous page request if passed.
+      required: false
+      schema:
+        type: string
+    - name: includeTotal
+      in: query
+      description: >
+        Whether to include the total number of users in the response.
+        To include set it to `true`
+      required: false
+      schema:
+        type: boolean
+        default: false
+    - name: searchTerm
+      in: query
+      description: Search term to filter audiences by name
+      schema:
+        type: string
+        example: "marketing"
+    - name: categoryId
+      in: query
+      description: >
+        Audience category ID to filter by.
+
+
+        This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
+      schema:
+        type: string
+        example: "4ba58d96-9ac2-4820-88ef-28aa4555500d"
+    - name: parentId
+      in: query
+      description: >
+        Parent audience ID to filter by.
+
+
+        This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
+      schema:
+        type: string
+        example: "7ca58d96-8ac2-4820-88eu-28aa4555500e"
+  responses:
+    "200":
+      $ref: '../../../../responses/identity/b2b/audience/getAudiences/get_audiences_success.yaml'
+    "400":
+      $ref: '../../../../responses/identity/b2b/audience/getAudiences/get_audiences_error.yaml'
+    "401":
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    "403":
+      $ref: '../../../../responses/common/forbidden.yaml'
+    '404':
+      $ref: '../../../../responses/identity/b2b/audience/get_audience_404_error.yaml'

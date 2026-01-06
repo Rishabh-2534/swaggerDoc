@@ -1,0 +1,24 @@
+get:
+  operationId: getAudienceB2B
+  tags:
+    - Audience
+  summary: Get audience by ID
+  description: This API allows you to get a audience by ID
+  parameters:
+    - name: audienceId
+      in: path
+      description: The ID of the audience to get
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "123e4567-e89b-12d3-a456-426614174000"
+  responses:
+    "200":
+      $ref: '../../../../responses/identity/b2b/audience/getAudience/get_audience_success.yaml'
+    "401":
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    "403":
+      $ref: '../../../../responses/common/forbidden.yaml'
+    '404':
+      $ref: '../../../../responses/identity/b2b/audience/get_audience_404_error.yaml'

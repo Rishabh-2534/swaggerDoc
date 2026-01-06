@@ -1,0 +1,13 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Audience's id
+          example: "25526ee2-752a-47e3-affa-2fa0eaadc5ec"
+      required:
+          - id
