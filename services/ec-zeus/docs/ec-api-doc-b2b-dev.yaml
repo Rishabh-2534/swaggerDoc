@@ -12,6 +12,8 @@ tags:
       description: Everything about Authorization
     - name: Audience
       description: Everything about Audience
+    - name: Audience Members
+      description: Everything about Audience Members
     - name: Content
       description: Everything about Content
     - name: Feed
@@ -44,6 +46,10 @@ paths:
         $ref: "./paths/identity/b2b/audiences.yaml"
     /b2b/identity/audiences/{audienceId}:
         $ref: "./paths/identity/b2b/audiences_audienceId.yaml"
+
+    # Audience Members
+    /b2b/identity/audiences/{audienceId}/members:
+        $ref: "./paths/identity/b2b/get_audiences_members.yaml"
 
     # Users
     /b2b/identity/users:
