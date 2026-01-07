@@ -49,7 +49,7 @@ paths:
 
     # Audience Members
     /b2b/identity/audiences/{audienceId}/members:
-        $ref: "./paths/identity/b2b/get_audiences_members.yaml"
+        $ref: "./paths/identity/b2b/audiences-members/get_audiences_members.yaml"
 
     # Users
     /b2b/identity/users:
