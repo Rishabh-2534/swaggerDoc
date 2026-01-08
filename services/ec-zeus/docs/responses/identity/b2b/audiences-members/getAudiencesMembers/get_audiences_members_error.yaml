@@ -1,0 +1,24 @@
+description: "Error"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message describing what went wrong
+          example: "The input provided is invalid."
+        errors:
+          type: array
+          description: List of validation errors
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message
+                example: "Invalid payload"
+              details:
+                type: string
+                description: Detailed error message
+                example: "Invalid audienceId provided."

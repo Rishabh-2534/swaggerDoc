@@ -1,0 +1,36 @@
+type: object
+properties:
+  userId:
+    type: string
+    format: uuid
+    description: Unique identifier for the user
+    example: "9a736d37-4337-4f77-b177-deb3efcfd190"
+  firstName:
+    type: string
+    description: First name of the user
+    example: "John"
+  lastName:
+    type: string
+    description: Last name of the user
+    example: "Doe"
+  city:
+    type: string
+    description: City where the user is located
+    example: "San Francisco"
+  state:
+    type: string
+    description: State where the user is located
+    example: "California"
+  title:
+    type: string
+    description: Job title of the user
+    example: "Software Engineer"
+  department:
+    type: string
+    description: Department the user belongs to
+    example: "Engineering"
+  division:
+    type: string
+    description: Division the user belongs to
+    example: "Product Development"
+
