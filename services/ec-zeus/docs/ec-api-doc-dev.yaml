@@ -33,12 +33,17 @@ tags:
     - name: Video
       description: Everything about Video
 servers:
-     - url: https://platform.{env}.simpplr.xyz/{version}
+     - url: https://platform.{env}.simpplr.xyz/v1
        variables:
          env:
             default: dev
          version:
             default: v1
+     - url: https://platform.{env}.simpplr.com/v1
+       variables:
+         env:
+            default: uat-au
+
 paths:
     # Authorization
     /identity/oauth/token:

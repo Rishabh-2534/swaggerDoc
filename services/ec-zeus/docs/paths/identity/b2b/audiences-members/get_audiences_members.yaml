@@ -1,0 +1,53 @@
+get:
+  operationId: getAudiencesMembersB2B
+  tags:
+    - Audience Members
+  summary: Get audience members
+  description: >
+    This API allows you to retrieve a list of all members for a specific audience.
+  parameters:
+    - name: audienceId
+      in: path
+      description: The unique identifier of the audience
+      required: true
+      schema:
+        type: string
+        example: "9a736d37-4337-4f77-b177-deb3efcfd190"
+    - name: pageSize
+      in: query
+      description: The number of audience members to return per page.
+      required: false
+      schema:
+        type: integer
+        default: 10
+    - name: pageToken
+      in: query
+      description: Should be what is returned as nextPageToken from a previous page request if passed.
+      required: false
+      schema:
+        type: string
+    - name: includeTotal
+      in: query
+      description: >
+        Whether to include the total number of members in the response.
+        To include set it to `true`
+      required: false
+      schema:
+        type: boolean
+        default: false
+    - name: searchTerm
+      in: query
+      description: Search term to filter audience members by name
+      schema:
+        type: string
+        example: "john"
+  responses:
+    "200":
+      $ref: '../../../../responses/identity/b2b/audiences-members/getAudiencesMembers/get_audiences_members_success.yaml'
+    "400":
+      $ref: '../../../../responses/identity/b2b/audiences-members/getAudiencesMembers/get_audiences_members_error.yaml'
+    "401":
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    "403":
+      $ref: '../../../../responses/common/forbidden.yaml'
+
