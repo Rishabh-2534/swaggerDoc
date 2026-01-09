@@ -12,14 +12,11 @@ post:
 
       parentId, categoryId, or categoryName are only supported for tenants where ABAC is enabled
 
-
-      Please login in to simpplr App to find IDs of segment, user, ad group, okta group, google group
-
     **Example 1: Segment with IS_NOT operator**
 
     ```
     {
-      "name": "Audience with segment exclusion",
+      "name": "date type auidence",
       "type": "mixed",
       "rule": {
         "AND": [
@@ -28,19 +25,83 @@ post:
               {
                 "values": [
                   {
-                    "value": "49a8828d-16d9-4265-a82e-063fc1f10afe"
+                    "label": "date",
+                    "value": "2025-11-21"
                   }
                 ],
-                "attribute": "segmentId",
-                "operator": "IS_NOT",
-                "fieldType": "segment"
+                "attribute": "start_date",
+                "operator": "ON",
+                "fieldType": "regular"
+              },
+              {
+                "values": [
+                  {
+                    "label": "date",
+                    "value": "2025-11-21"
+                  }
+                ],
+                "attribute": "start_date",
+                "operator": "ON_OR_BEFORE",
+                "fieldType": "regular"
+              },
+              {
+                "values": [
+                  {
+                    "label": "date",
+                    "value": "2025-11-21"
+                  }
+                ],
+                "attribute": "start_date",
+                "operator": "ON_OR_AFTER",
+                "fieldType": "regular"
+              },
+              {
+                "values": [
+                  {
+                    "label": "date",
+                    "value": "2025-11-21"
+                  }
+                ],
+                "attribute": "start_date",
+                "operator": "BEFORE",
+                "fieldType": "regular"
+              },
+              {
+                "values": [
+                  {
+                    "label": "date",
+                    "value": "2025-11-21"
+                  }
+                ],
+                "attribute": "start_date",
+                "operator": "AFTER",
+                "fieldType": "regular"
+              }
+            ]
+          },
+          {
+            "AND": [
+              {
+                "values": [
+                  {
+                    "label": "startDate",
+                    "value": "2025-11-21"
+                  },
+                  {
+                    "label": "endDate",
+                    "value": "2025-11-21"
+                  }
+                ],
+                "attribute": "start_date",
+                "operator": "BETWEEN",
+                "fieldType": "regular"
               }
             ]
           }
         ]
       },
       "sourceType": "app_managed",
-      "parentId":"39437d92-9be0-4a25-8543-55bdab74df4e"
+      "categoryId": "57cc74a4-c059-428d-914c-caa4eba702a2"
     }
     ```
 
@@ -115,7 +176,6 @@ post:
               {
                 "values": [
                   {
-                    "label": "date",
                     "value": "2025-11-07"
                   }
                 ],
@@ -140,7 +200,6 @@ post:
               {
                 "values": [
                   {
-                    "label": "date",
                     "value": "2026-11-19"
                   }
                 ],
@@ -237,89 +296,73 @@ post:
     }
     ```
 
-
-    **Example 6: AD Group with IS operator**
+    **Example 6: Multiple attribute with multiple operator**
 
     ```
     {
-      "name": "Audience with AD group filter",
+      "name": "Testing audience",
       "type": "mixed",
       "rule": {
         "AND": [
           {
-            "AND": [
+            "OR": [
               {
                 "values": [
                   {
-                    "value": "a006a46d-39c4-4cfb-bc8c-7d81e32ce68d"
+                    "value": "84c542ac-6fdf-4d37-8788-b0c4546eb9fa"
                   }
                 ],
-                "attribute": "mail-security",
+                "attribute": "userId",
                 "operator": "IS",
-                "fieldType": "adGroup"
-              }
-            ]
-          }
-        ]
-      },
-      "sourceType": "app_managed",
-      "categoryId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-    }
-    ```
-
-
-    **Example 7: AD Group and Okta Group with ALL operator**
-
-    ```
-    {
-      "name": "Audience with AD group and Okta group ALL",
-      "type": "mixed",
-      "rule": {
-        "AND": [
-          {
-            "AND": [
+                "fieldType": "regular"
+              },
               {
-                "attribute": "ALL",
-                "fieldType": "adGroup"
+                "values": [
+                  {
+                    "value": "sim"
+                  }
+                ],
+                "attribute": "firstName",
+                "operator": "CONTAINS",
+                "fieldType": "regular"
+              },
+              {
+                "values": [
+                  {
+                    "value": "CDX Tech"
+                  }
+                ],
+                "attribute": "businessUnit",
+                "operator": "IS_NOT",
+                "fieldType": "regular"
               }
             ]
           },
           {
             "AND": [
               {
-                "attribute": "BUILT_IN",
-                "operator": "ALL",
-                "fieldType": "oktaGroup"
+                "values": [
+                  {
+                    "value": "True"
+                  }
+                ],
+                "attribute": "isManager",
+                "operator": "IS",
+                "fieldType": "regular"
               }
             ]
-          }
-        ]
-      },
-      "sourceType": "app_managed",
-      "categoryName": "Sales Team"
-    }
-    ```
-
-
-    **Example 8: Okta Group with IS operator**
-
-    ```
-    {
-      "name": "Audience with Okta group filter",
-      "type": "mixed",
-      "rule": {
-        "AND": [
+          },
           {
             "AND": [
               {
                 "values": [
                   {
-                    "value": "00gqoj4ploU9lDkne5d7"
+                    "value": "add on name"
                   }
                 ],
-                "attribute": "OKTA_GROUP",
+                "attribute": "office_loc__c",
                 "operator": "IS",
-                "fieldType": "oktaGroup"
+                "fieldType": "regular"
               }
             ]
           }
@@ -328,111 +371,9 @@ post:
       "sourceType": "app_managed",
       "parentId": "39437d92-9be0-4a25-8543-55bdab74df4e"
     }
-    ```
+    ``` 
 
-
-    **Example 9: Multiple attribute with multiple operator**
-
-    ```
-    {
-        "name":"Testing audience",
-        "type":"mixed",
-        "rule": {
-          "AND": [
-            {
-              "OR": [
-                {
-                  "values": [
-                    {
-                      "value": "84c542ac-6fdf-4d37-8788-b0c4546eb9fa"
-                    }
-                  ],
-                  "attribute": "userId",
-                  "operator": "IS",
-                  "fieldType": "regular"
-                },
-                {
-                  "values": [
-                    {
-                      "value": "sim"
-                    }
-                  ],
-                  "attribute": "firstName",
-                  "operator": "CONTAINS",
-                  "fieldType": "regular"
-                },
-                {
-                  "values": [
-                    {
-                      "value": "CDX Tech"
-                    }
-                  ],
-                  "attribute": "businessUnit",
-                  "operator": "IS_NOT",
-                  "fieldType": "regular"
-                }
-              ]
-            },
-            {
-              "AND": [
-                {
-                  "values": [
-                    {
-                      "value": "True"
-                    }
-                  ],
-                  "attribute": "isManager",
-                  "operator": "IS",
-                  "fieldType": "regular"
-                },
-                {
-                  "values": [
-                    {
-                      "value": "a006a46d-39c4-4cfb-bc8c-7d81e32ce68d"
-                    }
-                  ],
-                  "attribute": "mail-security",
-                  "operator": "IS",
-                  "fieldType": "adGroup"
-                }
-              ]
-            },
-            {
-              "AND": [
-                {
-                  "attribute": "mail-security",
-                  "operator": "ALL",
-                  "fieldType": "adGroup"
-                },
-                {
-                  "attribute": "ALL",
-                  "fieldType": "oktaGroup"
-                }
-              ]
-            },
-            {
-              "AND": [
-                {
-                  "values": [
-                    {
-                      "value": "add on name"
-                    }
-                  ],
-                  "attribute": "office_loc__c",
-                  "operator": "IS",
-                  "fieldType": "regular"
-                }
-              ]
-            }
-          ]
-        },
-        "sourceType":"app_managed",
-        "parentId":"39437d92-9be0-4a25-8543-55bdab74df4e"
-      }
-      ```
-      
-
-    **Example 10: Business Unit, Company Name, State, Custom Field, and Title with various operators**
+    **Example 7: Business Unit, Company Name, State, Custom Field, and Title with various operators**
 
     ```
     {
