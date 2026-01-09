@@ -12,6 +12,8 @@ tags:
       description: Everything about Authorization
     - name: Audience
       description: Everything about Audience
+    - name: Audience Members
+      description: Everything about Audience Members
     - name: Content
       description: Everything about Content
     - name: Feed
@@ -26,12 +28,14 @@ tags:
       description: Everything about Users
 
 servers:
-     - url: https://platform.{env}.simpplr.xyz/{version}
+     - url: https://platform.{env}.simpplr.xyz/v1
        variables:
          env:
             default: dev
-         version:
-            default: v1
+     - url: https://platform.{env}.simpplr.com/v1
+       variables:
+         env:
+            default: uat-au
 paths:
     # Authorization
     /identity/oauth/token:
@@ -42,6 +46,10 @@ paths:
         $ref: "./paths/identity/b2b/audiences.yaml"
     /b2b/identity/audiences/{audienceId}:
         $ref: "./paths/identity/b2b/audiences_audienceId.yaml"
+
+    # Audience Members
+    /b2b/identity/audiences/{audienceId}/members:
+        $ref: "./paths/identity/b2b/audiences-members/get_audiences_members.yaml"
 
     # Users
     /b2b/identity/users:
