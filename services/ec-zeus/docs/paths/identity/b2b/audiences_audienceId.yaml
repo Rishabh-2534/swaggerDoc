@@ -4,5 +4,5 @@ get:
 delete:
   $ref: "./audiences/delete_audience.yaml#/delete"
 
-put:
+patch:
   $ref: "./audiences/update_audience.yaml#/put"

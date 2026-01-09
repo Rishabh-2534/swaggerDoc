@@ -3,22 +3,22 @@ description: "Single condition or nested subgroup"
 properties:
   attribute:
     type: string
-    description: "Attribute to filter on"
-    example: "segmentId"
+    description: "Attribute to filter on. This should not be user editable field"
+    example: "userId"
   fieldType:
     type: string
     description: "Type of field"
     enum:
-      - segment
       - regular
-      - adGroup
-      - oktaGroup
-      - googleGroup
+        #- segment
+        #- adGroup
+        #- oktaGroup
+        #- googleGroup
   operator:
     type: string
     description: "Operator for the condition (optional)"
     enum:
-      - ALL
+      #- ALL
       - IS
       - IS_NOT
       - CONTAINS
@@ -32,7 +32,7 @@ properties:
       - BETWEEN
   values:
     type: array
-    description: "Array of values for the condition (optional)"
+    description: "Array of values for the condition"
     minItems: 1
     items:
       type: object

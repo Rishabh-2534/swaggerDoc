@@ -22,6 +22,18 @@ properties:
     type: string
     description: parent audience ID
     example: "7ca58d96-8ac2-4820-88eu-28aa4555500e"
+  categoryName:
+    type: string
+    description: audience category name
+    example: "Teams"
+  sourceType:
+    type: string
+    description: Source type of the audience
+    example: "app_managed"
+    enum:
+      - app_managed
+      - user_managed
+      - system_managed
   createdOn:
     type: string
     description: Audiences's creation timestamp

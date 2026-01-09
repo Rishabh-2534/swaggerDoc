@@ -22,14 +22,13 @@ properties:
   parentId:
     type: string
     description: >
-        Audience category ID.
+        Parent audience ID.
 
 
         This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
 
 
-        when you pass parentId in request audience create inside an existing audience. And newly created audience become child of parent audience provied in request.
-
+        when you pass parentId in request, audience is created as a child audience of the given parent audience
     example: "39437d92-9be0-4a25-8543-55bdab74df4e"
     nullable: true
   categoryName:
@@ -41,10 +40,10 @@ properties:
       This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
 
       
-      When you pass categoryName in request audience create inside that category. 
+      When you pass categoryName in the request, audience created is shown under the given category folder in the UI
       
       
-      If audience category with the same name does not exists, we will create one with the name
+      If audience category with the same name does not exist, we will create one with the name
     example: "Marketing"
     nullable: true
   categoryId:
@@ -57,13 +56,17 @@ properties:
       This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
        
 
-      when you pass categoryId in request audience create inside that category.
+      When you pass categoryId in the request, audience created is shown under the given category folder in the UI
     example: "57cc74a4-c059-428d-914c-caa4eba702a2"
     nullable: true
   sourceType:
     type: string
-    description: "Source type of the audience"
-    example: "app_managed"
+    description: > 
+      Source type of the audience
+
+
+      if nothing is passed it is considered as app_managed and app_managed is the only allowed while creating audience via the API
+
     enum:
       - app_managed
     nullable: true
