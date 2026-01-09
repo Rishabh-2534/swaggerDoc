@@ -10,6 +10,13 @@ properties:
     example: "Marketing Team"
   type:
     type: string
+    description: "Type of audience"
+    enum:
+      - mixed
+      - csv
+      - system
+      - wizard
+      - external
     example: "mixed"
   description:
     type: string
