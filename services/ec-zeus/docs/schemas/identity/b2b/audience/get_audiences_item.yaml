@@ -46,3 +46,4 @@ properties:
     description: Number of members in the audience
     type: integer
     example: 25
+

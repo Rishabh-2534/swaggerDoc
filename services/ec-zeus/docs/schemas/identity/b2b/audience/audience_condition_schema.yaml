@@ -4,7 +4,7 @@ properties:
   attribute:
     type: string
     description: "Attribute to filter on. This should not be user editable field"
-    example: "userId"
+    example: "userId, firstName, lastName, title, companyName, businessUnit, department, division, userType, startDate, isManager, city, state, country, or Custom field ending with __c"
   fieldType:
     type: string
     description: "Type of field"
