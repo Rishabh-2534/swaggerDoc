@@ -63,5 +63,3 @@ get:
       $ref: '../../../../responses/common/unauthorized.yaml'
     "403":
       $ref: '../../../../responses/common/forbidden.yaml'
-    '404':
-      $ref: '../../../../responses/identity/b2b/audience/get_audience_404_error.yaml'

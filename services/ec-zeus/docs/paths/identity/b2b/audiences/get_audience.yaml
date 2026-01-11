@@ -22,3 +22,5 @@ get:
       $ref: '../../../../responses/common/forbidden.yaml'
     '404':
       $ref: '../../../../responses/identity/b2b/audience/get_audience_404_error.yaml'
+    '400':
+      $ref: '../../../../responses/identity/b2b/audience/getAudiences/get_audiences_error.yaml'
