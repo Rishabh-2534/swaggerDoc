@@ -14,6 +14,7 @@ const logger = require('pino-caller')(
         },
         {
           target: 'pino/file',
+          level: process.env.LOG_LEVEL || 'error',
           options: { destination: 1 },
         },
       ],

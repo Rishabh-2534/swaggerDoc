@@ -4,7 +4,7 @@ info:
     version: 1.0.0
     title: Simpplr User API Documentation
     description: ""
-x-proxy-enabled: true
+x-proxy-enabled: false
 tags:
     - name: Authorization
       description: Everything about Authorization
@@ -179,6 +179,8 @@ paths:
         $ref: "./paths/feed/user/comment/update_delete_comment.yaml"
     /rfeed/feeds/{feedId}/comments:
         $ref: "./paths/feed/user/comment/get_comments.yaml"
+    /wfeed/feeds/{feedId}/reactions:
+        $ref: "./paths/feed/user/reaction/add_remove_reaction.yaml"
      
 components:
     schemas:

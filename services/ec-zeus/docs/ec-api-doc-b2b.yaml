@@ -6,7 +6,7 @@ info:
     description: "API documentation for Simpplr B2B integration services"
     contact:
       name: Simpplr Support
-x-proxy-enabled: true
+x-proxy-enabled: false
 tags:
     - name: Authorization
       description: Everything about Authorization
@@ -121,6 +121,8 @@ paths:
         $ref: "./paths/feed/b2b/comment/update_delete_comment.yaml"
     /b2b/rfeed/feeds/{feedId}/comments:
         $ref: "./paths/feed/b2b/comment/get_comments.yaml"
+    /b2b/wfeed/feeds/{feedId}/reactions:
+        $ref: "./paths/feed/b2b/reaction/add_remove_reaction.yaml"
 
 components:
     securitySchemes:
