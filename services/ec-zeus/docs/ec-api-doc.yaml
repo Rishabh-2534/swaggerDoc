@@ -181,6 +181,8 @@ paths:
         $ref: "./paths/feed/user/comment/get_comments.yaml"
     /wfeed/feeds/{feedId}/reactions:
         $ref: "./paths/feed/user/reaction/add_remove_reaction.yaml"
+    /rfeed/feeds/{feedId}/reactions:
+        $ref: "./paths/feed/user/reaction/get_reactions.yaml"
      
 components:
     schemas:

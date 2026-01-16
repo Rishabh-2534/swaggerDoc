@@ -1,0 +1,64 @@
+get:
+  operationId: getReactions
+  tags:
+    - Feed
+  summary: Get reactions for a feed
+  description: This API allows you to retrieve reactions (likes, emojis) for a feed post with optional pagination and statistics
+  parameters:
+    - name: feedId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
+      description: The ID of the feed to get reactions for
+    - name: size
+      in: query
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        example: 10
+      description: Number of reactions to return per page
+    - name: nextPageToken
+      in: query
+      required: false
+      schema:
+        type: integer
+        nullable: true
+        example: 1759911721822
+      description: Token for pagination to fetch next page
+    - name: includeStats
+      in: query
+      required: false
+      schema:
+        type: boolean
+        default: false
+        example: true
+      description: Whether to include reaction statistics by type
+    - name: reactionType
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - like
+          - emoji/1F44D
+          - emoji/2764
+          - emoji/1F606
+          - emoji/1F4A1
+          - emoji/1F64F
+          - emoji/1F44F
+          - emoji/2B06
+      description: Filter reactions by type (optional)
+  responses:
+    '200':
+      $ref: '../../../../responses/feed/user/getReactions/get_reactions_success.yaml'
+    '400':
+      $ref: '../../../../responses/feed/user/getReactions/get_reactions_error.yaml'
+    '401':
+      $ref: '../../../../responses/common/unauthorized.yaml'
+    '403':
+      $ref: '../../../../responses/common/forbidden.yaml'
