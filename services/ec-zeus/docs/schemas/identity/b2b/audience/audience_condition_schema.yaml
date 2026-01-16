@@ -1,0 +1,46 @@
+type: object
+description: "Single condition or nested subgroup"
+properties:
+  attribute:
+    type: string
+    description: "Attribute to filter on. This should not be user editable field"
+    example: "userId, firstName, lastName, title, companyName, businessUnit, department, division, userType, startDate, isManager, city, state, country, or Custom field ending with __c"
+  fieldType:
+    type: string
+    description: "Type of field"
+    enum:
+      - regular
+        #- segment
+        #- adGroup
+        #- oktaGroup
+        #- googleGroup
+  operator:
+    type: string
+    description: "Operator for the condition (optional)"
+    enum:
+      #- ALL
+      - IS
+      - IS_NOT
+      - CONTAINS
+      - STARTS_WITH
+      - ENDS_WITH
+      - ON
+      - ON_OR_BEFORE
+      - ON_OR_AFTER
+      - BEFORE
+      - AFTER
+      - BETWEEN
+  values:
+    type: array
+    description: "Array of values for the condition"
+    minItems: 1
+    items:
+      type: object
+      properties:
+        value:
+          type: string
+          description: "Value for the condition"
+        label:
+          type: string
+          description: "label for the condition"
+      required: ["value"]

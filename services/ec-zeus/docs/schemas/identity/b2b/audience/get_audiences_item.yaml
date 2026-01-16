@@ -1,0 +1,56 @@
+type: object
+properties:
+  id:
+    type: string
+    description: Unique identifier for the audience
+    example: "9a736d37-4337-4f77-b177-deb3efcfd190"
+  name:
+    type: string
+    description: audience name
+    example: "Marketing Team"
+  type:
+    type: string
+    description: "Type of audience"
+    enum:
+      - mixed
+      - csv
+      - system
+      - wizard
+      - external
+    example: "mixed"
+  description:
+    type: string
+    example: "Marketing team members"
+  categoryId:
+    type: string
+    description: audience category ID
+    example: "4ba58d96-9ac2-4820-88ef-28aa4555500d"
+  parentId:
+    type: string
+    description: parent audience ID
+    example: "7ca58d96-8ac2-4820-88eu-28aa4555500e"
+  categoryName:
+    type: string
+    description: audience category name
+    example: "Teams"
+  sourceType:
+    type: string
+    description: Source type of the audience
+    example: "app_managed"
+    enum:
+      - app_managed
+      - user_managed
+      - system_managed
+  createdOn:
+    type: string
+    description: Audiences's creation timestamp
+    example: 2024-12-18T12:54:06.729Z
+  modifiedOn:
+    type: string
+    description: Audiences's modified timestamp
+    example: 2024-12-18T12:54:06.729Z
+  memberCount:
+    description: Number of members in the audience
+    type: integer
+    example: 25
+

@@ -1,0 +1,14 @@
+type: object
+description: >
+   "Subgroup schema for nested AND/OR conditions. 
+properties:
+  AND:
+    type: array
+    description: "Nested AND conditions"
+    items:
+      $ref: './audience_condition_schema.yaml'
+  OR:
+    type: array
+    description: "Nested OR conditions"
+    items:
+      $ref: './audience_condition_schema.yaml'

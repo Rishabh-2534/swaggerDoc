@@ -10,6 +10,10 @@ x-proxy-enabled: false
 tags:
     - name: Authorization
       description: Everything about Authorization
+    - name: Audience
+      description: Everything about Audience
+    - name: Audience Members
+      description: Everything about Audience Members
     - name: Content
       description: Everything about Content
     - name: Feed
@@ -24,16 +28,28 @@ tags:
       description: Everything about Users
 
 servers:
-     - url: https://platform.{env}.simpplr.xyz/{version}
+     - url: https://platform.{env}.simpplr.xyz/v1
        variables:
          env:
             default: dev
-         version:
-            default: v1
+     - url: https://platform.{env}.simpplr.com/v1
+       variables:
+         env:
+            default: uat-au
 paths:
     # Authorization
     /identity/oauth/token:
         $ref: "./paths/identity/b2b/token.yaml"
+
+    # Audience
+    /b2b/identity/audiences:
+        $ref: "./paths/identity/b2b/audiences.yaml"
+    /b2b/identity/audiences/{audienceId}:
+        $ref: "./paths/identity/b2b/audiences_audienceId.yaml"
+
+    # Audience Members
+    /b2b/identity/audiences/{audienceId}/members:
+        $ref: "./paths/identity/b2b/audiences-members/get_audiences_members.yaml"
 
     # Users
     /b2b/identity/users:
@@ -131,6 +147,11 @@ paths:
         $ref: "./paths/feed/b2b/reaction/get_reactions.yaml"
 
 components:
+    schemas:
+        AudienceItem:
+            $ref: './schemas/identity/b2b/audience/get_audiences_item.yaml'
+        AudienceRule:
+            $ref: './schemas/identity/b2b/audience/audience_rule_schema.yaml'
     securitySchemes:
         OAuth2ClientCredentials:
             type: "oauth2"

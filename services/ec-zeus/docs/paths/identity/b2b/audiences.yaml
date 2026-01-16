@@ -1,0 +1,5 @@
+get:
+  $ref: "./audiences/get_audiences.yaml#/get"
+
+post:
+  $ref: "./audiences/create_audience.yaml#/post"

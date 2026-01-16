@@ -1,0 +1,78 @@
+type: object
+properties:
+  name:
+    type: string
+    description: "Name of the audience"
+    example: "Marketing Audience"
+    minLength: 1
+    maxLength: 100
+  type:
+    type: string
+    description: "Type of audience"
+    example: "mixed"
+    enum:
+      - mixed
+  description:
+    type: string
+    nullable: true
+    description: "Description of the audience"
+    example: "Audience for marketing team members"
+  rule:
+    $ref: './audience_rule_schema.yaml'
+  parentId:
+    type: string
+    description: >
+        Parent audience ID.
+
+
+        This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
+
+
+        when you pass parentId in request, audience is created as a child audience of the given parent audience
+    example: "39437d92-9be0-4a25-8543-55bdab74df4e"
+    nullable: true
+  categoryName:
+    type: string
+    description: >
+      Audience category name.
+
+      
+      This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
+
+      
+      When you pass categoryName in the request, audience created is shown under the given category folder in the UI
+      
+      
+      If audience category with the same name does not exist, we will create one with the name
+    example: "Marketing"
+    nullable: true
+  categoryId:
+    type: string
+    format: uuid
+    description: >
+      Audience category ID.
+
+      
+      This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
+       
+
+      When you pass categoryId in the request, audience created is shown under the given category folder in the UI
+    example: "57cc74a4-c059-428d-914c-caa4eba702a2"
+    nullable: true
+  sourceType:
+    type: string
+    description: > 
+      Source type of the audience
+
+
+      if nothing is passed it is considered as app_managed and app_managed is the only allowed while creating audience via the API
+
+    enum:
+      - app_managed
+    nullable: true
+required:
+  - name
+  - type
+  - rule
+additionalProperties: false
+

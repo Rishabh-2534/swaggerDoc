@@ -1,0 +1,10 @@
+description: "Success"
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: "../../../../../schemas/identity/b2b/audience/get_audiences_item.yaml"
+        - type: object
+          properties:
+            rule:
+                $ref: "../../../../../schemas/identity/b2b/audience/audience_rule_schema.yaml"

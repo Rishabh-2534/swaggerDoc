@@ -94,4 +94,70 @@ content:
           type: boolean
           description: Whether Q&A is enabled for the site
           example: true
+        targetAudience:
+          type: array
+          items:
+            type: object
+            required:
+              - audienceId
+            properties:
+              entityAudienceId:
+                type: string
+                format: uuid
+                description: UUID of the entity audience
+              audienceId:
+                type: string
+                format: uuid
+                description: UUID of the audience
+            additionalProperties: false
+          description: List of target audiences
+        subscription:
+          type: array
+          items:
+            type: object
+            required:
+              - audienceId
+              - accessType
+              - isMandatory
+            properties:
+              entityAudienceId:
+                type: string
+                format: uuid
+                description: UUID of the entity audience
+              audienceId:
+                type: string
+                format: uuid
+                description: UUID of the audience
+              accessType:
+                type: string
+                enum: [viewer, member, follower]
+                description: Access type for the subscription
+              isMandatory:
+                type: boolean
+                description: Whether the subscription is mandatory
+            additionalProperties: false
+          description: List of subscription configurations
+        targetAudienceDeleted:
+          type: array
+          description: List of target audience UUIDs to delete
+          items:
+            type: string
+            format: uuid
+        subscriptionDeleted:
+          type: array
+          description: List of subscriptions to delete
+          items:
+            type: object
+            required:
+              - entityAudienceId
+              - shouldUnfollowAudience
+            properties:
+              entityAudienceId:
+                type: string
+                format: uuid
+                description: UUID of the entity audience to delete
+              shouldUnfollowAudience:
+                type: boolean
+                description: Whether to unfollow the audience
+            additionalProperties: false
       additionalProperties: false

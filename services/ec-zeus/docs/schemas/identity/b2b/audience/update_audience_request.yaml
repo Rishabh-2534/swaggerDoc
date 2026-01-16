@@ -1,0 +1,58 @@
+type: object
+properties:
+  name:
+    type: string
+    description: "Name of the audience"
+    example: "Marketing audience"
+    minLength: 1
+  type:
+    type: string
+    description: "Type of audience"
+    example: "mixed"
+    enum:
+      - mixed
+  description:
+    type: string
+    nullable: true
+    description: "Description of the audience"
+    example: "Audience for marketing team members"
+  rule:
+    $ref: './audience_rule_schema.yaml'
+  categoryName:
+    type: string
+    description: >
+      Audience category name.
+
+      
+      This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
+      
+
+      When we need to move audience inside an existing category or new category.
+
+
+      When you pass categoryName in request audience and its children move inside that category if category with same name already exist otherwise will create new category first and move audience inside it.
+
+
+      We can only move hierarchy level 1 audience using this field.
+    example: "Marketing"
+    nullable: true
+  categoryId:
+    type: string
+    format: uuid
+    description: >
+      Audience category ID.
+
+      
+      This is valid for only ABAC enabled tenants. For non-ABAC tenants, if you pass anything here it will throw error.
+      
+      
+      When you pass categoryId in request audience and its children move inside that category.
+
+      
+      We can only move hierarchy level 1 audience using this field.
+required:
+  - name
+  - type
+  - rule
+additionalProperties: false
+

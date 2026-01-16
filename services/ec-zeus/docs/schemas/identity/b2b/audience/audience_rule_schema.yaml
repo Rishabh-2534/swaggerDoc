@@ -1,0 +1,14 @@
+type: object
+description: "Audience rule configuration with flexible AND/OR structure"
+properties:
+  AND:
+    type: array
+    description: "All conditions in this array must be true (AND logic)"
+    items:
+      $ref: './audience_subgroup_schema.yaml'
+  OR:
+    type: array
+    description: "Any condition in this array can be true (OR logic)"
+    items:
+      $ref: './audience_subgroup_schema.yaml'
+
