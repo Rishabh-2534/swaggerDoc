@@ -27,6 +27,7 @@ const logger = require('./utils/logger'); // logger - API GATEWAY LOGGER
 const config = require('./config/config');
 const middleware = require('./middlewares/middleware');
 const apiRateLimiter = require('./middlewares/api_rate_limiter');
+const apiRouter = express.Router();
 
 const conf = config[config.ENV];
 
@@ -67,19 +68,21 @@ app.use(
 // TODO: Develop a custom middleware to get SF URL and Environment
 // TODO: Request schema validation (may be Joi??)
 
-app.use('/', probesRouter);
-app.use('/ping', pingRouter);
-app.use('/auth', authRouter);
-app.use('/sites', siteRouter);
-app.use('/people', peopleRouter);
-app.use('/blogs', blogsRouter);
-app.use('/search', searchRouter);
-app.use('/alerts', alertsRouter);
-app.use('/contents', contentRouter);
-app.use('/notifications', notificationRouter);
-app.use('/carousels', digitalDisplayRouter);
-app.use('/analytics', analyticsRouter);
-app.use('/audience', audienceRouter);
+apiRouter.use('/', probesRouter);
+apiRouter.use('/ping', pingRouter);
+apiRouter.use('/auth', authRouter);
+apiRouter.use('/sites', siteRouter);
+apiRouter.use('/people', peopleRouter);
+apiRouter.use('/blogs', blogsRouter);
+apiRouter.use('/search', searchRouter);
+apiRouter.use('/alerts', alertsRouter);
+apiRouter.use('/contents', contentRouter);
+apiRouter.use('/notifications', notificationRouter);
+apiRouter.use('/carousels', digitalDisplayRouter);
+apiRouter.use('/analytics', analyticsRouter);
+apiRouter.use('/audience', audienceRouter);
+
+app.use('/api', apiRouter);
 
 app.listen(conf.API_SERVICE_PORT, () => {
   logger.info(
