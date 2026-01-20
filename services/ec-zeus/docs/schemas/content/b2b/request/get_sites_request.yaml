@@ -39,12 +39,12 @@
 
 - name: siteIds
   in: query
-  description: Optional list of site UUIDs to filter the results
+  description: Optional comma-separated list of site UUIDs to filter the results
   schema:
-    type: array
-    items:
-      type: string
-      format: uuid
+    type: string
+  style: form
+  explode: false
+  example: "55ec49b0-61a0-4162-9853-fd45ab2164fa,5c3af8ae-f856-4654-a990-4b46284526fe"
   required: false
 
 - name: modifiedAfter
