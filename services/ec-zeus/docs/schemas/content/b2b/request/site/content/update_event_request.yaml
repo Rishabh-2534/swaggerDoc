@@ -99,6 +99,17 @@ properties:
     type: boolean
     description: Whether the event appears in feeds
 
+  isRestricted:
+    type: boolean
+    description: Whether the content is restricted to specific audiences
+
+  targetAudience:
+    type: array
+    items:
+      type: string
+      format: uuid
+    description: List of UUIDs identifying the target audiences
+
   isQuestionAnswerEnabled:
     type: boolean
     description: Whether question and answer feature is enabled
