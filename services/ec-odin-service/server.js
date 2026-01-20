@@ -68,7 +68,7 @@ app.use(
 // TODO: Develop a custom middleware to get SF URL and Environment
 // TODO: Request schema validation (may be Joi??)
 
-apiRouter.use('/', probesRouter);
+app.use('/', probesRouter);
 apiRouter.use('/ping', pingRouter);
 apiRouter.use('/auth', authRouter);
 apiRouter.use('/sites', siteRouter);
