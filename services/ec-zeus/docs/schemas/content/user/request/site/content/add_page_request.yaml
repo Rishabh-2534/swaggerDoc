@@ -137,6 +137,17 @@ properties:
     type: boolean
     description: Whether manual translation is enabled
 
+  isRestricted:
+    type: boolean
+    description: Whether the content is restricted to specific audiences
+
+  targetAudience:
+    type: array
+    items:
+      type: string
+      format: uuid
+    description: List of UUIDs identifying the target audiences
+    minItems: 0
 
 required:
   - contentSubType

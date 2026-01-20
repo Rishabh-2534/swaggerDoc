@@ -1,0 +1,31 @@
+type: object
+properties:
+  reactionType:
+    type: string
+    example: like
+    description: The type of reaction
+    enum:
+      - like
+      - emoji/1F44D
+      - emoji/2764
+      - emoji/1F606
+      - emoji/1F4A1
+      - emoji/1F64F
+      - emoji/1F44F
+      - emoji/2B06
+  entityId:
+    type: string
+    format: uuid
+    example: "eb4a3545-05f7-46e8-b17d-107339b6aae6"
+    description: The ID of the entity (feed or comment) that was reacted to
+  createdAt:
+    type: string
+    format: date-time
+    example: "2025-01-01T00:00:00.000Z"
+    description: The timestamp when the reaction was created
+  userId:
+    type: string
+    format: uuid
+    example: "e5149282-2b89-4588-8b70-590ea3218e83"
+    description: The ID of the user who created the reaction
+

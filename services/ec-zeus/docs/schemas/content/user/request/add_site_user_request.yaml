@@ -90,4 +90,32 @@ content:
           type: boolean
           description: Whether Q&A is enabled for the site
           example: true
+        targetAudience:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: List of UUIDs identifying the target audiences
+        subscription:
+          type: array
+          items:
+            type: object
+            required:
+              - audienceId
+              - accessType
+              - isMandatory
+            properties:
+              audienceId:
+                type: string
+                format: uuid
+                description: UUID of the audience
+              accessType:
+                type: string
+                enum: [viewer, member, follower, manager]
+                description: Access type for the subscription
+              isMandatory:
+                type: boolean
+                description: Whether the subscription is mandatory
+            additionalProperties: false
+          description: List of subscription configurations
       additionalProperties: false

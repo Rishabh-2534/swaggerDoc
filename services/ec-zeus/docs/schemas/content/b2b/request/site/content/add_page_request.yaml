@@ -142,6 +142,17 @@ properties:
     format: uuid
     description: UUID of the user creating the page
 
+  isRestricted:
+    type: boolean
+    description: Whether the content is restricted to specific audiences
+
+  targetAudience:
+    type: array
+    items:
+      type: string
+      format: uuid
+    description: List of UUIDs identifying the target audiences
+
 required:
   - contentSubType
   - bodyHtml

@@ -1,0 +1,65 @@
+description: Success response for get reactions
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+          description: Response status
+          enum: [success, error]
+        message:
+          type: string
+          example: Reaction list have been fetched successfully.
+          description: Descriptive message about the operation result
+        result:
+          type: object
+          description: Contains the reactions list and metadata
+          properties:
+            nextPageToken:
+              type: integer
+              nullable: true
+              example: 1759911721822
+              description: Token for pagination to fetch next page
+            size:
+              type: integer
+              example: 10
+              description: The number of reactions returned in this page
+            total:
+              type: integer
+              example: 25
+              description: Total number of reactions available
+            listOfItems:
+              type: array
+              description: List of reactions
+              items:
+                $ref: '../../../../schemas/feed/reaction_object.yaml'
+            reactionStats:
+              type: array
+              description: Statistics about reactions by type (included when includeStats=true)
+              items:
+                $ref: '../../../../schemas/feed/reaction_stats.yaml'
+            userDetails:
+              type: object
+              description: User details for users who reacted (keyed by userId)
+              additionalProperties:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                    format: uuid
+                    example: "e5149282-2b89-4588-8b70-590ea3218e83"
+                  name:
+                    type: string
+                    example: "John Doe"
+                  img:
+                    type: string
+                    example: "https://example.com/avatar.jpg"
+                  department:
+                    type: string
+                    example: "Engineering"
+                  location:
+                    type: string
+                    example: "San Francisco, CA"
+
