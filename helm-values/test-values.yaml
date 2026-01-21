@@ -2,7 +2,7 @@
 # Test Deployment Variables #
 #***********************************************************************************************************#
 microservicesName:
-  ec-odin-app:
+  ec-odin-service:
     nodeSelector:
       label: graviton-daemon
     tolerations:

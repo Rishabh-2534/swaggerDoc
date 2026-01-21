@@ -3,7 +3,7 @@
 #***********************************************************************************************************#
 microservicesName:
   # This name is common for all the microservices
-  ec-odin-app:
+  ec-odin-service:
     replicaCount: 1
     nodeSelector:
       label: graviton-daemon
