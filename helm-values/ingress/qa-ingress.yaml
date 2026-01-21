@@ -22,7 +22,7 @@ spec:
     - host: ec.qa.simpplr.xyz
       http:
         paths:
-          - path:/*
+          - path: /*
             pathType: ImplementationSpecific
             backend:
               service:
