@@ -1,15 +1,3 @@
-microservicesName:
-  ec-odin-app:
-    nodeSelector:
-      label: graviton-daemon
-    tolerations:
-      - effect: NoSchedule
-        key: taint
-        operator: Equal
-        value: graviton-daemon
-    tolerationsEnabled: true
-    nodeSelectorEnabled: true
-
 configMap:
   data:
     NODE_ENV: PROD
