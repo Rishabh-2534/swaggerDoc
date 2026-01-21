@@ -1,13 +1,17 @@
 #***********************************************************************************************************#
 # Dev Deployment Variables #
 #***********************************************************************************************************#
-
-# Below array is required if you need any custome values -- It's optional
-
-# microservicesName: # this name must not be changed
-#   notification-api-app:
-#     autoscalingMinReplicas: 10
-#     autoscalingMaxReplicas: 100
+microservicesName:
+  ec-odin-service:
+    nodeSelector:
+      label: graviton-daemon
+    tolerations:
+      - effect: NoSchedule
+        key: taint
+        operator: Equal
+        value: graviton-daemon
+    tolerationsEnabled: true
+    nodeSelectorEnabled: true
 
 #***********************************************************************************************************#
 # ConfigMap Variables #
