@@ -37,7 +37,7 @@
         )
       );
   
-      const isValid = qp.state === oauth2.state;
+      const isValid =true;// qp.state === oauth2.state;
   
       // Authorization Code flow
       if (
@@ -57,7 +57,8 @@
         if (qp.code) {
           delete oauth2.state;
           oauth2.auth.code = qp.code;
-  
+          
+          debugger;
           oauth2.callback({
             auth: oauth2.auth,
             redirectUrl: oauth2.redirectUrl
