@@ -29,7 +29,7 @@
         console.error('swaggerUIRedirectOauth2 not found');
         return;
       }
-  
+      console.log(oauth2);
       const qp = Object.fromEntries(
         new URLSearchParams(
           window.location.search || window.location.hash.substring(1)
