@@ -36,8 +36,7 @@
       oauth2.callback({
         code: params.get('code'),
         state: oauth2.state,
-        error: params.get('error'),
-        error_description: params.get('error_description')
+        
       });
 
       window.close();
