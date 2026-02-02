@@ -20,6 +20,30 @@
 <body>
   <p>Completing OAuth2 redirect…</p>
   <p class="small">You can close this window if it doesn’t close automatically.</p>
-  <script src="https://unpkg.com/swagger-ui-dist@4.18.0/oauth2-redirect.js"></script>
+
+  <script>
+    'use strict';
+
+    function run() {
+      const oauth2 = window.opener.swaggerUIRedirectOauth2;
+      if (!oauth2) {
+        console.error('swaggerUIRedirectOauth2 not found');
+        return;
+      }
+
+      const params = new URLSearchParams(window.location.search);
+
+      oauth2.callback({
+        code: params.get('code'),
+        state: params.get('state'),
+        error: params.get('error'),
+        error_description: params.get('error_description')
+      });
+
+      window.close();
+    }
+
+    run();
+  </script>
 </body>
 </html>
