@@ -43,7 +43,7 @@
       window.ui = SwaggerUIBundle({
         url: 'ec-api-doc-dev.yaml',
         dom_id: '#swagger-ui',
-        oauth2RedirectUrl: "https://api-docs.dev.simpplr.xyz/oauth2-redirect.html",
+        oauth2RedirectUrl: window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1) + 'oauth2-redirect.html',
         deepLink: true,
         presets: [  
           SwaggerUIBundle.presets.apis,

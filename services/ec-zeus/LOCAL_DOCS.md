@@ -121,12 +121,13 @@ The `ec-odin-service` has Swagger UI available but commented out. To enable it:
 
 ## GitHub Pages (test docs live)
 
-To host the Try-it and unified docs on GitHub Pages (e.g. `https://<username>.github.io/swaggerDoc/`):
+Your Swagger docs live in **`services/ec-zeus/docs/`**, not in a root **`/docs`** folder. For GitHub Pages to serve them, use **GitHub Actions** as the source (not "Branch / docs").
 
-1. **Enable Pages from Actions**  
-   Repo → **Settings** → **Pages** → Source: **GitHub Actions**.
+1. **Change the Pages source**  
+   Repo → **Settings** → **Pages**.  
+   Under **Build and deployment** → **Source**, choose **GitHub Actions** (not "Deploy from a branch" / "docs folder").
 
-2. **Push the workflow**  
+2. **Deploy**  
    The workflow `.github/workflows/deploy-docs-pages.yaml` deploys `services/ec-zeus/docs` on push to `develop` or `main`. Push your branch; after the workflow runs, the site is live.
 
 3. **Open the docs**  
