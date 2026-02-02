@@ -20,29 +20,70 @@
 <body>
   <p>Completing OAuth2 redirect…</p>
   <p class="small">You can close this window if it doesn’t close automatically.</p>
-
   <script>
     'use strict';
-
-    function run() {
+  
+    function run () {
       const oauth2 = window.opener.swaggerUIRedirectOauth2;
       if (!oauth2) {
         console.error('swaggerUIRedirectOauth2 not found');
         return;
       }
-
-      const params = new URLSearchParams(window.location.search);
-
-      oauth2.callback({
-        code: params.get('code'),
-        state: oauth2.state,
-        
-      });
-
+  
+      const qp = Object.fromEntries(
+        new URLSearchParams(
+          window.location.search || window.location.hash.substring(1)
+        )
+      );
+  
+      const isValid = qp.state === oauth2.state;
+  
+      // Authorization Code flow
+      if (
+        (oauth2.auth.schema.get("flow") === "accessCode" ||
+         oauth2.auth.schema.get("flow") === "authorizationCode") &&
+        !oauth2.auth.code
+      ) {
+        if (!isValid) {
+          oauth2.errCb({
+            authId: oauth2.auth.name,
+            source: "auth",
+            level: "warning",
+            message: "OAuth2 state mismatch"
+          });
+        }
+  
+        if (qp.code) {
+          delete oauth2.state;
+          oauth2.auth.code = qp.code;
+  
+          oauth2.callback({
+            auth: oauth2.auth,
+            redirectUrl: oauth2.redirectUrl
+          });
+        } else {
+          oauth2.errCb({
+            authId: oauth2.auth.name,
+            source: "auth",
+            level: "error",
+            message: qp.error_description || "No authorization code received"
+          });
+        }
+      } else {
+        // implicit / token flow
+        oauth2.callback({
+          auth: oauth2.auth,
+          token: qp,
+          isValid,
+          redirectUrl: oauth2.redirectUrl
+        });
+      }
+  
       window.close();
     }
-
+  
     run();
   </script>
+  
 </body>
 </html>
