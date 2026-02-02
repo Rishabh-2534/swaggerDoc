@@ -1,0 +1,36 @@
+# Deploy Swagger docs (b2b-api-tryit, api-docs-unified, etc.) to GitHub Pages
+name: Deploy docs to GitHub Pages
+
+on:
+  push:
+    branches: [develop, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact (docs folder)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: services/ec-zeus/docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
