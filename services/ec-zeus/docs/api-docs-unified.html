@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simpplr API Documentation – B2B & User API</title>
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.18.0/swagger-ui.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+    .section {
+      max-width: 1460px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      box-sizing: border-box;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #0f3460;
+    }
+    #auth-docs {
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    #auth-docs .markdown-body {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #334155;
+    }
+    #auth-docs .markdown-body h1 { font-size: 1.75rem; margin-top: 0; }
+    #auth-docs .markdown-body h2 { font-size: 1.35rem; margin-top: 24px; }
+    #auth-docs .markdown-body h3 { font-size: 1.15rem; }
+    #auth-docs .markdown-body code { background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    #auth-docs .markdown-body pre { background: #1e293b; color: #e2e8f0; padding: 16px; border-radius: 8px; overflow-x: auto; }
+    #auth-docs .markdown-body pre code { background: none; padding: 0; color: inherit; }
+    #auth-docs .markdown-body table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    #auth-docs .markdown-body th, #auth-docs .markdown-body td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+    #auth-docs .markdown-body th { background: #e2e8f0; }
+    #auth-docs .markdown-body a { color: #0f3460; }
+    #b2b-api-section { background: #fff; }
+    #user-api-section { background: #fafafa; border-top: 1px solid #e2e8f0; }
+    #swagger-ui-b2b, #swagger-ui-user { min-height: 400px; }
+  </style>
+</head>
+<body>
+  <section id="auth-docs" class="section">
+    <h2 class="section-title">Authentication: Auth code and access token</h2>
+    <div id="auth-markdown" class="markdown-body">Loading auth-process.md…</div>
+  </section>
+
+  <section id="b2b-api-section" class="section">
+    <h2 class="section-title">B2B API</h2>
+    <p style="margin: 0 0 12px; color: #64748b;">Simpplr B2B API – client credentials flow. Use Authorize (BearerAuth) or the token from the guide above.</p>
+    <div id="swagger-ui-b2b"></div>
+  </section>
+
+  <section id="user-api-section" class="section">
+    <h2 class="section-title">User API</h2>
+    <p style="margin: 0 0 12px; color: #64748b;">Simpplr User API – authorization code flow. Use Authorize or the token obtained via the auth process above.</p>
+    <div id="swagger-ui-user"></div>
+  </section>
+
+  <script src="https://unpkg.com/swagger-ui-dist@4.18.0/swagger-ui-bundle.js" crossorigin></script>
+  <script src="https://unpkg.com/swagger-ui-dist@4.18.0/swagger-ui-standalone-preset.js" crossorigin></script>
+  <script>
+    (function() {
+      // 1. Load and render auth-process.md
+      fetch('auth-process.md')
+        .then(r => r.text())
+        .then(md => {
+          document.getElementById('auth-markdown').innerHTML = marked.parse(md);
+        })
+        .catch(() => {
+          document.getElementById('auth-markdown').innerHTML = '<p>Could not load auth-process.md. Serve this page from the docs folder (e.g. npm run docs:tryit:b2b).</p>';
+        });
+
+      // 2. B2B API Swagger UI
+      const b2bUi = SwaggerUIBundle({
+        url: 'ec-api-doc-b2b-dev.yaml',
+        dom_id: '#swagger-ui-b2b',
+        deepLink: true,
+        presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+        layout: 'StandaloneLayout',
+        tryItOutEnabled: true,
+        persistAuthorization: true
+      });
+
+      // 3. User API Swagger UI
+      const userUi = SwaggerUIBundle({
+        url: 'ec-api-doc-dev.yaml',
+        dom_id: '#swagger-ui-user',
+        deepLink: true,
+        presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+        layout: 'StandaloneLayout',
+        tryItOutEnabled: true,
+        persistAuthorization: true
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -4,7 +4,13 @@
   "description": "Simpplr Zeus",
   "scripts": {
     "validate:dev": "cd docs && rdme openapi validate ./ec-api-doc-dev.yaml && rdme openapi validate ./ec-api-doc-b2b-dev.yaml",
-    "validate:prod": "cd docs && rdme openapi validate ./ec-api-doc.yaml && rdme openapi validate ./ec-api-doc-b2b.yaml"
+    "validate:prod": "cd docs && rdme openapi validate ./ec-api-doc.yaml && rdme openapi validate ./ec-api-doc-b2b.yaml",
+    "docs:serve:user": "npx @redocly/cli preview-docs docs/ec-api-doc-dev.yaml --port 8080",
+    "docs:serve:b2b": "npx @redocly/cli preview-docs docs/ec-api-doc-b2b-dev.yaml --port 8081",
+    "docs:serve:all": "concurrently \"npm run docs:serve:user\" \"npm run docs:serve:b2b\"",
+    "docs:build:user": "npx @redocly/cli build-docs docs/ec-api-doc-dev.yaml --output docs/user-api.html",
+    "docs:build:b2b": "npx @redocly/cli build-docs docs/ec-api-doc-b2b-dev.yaml --output docs/b2b-api.html",
+    "docs:tryit:b2b": "npx serve docs -p 8080"
   },
   "repository": {
     "type": "git",
@@ -21,6 +27,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "nodemon": "^3.0.3",
     "prettier": "^2.3.2",
-    "rdme": "10.5.3"
+    "rdme": "10.5.3",
+    "@redocly/cli": "^1.10.0",
+    "concurrently": "^8.2.2"
   }
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simpplr B2B API – Try it</title>
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.18.0/swagger-ui.css" />
+  <style>
+    .token-override {
+      background: #e8f4fd;
+      border-bottom: 1px solid #b8daff;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .token-override label { font-weight: 600; }
+    .token-override input {
+      flex: 1;
+      min-width: 200px;
+      padding: 6px 10px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+    /* Custom UI overrides: edit below to change Swagger UI look. Use #swagger-ui as prefix. */
+  </style>
+</head>
+<body>
+  <div class="token-override">
+    <label for="token-override">Override token for next request (optional):</label>
+    <input type="text" id="token-override" placeholder="Paste a different token here to use only for the next Try-it request" title="When set, this token is sent instead of the one from Authorize" />
+    <span style="color:#666; font-size:12px;">Leave empty to use the token from Authorize.</span>
+  </div>
+  <div id="swagger-ui"></div>
+  <script src="https://unpkg.com/swagger-ui-dist@4.18.0/swagger-ui-bundle.js" crossorigin></script>
+  <script src="https://unpkg.com/swagger-ui-dist@4.18.0/swagger-ui-standalone-preset.js" crossorigin></script>
+  <script>
+    window.onload = () => {
+      const overrideInput = document.getElementById('token-override');
+      window.ui = SwaggerUIBundle({
+        url: 'ec-api-doc-dev.yaml',
+        dom_id: '#swagger-ui',
+        oauth2RedirectUrl: "https://api-docs.dev.simpplr.xyz/oauth2-redirect.html",
+        deepLink: true,
+        presets: [  
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        layout: 'StandaloneLayout',
+        tryItOutEnabled: true,
+        persistAuthorization: true,
+        requestInterceptor: (req) => {
+          if (req.loadSpec) return req;
+          delete req.headers['User-Agent'];
+          delete req.headers['X-Requested-With'];
+          const override = (overrideInput && overrideInput.value || '').trim();
+          if (override) {
+            const token = override.startsWith('Bearer ') ? override : 'Bearer ' + override;
+            req.headers['Authorization'] = token;
+            overrideInput.value = '';
+          }
+          return req;
+        }
+      });
+    };
+  </script>
+</body>
+</html>

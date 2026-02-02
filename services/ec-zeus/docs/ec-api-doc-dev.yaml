@@ -198,8 +198,9 @@ components:
             type: "oauth2"
             description: "This API uses OAuth 2 with the implicit grant flow."
             flows:
-                implicit:
-                    authorizationUrl:  https://platform.test.simpplr.xyz/v1
+                authorizationCode:
+                    authorizationUrl:  /v1/identity/oauth/authorize
+                    tokenUrl: /v1/identity/oauth/token
                     scopes:
                         read: "read data"
                         write: "create/update data"
