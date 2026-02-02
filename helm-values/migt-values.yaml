@@ -5,6 +5,15 @@ microservicesName:
   # This name is common for all the microservices
   ec-odin-service:
     replicaCount: 1
+    nodeSelector:
+      label: graviton-daemon
+    tolerations:
+      - effect: NoSchedule
+        key: taint
+        operator: Equal
+        value: graviton-daemon
+    tolerationsEnabled: true
+    nodeSelectorEnabled: true
 # Below array is required if you need any custome values -- It's optional
 #***********************************************************************************************************#
 # ConfigMap Variables #
